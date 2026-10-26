@@ -1,0 +1,28 @@
+<style>
+ .print-format { font-family: "DejaVu Sans", Arial, sans-serif; font-size: 11px; color: #172b3a; }
+ h1 { border-bottom: 2px solid #147d92; padding-bottom: 12px; font-size: 23px; }
+ table.vector-items { width: 100%; border-collapse: collapse; margin: 18px 0; }
+ .vector-items th, .vector-items td { border: 1px solid #cbd5df; padding: 7px; vertical-align: top; }
+ .vector-items th { background: #edf5f8; } .number { text-align: right; white-space: nowrap; }
+ tr { page-break-inside: avoid; } .signatures { margin-top: 35px; }
+</style>
+{% set company = frappe.get_doc("Company", doc.company) %}
+<h1>{{ "Повернення за накладною" if doc.is_return else "Видаткова накладна" }} № {{ doc.name | e }}</h1>
+<p>від {{ frappe.utils.formatdate(doc.posting_date, "dd.MM.yyyy") | e }}</p>
+{% if doc.docstatus != 1 %}<p><strong>{{ "ЧЕРНЕТКА" if doc.docstatus == 0 else "СКАСОВАНО" }}</strong></p>{% endif %}
+<p><strong>Постачальник:</strong> {{ company.company_name | e }}{% if company.tax_id %}<br>ЄДРПОУ / РНОКПП: {{ company.tax_id | e }}{% endif %}</p>
+<p><strong>Покупець:</strong> {{ doc.customer_name | e }}{% if doc.tax_id %}<br>ЄДРПОУ / РНОКПП: {{ doc.tax_id | e }}{% endif %}</p>
+{% if doc.custom_nova_poshta_ttn %}<p>ТТН Нової пошти: {{ doc.custom_nova_poshta_ttn | e }}</p>{% endif %}
+<p>Валюта: {{ doc.currency | e }}</p>
+<table class="vector-items"><thead><tr><th>№</th><th>Товар</th><th>Кількість</th><th>Од.</th><th>Ціна</th><th>Сума</th></tr></thead><tbody>
+{% for row in doc.items %}<tr><td>{{ loop.index }}</td><td>{{ row.item_name | e }}<br><small>{{ row.item_code | e }}</small>
+{% if row.serial_no %}<br>Серійний №: {{ row.serial_no | e }}{% elif row.serial_and_batch_bundle %}
+{% set bundle = frappe.get_doc("Serial and Batch Bundle", row.serial_and_batch_bundle) %}
+{% for entry in bundle.entries %}{% if entry.serial_no %}<br>Серійний №: {{ entry.serial_no | e }}{% endif %}{% endfor %}{% endif %}</td>
+<td class="number">{{ row.get_formatted("qty", doc) | e }}</td><td>{{ _(row.uom) | e }}</td>
+<td class="number">{{ row.get_formatted("rate", doc) | e }}</td><td class="number">{{ row.get_formatted("amount", doc) | e }}</td></tr>{% endfor %}
+</tbody></table>
+{% if doc.discount_amount %}<p class="number">Додаткова знижка: {{ doc.get_formatted("discount_amount") | e }}</p>{% endif %}
+{% for tax in doc.taxes %}<p class="number">{{ tax.description | e }}: {{ tax.get_formatted("tax_amount_after_discount_amount", doc) | e }}</p>{% endfor %}
+<p class="number"><strong>Усього: {{ doc.get_formatted("grand_total") | e }}</strong></p>
+<p class="signatures">Відпустив(ла): ____________________ &nbsp;&nbsp; Отримав(ла): ____________________</p>

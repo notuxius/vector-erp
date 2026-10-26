@@ -1,0 +1,99 @@
+"<div class=""well"">
+    Edit list of Series in the box. Rules:
+    <ul>
+        <li>Each Series Prefix on a new line.</li>
+        <li>Allowed special characters are ""/"" and ""-""</li>
+        <li>
+            Optionally, set the number of digits in the series using dot (.)
+            followed by hashes (#). For example, "".####"" means that the series
+            will have four digits. Default is five digits.
+        </li>
+        <li>
+            You can also use variables in the series name by putting them
+            between (.) dots
+            <br>
+            Supported Variables:
+            <ul>
+                <li><code>.YYYY.</code> - Year in 4 digits</li>
+                <li><code>.YY.</code> - Year in 2 digits</li>
+                <li><code>.MM.</code> - Month</li>
+                <li><code>.DD.</code> - Day of month</li>
+                <li><code>.WW.</code> - Week of the year</li>
+                <li>
+                    <code>.{fieldname}.</code> - fieldname on the document e.g.
+                    <code>branch</code>
+                </li>
+                <li><code>.FY.</code> - Fiscal Year (requires ERPNext to be installed)</li>
+                <li><code>.ABBR.</code> - Company Abbreviation (requires ERPNext to be installed)</li>
+            </ul>
+        </li>
+    </ul>
+    Examples:
+    <ul>
+        <li>INV-</li>
+        <li>INV-10-</li>
+        <li>INVK-</li>
+        <li>INV-.YYYY.-.{branch}.-.MM.-.####</li>
+    </ul>
+</div>
+<br>
+","<div class=""well"">
+    Edit list of Series in the box. Rules:
+    <ul>
+        <li>Each Series Prefix on a new line.</li>
+        <li>Allowed special characters are ""/"" and ""-""</li>
+        <li>
+            Optionally, set the number of digits in the series using dot (.)
+            followed by hashes (#). For example, "".####"" means that the series
+            will have four digits. Default is five digits.
+        </li>
+        <li>
+            You can also use variables in the series name by putting them
+            between (.) dots
+            <br>
+            Supported Variables:
+            <ul>
+                <li><code>.YYYY.</code> - Year in 4 digits</li>
+                <li><code>.YY.</code> - Year in 2 digits</li>
+                <li><code>.MM.</code> - Month</li>
+                <li><code>.DD.</code> - Day of month</li>
+                <li><code>.WW.</code> - Week of the year</li>
+                <li>
+                    <code>.{fieldname}.</code> - fieldname on the document e.g.
+                    <code>branch</code>
+                </li>
+                <li><code>.FY.</code> - Fiscal Year (requires Vector ERP to be installed)</li>
+                <li><code>.ABBR.</code> - Company Abbreviation (requires Vector ERP to be installed)</li>
+            </ul>
+        </li>
+    </ul>
+    Examples:
+    <ul>
+        <li>INV-</li>
+        <li>INV-10-</li>
+        <li>INVK-</li>
+        <li>INV-.YYYY.-.{branch}.-.MM.-.####</li>
+    </ul>
+</div>
+<br>
+"
+Company Abbreviation (requires ERPNext to be installed),Company Abbreviation (requires Vector ERP to be installed)
+ERPNext,Vector ERP
+ERPNext Integrations,Vector ERP Integrations
+ERPNext Settings,Vector ERP Settings
+ERPNext User ID,Vector ERP User ID
+ERPNext will make a stock ledger entry for each transaction of this item. Keep unchecked for non-stock or service items.,Vector ERP will make a stock ledger entry for each transaction of this item. Keep unchecked for non-stock or service items.
+Fiscal Year (requires ERPNext to be installed),Fiscal Year (requires Vector ERP to be installed)
+Frappe CRM data synchronization is not enabled on ERPNext. Contact System Manager of ERPNext.,Frappe CRM data synchronization is not enabled on Vector ERP. Contact System Manager of Vector ERP.
+Frappe Framework,Framework
+Get to know ERPNext,Get to know Vector ERP
+"If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice or Receipt without creating a Purchase Order first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Order' checkbox in the Supplier master.","If this option is configured 'Yes', Vector ERP will prevent you from creating a Purchase Invoice or Receipt without creating a Purchase Order first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Order' checkbox in the Supplier master."
+"If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice without creating a Purchase Receipt first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Receipt' checkbox in the Supplier master.","If this option is configured 'Yes', Vector ERP will prevent you from creating a Purchase Invoice without creating a Purchase Receipt first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Receipt' checkbox in the Supplier master."
+"If you are maintaining stock of this Item in your Inventory, ERPNext will make a stock ledger entry for each transaction of this item.","If you are maintaining stock of this Item in your Inventory, Vector ERP will make a stock ledger entry for each transaction of this item."
+"One layer of one app's dock. Three of them share this table, told apart by `app`, `user` and `standard`: the app's own dock, which an app ships as an exported document and a developer authors; the site's arrangement of it, curated by a Workspace Manager and applying to everyone; and one person's own, applied last and winning. A dock belongs to an app, so arranging ERPNext's rail does not touch frappe's -- and a layer is addressed by app plus user rather than by user alone. Same shape at all three, because the rows are identical and the parent is what says whose they are; see `Custom Sidebar`, which layers a sidebar the same way in a table of its own.","One layer of one app's dock. Three of them share this table, told apart by `app`, `user` and `standard`: the app's own dock, which an app ships as an exported document and a developer authors; the site's arrangement of it, curated by a Workspace Manager and applying to everyone; and one person's own, applied last and winning. A dock belongs to an app, so arranging Vector ERP's rail does not touch frappe's -- and a layer is addressed by app plus user rather than by user alone. Same shape at all three, because the rows are identical and the parent is what says whose they are; see `Custom Sidebar`, which layers a sidebar the same way in a table of its own."
+Original immutable MoySklad entity ID. Leave empty for new ERPNext records.,Original immutable MoySklad entity ID. Leave empty for new Vector ERP records.
+"Something you bought before using ERPNext, with what you paid, where it is, and how much has already depreciated. See [Asset](https://docs.frappe.io/erpnext/user/manual/en/asset).","Something you bought before using Vector ERP, with what you paid, where it is, and how much has already depreciated. See [Asset](https://docs.frappe.io/erpnext/user/manual/en/asset)."
+This action will unlink this account from any external service integrating ERPNext with your bank accounts. It cannot be undone. Are you certain ?,This action will unlink this account from any external service integrating Vector ERP with your bank accounts. It cannot be undone. Are you certain ?
+User not allowed to synchronize data from Frappe CRM on ERPNext. Contact System Manager of ERPNext.,User not allowed to synchronize data from Frappe CRM on Vector ERP. Contact System Manager of Vector ERP.
+"WARNING: Exotel app has been separated from ERPNext, please install the app to continue using Exotel integration.","WARNING: Exotel app has been separated from Vector ERP, please install the app to continue using Exotel integration."
+[Important] [ERPNext] Auto Reorder Errors,[Important] [Vector ERP] Auto Reorder Errors

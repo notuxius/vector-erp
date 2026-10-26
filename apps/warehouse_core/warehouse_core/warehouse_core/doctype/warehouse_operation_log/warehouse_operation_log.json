@@ -1,0 +1,19 @@
+{
+ "doctype": "DocType", "name": "Warehouse Operation Log", "module": "Warehouse Core",
+ "autoname": "hash", "engine": "InnoDB", "allow_rename": 0,
+ "field_order": ["event_time", "actor", "action", "company", "reference_doctype", "reference_name", "details"],
+ "fields": [
+  {"fieldname": "event_time", "label": "Час операції", "fieldtype": "Datetime", "reqd": 1, "read_only": 1, "in_list_view": 1},
+  {"fieldname": "actor", "label": "Виконавець", "fieldtype": "Data", "reqd": 1, "read_only": 1, "in_list_view": 1, "in_standard_filter": 1},
+  {"fieldname": "action", "label": "Дія", "fieldtype": "Select", "options": "Submit\nCancel", "reqd": 1, "read_only": 1, "in_list_view": 1, "in_standard_filter": 1},
+  {"fieldname": "company", "label": "Компанія", "fieldtype": "Link", "options": "Company", "read_only": 1, "in_standard_filter": 1},
+  {"fieldname": "reference_doctype", "label": "Тип документа", "fieldtype": "Data", "reqd": 1, "read_only": 1, "in_list_view": 1, "in_standard_filter": 1},
+  {"fieldname": "reference_name", "label": "Документ", "fieldtype": "Data", "reqd": 1, "read_only": 1, "in_list_view": 1, "in_standard_filter": 1},
+  {"fieldname": "details", "label": "Деталі операції", "fieldtype": "Code", "options": "JSON", "read_only": 1}
+ ],
+ "permissions": [
+  {"role": "System Manager", "read": 1, "report": 1, "export": 1, "print": 1},
+  {"role": "Stock Manager", "read": 1, "report": 1, "export": 1, "print": 1}
+ ],
+ "sort_field": "event_time", "sort_order": "DESC", "search_fields": "reference_name,actor"
+}

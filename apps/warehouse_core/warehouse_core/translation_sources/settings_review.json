@@ -1,0 +1,186 @@
+{
+  "date": "2026-10-14",
+  "corrections": [
+    {
+      "source": "DocType",
+      "previous": "DocType",
+      "translation": "Тип документа"
+    },
+    {
+      "source": "Navbar Settings",
+      "previous": "Налаштування Navbar",
+      "translation": "Налаштування панелі навігації"
+    },
+    {
+      "source": "Navbar",
+      "previous": "Навбар",
+      "translation": "Панель навігації"
+    },
+    {
+      "source": "Navbar Template",
+      "previous": "Navbar шаблон",
+      "translation": "Шаблон панелі навігації"
+    },
+    {
+      "source": "Navbar Template Values",
+      "previous": "Значення шаблону Navbar",
+      "translation": "Значення шаблону панелі навігації"
+    },
+    {
+      "source": "Top Bar Items",
+      "previous": "Top Bar елементи",
+      "translation": "Пункти верхньої панелі"
+    },
+    {
+      "source": "Close Issue After Days",
+      "previous": "Закрити Issue Після днів",
+      "translation": "Закривати звернення через (днів)"
+    },
+    {
+      "source": "Log DocType",
+      "previous": "DocType журналу",
+      "translation": "Тип документа журналу"
+    },
+    {
+      "source": "Source DocType",
+      "previous": "Джерело DocType",
+      "translation": "Тип вихідного документа"
+    },
+    {
+      "source": "Disable Standard Email Footer",
+      "previous": "Вимкнути стандартний підпис (footer) листа",
+      "translation": "Вимкнути стандартний підпис листа"
+    },
+    {
+      "source": "Bypass Two Factor Auth for users who login from restricted IP Address",
+      "previous": "Обхід двох факторів Auth для користувачів, які входять з обмеженої IP-адреси",
+      "translation": "Не вимагати двофакторну автентифікацію для входу з дозволених IP-адрес"
+    },
+    {
+      "source": "Bypass restricted IP Address check If Two Factor Auth Enabled",
+      "previous": "Перевірка обмеженої IP-адреси, якщо ввімкнено два фактора Auth",
+      "translation": "Не перевіряти обмеження за IP-адресою, якщо ввімкнено двофакторну автентифікацію"
+    },
+    {
+      "source": "Bypass Restricted IP Address Check If Two Factor Auth Enabled",
+      "previous": "Обхід обмеженої перевірки IP-адреси, якщо увімкнено двофакторне авторизацію",
+      "translation": "Не перевіряти обмеження за IP-адресою, якщо ввімкнено двофакторну автентифікацію"
+    },
+    {
+      "source": "Enable Two Factor Auth",
+      "previous": "Увімкнути двофакторний аут",
+      "translation": "Увімкнути двофакторну автентифікацію"
+    },
+    {
+      "source": "Two Factor Authentication",
+      "previous": "Два факторів аутентифікації",
+      "translation": "Двофакторна автентифікація"
+    },
+    {
+      "source": "Two Factor Authentication method",
+      "previous": "Два методу автентифікації факторів",
+      "translation": "Спосіб двофакторної автентифікації"
+    },
+    {
+      "source": "If enabled, users who login from Restricted IP Address, won't be prompted for Two Factor Auth",
+      "previous": "Якщо цей параметр увімкнено, користувачі, які входитимуть із обмеженої IP-адреси, не будуть запитані про двофакторний аут",
+      "translation": "Якщо ввімкнено, під час входу з дозволених IP-адрес двофакторна автентифікація не запитуватиметься."
+    },
+    {
+      "source": "OTP Issuer Name",
+      "previous": "OTP Назва емітента",
+      "translation": "Назва емітента одноразових кодів"
+    },
+    {
+      "source": "LDAP Email Field",
+      "previous": "LDAP Email Поле",
+      "translation": "Поле електронної пошти LDAP"
+    },
+    {
+      "source": "LDAP First Name Field",
+      "previous": "LDAP Ім'я поля",
+      "translation": "Поле імені LDAP"
+    },
+    {
+      "source": "LDAP Search String",
+      "previous": "LDAP Рядок пошуку",
+      "translation": "Рядок пошуку LDAP"
+    },
+    {
+      "source": "LDAP User Creation and Mapping",
+      "previous": "Створення та картографування користувачів LDAP",
+      "translation": "Створення та зіставлення користувачів LDAP"
+    },
+    {
+      "source": "LDAP Group Mappings",
+      "previous": "Групові відображення LDAP",
+      "translation": "Зіставлення груп LDAP"
+    },
+    {
+      "source": "Password for Base DN",
+      "previous": "Пароль до Base DN",
+      "translation": "Пароль для базового DN"
+    },
+    {
+      "source": "API Secret",
+      "previous": "API-Secret",
+      "translation": "Секретний ключ API"
+    },
+    {
+      "source": "Send enquiries to this email address",
+      "previous": "Відправити запити на цей email",
+      "translation": "Надсилати запити на цю адресу електронної пошти"
+    },
+    {
+      "source": "Show title in browser window as \"Prefix - title\"",
+      "previous": "Показувати назву у вікні браузера як \"Префікс - title\"",
+      "translation": "Показувати назву у вікні браузера як «Префікс — назва»"
+    },
+    {
+      "source": "FavIcon",
+      "previous": "Іконка Favicon",
+      "translation": "Значок сайту"
+    },
+    {
+      "source": "An icon file with .ico extension. Should be 16 x 16 px. Generated using a favicon generator. [favicon-generator.org]",
+      "previous": "Значок файлу з розширенням .ico розширенням. Повинно бути 16 х 16 пікселів. Генерується з використанням генератора FavIcon. [favicon-generator.org]",
+      "translation": "Файл значка з розширенням .ico розміром 16 × 16 пікселів. Можна створити генератором значків [favicon-generator.org]."
+    },
+    {
+      "source": "Footer \"Powered By\"",
+      "previous": "Напис «Powered By» у підвалі",
+      "translation": "Напис «Працює на» в нижній частині сторінки"
+    },
+    {
+      "source": "Header, Robots",
+      "previous": "Заголовок, Robots",
+      "translation": "Заголовок і пошукові роботи"
+    },
+    {
+      "source": "An email will be sent to notify the User with the role 'Purchase Manager' when an automatic Material Request is created.",
+      "previous": "Після автоматичного створення заявки на товари користувач із роллю «Purchase Manager» отримує сповіщення електронною поштою.",
+      "translation": "Після автоматичного створення заявки на товари користувач із роллю «Керівник закупівель» отримує сповіщення електронною поштою."
+    },
+    {
+      "source": "Request for Quotations",
+      "translation": "Запити комерційних пропозицій",
+      "context": ""
+    },
+    {
+      "source": "Retail",
+      "translation": "Роздрібна торгівля",
+      "context": ""
+    },
+    {
+      "source": "Check",
+      "translation": "Прапорець",
+      "context": "DocField"
+    },
+    {
+      "source": "Select",
+      "translation": "Вибір зі списку",
+      "context": "DocField"
+    }
+  ],
+  "scope": "Settings UI captions only; saved keys, roles, URLs, API parameters and user records preserved."
+}

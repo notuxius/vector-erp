@@ -1,0 +1,113 @@
+{
+ "doctype": "DocType",
+ "name": "Nova Poshta Settings",
+ "module": "Warehouse Core",
+ "engine": "InnoDB",
+ "track_changes": 1,
+ "allow_rename": 0,
+ "field_order": [
+  "company",
+  "enabled",
+  "api_key",
+  "sender_section",
+  "sender_name",
+  "sender_ref",
+  "sender_contact_name",
+  "sender_contact",
+  "sender_phone",
+  "sender_city_name",
+  "sender_city",
+  "sender_warehouse_name",
+  "sender_warehouse"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "label": "Компанія",
+   "fieldtype": "Link",
+   "options": "Company",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "enabled",
+   "label": "Увімкнено",
+   "fieldtype": "Check",
+   "default": "0"
+  },
+  {
+   "fieldname": "api_key",
+   "label": "API-ключ",
+   "fieldtype": "Password",
+   "description": "Збережіть ключ із бізнес-кабінету Нової пошти. Він не передається до браузера."
+  },
+  {
+   "fieldname": "sender_section",
+   "label": "Відправник",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sender_name",
+   "label": "Відправник",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sender_ref",
+   "label": "Код відправника",
+   "fieldtype": "Data",
+   "hidden": 1
+  },
+  {
+   "fieldname": "sender_contact_name",
+   "label": "Контактна особа",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sender_contact",
+   "label": "Код контакту",
+   "fieldtype": "Data",
+   "hidden": 1
+  },
+  {
+   "fieldname": "sender_phone",
+   "label": "Телефон відправника",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "sender_city_name",
+   "label": "Місто відправника",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sender_city",
+   "label": "Код міста",
+   "fieldtype": "Data",
+   "hidden": 1
+  },
+  {
+   "fieldname": "sender_warehouse_name",
+   "label": "Відділення відправника",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sender_warehouse",
+   "label": "Код відділення",
+   "fieldtype": "Data",
+   "hidden": 1
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  }
+ ],
+ "autoname": "field:company",
+ "title_field": "company"
+}

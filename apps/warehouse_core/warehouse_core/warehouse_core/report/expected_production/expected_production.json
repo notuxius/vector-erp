@@ -1,0 +1,6 @@
+{
+ "doctype": "Report", "name": "Expected Production", "report_name": "Expected Production",
+ "ref_doctype": "Work Order", "report_type": "Script Report", "is_standard": "Yes",
+ "module": "Warehouse Core", "disabled": 0, "prepared_report": 0,
+ "roles": [{"role": "Manufacturing User"}, {"role": "Manufacturing Manager"}, {"role": "Stock User"}, {"role": "Stock Manager"}]
+}

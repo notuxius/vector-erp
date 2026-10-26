@@ -1,0 +1,321 @@
+A business or person you buy from. See [Supplier](https://docs.frappe.io/erpnext/user/manual/en/supplier).,"Компанія або особа, у якої ви купуєте. Довідка: [Постачальник](https://docs.frappe.io/erpnext/user/manual/en/supplier)."
+A business or person you sell to. See [Customer](https://docs.frappe.io/erpnext/user/manual/en/customer).,"Компанія або особа, якій ви продаєте. Довідка: [Клієнт](https://docs.frappe.io/erpnext/user/manual/en/customer)."
+A product or a service you sell. See [Item](https://docs.frappe.io/erpnext/user/manual/en/item).,"Товар або послуга, які ви продаєте. Довідка: [Товар](https://docs.frappe.io/erpnext/user/manual/en/item)."
+Active Customers,Активні клієнти
+Framework,Адміністрування
+Frappe Framework,Адміністрування
+Return to MTech ERP,Повернутися до MTech ERP
+Return,Повернутися,Navigation
+Active RQ Worker,Активний обробник RQ
+Active Suppliers,Активні постачальники
+Add Asset,Додати актив
+Add Bank Account,Додати банківський рахунок
+Add Customer,Додати клієнта
+Add Supplier,Додати постачальника
+Add a customer,Додайте клієнта
+Add a product you make,"Додайте виріб, який виготовляєте"
+Add a raw material,Додайте сировину
+Add a supplier,Додайте постачальника
+"Add a supplier, order from them and pay their bill.","Додайте постачальника, створіть замовлення й оплатіть рахунок."
+Add an asset item,Додайте товар для обліку активів
+"Add an item and a customer, bill them and collect the payment.","Додайте товар і клієнта, виставте рахунок та отримайте оплату."
+Add an item you buy,Додайте товар для закупівлі
+Add an item you sell,Додайте товар для продажу
+Add an item you stock,Додайте складський товар
+Add the bank account you use,Додайте ваш банківський рахунок
+Add the people you work with and choose what they can see.,"Додайте колег і визначте, що їм доступно."
+Annual Purchase,Річні закупівлі
+Annual Sales,Річні продажі
+"Anything with a start and an end: a client job, an installation, an internal initiative. See [Project](https://docs.frappe.io/erpnext/user/manual/en/project).","Будь-яка робота з початком і завершенням: замовлення клієнта, встановлення або внутрішня ініціатива. Довідка: [Проєкт](https://docs.frappe.io/erpnext/user/manual/en/project)."
+Anything you keep on shelves and count. See [Item](https://docs.frappe.io/erpnext/user/manual/en/item).,"Усе, що зберігається на полицях і підлягає кількісному обліку. Довідка: [Товар](https://docs.frappe.io/erpnext/user/manual/en/item)."
+Appointment Booking,Запис на зустріч
+Asset Maintenance Report,Звіт про обслуговування активів
+Asset Reports,Звіти за активами
+"Assets, liabilities and equity on any date, straight from your ledger. See [Balance Sheet](https://docs.frappe.io/erpnext/user/manual/en/balance-sheet).","Активи, зобов’язання й власний капітал на будь-яку дату за даними головної книги. Довідка: [Баланс](https://docs.frappe.io/erpnext/user/manual/en/balance-sheet)."
+Audit Reports,Аудиторські звіти
+Average Sales Order Value,Середня сума замовлення клієнта
+BOM Reports,Звіти за специфікаціями
+Background Job Activity,Активність фонових завдань
+Background Task,Фонове завдання
+Bank Reconciliation (old),Банківське звіряння (старе)
+Banking Setup,Налаштування банківських операцій
+"Bill your customer for the item. Submit it, then use **Print** to see it on paper or send it as a PDF. See [Sales Invoice](https://docs.frappe.io/erpnext/user/manual/en/sales-invoice).","Виставте клієнту рахунок за товар. Проведіть його, потім скористайтеся друком або надішліть PDF. Довідка: [Рахунок продажу](https://docs.frappe.io/erpnext/user/manual/en/sales-invoice)."
+Break a project into tasks and log the time your team spends.,Розбийте проєкт на завдання та обліковуйте час команди.
+Break it into tasks,Розбийте проєкт на завдання
+Budgeting,Бюджетування
+Check its depreciation,Перевірте амортизацію
+Check what you owe,Перевірте свої борги
+"Check your chart of accounts and taxes, and add the bank account you use.",Перевірте план рахунків і податки та додайте банківський рахунок.
+Check your profit,Перевірте прибуток
+Check your stock levels,Перевірте рівень запасів
+"Compare the results against the goal, and decide what to change. See [Quality Management](https://docs.frappe.io/erpnext/user/manual/en/quality-management).",Порівняйте результати з ціллю та визначте потрібні зміни. Довідка: [Управління якістю](https://docs.frappe.io/erpnext/user/manual/en/quality-management).
+"Computers, vehicles, furniture: how each kind depreciates, and which accounts it posts to. See [Asset Category](https://docs.frappe.io/erpnext/user/manual/en/asset-category).","Комп’ютери, транспорт, меблі: правила амортизації та рахунки для кожної категорії. Довідка: [Категорія активу](https://docs.frappe.io/erpnext/user/manual/en/asset-category)."
+Confirm a sales order,Підтвердьте замовлення клієнта
+Confirm what the customer ordered and when it is due. Deliver and invoice from the order itself. See [Sales Order](https://docs.frappe.io/erpnext/user/manual/en/sales-order).,Підтвердьте склад замовлення та строк доставки. Створіть відвантаження й рахунок із самого замовлення. Довідка: [Замовлення клієнта](https://docs.frappe.io/erpnext/user/manual/en/sales-order).
+Create Asset Maintenance,Створити обслуговування активу
+Create Asset Movement,Створити переміщення активу
+Create BOM,Створити специфікацію
+Create Maintenance Schedule,Створити графік обслуговування
+Create Non Conformance,Створити невідповідність
+Create Production Plan,Створити план виробництва
+Create Project Template,Створити шаблон проєкту
+Create Quality Goal,Створити ціль з якості
+Create Quality Inspection,Створити перевірку якості
+Create Quality Inspection Template,Створити шаблон перевірки якості
+Create Quality Procedure,Створити процедуру якості
+Create Quality Review,Створити огляд якості
+Create Stock Reconciliation,Створити інвентаризацію
+Customer Reports,Звіти за клієнтами
+Decide how many to make. The raw materials you need are worked out from the BOM. See [Work Order](https://docs.frappe.io/erpnext/user/manual/en/work-order).,Визначте кількість до виготовлення. Потреба в сировині розраховується за специфікацією. Довідка: [Замовлення на виробництво](https://docs.frappe.io/erpnext/user/manual/en/work-order).
+Decide what to check,"Визначте, що перевіряти"
+"Depreciation is posted on schedule, asset by asset, without a journal entry from you. See [Depreciation](https://docs.frappe.io/erpnext/user/manual/en/asset-depreciation).",Амортизація кожного активу проводиться за розкладом без ручного бухгалтерського запису. Довідка: [Амортизація](https://docs.frappe.io/erpnext/user/manual/en/asset-depreciation).
+Enter a supplier's bill,Уведіть рахунок постачальника
+Enter the stock you have today,Уведіть поточні залишки
+Enter their bill,Уведіть рахунок постачальника
+"Every movement of every item, in and out, with the balance after each. See [Stock Ledger](https://docs.frappe.io/erpnext/user/manual/en/stock-ledger).",Кожне надходження та вибуття товару із залишком після операції. Довідка: [Рух товарів](https://docs.frappe.io/erpnext/user/manual/en/stock-ledger).
+"Every posting from your invoices and payments, with its debit and credit. See [General Ledger](https://docs.frappe.io/erpnext/user/manual/en/general-ledger).",Кожне проведення рахунків і платежів із дебетом та кредитом. Довідка: [Головна книга](https://docs.frappe.io/erpnext/user/manual/en/general-ledger).
+"Every work order, how far along it is, and what is running late. See [Work Order Summary](https://docs.frappe.io/erpnext/user/manual/en/work-order-summary).","Усі виробничі замовлення, їхній поступ і прострочення. Довідка: [Зведення замовлення на виробництво](https://docs.frappe.io/erpnext/user/manual/en/work-order-summary)."
+Failed Scheduled Jobs,Помилкові завдання за розкладом
+Finish making it,Завершіть виготовлення
+Follow every movement,Відстежуйте кожен рух
+Follow up on unpaid invoices,Контролюйте неоплачені рахунки
+"For anything that isn't an invoice or a payment: accruals, depreciation, or fixing a mistake. See [Journal Entry](https://docs.frappe.io/erpnext/user/manual/en/journal-entry).","Для операцій, які не є рахунком або платежем: нарахувань, амортизації чи виправлень. Довідка: [Запис журналу](https://docs.frappe.io/erpnext/user/manual/en/journal-entry)."
+"From the store to the shop floor, or between branches. See [Stock Entry](https://docs.frappe.io/erpnext/user/manual/en/stock-entry).",Зі складу до цеху або між філіями. Довідка: [Складська операція](https://docs.frappe.io/erpnext/user/manual/en/stock-entry).
+Get paid,Отримайте оплату
+Get to know ERPNext,Знайомство з ERPNext
+Get your books ready,Підготуйте бухгалтерський облік
+Goods or services you buy from suppliers. See [Item](https://docs.frappe.io/erpnext/user/manual/en/item).,"Товари або послуги, які ви купуєте в постачальників. Довідка: [Товар](https://docs.frappe.io/erpnext/user/manual/en/item)."
+Hand it to a person or place,Передайте актив особі або до іншого місця
+"How much of each item is on your shelves, and what it is worth. From here, every receipt and delivery keeps it up to date. See [Stock Reconciliation](https://docs.frappe.io/erpnext/user/manual/en/stock-reconciliation).",Кількість товарів на полицях та їхня вартість. Надалі кожне надходження й відвантаження оновлює залишки. Довідка: [Інвентаризація](https://docs.frappe.io/erpnext/user/manual/en/stock-reconciliation).
+"Import a statement from your bank and pair each line with a payment, so your books agree with it. See [Bank Reconciliation](https://docs.frappe.io/erpnext/user/manual/en/bank-reconciliation).",Імпортуйте банківську виписку та зіставте її рядки з платежами для узгодження обліку. Довідка: [Звірка з банком](https://docs.frappe.io/erpnext/user/manual/en/bank-reconciliation).
+"Income against expenses for any period, built from every invoice and payment you have recorded.",Доходи й витрати за будь-який період на основі всіх зареєстрованих рахунків і платежів.
+Incoming Leads,Нові потенційні клієнти
+Inspect goods coming in or going out,Перевірте вхідні або вихідні товари
+Invite your team,Запросіть команду
+Invoicing & Payments,Рахунки та платежі
+Issues Opened,Відкриті звернення
+It clears their bill and takes the money out of your bank or cash account. See [Payment Entry](https://docs.frappe.io/erpnext/user/manual/en/payment-entry).,Платіж погашає рахунок постачальника та списує кошти з банківського або касового рахунку. Довідка: [Платіж](https://docs.frappe.io/erpnext/user/manual/en/payment-entry).
+"It posts the expense, and what you owe the supplier, to your ledger. See [Purchase Invoice](https://docs.frappe.io/erpnext/user/manual/en/purchase-invoice).",Документ відображає витрати й заборгованість перед постачальником у головній книзі. Довідка: [Рахунок постачальника](https://docs.frappe.io/erpnext/user/manual/en/purchase-invoice).
+Item Reports,Звіти за товарами
+Item Standard Cost,Нормативна собівартість товару
+Jobs,Завдання
+Keep quality in check,Контролюйте якість
+Keep track of your stock,Контролюйте складські залишки
+Know what you own and owe,"Дізнайтеся, що маєте й що винні"
+Ledger Tools,Інструменти облікових реєстрів
+Log a problem,Зареєструйте проблему
+Log time against it,Обліковуйте робочий час
+Make your first sale,Здійсніть перший продаж
+Match your bank statement,Звірте банківську виписку
+Meetings & Feedback,Зустрічі та відгуки
+Monthly Completed Work Order,Завершені виробничі замовлення за місяць
+Move stock between warehouses,Перемістіть товари між складами
+Movement Reports,Звіти про рух
+New Assets (This Year),Нові активи за цей рік
+"Note down a price a supplier offered, so you can compare suppliers before you order. See [Supplier Quotation](https://docs.frappe.io/erpnext/user/manual/en/supplier-quotation).","Збережіть запропоновану ціну, щоб порівняти постачальників перед замовленням. Довідка: [Пропозиція постачальника](https://docs.frappe.io/erpnext/user/manual/en/supplier-quotation)."
+Notifications By Type,Сповіщення за типами
+"Once the customer agrees, turn it into a sales order or an invoice from the quotation itself. See [Quotation](https://docs.frappe.io/erpnext/user/manual/en/quotation).",Після погодження клієнтом створіть із пропозиції замовлення або рахунок. Довідка: [Комерційна пропозиція](https://docs.frappe.io/erpnext/user/manual/en/quotation).
+Open Accounts,Відкрити бухгалтерію
+Open Accounts Payable,Відкрити заборгованість постачальникам
+Open Accounts Receivable,Відкрити заборгованість клієнтів
+Open Asset Depreciation Ledger,Відкрити реєстр амортизації активів
+Open Assets,Відкрити активи
+Open Balance Sheet,Відкрити баланс
+Open Banking,Відкрити банківські операції
+Open Buying,Відкрити закупівлі
+Open Chart of Accounts,Відкрити план рахунків
+Open Delayed Tasks Summary,Відкрити підсумок прострочених завдань
+Open Fixed Asset Register,Відкрити реєстр основних засобів
+Open General Ledger,Відкрити головну книгу
+Open Manufacturing,Відкрити виробництво
+Open Non Conformances,Відкрити невідповідності
+Open Opportunity,Відкрита можливість продажу
+Open Profit and Loss,Відкрити звіт про прибутки та збитки
+Open Project Summary,Відкрити підсумок проєктів
+Open Purchase Order Analysis,Відкрити аналіз замовлень постачальникам
+Open Quality,Відкрити якість
+Open Quality Actions,Відкрити дії з якості
+Open Quality Reviews,Відкрити огляди якості
+Open Sales Analytics,Відкрити аналіз продажів
+Open Sales Taxes and Charges Template,Відкрити шаблон податків і зборів продажу
+Open Selling,Відкрити продажі
+Open Stock,Відкрити склад
+Open Stock Balance,Відкрити залишки товарів
+Open Stock Ledger,Відкрити рух товарів
+Open Warehouse,Відкрити склади
+Open Work Order Summary,Відкрити підсумок виробничих замовлень
+Order Status Reports,Звіти про стан замовлень
+"Order from the supplier. When the goods arrive, receive them and record the bill from the order itself. See [Purchase Order](https://docs.frappe.io/erpnext/user/manual/en/purchase-order).",Замовте товари. Після їх прибуття оформте надходження та рахунок із самого замовлення. Довідка: [Замовлення постачальнику](https://docs.frappe.io/erpnext/user/manual/en/purchase-order).
+Order from your suppliers,Замовляйте в постачальників
+Outgoing Bills (Sales Invoice),Вихідні рахунки (продаж)
+Overdue Issues,Прострочені звернення
+Pay your supplier,Оплатіть постачальнику
+Place a purchase order,Створіть замовлення постачальнику
+Plan a work order,Заплануйте виробниче замовлення
+Plan and deliver projects,Плануйте та виконуйте проєкти
+Plan and run production,Плануйте та виконуйте виробництво
+Plan maintenance visits,Заплануйте візити обслуговування
+Plan production from your orders,Сплануйте виробництво за замовленнями
+Planning Reports,Звіти планування
+Post a journal entry,Створіть бухгалтерське проведення
+Production Reports,Виробничі звіти
+Profiles,Профілі
+"Progress, hours and costs for every project.","Поступ, години та витрати кожного проєкту."
+Project Reports,Звіти за проєктами
+"Pull in open sales orders and work out what to make, and what to buy, to fill them.","Завантажте відкриті замовлення клієнтів і визначте, що виготовити та закупити для їх виконання."
+Purchase Reports,Звіти про закупівлі
+Quality Reports,Звіти з якості
+Quote a price,Запропонуйте ціну
+"Raw materials come out of stock and the finished products go in. From the work order, **Finish** fills this in for you. See [Stock Entry](https://docs.frappe.io/erpnext/user/manual/en/stock-entry).","Сировина списується, готова продукція оприбутковується. Дія завершення у виробничому замовленні заповнює операцію автоматично. Довідка: [Складська операція](https://docs.frappe.io/erpnext/user/manual/en/stock-entry)."
+Receivables & Payables,Дебіторська та кредиторська заборгованість
+Receive goods from a supplier,Отримайте товари від постачальника
+Reconciliation,Звіряння
+Record a supplier's quote,Зареєструйте пропозицію постачальника
+Record an asset and see what it's worth year by year.,Зареєструйте актив і перегляньте його вартість за роками.
+Record an asset you already own,Зареєструйте наявний актив
+Record the hours spent on tasks. Bill them to the customer or use them to cost the project. See [Timesheet](https://docs.frappe.io/erpnext/user/manual/en/timesheets).,Записуйте час роботи над завданнями для виставлення рахунку клієнту або розрахунку витрат проєкту. Довідка: [Табель робочого часу](https://docs.frappe.io/erpnext/user/manual/en/timesheets).
+"Record the results against a receipt or a delivery, and accept or reject the goods. See [Quality Inspection](https://docs.frappe.io/erpnext/user/manual/en/quality-inspection).",Зареєструйте результати перевірки надходження або відвантаження та прийміть чи відхиліть товари. Довідка: [Перевірка якості](https://docs.frappe.io/erpnext/user/manual/en/quality-inspection).
+"Record who has it and where it is, so you always know. See [Asset Movement](https://docs.frappe.io/erpnext/user/manual/en/asset-movement).",Зареєструйте відповідальну особу та місце розташування активу. Довідка: [Рух активів](https://docs.frappe.io/erpnext/user/manual/en/asset-movement).
+Registers & Profitability,Реєстри та рентабельність
+"Regular service visits for equipment you sold, planned ahead for the whole contract. See [Maintenance Schedule](https://docs.frappe.io/erpnext/user/manual/en/maintenance-schedule).",Регулярні візити для обслуговування проданого обладнання на весь строк договору. Довідка: [Графік технічного обслуговування](https://docs.frappe.io/erpnext/user/manual/en/maintenance-schedule).
+Resolved Issues,Вирішені звернення
+Reuse it as a template,Використовуйте як шаблон
+Review how a goal is going,Перевірте досягнення цілі
+Review your chart of accounts,Перевірте план рахунків
+Review your taxes,Перевірте податки
+Review your warehouses,Перевірте ваші склади
+Sales Orders Count,Кількість замовлень клієнтів
+Sales Reports,Звіти про продажі
+Sales Team Reports,Звіти команди продажів
+"Sales by customer, item or territory, over any period. See [Sales Analytics](https://docs.frappe.io/erpnext/user/manual/en/sales-analytics).","Продажі за клієнтами, товарами або територіями за будь-який період. Довідка: [Аналітика продажів](https://docs.frappe.io/erpnext/user/manual/en/sales-analytics)."
+"Save the tasks you repeat on every job, and start the next project from them.",Збережіть повторювані завдання та починайте з них нові проєкти.
+Schedule its upkeep,Заплануйте обслуговування
+Scheduled Jobs,Завдання за розкладом
+See everything you own,Перегляньте все майно
+See how production is going,Перевірте хід виробництва
+Send your first invoice,Надішліть перший рахунок
+Serial & Batch,Серійні номери та партії
+Serial & Batch Reports,Звіти за серійними номерами та партіями
+"Servicing, inspections and calibration, with reminders to the team doing it. See [Asset Maintenance](https://docs.frappe.io/erpnext/user/manual/en/asset-maintenance).","Обслуговування, огляди та калібрування з нагадуваннями відповідальній команді. Довідка: [Обслуговування активів](https://docs.frappe.io/erpnext/user/manual/en/asset-maintenance)."
+Set a quality goal,Визначте ціль з якості
+Set up an asset category,Налаштуйте категорію активів
+Set up an inspection and record your first check.,Налаштуйте перевірку якості й зареєструйте перший результат.
+Set up your warehouses and enter the stock you have today.,Налаштуйте склади та введіть поточні залишки.
+Ship to a customer,Відвантажте товар клієнту
+"Something you bought before using ERPNext, with what you paid, where it is, and how much has already depreciated. See [Asset](https://docs.frappe.io/erpnext/user/manual/en/asset).","Майно, придбане до початку роботи з ERPNext: первісна вартість, місце та накопичена амортизація. Довідка: [Актив](https://docs.frappe.io/erpnext/user/manual/en/asset)."
+"Something you use to make your products, kept in the Raw Material group. See [Item](https://docs.frappe.io/erpnext/user/manual/en/item).",Матеріал для виготовлення продукції з групи сировини. Довідка: [Товар](https://docs.frappe.io/erpnext/user/manual/en/item).
+"Something you want to measure and improve, like on-time delivery or returns, reviewed on a schedule you choose. See [Quality Management](https://docs.frappe.io/erpnext/user/manual/en/quality-management).","Показник для покращення, наприклад своєчасність доставки або повернення, із перевіркою за вашим розкладом. Довідка: [Управління якістю](https://docs.frappe.io/erpnext/user/manual/en/quality-management)."
+Spot delayed tasks,Знайдіть прострочені завдання
+Spot your best sellers,Знайдіть найпопулярніші товари
+Start a project,Почніть проєкт
+Stock Reposting,Перепроведення складського обліку
+"Stock goes down as the goods leave, and the invoice can be made from the delivery. See [Delivery Note](https://docs.frappe.io/erpnext/user/manual/en/delivery-note).",Залишки зменшуються під час відвантаження. Рахунок можна створити з видаткової накладної. Довідка: [Видаткова накладна](https://docs.frappe.io/erpnext/user/manual/en/delivery-note).
+"Stock goes up in the warehouse you receive into, and the bill can be made from the receipt. See [Purchase Receipt](https://docs.frappe.io/erpnext/user/manual/en/purchase-receipt).",Залишки збільшуються на складі отримання. Рахунок можна створити з документа надходження. Довідка: [Надходження товарів](https://docs.frappe.io/erpnext/user/manual/en/purchase-receipt).
+Subcontracting Reports,Звіти про субпідряд
+Supplier Reports,Звіти за постачальниками
+"Tasks past their due date, and how late each one is.",Завдання з простроченою датою завершення та тривалість прострочення.
+Tax & Compliance,Податки та звітність
+"The account your customers pay into and you pay from, linked to its account in your chart of accounts. See [Bank Account](https://docs.frappe.io/erpnext/user/manual/en/bank-account).","Рахунок для отримання та здійснення платежів, пов’язаний із рахунком у плані рахунків. Довідка: [Банківський рахунок](https://docs.frappe.io/erpnext/user/manual/en/bank-account)."
+"The bill your supplier sent, so you know what you owe and when it is due. See [Purchase Invoice](https://docs.frappe.io/erpnext/user/manual/en/purchase-invoice).",Рахунок постачальника із сумою боргу та строком оплати. Довідка: [Рахунок постачальника](https://docs.frappe.io/erpnext/user/manual/en/purchase-invoice).
+"The kind of thing you own, marked as a fixed asset. See [Item](https://docs.frappe.io/erpnext/user/manual/en/item).","Вид майна, позначений як основний засіб. Довідка: [Товар](https://docs.frappe.io/erpnext/user/manual/en/item)."
+"The parameters to inspect and what counts as a pass, reused on every inspection. See [Quality Inspection Template](https://docs.frappe.io/erpnext/user/manual/en/quality-inspection-template).",Параметри та критерії прийнятності для повторного використання в перевірках. Довідка: [Шаблон перевірки якості](https://docs.frappe.io/erpnext/user/manual/en/quality-inspection-template).
+"The raw materials, and how much of each, that go into one unit of your product. Submit it to use it in production. See [BOM](https://docs.frappe.io/erpnext/user/manual/en/bill-of-materials).
+
+Sending some of the work to a supplier? See [Subcontracting](https://docs.frappe.io/erpnext/user/manual/en/subcontracting).","Сировина та її кількість для одиниці виробу. Проведіть специфікацію для використання у виробництві. Передаєте частину робіт постачальнику? Перегляньте довідку про субпідряд. Довідка: [Специфікація (BOM)](https://docs.frappe.io/erpnext/user/manual/en/bill-of-materials), [Субпідряд](https://docs.frappe.io/erpnext/user/manual/en/subcontracting)."
+"The steps your team follows, so it is done the same way every time. See [Quality Management](https://docs.frappe.io/erpnext/user/manual/en/quality-management).",Послідовність дій команди для однакового виконання роботи щоразу. Довідка: [Управління якістю](https://docs.frappe.io/erpnext/user/manual/en/quality-management).
+The taxes that fill in on every invoice. We added your country's where we had them; check the rates match what you charge. Purchase taxes live in [Purchase Taxes and Charges Template](/desk/purchase-taxes-and-charges-template). See [Setting Up Taxes](https://docs.frappe.io/erpnext/user/manual/en/setting-up-taxes).,"Податки, що автоматично додаються до рахунків. Перевірте, чи відповідають стандартні ставки вашим. Податки закупівлі налаштовуються окремо. Довідка: [Шаблон податків та зборів на закупку](/desk/purchase-taxes-and-charges-template), [Setting Up Taxes](https://docs.frappe.io/erpnext/user/manual/en/setting-up-taxes)."
+Timesheet Working Hours,Робочі години за табелями
+Top Customers,Найбільші клієнти
+Total Assets,Усього активів
+Total Incoming Bills,Усього вхідних рахунків
+Total Incoming Payment,Усього вхідних платежів
+Total Outgoing Bills,Усього вихідних рахунків
+Total Outgoing Payment,Усього вихідних платежів
+Total System Users,Усього системних користувачів
+Total Website Users,Усього користувачів сайту
+Trace every posting,Перевіряйте кожне проведення
+Track progress and costs,Відстежуйте виконання й витрати
+Track what your business owns,Обліковуйте майно підприємства
+Track your orders,Відстежуйте замовлення
+Value Changes,Зміни вартості
+"We created a few to start with. Rename them, or add the places you actually keep stock. See [Warehouse](https://docs.frappe.io/erpnext/user/manual/en/warehouse).",Ми створили кілька складів для початку. Перейменуйте їх або додайте фактичні місця зберігання. Довідка: [Склад](https://docs.frappe.io/erpnext/user/manual/en/warehouse).
+"We set up a standard chart of accounts for your country. See how your accounts are grouped, and rename or add any to match how you report. See [Chart of Accounts](https://docs.frappe.io/erpnext/user/manual/en/chart-of-accounts).","Ми створили стандартний план рахунків вашої країни. Перевірте групування, перейменуйте або додайте рахунки відповідно до звітності. Довідка: [План рахунків](https://docs.frappe.io/erpnext/user/manual/en/chart-of-accounts)."
+"What comes out at the end of production, kept in the Products group. See [Item](https://docs.frappe.io/erpnext/user/manual/en/item).","Результат виробництва, що належить до групи готової продукції. Довідка: [Товар](https://docs.frappe.io/erpnext/user/manual/en/item)."
+"What you have in each warehouse, and what it is worth.",Що є на кожному складі та скільки воно коштує.
+"What you ordered, what has arrived, and what is still to come.","Що замовлено, що вже надійшло та що ще очікується."
+"What you own, where it is, and what it is worth today.","Ваше майно, його місце розташування та поточна вартість."
+"When something falls short of the procedure, note what happened, the cause, and what you will do about it. See [Non Conformance](https://docs.frappe.io/erpnext/user/manual/en/non-conformance).","За відхилення від процедури зазначте подію, причину та заплановані дії. Довідка: [Невідповідність](https://docs.frappe.io/erpnext/user/manual/en/non-conformance)."
+"When your customer pays, record it here. It is matched against their invoice, so you can see what is still owed. See [Payment Entry](https://docs.frappe.io/erpnext/user/manual/en/payment-entry).",Зареєструйте отриману оплату. Вона зіставляється з рахунком клієнта для контролю залишку боргу. Довідка: [Платіж](https://docs.frappe.io/erpnext/user/manual/en/payment-entry).
+"Who does what, by when. Tasks roll up into the project's progress. See [Task](https://docs.frappe.io/erpnext/user/manual/en/task).","Хто, що й до якого строку виконує. Завдання визначають загальний поступ проєкту. Довідка: [Завдання](https://docs.frappe.io/erpnext/user/manual/en/task)."
+"Who owes you, how much, and for how long. See [Accounts Receivable](https://docs.frappe.io/erpnext/user/manual/en/accounts-receivable).","Хто вам винен, скільки та протягом якого часу. Довідка: [Заборгованість клієнтів](https://docs.frappe.io/erpnext/user/manual/en/accounts-receivable)."
+"Who you owe, how much, and when each bill is due.",Кому й скільки ви винні та коли спливає строк кожного рахунку.
+Write down how the work is done,Опишіть порядок роботи
+Write down what goes into a product and make it with a work order.,Опишіть склад виробу та виготовте його за виробничим замовленням.
+Write its bill of materials,Складіть специфікацію виробу
+How many opportunities each territory brings in.,Кількість можливостей продажу за територіями.
+New opportunities coming in each week.,Нові можливості продажу за тижнями.
+Which campaigns bring in your opportunities.,"Маркетингові кампанії, що створюють можливості продажу."
+New leads coming in each week.,Нові потенційні клієнти за тижнями.
+The opportunities you win each month.,Успішні можливості продажу за місяцями.
+The value of opportunities you win in each territory.,Сума успішних можливостей продажу за територіями.
+Where your leads come from.,Джерела залучення потенційних клієнтів.
+What your stock is worth in each warehouse.,Вартість запасів на кожному складі.
+The stock that has sat longest in your warehouses.,"Товари, які найдовше зберігаються на складах."
+"What your stock is worth, by item group.",Вартість запасів за групами товарів.
+What you deliver to your customers each month.,Відвантаження товарів клієнтам за місяцями.
+Items you're about to run short of.,"Товари, запаси яких закінчуються."
+What you receive from suppliers each month.,Надходження товарів від постачальників за місяцями.
+What you send out for subcontracting each month.,Передача матеріалів субпідрядникам за місяцями.
+How long your unpaid supplier bills have been due.,Заборгованість перед постачальниками за строками прострочення.
+Your budgets against what you actually spent.,Порівняння бюджетів із фактичними витратами.
+What your suppliers bill you each month.,Суми рахунків постачальників за місяцями.
+What you bill your customers each month.,"Суми рахунків, виставлених клієнтам, за місяцями."
+"Your income and expenses over the year, and what's left as profit.","Доходи, витрати та прибуток протягом року."
+"How much money sits in your bank accounts, month by month.",Залишки коштів на банківських рахунках за місяцями.
+How long your customers' unpaid invoices have been due.,Заборгованість клієнтів за строками прострочення.
+Sales orders still waiting to be delivered or billed.,"Замовлення клієнтів, за якими ще потрібно відвантажити товари або виставити рахунки."
+"Your customers, ranked by what you deliver to them.",Рейтинг клієнтів за обсягом відвантажень.
+How much your customers order each month.,Обсяг замовлень клієнтів за місяцями.
+Your best-selling items over the year.,Товари з найбільшими продажами за рік.
+How many inspections you run each month.,Кількість перевірок якості за місяцями.
+How much you order from suppliers each month.,Обсяг замовлень постачальникам за місяцями.
+"Where your purchase orders stand: to receive, to bill, or done.","Стан замовлень постачальникам: очікується надходження, очікується рахунок або виконано."
+"Your suppliers, ranked by what they deliver to you.",Рейтинг постачальників за обсягом поставок.
+"Your material requests by status, from pending to ordered.",Заявки на товари за станом: від очікування до замовлення.
+Operations completed on your work orders each quarter.,Виконані операції за виробничими замовленнями за кварталами.
+How much you produce each month.,Обсяг виробництва за місяцями.
+"Your work orders by status, from planned to completed.",Виробничі замовлення за станом: від запланованих до виконаних.
+What your work orders planned against what they produced.,Планова та фактично вироблена кількість за виробничими замовленнями.
+"Your job cards each month, by status.",Наряди на виконання робіт за місяцями та станом.
+How long your open work orders have been waiting.,Тривалість очікування виконання відкритих виробничих замовлень.
+How many of your inspections pass or fail.,Кількість перевірок якості з позитивним і негативним результатом.
+How long your workstations were down last month.,Тривалість простою робочих центрів за минулий місяць.
+Support issues opened each month.,Звернення до служби підтримки за місяцями.
+"What your assets are worth, by location.",Вартість активів за місцем розташування.
+"What your assets are worth, by category.",Вартість активів за категоріями.
+"What your assets are worth, year by year.",Вартість активів за роками.
+How far along your open projects are.,Стан виконання відкритих проєктів.
+The projects you finish each month.,Завершені проєкти за місяцями.
+Scroll up,Прокрутити вгору
+Kanban,Канбан
+Kanban Board,Канбан-дошка
+Module Onboarding,Початкове налаштування модуля
+Lead Details,Відомості про ліда
+Email Group,Поштова група
+Email Queue,Черга електронної пошти
+Unhandled Email,Необроблений лист
+Email Digest,Поштовий дайджест
+BOM Update Tool,Інструмент оновлення специфікацій
+BOM Comparison Tool,Інструмент порівняння специфікацій
+Push Notification,Пуш-сповіщення
+Push Notifications,Пуш-сповіщення
+Push Notification Settings,Налаштування пуш-сповіщень
+Webhook,Вебхук
+Defines workflow states and rules for a document.,Визначає стани та правила робочого процесу для документа.
+Scroll down,Прокрутити вниз
+Sidebar width (px),Ширина бічної панелі (пікселі)
+Applies immediately for you in this browser.,Застосовується одразу для вас у цьому браузері.
+Maximum sidebar width (px),Максимальна ширина бічної панелі (пікселі)
+Maximum: {0} px · Current: {1} px,Максимум: {0} пікс. · Поточна: {1} пікс.
+"Fit width to the widest text, up to the selected maximum","Підлаштовувати ширину під найдовший текст, не перевищуючи вибраний максимум"
+Platform,Платформа

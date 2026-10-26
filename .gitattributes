@@ -1,0 +1,3 @@
+# Embedded newlines are part of Frappe translation lookup keys.
+apps/warehouse_core/warehouse_core/translations/*.csv text eol=lf
+apps/warehouse_core/warehouse_core/translation_sources/*.csv text eol=lf

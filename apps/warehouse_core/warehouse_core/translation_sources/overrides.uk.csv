@@ -1,0 +1,1718 @@
+Warehouse Core,Вектор ERP
+Vector ERP,Вектор ERP
+Warehouse Sales,Продажі складу
+Warehouse Purchasing,Закупівлі складу
+Warehouse Staff,Працівники складу
+Warehouse Accounting,Бухгалтерія складу
+Warehouse Operations Manager,Керівник складських операцій
+MoySklad ID,Ідентифікатор MoySklad
+Original immutable MoySklad entity ID. Leave empty for new ERPNext records.,Початковий незмінний ідентифікатор запису MoySklad. Для нових записів ERPNext залиште порожнім.
+Home,Головна
+Workspace,Робочий простір
+Workspaces,Робочі простори
+Public,Загальні
+Private,Особисті
+My Workspaces,Мої робочі простори
+All Workspaces,Усі робочі простори
+Apps,Застосунки
+Search,Пошук
+Search or type a command (Ctrl + G),Пошук або команда (Ctrl + G)
+Search or type a command,Пошук або команда
+Search for anything,Пошук
+Search Results,Результати пошуку
+No results found,Нічого не знайдено
+No Results,Немає результатів
+Recent,Нещодавні
+Recently Visited,Нещодавно переглянуті
+Favorites,Обране
+Bookmarks,Закладки
+Shortcuts,Швидкі посилання
+Quick Links,Швидкі посилання
+Reports & Masters,Звіти та довідники
+Your Shortcuts,Ваші швидкі посилання
+Settings,Налаштування
+System Settings,Налаштування системи
+Help,Допомога
+About,Про програму
+Documentation,Документація
+Support,Підтримка
+Tools,Інструменти
+Build,Розробка
+Integrations,Інтеграції
+Users,Користувачі
+Users and Permissions,Користувачі та права доступу
+User,Користувач
+Role,Роль
+Roles,Ролі
+Role Profile,Профіль ролей
+User Permission,Дозвіл користувача
+My Settings,Мої налаштування
+My Profile,Мій профіль
+Profile,Профіль
+Language,Мова
+Log out,Вийти
+Logout,Вийти
+Login,Увійти
+Log In,Увійти
+Email,Електронна пошта
+Password,Пароль
+Notifications,Сповіщення
+No new notifications,Немає нових сповіщень
+Mark all as read,Позначити все як прочитане
+Toggle Sidebar,Показати або приховати бічну панель
+Edit Workspace,Редагувати робочий простір
+Create Workspace,Створити робочий простір
+Save,Зберегти
+Submit,Провести
+Cancel,Скасувати
+Close,Закрити
+New,Створити
+Add,Додати
+Create,Створити
+Edit,Редагувати
+Delete,Видалити
+Duplicate,Дублювати
+Rename,Перейменувати
+Refresh,Оновити
+Reload,Перезавантажити
+Update,Оновити
+Print,Друк
+Download,Завантажити
+Upload,Додати файл
+Import,Імпорт
+Export,Експорт
+Share,Поділитися
+Assign To,Призначити
+Attachments,Вкладення
+Add Attachment,Додати вкладення
+Comments,Коментарі
+Comment,Коментар
+Add a comment,Додати коментар
+Activity,Активність
+Actions,Дії
+More,Більше
+Menu,Меню
+View,Перегляд
+List,Список
+List View,Список
+Report View,Звіт
+Tree View,Дерево
+Calendar,Календар
+Dashboard,Огляд
+Dashboards,Огляди
+Filter,Фільтр
+Filters,Фільтри
+Add Filter,Додати фільтр
+Clear Filters,Очистити фільтри
+Clear,Очистити
+Apply,Застосувати
+Reset,Скинути
+Group By,Групувати за
+Sort By,Сортувати за
+Ascending,За зростанням
+Descending,За спаданням
+Select All,Вибрати все
+Select,Вибрати
+Show More,Показати більше
+Load More,Завантажити ще
+More Options,Додаткові параметри
+Previous,Попередній
+Next,Наступний
+Back,Назад
+Yes,Так
+No,Ні
+OK,Гаразд
+Confirm,Підтвердити
+Continue,Продовжити
+None,Немає
+Enabled,Увімкнено
+Disabled,Вимкнено
+Name,Назва
+ID,Ідентифікатор
+Title,Заголовок
+Status,Статус
+Type,Тип
+Description,Опис
+Details,Подробиці
+General,Загальне
+Basic Details,Основні відомості
+Additional Information,Додаткова інформація
+More Information,Додаткова інформація
+Date,Дата
+From Date,Початкова дата
+To Date,Кінцева дата
+Posting Date,Дата проведення
+Posting Time,Час проведення
+Transaction Date,Дата операції
+Due Date,Термін оплати
+Delivery Date,Дата доставки
+Required By,Потрібно до
+Created By,Автор
+Created On,Дата створення
+Modified,Змінено
+Last Updated On,Дата останнього оновлення
+Draft,Чернетка
+Submitted,Проведено
+Cancelled,Скасовано
+Open,Відкрито
+Closed,Закрито
+Completed,Завершено
+Pending,Очікує
+Paid,Оплачено
+Unpaid,Не оплачено
+Overdue,Прострочено
+Partly Paid,Частково оплачено
+To Deliver and Bill,До відвантаження та виставлення рахунку
+To Bill,До виставлення рахунку
+To Deliver,До відвантаження
+To Receive and Bill,До отримання та виставлення рахунку
+To Receive,До отримання
+Not Saved,Не збережено
+Stock,Склад
+Selling,Продажі
+Buying,Закупівлі
+Accounting,Бухгалтерія
+Assets,Активи
+Projects,Проєкти
+Manufacturing,Виробництво
+Quality,Якість
+Reports,Звіти
+Setup,Налаштування
+Item,Товар
+Items,Товари
+Item Code,Код товару
+Item Name,Назва товару
+Item Group,Група товарів
+Item Details,Відомості про товар
+Maintain Stock,Вести складський облік
+Is Stock Item,Складський товар
+Stock UOM,Складська одиниця виміру
+Default Unit of Measure,Основна одиниця виміру
+Unit of Measure,Одиниця виміру
+UOM,Одиниця виміру
+Brand,Бренд
+Barcode,Штрихкод
+Barcodes,Штрихкоди
+Image,Зображення
+Customers,Клієнти
+Customer Name,Назва клієнта
+Customer Group,Група клієнтів
+Customer Type,Тип клієнта
+Suppliers,Постачальники
+Supplier Name,Назва постачальника
+Supplier Group,Група постачальників
+Supplier Type,Тип постачальника
+Contact,Контакт
+Contacts,Контакти
+Address,Адреса
+Address and Contact,Адреса та контакт
+Contact Info,Контактні дані
+Mobile No,Мобільний телефон
+Phone,Телефон
+Email Address,Адреса електронної пошти
+Territory,Територія
+Tax ID,Податковий номер
+Company,Компанія
+Country,Країна
+Currency,Валюта
+Exchange Rate,Курс обміну
+Warehouse,Склад
+Warehouses,Склади
+Warehouse Name,Назва складу
+Parent Warehouse,Батьківський склад
+Default Warehouse,Склад за замовчуванням
+Source Warehouse,Склад-відправник
+Target Warehouse,Склад-одержувач
+From Warehouse,Зі складу
+To Warehouse,На склад
+Set Source Warehouse,Вказати склад-відправник
+Set Target Warehouse,Вказати склад-одержувач
+Is Group,Є групою
+Price List,Прайс-лист
+Item Price,Ціна товару
+Price List Rate,Ціна за прайс-листом
+Selling Price List,Прайс-лист продажу
+Buying Price List,Прайс-лист закупівлі
+Rate,Ціна
+Qty,Кількість
+Quantity,Кількість
+Amount,Сума
+Total,Разом
+Total Quantity,Загальна кількість
+Net Total,Сума без податків
+Grand Total,Загальна сума
+Rounded Total,Округлена сума
+Discount,Знижка
+Discount Amount,Сума знижки
+Discount Percentage,Відсоток знижки
+Additional Discount,Додаткова знижка
+Taxes and Charges,Податки та збори
+Total Taxes and Charges,Усього податків та зборів
+In Words,Сума словами
+Quotation,Комерційна пропозиція
+Sales Order,Замовлення клієнта
+Purchase Order,Замовлення постачальнику
+Delivery Note,Видаткова накладна
+Purchase Receipt,Надходження товарів
+Sales Invoice,Рахунок продажу
+Purchase Invoice,Рахунок постачальника
+Payment Entry,Платіж
+Stock Entry,Складська операція
+Stock Entry Type,Тип складської операції
+Stock Reconciliation,Інвентаризація
+Material Request,Заявка на товари
+Material Transfer,Переміщення товарів
+Material Receipt,Оприбуткування товарів
+Material Issue,Списання товарів
+Purpose,Призначення
+Stock Balance,Залишки товарів
+Stock Ledger,Рух товарів
+Accounts Receivable,Заборгованість клієнтів
+Accounts Payable,Заборгованість постачальникам
+General Ledger,Головна книга
+Payment Type,Тип платежу
+Mode of Payment,Спосіб оплати
+Party Type,Тип контрагента
+Party,Контрагент
+Paid Amount,Сплачена сума
+Received Amount,Отримана сума
+Outstanding Amount,Залишок до сплати
+Account,Рахунок
+Cost Center,Центр витрат
+Fiscal Year,Фінансовий рік
+Payment Terms,Умови оплати
+Payment Schedule,Графік платежів
+Terms and Conditions,Умови
+Terms,Умови
+Remarks,Примітки
+Customer's Purchase Order,Замовлення клієнта на закупівлю
+Supplier Invoice No,Номер рахунку постачальника
+Supplier Invoice Date,Дата рахунку постачальника
+Return,Повернення
+Is Return,Повернення
+Return Against,Повернення за документом
+Update Stock,Оновити складські залишки
+Get Items From,Отримати товари з
+Add Row,Додати рядок
+Add Multiple,Додати кілька
+Actual Qty,Фактична кількість
+Available Qty,Доступна кількість
+Projected Qty,Прогнозована кількість
+Valuation Rate,Облікова вартість одиниці
+Stock Value,Вартість запасів
+Serial No,Серійний номер
+Batch No,Номер партії
+Data Import,Імпорт даних
+Import Type,Тип імпорту
+Download Template,Завантажити шаблон
+Start Import,Почати імпорт
+Naming Series,Серія нумерації
+Amended From,Виправлення документа
+Connections,Пов’язані документи
+1 day ago,1 день тому
+1 second ago,1 секунду тому
+2 hours ago,2 години тому
+2 months ago,2 місяці тому
+2 weeks ago,2 тижні тому
+2 years ago,2 роки тому
+{0} w,{0} тиж.
+3 minutes ago,3 хвилини тому
+5 days ago,5 днів тому
+A folder cannot have a File URL,Папка не може мати URL-адресу файлу
+Accept emit() calls for events no app registered through the automation_events hook.,"Дозволяти виклики emit() для подій, які жоден застосунок не зареєстрував через хук automation_events."
+Action Type is required for action steps,Для кроків дії потрібно вказати тип дії
+Action completed,Дію виконано
+Actions Snapshot,Знімок дій
+"Add field rules below, every rule must match before the flow can run",Додайте нижче правила для полів. Для запуску сценарію мають виконуватися всі правила
+Advanced Condition,Розширена умова
+Advanced Expression using Python,Розширений вираз мовою Python
+All Results,Усі результати
+Allow Unregistered Events,Дозволити незареєстровані події
+Assigned to {0},Призначено: {0}
+Assignees,Виконавці
+At least one assignee is required,Потрібен принаймні один виконавець
+At least one recipient is required,Потрібен принаймні один одержувач
+Attempt,Спроба
+Auto repeat skipped. The owner cannot access the reference document.,Автоматичне повторення пропущено. Власник не має доступу до пов’язаного документа.
+Auto-disabled after {0} consecutive failures,Автоматично вимкнено після {0} послідовних збоїв
+Automation Action,Дія автоматизації
+Automation Event Subscription,Підписка на подію автоматизації
+Automation Flow,Сценарій автоматизації
+Automation Flow Title,Назва сценарію автоматизації
+Automation Flow cannot target a child table: {0},Сценарій автоматизації не може працювати з дочірньою таблицею: {0}
+Automation Flow {0} was auto-disabled,Сценарій автоматизації {0} автоматично вимкнено
+Automation Run,Виконання автоматизації
+Automation Run Step,Крок виконання автоматизації
+Automation Settings,Налаштування автоматизації
+Automation Trigger Queue,Черга запуску автоматизації
+Automation User,Користувач автоматизації
+Automation User {0} is disabled or missing,Користувача автоматизації {0} вимкнено або не знайдено
+Automation event payload is too large,Обсяг даних події автоматизації завеликий
+Automation paused,Автоматизацію призупинено
+Blocked for child tables (istable). Required for document and date-based triggers.,Недоступно для дочірніх таблиць (istable). Обов’язково для запуску за документом або датою.
+Branch for step {0} must be If or Else,Гілка кроку {0} має бути «Якщо» або «Інакше»
+Bytes an emitted event payload may carry.,Максимальний обсяг даних події в байтах.
+"Bytes of output a step may publish to later steps. Larger output is dropped, not failed.",Обсяг результату кроку в байтах для передавання наступним крокам. Завеликий результат відкидається без помилки.
+Changed {0} by {1},Змінено {0} на {1}
+Check the Error Log for details.,Подробиці наведено в журналі помилок.
+Choose a numeric field,Виберіть числове поле
+Client-supplied resolver methods are not allowed,Методи визначення зв’язків із клієнтського запиту заборонено
+Commit Every,Фіксувати після кожних
+Condition Values,Значення умов
+Condition took the {0} branch,За умовою вибрано гілку {0}
+Consecutive failures after which a flow is auto-disabled and its owner notified.,Кількість послідовних збоїв до автоматичного вимкнення сценарію та сповіщення його власника.
+Correlation Key,Ключ зіставлення
+Could not generate PDF,Не вдалося створити PDF
+Could not load the saved field rules,Не вдалося завантажити збережені правила полів
+Could not resolve host: {0},Не вдалося визначити адресу сервера: {0}
+Create a new {0},Створити: {0}
+Create your first {0},Створіть перший запис: {0}
+Created {0} {1},Створено {0} {1}
+Cron Expression,Вираз cron
+Custom Event,Користувацька подія
+Custom Event trigger requires an event name,Для запуску за користувацькою подією потрібна назва події
+Date Based,За датою
+Date Based trigger requires a Date Field and a Date Direction,Для запуску за датою потрібні поле дати та напрямок відліку
+Date Direction,Напрямок відліку від дати
+Date Field,Поле дати
+Date Offset (Days),Зсув дати (дні)
+Days,Дні
+Days a Failed or Skipped queue row is kept before the nightly sweep removes it.,Кількість днів зберігання помилкового або пропущеного запису черги до нічного очищення.
+Denormalized so the run survives deletion of its Automation Flow.,"Збережено окремо, щоб запис виконання залишився після видалення сценарію автоматизації."
+Detail,Подробиці
+Disable Automations,Вимкнути автоматизації
+Disabled Reason,Причина вимкнення
+Doc Cancelled,Документ скасовано
+Doc Created,Документ створено
+Doc Deleted,Документ видалено
+Doc Submitted,Документ проведено
+Doc Updated,Документ оновлено
+Document Owner,Власник документа
+Document owner,Власник документа
+Document-less automations do not accept a document name,Автоматизації без документа не приймають назву документа
+Drain Seconds,Тривалість обробки черги (секунди)
+Duplicate automation action_type: {0},Повторний тип дії автоматизації action_type: {0}
+Duplicate automation relationship name on {0},Повторна назва зв’язку автоматизації для {0}
+Duplicate record alias: {0},Повторний псевдонім запису: {0}
+Each relationship needs an alias and relationship name,Для кожного зв’язку потрібні псевдонім і назва
+Else,Інакше
+Email Template can only be used with the Email channel,Шаблон листа можна використовувати лише для каналу електронної пошти
+Email Template {0} has no content to send,Шаблон листа {0} не містить тексту для надсилання
+Emailed {0},Лист надіслано: {0}
+Empty = any value.,Порожнє поле означає будь-яке значення.
+Enable an Automation Flow only after adding at least one action,Увімкніть сценарій автоматизації після додавання принаймні однієї дії
+Enabling requires at least one action and a valid trigger.,Для ввімкнення потрібні принаймні одна дія та коректна умова запуску.
+Error Summary,Опис помилки
+Event Name,Назва події
+Event Payload,Дані події
+Event Payload Limit,Обмеження обсягу даних події
+Expires At,Термін дії до
+Failure Threshold,Поріг збоїв
+Field Value Changed,Змінено значення поля
+Field Value Changed trigger requires a Trigger Field,Для запуску за зміною значення потрібно вказати поле запуску
+Field is required,Поле обов’язкове
+Filtered relationship queries require one target DocType,Для запитів до зв’язків із фільтрами потрібен один цільовий тип документа
+Forced the {0} branch,Примусово вибрано гілку {0}
+Generating PDF...,Створення PDF…
+How long a claimed row may stay Running before it is assumed crashed and requeued.,"Час виконання взятого в роботу запису, після якого він вважається завислим і повертається до черги."
+"How many times a claimed row is retried when its run fails outside the flow's own steps, before the row is marked Failed.","Кількість повторних спроб у разі збою поза кроками сценарію, після яких запис позначається як помилковий."
+How many times an automation may trigger another before the chain is refused.,Максимальна кількість послідовних запусків однієї автоматизації іншою.
+If,Якщо
+"If no Print Format is selected, the default template for this report will be used.","Якщо формат друку не вибрано, буде використано стандартний шаблон цього звіту."
+Invalid Website Theme Name,Некоректна назва теми сайту
+Invalid automation relationship definition,Некоректне визначення зв’язку автоматизації
+Invalid cron expression: {0},Некоректний вираз cron: {0}
+Invalid file name,Некоректна назва файлу
+Limits,Обмеження
+Match Fields,Умови полів
+Matches the event name passed to emit().,"Має збігатися з назвою події, переданою до emit()."
+Maximum Attempts,Максимальна кількість спроб
+Maximum Recursion Depth,Максимальна глибина рекурсії
+Minutes,Хвилини
+Named record alias this action operates on.,"Псевдонім запису, з яким працює ця дія."
+New Role Name,Назва нової ролі
+New role created successfully.,Нову роль успішно створено.
+Next Run,Наступний запуск
+No recipients to notify,Немає одержувачів для сповіщення
+Noop Source,Джерело порожньої дії
+Notified {0},Сповіщено: {0}
+Null = run as soon as possible. Used by waits and date/cron triggers.,Null означає запуск якнайшвидше. Використовується для очікування та запусків за датою або cron.
+Only a System Manager can write a script step,Лише системний адміністратор може створити крок зі скриптом
+Only an {0} Server Script can be run from a flow,Із сценарію можна запускати лише серверний скрипт типу {0}
+Optional alias for the destination reference returned by this action.,Необов’язковий псевдонім посилання на результат цієї дії.
+Optional. Checked against a related record.,Необов’язково. Перевіряється для пов’язаного запису.
+"Optional. For logic the match fields cannot express, such as OR groups. The document is available as <code>doc</code>; the match fields and this expression must all be true.","Необов’язково. Для логіки, яку неможливо описати умовами полів, наприклад груп АБО. Документ доступний як <code>doc</code>; мають виконуватися і умови полів, і цей вираз."
+Optional. The step runs only if this expression is true.,Необов’язково. Крок виконується лише за істинності цього виразу.
+Output Alias,Псевдонім результату
+Parent Step,Батьківський крок
+Partially Failed,Частково завершено з помилками
+Payload for custom emit() events.,Дані користувацьких подій emit().
+"Pick a Server Script or write one here, not both",Виберіть серверний скрипт або напишіть його тут. Використайте лише один спосіб
+"Pick a Server Script, or write one here",Виберіть серверний скрипт або напишіть його тут
+Queue Retention Days,Термін зберігання черги (дні)
+Ran script,Скрипт виконано
+Re-check filters and condition in the worker before executing.,Повторно перевіряти фільтри та умову у фоновому процесі перед виконанням.
+Record alias could not be resolved,Не вдалося визначити запис за псевдонімом
+Recursion Depth,Глибина рекурсії
+Related Record Condition,Умова для пов’язаного запису
+Related record condition must be a JSON object,Умова для пов’язаного запису має бути об’єктом JSON
+Related record condition needs a relationship,Для умови пов’язаного запису потрібно вказати зв’язок
+Related record does not exist: {0} {1},Пов’язаний запис не існує: {0} {1}
+Relationship provider returned an invalid record reference,Постачальник зв’язку повернув некоректне посилання на запис
+Relationship source DocType does not match,Вихідний тип документа зв’язку не збігається
+Relationship target DocType is not allowed,Цільовий тип документа зв’язку не дозволений
+Relationship {0} cannot be used as a single record alias,Зв’язок {0} не можна використати як псевдонім одного запису
+Relationship {0} did not resolve to one record,За зв’язком {0} не вдалося визначити один запис
+Relationship {0} returns multiple records,Зв’язок {0} повертає кілька записів
+Relationships,Зв’язки
+Relationships Snapshot,Знімок зв’язків
+Relationships must be a JSON list,Зв’язки мають бути списком JSON
+Reliability,Надійність
+Replicate Role,Скопіювати роль
+Replicating Role...,Копіювання ролі…
+Requests to internal network addresses are not permitted,Запити до внутрішніх мережевих адрес заборонено
+Reset link emailed,Посилання для скидання надіслано електронною поштою
+Resume From Step,Продовжити з кроку
+Resume Queue,Черга відновлення
+Resume Run,Продовжити виконання
+Retention,Зберігання
+Revalidate on Run,Повторно перевіряти під час запуску
+Row {0}: Branch is only meaningful inside an If step,Рядок {0}: гілку можна вказати лише всередині кроку «Якщо»
+Row {0}: Parent Step must be an earlier row,Рядок {0}: батьківський крок має бути в попередньому рядку
+Row {0}: Parent Step {1} is not an If step,Рядок {0}: батьківський крок {1} не є кроком «Якщо»
+Row {0}: Step Key must be unique,Рядок {0}: ключ кроку має бути унікальним
+Row {0}: Wait unit must be one of {1},Рядок {0}: одиниця очікування має бути однією з {1}
+Row {0}: an If step needs a Step Condition,Рядок {0}: для кроку «Якщо» потрібна умова
+Row {0}: choose the If or Else branch,Рядок {0}: виберіть гілку «Якщо» або «Інакше»
+Row {0}: duplicate output alias {1},Рядок {0}: повторний псевдонім результату {1}
+Row {0}: unknown target alias {1},Рядок {0}: невідомий цільовий псевдонім {1}
+Row {0}: unsupported Step Type {1},Рядок {0}: непідтримуваний тип кроку {1}
+Row {0}: {1},Рядок {0}: {1}
+Rows a drain runs between commits.,Кількість записів черги між фіксаціями транзакції.
+Run,Запустити
+Run After,Запустити після
+Run As,Виконати від імені
+Run State,Стан виконання
+Run against,Виконати для
+Running,Виконується
+Running…,Виконується…
+Scheduled for {0},Заплановано на {0}
+Scheduled trigger requires a Cron Expression,Для запуску за розкладом потрібен вираз cron
+Seconds a drain may keep claiming batches. 0 derives it from the queue's own timeout.,Час отримання нових порцій із черги в секундах. 0 означає використання тайм-ауту черги.
+Select a Document Type to add field rules.,"Виберіть тип документа, щоб додати правила полів."
+"Send this notification's content from an Email Template instead of Subject/Message. Also used for the bell if Send System Notification is checked. The template is looked up fresh on every send, so editing it later changes what gets sent here too.","Надсилати вміст сповіщення за шаблоном листа замість теми та повідомлення. Також застосовується до системного сповіщення. Шаблон завантажується перед кожним надсиланням, тому його зміни впливають і на ці сповіщення."
+Server Scripts are disabled. Enable them from the bench configuration.,Серверні скрипти вимкнено. Увімкніть їх у конфігурації bench.
+Set at least one field,Заповніть принаймні одне поле
+Set {0},Установити {0}
+Show Board,Показати дошку
+Show Users,Показати користувачів
+Single DocTypes cannot be renamed,Одиничні типи документів не можна перейменовувати
+Small structured result returned by the action.,Невеликий структурований результат дії.
+Snapshot,Знімок
+Stale Running Minutes,Поріг зависання виконання (хвилини)
+"Standard 5-field cron, for example <code>0 9 * * 1</code>.","Стандартний вираз cron із 5 полів, наприклад <code>0 9 * * 1</code>."
+Step Condition,Умова кроку
+Step Key,Ключ кроку
+Step Output Limit,Обмеження обсягу результату кроку
+Step Type,Тип кроку
+Step condition did not match,Умову кроку не виконано
+"Step outputs, record aliases and branch choices a resumed run picks up.","Результати кроків, псевдоніми записів і вибрані гілки для продовження виконання."
+Step {0} is not an If step,Крок {0} не є кроком «Якщо»
+Stop dispatching automations site-wide. Queued rows are left untouched.,Зупинити запуск автоматизацій на всьому сайті. Записи в черзі зберігаються.
+Stop on Error,Зупинити в разі помилки
+Target Document Type is required,Потрібно вказати цільовий тип документа
+Test Data,Тестові дані
+Test Run,Тестовий запуск
+Test Run: {0},Тестовий запуск: {0}
+Test Spanish,Тест іспанської мови
+That Server Script is disabled,Цей серверний скрипт вимкнено
+"The flow runs for real against this document, then everything it did is rolled back.","Сценарій виконує дії з цим документом, після чого всі зміни відкочуються."
+"The flow's steps as they were when the run started. A resumed run executes these, not the current flow.",Кроки сценарію на момент початку виконання. Після відновлення виконуються саме ці збережені кроки.
+"The report may be too large to render in a single request. Narrow the filters and try again, or use Print and save as PDF from your browser.",Звіт може бути завеликим для одного запиту. Звузьте фільтри та повторіть спробу або скористайтеся друком і збережіть PDF у браузері.
+The request could not be completed. Check your connection and try again.,Не вдалося виконати запит. Перевірте з’єднання та повторіть спробу.
+The step condition that skipped this step.,"Умова, через яку цей крок пропущено."
+Theme name cannot contain '/' or path separators,Назва теми не може містити '/' або роздільники шляху
+This action does not support the selected trigger,Ця дія не підтримує вибрану умову запуску
+This action requires a Document Type,Для цієї дії потрібен тип документа
+This flow has no steps to run.,Цей сценарій не має кроків для виконання.
+Timeless Night,Вічна ніч
+Timeout must be between 1 and {0} seconds,Тайм-аут має становити від 1 до {0} секунд
+Timing,Час виконання
+Too many redirects,Забагато перенаправлень
+Trigger,Умова запуску
+Trigger Field,Поле запуску
+Trigger Queue Row,Запис черги запуску
+Trigger Type,Тип запуску
+Trigger caching,Оновити кеш
+Triggered At,Час запуску
+Triggered By,Ініціатор запуску
+Triggering User,"Користувач, який ініціював запуск"
+Truncated to 5k characters.,Скорочено до 5000 символів.
+"Tuning for the automation engine: dispatch limits, drain behaviour, retention and payload limits.","Налаштування автоматизації: обмеження запусків, обробка черги, зберігання та обсяг даних."
+URL has no host,URL-адреса не містить сервера
+URL is required,Потрібна URL-адреса
+URL must be http or https,URL-адреса має починатися з http або https
+Unknown DocType,Невідомий тип документа
+Unknown Email Template,Невідомий шаблон листа
+Unknown Server Script,Невідомий серверний скрипт
+Unknown automation action: {0},Невідома дія автоматизації: {0}
+Unknown automation relationship: {0},Невідомий зв’язок автоматизації: {0}
+Unknown derived relationship: {0},Невідомий похідний зв’язок: {0}
+Unknown derived relationship: {0} on {1},Невідомий похідний зв’язок: {0} для {1}
+Unknown parameter: {0},Невідомий параметр: {0}
+Unknown related-condition source alias: {0},Невідомий вихідний псевдонім умови пов’язаного запису: {0}
+Unknown relationship source alias: {0},Невідомий вихідний псевдонім зв’язку: {0}
+Unregistered automation event: {0},Незареєстрована подія автоматизації: {0}
+Unsupported HTTP method,Непідтримуваний метод HTTP
+Unsupported count comparison: {0},Непідтримуване порівняння кількості: {0}
+Unsupported related condition: {0},Непідтримувана умова пов’язаного запису: {0}
+Wait Resume,Відновлення після очікування
+Wait for Event correlation key rendered empty,Ключ зіставлення для очікування події виявився порожнім
+Wait for Event requires a correlation key,Для очікування події потрібен ключ зіставлення
+Wait for Event requires a timeout,Для очікування події потрібен тайм-аут
+Wait for Event timeout unit must be one of {0},Одиниця тайм-ауту очікування події має бути однією з {0}
+Wait steps require a duration value and unit,Для кроків очікування потрібні тривалість і одиниця часу
+Waited for {0} (simulated),Очікування {0} (імітація)
+Waited {0} {1} (simulated),Очікування протягом {0} {1} (імітація)
+Waiting,Очікування
+Waiting for {0},Очікування: {0}
+Waiting {0} seconds,Очікування {0} секунд
+"What the action threw as a message, if it failed.",Повідомлення про помилку дії в разі збою.
+Would {0} {1} (not sent),Буде виконано {0} {1} (не надіслано)
+here,тут
+{0} (by {1}),{0} (автор: {1})
+{0} does not support {1} triggers,{0} не підтримує запуск типу {1}
+{0} has no field {1},{0} не має поля {1}
+{0} must be a JSON object,{0} має бути об’єктом JSON
+{0} requires a Document Type,Для {0} потрібен тип документа
+{0} requires a target document,Для {0} потрібен цільовий документ
+{0} trigger requires a Document Type,Для запуску типу {0} потрібен тип документа
+{0} {1} returned {2},{0} {1} повернув {2}
+{0} {1} returned {2}: {3},{0} {1} повернув {2}: {3}
+% of Component Cost,% вартості компонента
+'{0}' is a reserved name and cannot be used as a line reference,"'{0}' — зарезервована назва, яку не можна використовувати як посилання на рядок"
+(none),(немає)
+API Method Path,Шлях до методу API
+All raw materials are already mapped to finished goods,Усю сировину вже зіставлено з готовою продукцією
+Auto Assign,Призначити автоматично
+Auto Map Raw Materials to Finished Goods,Автоматично зіставляти сировину з готовою продукцією
+"Books are closed till {0} by Period Closing Voucher, remove these rows: {1}",Облік закрито до {0} документом закриття періоду. Видаліть ці рядки: {1}
+Calculation Formula,Формула розрахунку
+Cannot apply taxes,Не вдалося застосувати податки
+Cannot apply taxes from this address,Не вдалося застосувати податки за цією адресою
+Cannot cancel Stock Closing Entry {0} because the later Stock Closing Entry {1} is built on it. Cancel {1} first.,"Не можна скасувати закриття складського обліку {0}, оскільки пізніший документ {1} спирається на нього. Спочатку скасуйте {1}."
+Cannot create Work Orders from a stopped Material Request,Не можна створити замовлення на виробництво зі зупиненої заявки на товари
+"Cannot disable Serial and Batch No for Item, as there are items with serial / batch enabled.","Не можна вимкнути серійний і партійний облік: є товари, для яких він увімкнений."
+Cannot enable {0} as {1} is disabled in {2},"Не можна ввімкнути {0}, оскільки {1} вимкнено в {2}"
+Cannot load {0} details,Не вдалося завантажити відомості про {0}
+Circular dependency detected: {0},Виявлено циклічну залежність: {0}
+Clearance Summary,Підсумок звіряння
+Click to change the closing balance as per statement,"Натисніть, щоб змінити кінцевий залишок за випискою"
+Closed Period Rows Selected,Вибрано рядки закритого періоду
+Closing (statement),Кінцевий залишок (за випискою)
+Closing (system),Кінцевий залишок (у системі)
+"Company is required to apply taxes. Set Company, then select {0} again.",Для застосування податків потрібна компанія. Укажіть компанію та знову виберіть {0}.
+"Company is required to load address, taxes, and payment terms. Set Company, then select {0} again.","Для завантаження адреси, податків і умов оплати потрібна компанія. Укажіть компанію та знову виберіть {0}."
+Completed Quantity cannot be negative,Виконана кількість не може бути від’ємною
+Completed quantity cannot be negative.,Виконана кількість не може бути від’ємною.
+Components can be returned only after Work Order {0} is Completed or Closed,Компоненти можна повернути лише після завершення або закриття замовлення на виробництво {0}
+Could not download the statement. Please try again.,Не вдалося завантажити виписку. Повторіть спробу.
+Could not validate {0}: {1},Не вдалося перевірити {0}: {1}
+Disabled Price List,Вимкнений прайс-лист
+Duplicate POS Search Fields,Повторні поля пошуку касового термінала
+Duplicate line reference: '{0}',Повторне посилання на рядок: '{0}'
+FY,Фінансовий рік
+Field and operator must be strings,Поле та оператор мають бути текстовими значеннями
+"Filter must be [field, operator, value]","Фільтр має мати вигляд [field, operator, value]"
+Filter must be a list or dict,Фільтр має бути списком або словником
+Finished Good Batch No,Номер партії готової продукції
+Finished Good Serial / Batch No,Серійний номер / номер партії готової продукції
+Finished Good Serial No,Серійний номер готової продукції
+Finished good batch this raw material was consumed into (Manufacture / Repack),"Партія готової продукції, на яку використано цю сировину (виробництво / перепакування)"
+Finished good mapping can't be changed for a cancelled entry,Не можна змінити зіставлення з готовою продукцією для скасованої операції
+Finished good mapping is only allowed for Manufacture and Repack entries,Зіставлення з готовою продукцією дозволено лише для виробництва та перепакування
+Finished good serial no this raw material was consumed into (Manufacture / Repack),"Серійний номер готової продукції, на яку використано цю сировину (виробництво / перепакування)"
+"For the new {0} to take effect, would you like to clear the current {1}?","Очистити поточне значення {1}, щоб застосувати нове значення {0}?"
+Formula evaluation error: {0},Помилка обчислення формули: {0}
+Formula has unbalanced parentheses,У формулі неузгоджені дужки
+"Formula must return a numeric value, got {0}","Формула має повертати число, отримано {0}"
+Formula references itself ('{0}'),Формула посилається сама на себе ('{0}')
+From Date cannot be after As On Date,Початкова дата не може бути пізнішою за дату стану
+From Reference Date cannot be greater than To Reference Date,Початкова дата документа-підстави не може бути пізнішою за кінцеву
+GL Reposting Entries,Перепроведення записів головної книги
+GL reposting entries created: {0},Створено записів перепроведення головної книги: {0}
+Import 1 transaction,Імпортувати 1 операцію
+Importing 1 transaction,Імпортується 1 операція
+Importing {0} of {1} transactions,Імпортується {0} з {1} операцій
+Include Revaluation Journals,Включати записи переоцінки
+Incorrectly Cleared,Помилково звірено
+Invalid JSON format: {0},Некоректний формат JSON: {0}
+Invalid POS Field,Некоректне поле касового термінала
+Invalid POS Fields,Некоректні поля касового термінала
+Invalid POS Search Field,Некоректне поле пошуку касового термінала
+Invalid Valuation Method,Некоректний метод оцінки
+Invalid address,Некоректна адреса
+Invalid doctype,Некоректний тип документа
+Invalid doctype {0},Некоректний тип документа {0}
+Invalid document type,Некоректний тип документа
+Invalid filter,Некоректний фільтр
+"Invalid line reference format: '{0}'. Must start with a letter and contain only letters, numbers and underscores","Некоректний формат посилання на рядок: '{0}'. Посилання має починатися з літери та містити лише літери, цифри й підкреслення"
+Invalid name,Некоректна назва
+Invalid operator '{0}',Некоректний оператор '{0}'
+Invalid reference,Некоректне посилання
+Invalid tax master doctype,Некоректний тип довідника податків
+Invalid type,Некоректний тип
+Item Restricted for Party,Товар обмежено для контрагента
+Later Stock Closing Entry Exists,Існує пізніший документ закриття складського обліку
+Link the Serial and Batch Bundles of the raw materials and finished goods first. Serial / batch nos picked on submit can be mapped after the entry is submitted.,"Спочатку прив’яжіть набори серійних номерів і партій сировини та готової продукції. Номери, вибрані під час проведення, можна зіставити після проведення операції."
+Logical condition must have exactly one operator,Логічна умова має містити рівно один оператор
+Logical conditions need at least 1 sub-condition,Логічна умова має містити принаймні одну підумову
+Logical operators must be 'and' or 'or',Логічні оператори мають бути 'and' або 'or'
+Manufactured Qty (including Process Loss),Виготовлена кількість (з урахуванням технологічних втрат)
+Map Raw Materials to Finished Goods,Зіставити сировину з готовою продукцією
+Mapping must be a dictionary of raw material entries to finished goods,Зіставлення має бути словником відповідностей записів сировини готовій продукції
+Mapping saved,Зіставлення збережено
+Matched date,Дата зіставлення
+Material Request must be submitted to create Work Orders,Для створення замовлень на виробництво заявку на товари потрібно провести
+Method '{0}' must be whitelisted and permit GET requests,Метод '{0}' має бути дозволеним для виклику та підтримувати запити GET
+Method {0} must permit GET requests,Метод {0} має підтримувати запити GET
+Missing Accounting Dimension,Не вказано аналітику обліку
+Missing Company,Не вказано компанію
+No Matching Vouchers Found,Відповідних документів не знайдено
+No new GL reposting entries were created for the selected rows.,Для вибраних рядків не створено нових записів перепроведення головної книги.
+Not permitted for {0},Не дозволено для {0}
+"On submit of a Manufacture / Repack entry, map the raw material serial / batch nos that were not mapped in draft to the finished goods, in order","Під час проведення виробництва або перепакування послідовно зіставляти з готовою продукцією серійні номери та партії сировини, які не були зіставлені в чернетці"
+Only users with the {0} role can repost GL entries,Перепроводити записи головної книги можуть лише користувачі з роллю {0}
+Operator '{0}' requires a list value,Для оператора '{0}' значення має бути списком
+Paid From and Paid To accounts must be different for an Internal Transfer.,Для внутрішнього переказу рахунки списання та зарахування мають відрізнятися.
+Parent document is required to search child rows,Для пошуку в дочірніх рядках потрібен батьківський документ
+Pick the finished good serial / batch each raw material went into. The Serial No and Batch Traceability report uses this mapping.,Виберіть серійний номер або партію готової продукції для кожної сировини. Ці відповідності використовуються у звіті простежуваності серійних номерів і партій.
+Please contact any of the following users for this transaction.,Зверніться до одного з наведених користувачів щодо цієї операції.
+Please select rows to create GL Reposting Entries,Виберіть рядки для створення записів перепроведення головної книги
+Please select rows to create {0},Виберіть рядки для створення {0}
+Please set a primary email ID for the Contact {0},Укажіть основну адресу електронної пошти для контакту {0}
+Please set company on the Document before requesting for invoices.,Укажіть компанію в документі перед запитом рахунків.
+Price List {0} is disabled,Прайс-лист {0} вимкнено
+Price List {0} is not enabled for {1},Прайс-лист {0} не увімкнено для {1}
+Production Plan Quantity Exceeded,Перевищено кількість за планом виробництва
+Qty for Manufacture must be greater than the process loss of {0} to produce a finished good.,Для отримання готової продукції кількість до виробництва має перевищувати технологічні втрати {0}.
+Rate at which Price List Currency is converted to Company Currency,Курс перерахунку валюти прайс-листа у валюту компанії
+Rate at which document currency is converted to company currency,Курс перерахунку валюти документа у валюту компанії
+Raw material {0} is already mapped and can't be changed after {1} is submitted,Сировину {0} вже зіставлено; після проведення {1} змінити зіставлення неможливо
+"Raw material {0} is mapped to {1}, which is not a finished good of this entry","Сировину {0} зіставлено з {1}, що не є готовою продукцією цієї операції"
+Repost GL Entries,Перепровести записи головної книги
+Repost Stock & GL Entries,Перепровести складські та бухгалтерські записи
+Reposting Entries,Записи перепроведення
+Row #{0}: '{1}' does not match {2}.,Рядок №{0}: '{1}' не відповідає {2}.
+Row #{0}: '{1}' is not a valid field of {2}.,Рядок №{0}: '{1}' не є коректним полем {2}.
+Row #{0}: Company {1} does not match with the company {2} in Serial and Batch Bundle {3}.,Рядок №{0}: компанія {1} не відповідає компанії {2} у наборі серійних номерів і партій {3}.
+Row #{0}: Planned Qty must be greater than 0 for Item {1}.,Рядок №{0}: планова кількість для товару {1} має бути більшою за 0.
+Row {0} in {1} {2}: Work Order quantity after process loss {3} exceeds the remaining allowed quantity {4}.,Рядок {0} у {1} {2}: кількість замовлення на виробництво після технологічних втрат {3} перевищує допустимий залишок {4}.
+Row {0} is not a raw material serial / batch entry of {1},Рядок {0} не є записом серійного номера або партії сировини в {1}
+Row {0}: Item {1} is not allowed for {2} {3}.,Рядок {0}: товар {1} не дозволений для {2} {3}.
+SCIO Detail,Деталі складських операцій надходження та вибуття
+"SMS Settings.allowed_roles not found. Update the Frappe Framework app to a version that includes this field, then re-run bench migrate.",Поле SMS Settings.allowed_roles не знайдено. Оновіть Frappe Framework до версії з цим полем і повторно виконайте bench migrate.
+Serial / Batch No Not Activated,Серійний або партійний облік не активовано
+Serial Nos Exist,Серійні номери вже існують
+"Set automatically to the day after the previous Stock Closing Entry, or to the first stock transaction's date",Установлюється автоматично на день після попереднього закриття складського обліку або на дату першої складської операції
+Shipping Account {0} does not belong to Company {1},Рахунок доставки {0} не належить компанії {1}
+The cost of the secondary items cannot exceed the raw material cost of {0}.,Вартість побічної продукції не може перевищувати вартість сировини {0}.
+The following rows are not valid fields of {0} and have to be removed: {1},Наведені рядки не є коректними полями {0} і мають бути видалені: {1}
+There are no serial / batch tracked raw materials or finished goods to map,Немає сировини або готової продукції із серійним чи партійним обліком для зіставлення
+"These rows fall in a closed Accounting Period, remove them: {0}",Ці рядки належать до закритого облікового періоду. Видаліть їх: {0}
+This Job Card has no raw materials to transfer.,У цій робочій картці немає сировини для переміщення.
+Tip,Порада
+"To Date must be after {0}, the To Date of the last Stock Closing Entry {1}",Кінцева дата має бути пізнішою за {0} — кінцеву дату останнього закриття складського обліку {1}
+Use Serial No Wise Valuation,Оцінювати окремо за серійними номерами
+Valuation Type,Тип оцінки
+Work Order Not Finished,Замовлення на виробництво не завершено
+Work Order must reference a row in Production Plan {0}.,Замовлення на виробництво має посилатися на рядок плану виробництва {0}.
+Work Order must reference only one Production Plan row.,Замовлення на виробництво має посилатися лише на один рядок плану виробництва.
+"e.g. Last 3 weeks, Q1, May 2025","наприклад: останні 3 тижні, І квартал, травень 2025"
+{0} (Accounting Period {1}),{0} (обліковий період {1})
+{0} cannot be cleared against a bank statement,{0} не можна звірити з банківською випискою
+{0} cannot be reconciled against a Bank Transaction,{0} не можна звірити з банківською операцією
+{0} does not hold a Serial and Batch Bundle,{0} не містить набору серійних номерів і партій
+{0} has no serial / batch tracked finished good,{0} не містить готової продукції із серійним чи партійним обліком
+"{0} is both a finished good serial no and batch no in {1}, please specify which one","{0} є і серійним номером, і номером партії готової продукції в {1}. Уточніть тип номера"
+{0} is not a child table,{0} не є дочірньою таблицею
+{0} is not a finished good serial / batch produced by {1},"{0} не є серійним номером або партією готової продукції, виготовленої за {1}"
+"{0} is required to apply taxes. Set {0}, then select {1} again.",Для застосування податків потрібно вказати {0}. Укажіть {0} і знову виберіть {1}.
+{0} is required when {1} is {2},"{0} є обов’язковим, якщо {1} має значення {2}"
+{0} must be greater than zero.,{0} має бути більшим за нуль.
+{0} should be in format: app.module.method,{0} має бути у форматі app.module.method
+{0} to {1},від {0} до {1}
+Create a new {0},Створити: {0},Create a new document from list view
+Create your first {0},Створіть перший запис: {0},Create a new document from list view
+Days,Дні,Duration
+Minutes,Хвилини,Duration
+Row {0}: {1},Рядок {0}: {1},Financial Report Template
+{0} to {1},від {0} до {1},Do MMMM YYYY
+Client Secret Basic,Секрет клієнта (Basic)
+Client Secret Post,Секрет клієнта (POST)
+Jane Doe,Олена Коваль
+label,назва
+value,значення
+event,подія
+&copy; Frappe Technologies Pvt. Ltd. and contributors,&copy; Frappe Technologies Pvt. Ltd. та учасники проєкту
+wkhtmltopdf 0.12.x (with patched qt).,wkhtmltopdf 0.12.x (із виправленим Qt).
+B,млрд,Number system
+M,млн,Number system
+K,тис.,Number system
+T,трлн,Number system
+"Don't HTML Encode HTML tags like &lt;script&gt; or just characters like &lt; or &gt;, as they could be intentionally used in this field","Не кодуйте HTML-теги, наприклад &lt;script&gt;, або символи &lt; чи &gt;, оскільки вони можуть бути навмисно використані в цьому полі"
+"Filters will be accessible via <code>filters</code>. <br><br>Send output as <code>result = [result]</code>, or for old style <code>data = [columns], [result]</code>","Фільтри доступні через <code>filters</code>. <br><br>Поверніть результат як <code>result = [result]</code> або у старому форматі <code>data = [columns], [result]</code>"
+Manufacturer Part Number <b>{0}</b> is invalid,Некоректний артикул виробника <b>{0}</b>
+Asset Naming Series,Серія нумерації активів
+Auth URL Data,Дані URL-адреси автентифікації
+BOM 1,Специфікація 1
+BOM 2,Специфікація 2
+BOM Explorer,Огляд специфікацій
+CWIP Account,Рахунок капітальних інвестицій
+Doc Event,Подія документа
+Doc Events,Події документа
+Double Declining Balance,Метод подвійного зменшення залишкової вартості
+Due Date Based On,Відлік строку оплати
+Email ID,Адреса електронної пошти
+Email Id,Адреса електронної пошти
+Enter url parameter for receiver nos,Уведіть параметр URL для номерів одержувачів
+Header,Заголовок
+LDAP Group,Група LDAP
+Markdown Editor,Редактор Markdown
+Min Amt,Мінімальна сума
+Moving Average,Ковзне середнє
+Prevdoc DocType,Тип попереднього документа
+Raised By,Ініціатор
+Rich Text,Форматований текст
+SMS Gateway URL,URL-адреса SMS-шлюзу
+Script,Скрипт
+Time Sheets,Табелі робочого часу
+To Do,До виконання
+ToDo,Завдання
+Web View,Вебперегляд
+Webhook Secret,Секрет вебхука
+Y Axis Fields,Поля осі Y
+Fw: {0},Переслано: {0}
+Re:,Відповідь:
+Re: {0},Відповідь: {0}
+Res: {0},Відповідь: {0}
+{0} d,{0} дн.
+Dismiss,Приховати
+Dismiss,Приховати,Stop showing the onboarding widget.
+Stock Ageing,Вік складських залишків
+Quick Stock Balance,Швидка перевірка залишків
+Product Bundle Balance,Залишки комплектів товарів
+Serial No Warranty Expiry,Закінчення гарантії за серійним номером
+Purchase Receipt Trends,Динаміка надходжень товарів
+Delivery Note Trends,Динаміка відвантажень
+Requested Items To Be Transferred,Замовлені товари до переміщення
+Items To Be Requested,Товари до замовлення
+UOM Category,Категорія одиниць виміру
+Customs Tariff Number,Код митного тарифу
+Stock Qty vs Serial No Count,Кількість запасів і кількість серійних номерів
+Stock Qty vs Batch Qty,Кількість на складі та кількість у партіях
+Valid Till,Дійсна до
+Currency and Price List,Валюта та прайс-лист
+Rate at which customer's currency is converted to company's base currency,Курс перерахунку валюти клієнта в базову валюту компанії
+Price List Exchange Rate,Курс валюти прайс-листа
+Ignore Pricing Rule,Ігнорувати правило ціноутворення
+Net Total (Company Currency),Сума без податків (у валюті компанії)
+Named Place,Узгоджене місце поставки
+Total Taxes and Charges (Company Currency),Усього податків і зборів (у валюті компанії)
+Grand Total (Company Currency),Загальна сума (у валюті компанії)
+Rounding Adjustment (Company Currency),Коригування округлення (у валюті компанії)
+Rounded Total (Company Currency),Округлена сума (у валюті компанії)
+In Words (Company Currency),Сума словами (у валюті компанії)
+Rounding Adjustment,Коригування округлення
+Disable Rounded Total,Не округлювати підсумкову суму
+Coupon Code,Код купона
+Additional Discount Percentage,Відсоток додаткової знижки
+Additional Discount Amount,Сума додаткової знижки
+Bundle Items,Склад комплекту
+Pricing Rule Detail,Відомості про правила ціноутворення
+Contact Email,Електронна пошта контакту
+Term Details,Текст умов
+Update Auto Repeat Reference,Оновити посилання на автоповтор
+Group same items,Групувати однакові товари
+Lost Reasons,Причини втрати
+Partially Ordered,Частково замовлено
+Opportunity Item,Позиція можливості продажу
+Customer's Item Code,Код товару в клієнта
+Is Free Item,Безкоштовний товар
+Is Alternative,Альтернативна позиція
+Has Alternative Item,Є альтернативний товар
+Qty as per Stock UOM,Кількість у складських одиницях виміру
+Price List Rate (Company Currency),Ціна за прайс-листом (у валюті компанії)
+Discount and Margin,Знижка та націнка
+Margin Type,Тип націнки
+Margin Rate or Amount,Відсоток або сума націнки
+Rate With Margin,Ціна з націнкою
+Discount (%) on Price List Rate with Margin,Знижка (%) на ціну за прайс-листом із націнкою
+Rate With Margin (Company Currency),Ціна з націнкою (у валюті компанії)
+Net Rate,Ціна без податків
+Net Amount,Сума без податків
+Item Tax Template,Шаблон податків на товар
+Net Rate (Company Currency),Ціна без податків (у валюті компанії)
+Amount (Company Currency),Сума (у валюті компанії)
+Net Amount (Company Currency),Сума без податків (у валюті компанії)
+Item Weight Details,Відомості про вагу товару
+Warehouse and Reference,Склад і пов’язані документи
+Blanket Order,Рамкова угода
+Against Doctype,Тип пов’язаного документа
+Against Docname,Пов’язаний документ
+Item Tax Rate,Ставка податку на товар
+On Net Total,На суму без податків
+On Previous Row Total,На підсумок попереднього рядка
+On Item Quantity,За кількістю товару
+Reference Row #,Номер рядка для розрахунку
+"If checked, the tax amount will be considered as already included in the Print Rate / Print Amount","Якщо позначено, податок вважається вже включеним у ціну та суму, зазначені в друкованому документі."
+Set by Item Tax Template,Задано шаблоном податків на товар
+Item Row,Рядок товару
+Parent Item,Батьківський товар
+To Warehouse (Optional),На склад (необов’язково)
+Conversion Factor,Коефіцієнт перерахунку
+Actual Batch Quantity,Фактична кількість у партії
+Parent Detail docname,Ідентифікатор батьківського рядка
+Pricing Rule,Правило ціноутворення
+Child Docname,Ідентифікатор дочірнього запису
+Rule Applied,Правило застосовано
+Payment Term,Умова оплати
+Invoice Portion,Частка суми рахунку
+Day(s) after invoice date,Днів після дати рахунку
+Day(s) after the end of the invoice month,Днів після закінчення місяця рахунку
+Month(s) after the end of the invoice month,Місяців після закінчення місяця рахунку
+Credit Days,Днів відстрочення
+Credit Months,Місяців відстрочення
+Discount Validity Based On,Відлік строку дії знижки
+Skip Delivery Note,Без видаткової накладної
+Is Subcontracted,Передано на субпідряд
+In Words will be visible once you save the Sales Order.,Сума словами з’явиться після збереження замовлення клієнта.
+"Applying a Discount Amount? When this Sales Order is partially fulfilled through multiple Delivery Notes and Sales Invoices, the Discount Amount is allocated on a FIFO basis. The earlier transactions receive a larger share of the discount. To spread the discount proportionally across item prices, use Additional Discount Percentage instead.","Якщо замовлення клієнта виконується частинами через кілька видаткових накладних і рахунків продажу, фіксована сума знижки розподіляється за принципом FIFO: раніші документи отримують більшу частку. Щоб розподілити знижку пропорційно цінам товарів, використовуйте «Відсоток додаткової знижки»."
+Advance Paid,Сплачений аванс
+Shipping Address Name,Назва адреси доставки
+Terms and Conditions Details,Текст умов договору
+Partly Delivered,Частково доставлено
+%  Delivered,"Відвантажено, %"
+% of materials delivered against this Sales Order,"Відсоток товарів, відвантажених за цим замовленням клієнта"
+% Amount Billed,"Виставлено рахунків, %"
+% of materials billed against this Sales Order,"Відсоток товарів за цим замовленням клієнта, на які виставлено рахунки"
+Billing Status,Стан виставлення рахунків
+Not Billed,Рахунки не виставлено
+Fully Billed,Рахунки виставлено повністю
+Partly Billed,Рахунки виставлено частково
+Requested,Запитано
+Partially Paid,Частково сплачено
+Loyalty Amount,Вартість балів лояльності
+Is Internal Customer,Внутрішній клієнт
+Customer's Purchase Order Date,Дата замовлення клієнта на закупівлю
+Inter Company Order Reference,Пов’язане міжфірмове замовлення
+Ensure Delivery Based on Produced Serial No,Відвантажувати за серійними номерами виготовленої продукції
+Sales Order Schedule,Графік виконання замовлення клієнта
+Manufacturing Section,Виробництво
+Work Order Qty,Кількість за виробничим замовленням
+Produced Quantity,Вироблена кількість
+Returned Qty,Повернута кількість
+Sales Order Date,Дата замовлення клієнта
+Material Request Item,Позиція заявки на товари
+Purchase Order Item,Позиція замовлення постачальнику
+Contact No.,Контактний телефон
+Contribution to Net Total,Частка суми без податків
+Is Return (Credit Note),Повернення (кредит-нота)
+Update Billed Amount in Sales Order,Оновити суму виставлених рахунків у замовленні клієнта
+Update Billed Amount in Delivery Note,Оновити суму виставлених рахунків у видатковій накладній
+Issue a debit note against an existing Sales Invoice to adjust the rate. The quantity will be retained from the original invoice.,"Створіть дебет-ноту до наявного рахунку продажу, щоб скоригувати ціну. Кількість залишиться такою самою, як у початковому рахунку."
+"If checked, updates inventory; stock and accounting entries are created together. Leave unchecked if a Delivery Note is created separately.","Якщо позначено, складські залишки оновлюються, а складські та бухгалтерські записи створюються разом. Не позначайте, якщо видаткову накладну оформлюєте окремо."
+In Words will be visible once you save the Sales Invoice.,Сума словами з’явиться після збереження рахунку продажу.
+Total Billing Hours,Усього годин до виставлення рахунку
+Total Billing Amount,Усього до виставлення рахунку
+Cash/Bank Account,Касовий / банківський рахунок
+Sales Invoice Payment,Оплата рахунку продажу
+Change Amount,Сума решти
+Account for Change Amount,Рахунок для решти
+Write Off Amount,Сума списання
+Write Off Outstanding Amount,Списати залишок до сплати
+Loyalty Points Redemption,Використання балів лояльності
+Redeem Loyalty Points,Використати бали лояльності
+Redemption Account,Рахунок списання балів лояльності
+Redemption Cost Center,Центр витрат для списання балів лояльності
+Customer PO Details,Відомості про замовлення клієнта на закупівлю
+Accounting Details,Дані бухгалтерського обліку
+Sales Contributions and Incentives,Внесок у продажі та винагороди
+Unpaid and Discounted,"Не сплачено, дисконтовано"
+Overdue and Discounted,"Прострочено, дисконтовано"
+Is Discounted,Дисконтовано
+Has Item Scanned,Товар відскановано
+Tax Withholding Category,Категорія утримання податку
+Service Stop Date,Дата припинення надання послуги
+Service Start Date,Дата початку надання послуги
+Service End Date,Дата закінчення надання послуги
+Stock Details,Відомості про запаси
+Available Batch Qty at Warehouse,Доступна кількість у партії на складі
+Sales Order Item,Позиція замовлення клієнта
+Sales Invoice Item,Позиція рахунку продажу
+POS Invoice Item,Позиція POS-рахунку
+Settled,Урегульовано
+To Time,До часу
+Time Sheet,Табель робочого часу
+Timesheet Detail,Рядок табеля робочого часу
+Project Name,Назва проєкту
+Issue Credit Note,Створити кредит-ноту
+Return Against Delivery Note,Повернення за видатковою накладною
+In Words (Export) will be visible once you save the Delivery Note.,Сума словами (для експорту) з’явиться після збереження видаткової накладної.
+In Words will be visible once you save the Delivery Note.,Сума словами з’явиться після збереження видаткової накладної.
+Partially Billed,Рахунки виставлено частково
+Installation Status,Стан монтажу
+Transporter,Перевізник
+Transporter Name,Назва перевізника
+Transport Receipt Date,Дата транспортної накладної
+Vehicle No,Номер автомобіля
+Customer's Purchase Order No,Номер замовлення клієнта на закупівлю
+Print Without Amount,Друкувати без сум
+Inter Company Reference,Пов’язаний міжфірмовий документ
+Qty in Stock UOM,Кількість у складських одиницях виміру
+Returned Qty in Stock UOM,Повернута кількість у складських одиницях виміру
+Against Sales Order,За замовленням клієнта
+Against Sales Order Item,За позицією замовлення клієнта
+Against Sales Invoice,За рахунком продажу
+Against Sales Invoice Item,За позицією рахунку продажу
+Available Batch Qty at From Warehouse,Доступна кількість у партії на складі-відправнику
+Installed Qty,Змонтована кількість
+Received Qty,Отримана кількість
+Billing Currency,Валюта рахунків
+Loyalty Program Tier,Рівень програми лояльності
+Contact HTML,Контактні дані (HTML)
+"Select, to make the customer searchable with these fields","Виберіть значення, щоб клієнта можна було знайти за цими полями."
+"Reselect, if the chosen address is edited after save","Виберіть адресу повторно, якщо її дані змінилися після збереження."
+Customer Primary Contact,Основний контакт клієнта
+"Reselect, if the chosen contact is edited after save","Виберіть контакт повторно, якщо його дані змінилися після збереження."
+Credit & Overdue Limits,Кредитний ліміт і ліміт простроченої заборгованості
+TDS/TCS is calculated at the rate defined here on every payment from this customer.,Податки TDS/TCS розраховуються за вказаною тут ставкою для кожного платежу від цього клієнта.
+Allow sales invoice creation without sales order,Дозволити створення рахунку продажу без замовлення клієнта
+Allow sales invoice creation without delivery note,Дозволити створення рахунку продажу без видаткової накладної
+"Blocks new transactions and further accounting entries on this customer's account. Only users with the role set in Company's ""Roles Allowed to Set and Edit Frozen Account Entries"" can transact.","Блокує нові операції та бухгалтерські проведення за рахунком клієнта. Проводити операції можуть лише користувачі з роллю, якій у налаштуваннях компанії дозволено створювати й редагувати записи за заблокованими рахунками."
+New Sales Invoices are blocked when the customer's overdue amount exceeds this. Requires 'Restrict Customer Over Billing' in Accounts Settings.,"Нові рахунки продажу блокуються, якщо прострочена заборгованість клієнта перевищує цю суму. Потрібно ввімкнути обмеження виставлення рахунків клієнтам із простроченою заборгованістю в налаштуваннях бухгалтерського обліку."
+Company Billing Address,Адреса компанії для рахунків
+Billing Address Details,Адреса для рахунків: подробиці
+Customer Contact,Контакт клієнта
+Customer Contact Email,Електронна пошта контакту клієнта
+% Billed,"Виставлено рахунків, %"
+% Received,"Отримано, %"
+Is Internal Supplier,Внутрішній постачальник
+Product Bundle,Комплект товарів
+Discount on Price List Rate (%),Знижка на ціну за прайс-листом (%)
+Available Qty at Target Warehouse,Доступна кількість на складі-одержувачі
+Available Qty at Company,Доступна кількість у компанії
+Sales Order Packed Item,Позиція комплекту в замовленні клієнта
+Supplier Quotation Item,Позиція пропозиції постачальника
+"Billed, Received & Returned","Рахунки, надходження та повернення"
+Billed Amount,Сума виставлених рахунків
+Manufacturer Part Number,Каталожний номер виробника
+"Tax detail table fetched from item master as a string and stored in this field.
+Used for Taxes and Charges","Таблиця податків із картки товару, збережена в цьому полі як текстовий рядок.
+Використовується для розрахунку податків і зборів."
+Production Plan Item,Позиція плану виробництва
+Production Plan Sub Assembly Item,Вузол у плані виробництва
+Allocate Full Amount to Stock Items,Відносити всю суму на складські товари
+"If checked, the entire amount (e.g. Freight) is allocated to the valuation of stock & asset items only. If unchecked, the amount is distributed across all items and the portion belonging to non-stock items is not added to valuation.","Якщо позначено, уся сума (наприклад, вартість перевезення) включається до облікової вартості лише складських товарів і активів. Інакше сума розподіляється між усіма позиціями, а частка, що припадає на нескладські позиції, не збільшує їхню облікову вартість."
+Raw Material Item Code,Код сировини
+Stock Uom,Складська одиниця виміру
+Reserve Warehouse,Склад резервування
+BOM Detail No,Номер рядка специфікації
+Required Qty,Потрібна кількість
+Supplied Qty,Поставлена кількість
+Total Supplied Qty,Усього поставлено
+Supplier Delivery Note,Накладна постачальника
+Return Against Purchase Receipt,Повернення за надходженням товарів
+Accepted Warehouse,Склад прийнятих товарів
+Rejected Warehouse,Склад відхилених товарів
+Raw Materials Consumed,Використана сировина
+Get Current Stock,Отримати поточні залишки
+Consumed Items,Використані товари
+Vehicle Number,Номер транспортного засобу
+Received and Accepted,Отримано та прийнято
+Sample Quantity,Кількість зразків
+Qty as Per Stock UOM,Кількість у складських одиницях виміру
+Received Qty in Stock UOM,Отримана кількість у складських одиницях виміру
+Accepted Qty in Stock UOM,Прийнята кількість у складських одиницях виміру
+Valuation rate for the item as per Sales Invoice (Only for Internal Transfers),Облікова вартість одиниці товару за рахунком продажу (лише для внутрішніх переміщень)
+Item Tax Amount Included in Value,"Сума податку на товар, включена у вартість"
+Amount Difference with Purchase Invoice,Різниця із сумою в рахунку постачальника
+Return Qty from Rejected Warehouse,Кількість до повернення зі складу відхилених товарів
+Purchase Invoice Item,Позиція рахунку постачальника
+Purchase Receipt Item,Позиція надходження товарів
+Rejected Serial and Batch Bundle,Набір серійних номерів і партій відхилених товарів
+Is Return (Debit Note),Повернення (дебет-нота)
+Return Against Purchase Invoice,Повернення за рахунком постачальника
+Update Billed Amount in Purchase Order,Оновити суму виставлених рахунків у замовленні постачальнику
+Update Billed Amount in Purchase Receipt,Оновити суму виставлених рахунків у надходженні товарів
+"If checked, updates inventory; stock and accounting entries are created together. Leave unchecked if a Purchase Receipt is created separately.","Якщо позначено, складські залишки оновлюються, а складські та бухгалтерські записи створюються разом. Не позначайте, якщо надходження товарів оформлюєте окремим документом."
+Set Accepted Warehouse,Задати склад прийнятих товарів
+Set Advances and Allocate (FIFO),Задати та розподілити аванси (FIFO)
+Start date of current invoice's period,"Початкова дата періоду, за який виставлено цей рахунок"
+End date of current invoice's period,"Кінцева дата періоду, за який виставлено цей рахунок"
+"Once set, this invoice will be on hold till the set date","Якщо задано дату, рахунок буде призупинено до цієї дати."
+Reason For Putting On Hold,Причина призупинення
+Rejected Qty,Відхилена кількість
+Deferred Expense Account,Рахунок відстрочених витрат
+Purchase Receipt Detail,Рядок надходження товарів
+Per-Company Accounts,Рахунки за компаніями
+Override the default payable / advance accounts on a per-company basis. Leave blank to use each company's defaults from Company settings.,"Задає рахунки розрахунків із постачальником та авансів окремо для кожної компанії. Залиште порожнім, щоб використовувати рахунки за замовчуванням із налаштувань компанії."
+"Supplier's tax identification number (e.g. PAN, VAT, GST)","Податковий ідентифікатор постачальника (наприклад, PAN, VAT або GST)"
+Is Transporter,Перевізник
+Enable to make this supplier selectable as a transporter on Delivery Notes and Stock Entries,"Увімкніть, щоб цього постачальника можна було вибрати як перевізника у видаткових накладних і складських операціях."
+Allow purchase invoice creation without purchase order,Дозволити створення рахунку постачальника без замовлення постачальнику
+Allow purchase invoice creation without purchase receipt,Дозволити створення рахунку постачальника без надходження товарів
+"Frozen suppliers block new transactions and ledger entries until unfrozen. Only users with the role set in Company's ""Roles Allowed to Set and Edit Frozen Account Entries"" can transact.","Блокування постачальника забороняє нові операції та бухгалтерські проведення до зняття блокування. Проводити операції можуть лише користувачі з роллю, якій у налаштуваннях компанії дозволено створювати й редагувати записи за заблокованими рахунками."
+Block Supplier,Заблокувати постачальника
+Hold Type,Тип блокування
+Invoices,Рахунки
+RFQ and Purchase Order Settings,Налаштування запитів пропозицій і замовлень постачальнику
+Prevent RFQs,Заборонити запити пропозицій
+Warn POs,Попереджати про замовлення постачальнику
+Prevent POs,Заборонити замовлення постачальнику
+Supplier Details,Відомості про постачальника
+Industry,Галузь
+Overdue Limit,Ліміт простроченої заборгованості
+Bypass credit limit check at sales order,Не перевіряти кредитний ліміт у замовленні клієнта
+Accounting Dimensions ,Аналітики бухгалтерського обліку
+Purchase Order Pricing Rule,Правило ціноутворення для замовлення постачальнику
+Set Reserve Warehouse,Задати склад резервування
+Purchase Taxes and Charges Template,Шаблон податків і зборів із закупівлі
+Taxes and Charges Added (Company Currency),Додані податки та збори (у валюті компанії)
+Taxes and Charges Deducted (Company Currency),Відняті податки та збори (у валюті компанії)
+Advance Paid (Company Currency),Сплачений аванс (у валюті компанії)
+Disabled items cannot be selected in any transaction.,Вимкнений товар не можна вибрати в жодному документі.
+ERPNext will make a stock ledger entry for each transaction of this item. Keep unchecked for non-stock or service items.,ERPNext створюватиме запис складського обліку для кожної операції з цим товаром. Не позначайте для товарів без складського обліку та послуг.
+Enable if this item is a company asset like machinery or furniture.,"Увімкніть, якщо цей товар є активом компанії, наприклад обладнанням або меблями."
+Item Attributes,Атрибути товару
+Allow this item to be used in sales transactions.,Дозволити використання цього товару в документах продажу.
+Allow Alternative Item,Дозволити заміну товару
+Allow substituting this item with an alternative from the Item Alternative list when stock is unavailable.,"Дозволити заміну цього товару альтернативним зі списку замін, якщо товару немає на складі."
+"If this item has variants, then it cannot be selected in sales orders etc.","Якщо товар має варіанти, сам шаблон товару не можна вибрати в замовленнях клієнтів та інших документах."
+Allow Purchase,Дозволити закупівлю
+Allow this item to be used in purchase transactions.,Дозволити використання цього товару в документах закупівлі.
+Is Customer Provided Item,Товар надано клієнтом
+Enable if this item is provided by a customer and received via Stock Entry.,"Увімкніть, якщо цей товар надає клієнт і його надходження оформлюється складською операцією."
+Standard Selling Rate,Стандартна ціна продажу
+Creates an Item Price automatically when the item is saved,Автоматично створює запис ціни товару під час збереження картки товару.
+Over Delivery/Receipt Allowance (%),Допустиме перевищення відвантаження / надходження (%)
+"Percentage by which over-delivery or over-receipt is allowed against a Sales/Purchase Order for this item. If not set, value from Stock Settings will be used.","Відсоток, на який дозволено перевищити замовлену кількість цього товару під час відвантаження або надходження. Якщо не задано, використовується значення з налаштувань складу."
+Over Billing Allowance (%),Допустиме перевищення суми рахунку (%)
+"Percentage by which over-billing is allowed against a Sales/Purchase Order for this item. If not set, value from Accounts Settings will be used.","Відсоток, на який сума рахунку за цей товар може перевищувати суму в замовленні клієнта або постачальнику. Якщо не задано, використовується значення з налаштувань бухгалтерського обліку."
+Item Defaults,Значення за замовчуванням для товару
+Inventory,Запаси
+End of Life,Дата припинення використання
+Defines the date after which the item can no longer be used in transactions or manufacturing,"Дата, після якої товар більше не можна використовувати в документах або виробництві."
+Default Material Request Type,Тип заявки на товари за замовчуванням
+Customer Provided,Надано клієнтом
+Warranty Period (in days),Гарантійний строк (днів)
+"Allow stock to go below zero for this item, even if negative stock is disabled in Stock Settings.","Дозволити від’ємний залишок цього товару, навіть якщо від’ємні залишки заборонено в налаштуваннях складу."
+Auto re-order,Автоматичне дозамовлення
+Reorder level based on Warehouse,Рівень дозамовлення за складом
+Track this item in batches. Cannot be changed after a stock transaction exists.,Вести облік цього товару за партіями. Налаштування не можна змінити після створення складських операцій.
+Batch Number Series,Серія нумерації партій
+"Example: ABCD.#####. If series is set and Batch No is not mentioned in transactions, then automatic batch number will be created based on this series. If you always want to explicitly mention Batch No for this item, leave this blank. Note: this setting will take priority over the Naming Series Prefix in Stock Settings.","Приклад: ABCD.#####. Якщо серію задано, а номер партії в документі не вказано, його буде створено автоматично за цією серією. Залиште поле порожнім, щоб завжди вводити номер партії вручну. Це налаштування має пріоритет над префіксом серії нумерації в налаштуваннях складу."
+Has Expiry Date,Має строк придатності
+Shelf Life In Days,Строк придатності (днів)
+Max Sample Quantity,Максимальна кількість зразків
+Serial Number Series,Серія нумерації серійних номерів
+"Example: ABCD.#####
+If series is set and Serial No is not mentioned in transactions, then automatic serial number will be created based on this series. If you always want to explicitly mention Serial Nos for this item. leave this blank.","Приклад: ABCD.#####
+Якщо серію задано, а серійний номер у документі не вказано, його буде створено автоматично за цією серією. Залиште поле порожнім, щоб завжди вводити серійні номери цього товару вручну."
+Variant Of,Варіант товару
+"If item is a variant of another item then description, image, pricing, taxes etc will be set from the template unless explicitly specified","Якщо товар є варіантом іншого товару, його опис, зображення, ціни, податки тощо беруться із шаблону, якщо їх не задано окремо."
+Variant Based On,Основа варіанта
+Item Attribute,Атрибут товару
+Variant Attributes,Атрибути варіанта
+Default Purchase Unit of Measure,Одиниця виміру закупівлі за замовчуванням
+Minimum Order Qty,Мінімальна кількість у замовленні
+Lead Time in days,Строк постачання (днів)
+The rate at which this item was last purchased via a Purchase Invoice. Auto-updated by the system.,Ціна останньої закупівлі цього товару за рахунком постачальника. Оновлюється автоматично.
+Delivered by Supplier (Drop Ship),Пряма доставка від постачальника
+Item Supplier,Постачальник товару
+Country of Origin,Країна походження
+Customer Items,Коди товарів у клієнтів
+Include Item In Manufacturing,Використовувати товар у виробництві
+Is Subcontracted Item,Товар виготовляє субпідрядник
+Enable if a vendor manufactures this item for you. You can choose to provide them raw materials using the default BOM.,"Увімкніть, якщо постачальник виготовляє цей товар для вас. Ви можете передавати йому сировину за специфікацією за замовчуванням."
+Default BOM,Специфікація за замовчуванням
+Default Manufacturer Part No,Каталожний номер виробника за замовчуванням
+Default Item Manufacturer,Виробник товару за замовчуванням
+A quality inspection must be completed before generating a Purchase Receipt for this item.,Перед створенням надходження цього товару потрібно провести перевірку якості.
+A quality inspection must be completed before generating a Delivery Note for this item.,Перед створенням видаткової накладної для цього товару потрібно провести перевірку якості.
+Item Prices,Ціни товарів
+Default price list for buying or selling this item,Прайс-лист за замовчуванням для закупівлі або продажу цього товару
+Default Inventory Account,Рахунок обліку запасів за замовчуванням
+Stock account where inventory value for this item will be tracked,"Рахунок запасів, на якому обліковується вартість цього товару"
+Purchase Defaults,Значення за замовчуванням для закупівлі
+Cost center used for tracking purchase expenses for this item,Центр витрат для обліку витрат на закупівлю цього товару
+This supplier will be auto-selected in new purchase transactions,Цей постачальник автоматично підставлятиметься в нові документи закупівлі.
+Account where the cost of this item will be debited on purchase,"Рахунок, за дебетом якого відображається вартість цього товару під час закупівлі"
+Account to record additional purchase expenses like freight or customs for this item,"Рахунок для обліку додаткових витрат на закупівлю цього товару, наприклад перевезення або мита"
+Used to balance the books when recording extra purchase costs like freight or customs,"Кореспондуючий рахунок для обліку додаткових витрат на закупівлю, наприклад перевезення або мита"
+"Account to track value added to stock via Stock Entry, Stock Reconciliation or Landed Cost Voucher","Рахунок для обліку збільшення вартості запасів за складськими операціями, інвентаризацією або документами додаткових витрат"
+Sales Defaults,Значення за замовчуванням для продажу
+Cost center used for tracking sales revenue for this item,Центр витрат для обліку доходу від продажу цього товару
+Account where revenue from selling this item will be credited,"Рахунок, за кредитом якого відображається дохід від продажу цього товару"
+Account where cost of goods sold will be posted when this item is sold,"Рахунок, на який відноситься собівартість цього товару під час продажу"
+Minimum Net Rate,Мінімальна ціна без податків
+Maximum Net Rate,Максимальна ціна без податків
+Material Request Type,Тип заявки на товари
+Transfer,Переміщення
+From Range,Початок діапазону
+To Range,Кінець діапазону
+Enter the Item Code that this customer uses at their end. This will be shown in Sales Orders for the customer's reference.,"Введіть код товару, який використовує цей клієнт у своїй системі. Він відображатиметься в замовленнях клієнта як довідкова інформація."
+Warehouse Detail,Відомості про склад
+Is Rejected Warehouse,Склад відхилених товарів
+"If blank, parent Warehouse Account or company default will be considered in transactions","Якщо поле порожнє, у документах використовуватиметься рахунок батьківського складу або рахунок компанії за замовчуванням."
+Phone No,Номер телефону
+Tree Details,Відомості про ієрархію
+lft,lft
+rgt,rgt
+Material Transfer for Manufacture,Передача матеріалів у виробництво
+Material Consumption for Manufacture,Витрачання матеріалів на виробництво
+Repack,Перепакування
+Inspection Required,Потрібна перевірка якості
+Stock Entry (Outward GIT),Складська операція відправлення в транзит
+Source Stock Entry (Manufacture),Початкова складська операція (виробництво)
+From BOM,За специфікацією
+Including items for sub assemblies,Включно з матеріалами для складальних вузлів
+Default Source Warehouse,Склад-відправник за замовчуванням
+Sets 'Source Warehouse' in each row of the items table.,Задає склад-відправник у кожному рядку таблиці товарів.
+Source Warehouse Address Link,Посилання на адресу складу-відправника
+Source Warehouse Address,Адреса складу-відправника
+Default Target Warehouse,Склад-одержувач за замовчуванням
+Sets 'Target Warehouse' in each row of the items table.,Задає склад-одержувач у кожному рядку таблиці товарів.
+Target Warehouse Address Link,Посилання на адресу складу-одержувача
+Target Warehouse Address,Адреса складу-одержувача
+Update Rate and Availability,Оновити ціни та наявність
+Sales Invoice No,Номер рахунку продажу
+Purchase Receipt No,Номер надходження товарів
+Per Transferred,"Переміщено, %"
+Is Finished Item,Готовий виріб
+Subcontracted Item,Товар на субпідряді
+Basic Rate (as per Stock UOM),Базова ціна за складську одиницю виміру
+Customer Provided Item Cost,"Вартість товару, наданого клієнтом"
+Additional Cost,Додаткові витрати
+Basic Amount,Базова сума
+Difference Account,Рахунок різниці
+Actual Qty (at source/target),Фактична кількість на складі-відправнику / одержувачі
+Material Request used to make this Stock Entry,"Заявка на товари, на підставі якої створено цю складську операцію"
+Original Item,Початковий товар
+Against Stock Entry,За складською операцією
+Stock Entry Child,Рядок складської операції
+PO Supplied Item,"Сировина, надана за замовленням постачальнику"
+Reference Purchase Receipt,Пов’язане надходження товарів
+Job Card Item,Позиція робочої картки
+Difference Amount,Сума різниці
+Current Qty,Поточна кількість
+Current Valuation Rate,Поточна облікова вартість одиниці
+Terms and Conditions Content,Текст умов договору
+Transfer Status,Стан переміщення
+Lead Time Date,Дата з урахуванням строку постачання
+Packed Item,Позиція комплекту
+Material Request Plan Item,Позиція плану заявки на товари
+Item Reorder,Дозамовлення товару
+Reorder Level,Рівень дозамовлення
+Payment From / To,Платник / одержувач
+Account Paid To,Рахунок зарахування
+Get Outstanding Invoices,Отримати неоплачені рахунки
+Payment References,Документи для розподілу платежу
+Difference Amount (Company Currency),Сума різниці (у валюті компанії)
+Write Off Difference Amount,Списати суму різниці
+Cheque/Reference No,Номер чека / документа-підстави
+Custom Remarks,Власні примітки
+Payment Term Outstanding,Залишок до сплати за умовою оплати
+Advance Voucher No,Номер документа на аванс
+Use prices from Default Price List as fallback,"Використовувати прайс-лист за замовчуванням, якщо ціни немає"
+"If no Item Price is found for an item in the Price List set in the transaction, prices from the Default Price List will be fetched.","Якщо в прайс-листі документа немає ціни цього товару, вона береться з прайс-листа за замовчуванням."
+Allow editing Price List rate in transactions,Дозволити змінювати ціну за прайс-листом у документах
+Warn or stop if Item rate is changed in Delivery Notes and Sales Invoices generated from a Sales Order.,"Попереджати або блокувати операцію, якщо ціна товару у видатковій накладній чи рахунку продажу відрізняється від ціни в початковому замовленні клієнта."
+Action if same rate is not maintained throughout sales cycle,Дія в разі зміни ціни протягом циклу продажу
+Validate selling price for Item against purchase or valuation rate,Перевіряти ціну продажу відносно ціни закупівлі або облікової вартості
+Calculate Product Bundle price based on child Item's rates,Розраховувати ціну комплекту за цінами його складових
+"Enabling this will do the following:
+<ul style=""padding-left:16px"">
+<li>Make the rate column of all Packed/Bundle Items tables editable.</li>
+<li>Calculate the prices of all <a href=""/desk/product-bundle"" rel=""noopener noreferrer"">Product Bundles</a> in the Items table, based on the prices of its child Items, specified in the Packed/Bundle Items table. </li>
+</ul>
+Note: If this is enabled, updating the rate of the Product Bundle in the Items table will not change its price. It will get reset to the price based on its Child Items on saving the doc.","Якщо ввімкнено:
+<ul style=""padding-left:16px"">
+<li>Ціни в таблицях складових комплекту можна редагувати.</li>
+<li>Ціни всіх <a href=""/desk/product-bundle"" rel=""noopener noreferrer"">комплектів товарів</a> у таблиці товарів розраховуються за цінами їхніх складових, зазначеними в таблиці складу комплекту.</li>
+</ul>
+Якщо змінити ціну комплекту безпосередньо в таблиці товарів, під час збереження документа вона знову буде розрахована за цінами складових."
+Allow negative rates for Items,Дозволити від’ємні ціни товарів
+Is Sales Order required to create Sales Invoice/Delivery Note?,Вимагати замовлення клієнта для рахунку продажу / видаткової накладної
+Is Delivery Note required to create Sales Invoice?,Вимагати видаткову накладну для рахунку продажу
+Allow same Item to be added multiple times in a transaction,Дозволити додавати той самий товар у документ кілька разів
+Allow multiple Sales Orders against a customer's Purchase Order,Дозволити кілька замовлень клієнта за одним його замовленням на закупівлю
+Allow Sales Order creation for expired Quotation,Дозволити замовлення клієнта за простроченою комерційною пропозицією
+"This allows creation of sales orders from quotations that have passed their expiration date, providing flexibility in processing orders despite outdated quotes.","Дозволяє створювати замовлення клієнтів на підставі комерційних пропозицій, строк дії яких уже закінчився."
+Don't reserve Sales Order qty on sales return,Не резервувати товар за замовленням клієнта під час повернення
+"If enabled, system will set incoming rate as zero for stand-alone credit notes with expired batch item.","Якщо ввімкнено, для кредит-нот без документа-підстави вхідна ціна товарів із прострочених партій встановлюється в нуль."
+Allow Quotation with zero quantity,Дозволити комерційну пропозицію з нульовою кількістю
+Allow Sales Order with zero quantity,Дозволити замовлення клієнта з нульовою кількістю
+"Enable Urchin Tracking Module parameters in Quotation, Sales Order, Sales Invoice, POS Invoice, Lead,  and Delivery Note.","Увімкнути параметри UTM у комерційній пропозиції, замовленні клієнта, рахунку продажу, POS-рахунку, ліді та видатковій накладній."
+Allow delivery of overproduced quantity,"Дозволити відвантаження продукції, виготовленої понад замовлення"
+Deliver secondary Items,Відвантажувати супутню продукцію
+"If enabled, the Secondary Items generated against a Finished Good will also be added in the Stock Entry when delivering that Finished Good.","Якщо ввімкнено, супутні товари, отримані під час виготовлення готової продукції, також додаються до складської операції її відвантаження."
+Maintain same rate throughout the purchase  cycle,Зберігати однакову ціну протягом усього циклу закупівлі
+Warn or stop if Item rate is changed in Purchase Invoice or Purchase Receipt generated from a Purchase Order.,"Попереджати або блокувати операцію, якщо ціна товару в рахунку постачальника чи надходженні товарів відрізняється від ціни в початковому замовленні постачальнику."
+Set Landed Cost Based on Purchase Invoice Rate,Коригувати вартість надходження за ціною рахунку постачальника
+Users can enable the checkbox If they want to adjust the incoming rate (set using purchase receipt) based on the purchase invoice rate.,"Увімкніть, щоб коригувати вхідну ціну, зазначену в надходженні товарів, відповідно до ціни в рахунку постачальника."
+Action if same rate is not maintained,Дія в разі зміни ціни
+Configure the action to stop the transaction or just warn if the same rate is not maintained.,"Виберіть, чи блокувати операцію, чи лише попереджати, якщо ціна відрізняється від початкової."
+Is Purchase Order required for Purchase Invoice & Receipt creation?,Вимагати замовлення постачальнику для рахунку та надходження товарів
+Is Purchase Receipt required for Purchase Invoice creation?,Вимагати надходження товарів для рахунку постачальника
+How often should project be updated of Total Purchase Cost ?,Як часто оновлювати загальну вартість закупівель у проєкті?
+"The percentage by which you are allowed to order more on a Purchase Order than the quantity requested on the originating Material Request. For example, if the Material Request has 100 units and the allowance is 10%, you can order up to 110 units","Відсоток, на який кількість у замовленні постачальнику може перевищувати кількість у початковій заявці на товари. Наприклад, якщо в заявці 100 одиниць, а допуск становить 10 %, можна замовити до 110 одиниць."
+Allow Item to be added multiple times in a transaction,Дозволити додавати той самий товар у документ кілька разів
+Set valuation rate for rejected Materials,Визначати облікову вартість відхилених товарів
+"If enabled, the system will generate an accounting entry for materials rejected in the Purchase Receipt.","Якщо ввімкнено, система створює бухгалтерські записи для товарів, відхилених у документі надходження."
+Disable last purchase rate,Не підставляти останню закупівельну ціну
+Show pay button in Purchase Order portal,Показувати кнопку оплати замовлення постачальнику на порталі
+Purchase Invoice Settings,Налаштування рахунків постачальників
+Bill for rejected quantity in Purchase Invoice,Включати відхилену кількість до рахунку постачальника
+"If checked, Rejected Quantity will be included while making Purchase Invoice from Purchase Receipt.","Якщо позначено, під час створення рахунку постачальника на підставі надходження товарів до рахунку включається також відхилена кількість."
+"While making Purchase Invoice from Purchase Order, use Exchange Rate on Invoice's transaction date rather than inheriting it from Purchase Order. Only applies for Purchase Invoice.","Під час створення рахунку постачальника за замовленням використовувати курс на дату рахунку, а не курс із замовлення. Налаштування діє лише для рахунків постачальників."
+Allow Purchase Order with Zero Quantity,Дозволити замовлення постачальнику з нульовою кількістю
+Allows users to submit Purchase Orders with zero quantity. Useful when rates are fixed but the quantities are not. Eg. Rate Contracts.,"Дозволяє проводити замовлення постачальнику з нульовою кількістю. Корисно, коли ціни вже узгоджено, а кількість ще не визначено, наприклад у договорах із фіксованими цінами."
+Material Transferred for Subcontract,"Матеріали, передані субпідряднику"
+Over Transfer Allowance (%),Допустиме перевищення кількості переміщення (%)
+Percentage you are allowed to transfer more against the quantity ordered. For example: If you have ordered 100 units. and your Allowance is 10% then you are allowed to transfer 110 units.,"Відсоток, на який кількість переміщення може перевищувати замовлену кількість. Наприклад, якщо замовлено 100 одиниць, а допуск становить 10 %, можна перемістити 110 одиниць."
+Subcontracting Order (Draft) will be auto-created on submission of Purchase Order.,Чернетка замовлення субпідряду створюється автоматично під час проведення замовлення постачальнику.
+Auto create Purchase Receipt,Автоматично створювати надходження товарів
+Purchase Receipt (Draft) will be auto-created on submission of Subcontracting Receipt.,Чернетка надходження товарів створюється автоматично під час проведення накладної субпідряду.
+Item Naming By,Правило найменування товарів
+Default Item Group,Група товарів за замовчуванням
+Default Valuation Method,Метод оцінки за замовчуванням
+Price List Defaults,Налаштування прайс-листів за замовчуванням
+Auto insert Item Price if missing,"Автоматично додавати ціну товару, якщо її немає"
+Update existing Price List Rate,Оновлювати наявну ціну в прайс-листі
+Update Price List based on,Джерело оновлення прайс-листа
+Allow to edit stock UOM qty for Purchase documents,Дозволити змінювати кількість у складських одиницях у документах закупівлі
+Allow to edit stock UOM qty for Stock Entry,Дозволити змінювати кількість у складських одиницях у складських операціях
+Allow UOM with conversion rate defined in Item,Дозволити лише одиниці виміру з коефіцієнтом перерахунку в картці товару
+"If enabled, the system will allow selecting UOMs in sales and purchase transactions only if the conversion rate is set in the item master.","Якщо ввімкнено, у документах продажу та закупівлі можна вибирати лише ті одиниці виміру, для яких у картці товару задано коефіцієнт перерахунку."
+Sample Retention Warehouse,Склад для зберігання зразків
+This can be enabled at specific Item level as well,Це налаштування також можна ввімкнути для окремого товару.
+"The percentage you are allowed to receive or deliver more against the quantity ordered. For example, if you have ordered 100 units, and your Allowance is 10%, then you are allowed to receive 110 units.","Відсоток, на який відвантажена або отримана кількість може перевищувати замовлену. Наприклад, якщо замовлено 100 одиниць, а допуск становить 10 %, можна отримати 110 одиниць."
+Convert Item description to clean HTML in transactions,Очищати HTML-розмітку опису товару в документах
+Validate Material Transfer warehouses,Перевіряти склади під час переміщення товарів
+"If enabled, the source and target warehouse in the Material Transfer Stock Entry must be different else an error will be thrown. If inventory dimensions are present, same source and target warehouse can be allowed but atleast any one of the inventory dimension fields must be different.","Якщо ввімкнено, склад-відправник і склад-одержувач у документі переміщення мають відрізнятися. Якщо використовуються додаткові аналітики складського обліку, склади можуть збігатися, але хоча б одна аналітика повинна мати різні значення."
+Serial & Batch Item,Товари із серійним і партійним обліком
+Activate Serial / Batch No for Item,Увімкнути серійний / партійний облік товару
+Serial Item settings,Налаштування серійного обліку
+Batch Item settings,Налаштування партійного обліку
+"If enabled, the system will use the moving average valuation method to calculate the valuation rate for the batched items and will not consider the individual batch-wise incoming rate.","Якщо ввімкнено, облікова вартість товарів із партійним обліком розраховується методом ковзної середньої без урахування окремої вхідної ціни кожної партії."
+This will be applied if no naming series is configured in Item master,"Застосовується, якщо в картці товару не задано серію нумерації."
+Set Serial and Batch Bundle Naming Based on Naming Series,Нумерувати набори серійних номерів і партій за серією нумерації
+"Upon submission of the Sales Order, Work Order, or Production Plan, the system will automatically reserve the stock.","Під час проведення замовлення клієнта, виробничого замовлення або плану виробництва система автоматично резервує запаси."
+Auto reserve Stock for Sales Order on Purchase,Автоматично резервувати придбані товари під замовлення клієнта
+Stock will be reserved on submission of <b>Purchase Receipt</b> created against Material Request for Sales Order.,"Запаси резервуються під час проведення <b>надходження товарів</b>, створеного за заявкою на товари для замовлення клієнта."
+Serial and Batch Nos will be auto-reserved based on <b>Pick Serial / Batch Based On</b>,Серійні номери та партії резервуються автоматично відповідно до налаштування <b>Вибирати серійні номери / партії за</b>.
+Allow to make Quality Inspection after Purchase / Delivery,Дозволити перевірку якості після надходження / відвантаження
+Auto Material Request,Автоматичні заявки на товари
+Raise Material Request when stock reaches re-order level,Створювати заявку на товари при досягненні рівня дозамовлення
+This option is useful if you want to ensure a constant supply of raw materials/products and avoid shortage. A Material Request will be raised automatically when stock reached the re-order level defined in the Item form.,"Допомагає підтримувати запас сировини й товарів та уникати дефіциту. Заявка на товари створюється автоматично, коли залишок досягає рівня дозамовлення, заданого в картці товару."
+Notify by email on creation of automatic Material Request,Сповіщати поштою про автоматичне створення заявки на товари
+An email will be sent to notify the User with the role 'Purchase Manager' when an automatic Material Request is created.,Після автоматичного створення заявки на товари користувач із роллю «Керівник закупівель» отримує сповіщення електронною поштою.
+Control Historical Stock Transactions,Контроль складських операцій минулих періодів
+Freeze stocks older than (days),"Блокувати складські операції, старші за (днів)"
+Stock transactions that are older than the mentioned days cannot be modified.,"Складські операції, від дати яких минуло більше зазначеної кількості днів, не можна змінювати."
+Stock frozen up to,Блокувати складські операції до дати
+No stock transactions can be created or modified before this date.,Не можна створювати або змінювати складські операції з датою раніше зазначеної.
+Role allowed to edit frozen stock,Роль із правом змінювати заблоковані складські операції
+"The users with this Role are allowed to create/modify a stock transaction, even though the transaction is frozen.",Користувачі з цією роллю можуть створювати й змінювати складські операції навіть у заблокованому періоді.
+"If mentioned, the system will allow only the users with this Role to create or modify any stock transaction earlier than the latest stock transaction for a specific item and warehouse. If set as blank, it allows all users to create/edit back-dated transactions.","Якщо роль задано, лише користувачі з цією роллю можуть створювати або змінювати складські операції, датовані раніше за останню операцію з цим товаром на цьому складі. Якщо поле порожнє, операції заднім числом доступні всім користувачам."
+Apply Rule On Item Code,Застосувати правило до кодів товарів
+Apply Rule On Item Group,Застосувати правило до груп товарів
+Apply Rule On Brand,Застосувати правило до брендів
+Conditions will be applied on all the selected items combined. ,Умови застосовуються до всіх вибраних товарів сукупно.
+Is Cumulative,Накопичувальне правило
+Discount on Other Item,Знижка на інший товар
+Quantity and Amount,Кількість і сума
+Max Amt,Максимальна сума
+Product Discount Scheme,Схема товарних знижок
+Same Item,Той самий товар
+Free Item,Безкоштовний товар
+Free Item Rate,Ціна безкоштовного товару
+"If rate is zero then item will be treated as ""Free Item""","Якщо ціна дорівнює нулю, товар вважається безкоштовним."
+Don't Enforce Free Item Qty,Не вимагати задану кількість безкоштовного товару
+Give free item for every N quantity,Надавати безкоштовний товар за кожні N одиниць
+Qty for which recursion isn't applicable.,"Кількість, до якої повторювана знижка не застосовується."
+For Price List,Для прайс-листа
+"Simple Python Expression, Example: territory != 'All Territories'","Простий вираз Python, наприклад: territory != 'All Territories'"
+Apply Multiple Pricing Rules,Застосовувати кілька правил ціноутворення
+System will notify to increase or decrease quantity or amount ,"Система підкаже, коли варто збільшити або зменшити кількість чи суму."
+Validate Applied Rule,Перевіряти застосоване правило
+"If enabled, then system will only validate the pricing rule and not apply automatically. User has to manually set the discount percentage / margin / free items to validate the pricing rule","Якщо ввімкнено, система лише перевіряє дотримання правила ціноутворення, а не застосовує його автоматично. Користувач має самостійно задати відсоток знижки, націнку або безкоштовні товари відповідно до правила."
+"Higher the number, higher the priority","Що більше число, то вищий пріоритет."
+Pricing Rule Help,Довідка з правил ціноутворення
+Promotional Scheme Id,Ідентифікатор акційної схеми
+Promotional Scheme,Акційна схема
+Quantity  that must be bought or sold per UOM,"Кількість, яку потрібно придбати або продати в зазначеній одиниці виміру"
+Item Description,Опис товару
+Price Not UOM Dependent,Ціна не залежить від одиниці виміру
+Applicable for Countries,Застосовується для країн
+Check this to disallow fractions. (for Nos),"Позначте, щоб дозволити лише цілі значення кількості, наприклад для обліку в штуках."
+"""Customer Provided Item"" cannot be Purchase Item also","Товар, наданий клієнтом, не може одночасно бути товаром для закупівлі."
+"""Customer Provided Item"" cannot have Valuation Rate","Для товару, наданого клієнтом, не можна задавати облікову вартість."
+'Update Stock' can not be checked because items are not delivered via {0},"Не можна позначити «Оновити складські залишки», оскільки товари не відвантажуються через {0}."
+'Update Stock' cannot be checked for fixed asset sale,Не можна позначити «Оновити складські залишки» під час продажу основного засобу.
+A logical Warehouse against which stock entries are made.,"Обліковий склад, за яким реєструються складські операції."
+A separate Purchase Order is created for each Supplier.,Для кожного постачальника створюється окреме замовлення постачальнику.
+"According to the BOM {0}, the Item '{1}' is missing in the stock entry.","У складській операції бракує товару «{1}», передбаченого специфікацією {0}."
+Account {0} is invalid. Account Currency must be {1},Рахунок {0} не підходить. Валюта рахунку має бути {1}.
+Account: {0} is not permitted under Payment Entry,Рахунок {0} не можна використовувати в документі оплати.
+Accounting Entry for LCV in Stock Entry {0},Бухгалтерське проведення додаткових витрат у складській операції {0}
+Accounting Entry for Stock,Бухгалтерське проведення за запасами
+Add Item,Додати товар
+Adjustment based on Purchase Invoice rate,Коригування за ціною рахунку постачальника
+Allow Item to Be Added Multiple Times in a Transaction,Дозволити додавати той самий товар у документ кілька разів
+Allowed Items,Дозволені товари
+Alternate Item,Альтернативний товар
+Alternative Items,Альтернативні товари
+Amount {0} {1} adjusted against {2} {3},Суму {0} {1} зараховано за документом {2} {3}
+Auto repeat document updated,Документ автоповтору оновлено
+Batch {0} of Item {1} has expired.,Строк придатності партії {0} товару {1} закінчився.
+Block Invoice,Заблокувати рахунок
+Buying Settings,Налаштування закупівель
+Can only make payment against unbilled {0},"Оплату можна створити лише для {0}, за яким ще не виставлено рахунок."
+Cannot cancel transaction for Completed Work Order.,Не можна скасувати операцію за завершеним виробничим замовленням.
+Cannot create Stock Reservation Entries for future dated Purchase Receipts.,Не можна резервувати запаси за надходженням товарів із майбутньою датою.
+Cannot receive from customer against negative outstanding,Не можна отримати платіж від клієнта за документом із від’ємним залишком до сплати.
+Cannot select a Group type Customer Group. Please select a non-group Customer Group.,"Не можна вибрати батьківську групу клієнтів. Виберіть кінцеву групу, яка не містить підгруп."
+Change Release Date,Змінити дату розблокування
+Child warehouse exists for this warehouse. You can not delete this warehouse.,"Не можна видалити цей склад, оскільки він містить дочірні склади."
+Closed order cannot be cancelled. Unclose to cancel.,Не можна скасувати закрите замовлення. Спочатку відкрийте його повторно.
+Consolidated Sales Invoice,Консолідований рахунок продажу
+"Could not create Credit Note automatically, please uncheck 'Issue Credit Note' and submit again",Не вдалося автоматично створити кредит-ноту. Зніміть прапорець «Створити кредит-ноту» й проведіть документ повторно.
+Create Purchase Order,Створити замовлення постачальнику
+Create Stock Entry,Створити складську операцію
+Create Variants,Створити варіанти
+Creating Purchase Order ...,Створення замовлення постачальнику…
+Creating Purchase Receipt ...,Створення надходження товарів…
+Creating Stock Entry,Створення складської операції
+Credit Note {0} has been created automatically,Кредит-ноту {0} створено автоматично
+Credit limit has been crossed for customer {0} ({1}/{2}),Перевищено кредитний ліміт клієнта {0} ({1}/{2})
+Currency should be same as Price List Currency: {0},Валюта має збігатися з валютою прайс-листа: {0}
+"Difference Account must be a Asset/Liability type account (Temporary Opening), since this Stock Entry is an Opening Entry","Рахунок різниці має бути рахунком активів або зобов’язань для введення початкових залишків, оскільки ця складська операція вводить початкові залишки."
+"Difference Account must be a Asset/Liability type account, since this Stock Reconciliation is an Opening Entry","Рахунок різниці має бути рахунком активів або зобов’язань, оскільки ця інвентаризація вводить початкові залишки."
+Different 'Source Warehouse' and 'Target Warehouse' can be set for each row.,Для кожного рядка можна окремо задати склад-відправник і склад-одержувач.
+Duplicate {0} found in the table,У таблиці знайдено дублікат: {0}
+"Enter an Item Code, the name will be auto-filled the same as Item Code on clicking inside the Item Name field.",Введіть код товару. Після клацання в полі «Назва товару» код буде автоматично підставлено як назву.
+Exchange rate {0} does not match the exchange rate of Purchase Receipt {1}. Use the same exchange rate as the Purchase Receipt or enable {2} in {3} to adjust the landed cost based on this invoice.,"Курс {0} відрізняється від курсу в надходженні товарів {1}. Використайте курс із надходження або ввімкніть {2} у {3}, щоб скоригувати вартість надходження за цим рахунком."
+Expense / Difference account ({0}) must be a 'Profit or Loss' account,Рахунок витрат / різниці ({0}) має належати до рахунків доходів або витрат.
+Expired Batches,Партії з простроченим строком придатності
+Fixed Asset,Основний засіб
+Get Items from BOM,Отримати товари зі специфікації
+Get Items from Product Bundle,Отримати товари зі складу комплекту
+Goods In Transit,Товари в дорозі
+Grand Total (Company Currency,Загальна сума (у валюті компанії
+Hold,Призупинити
+"If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice or Receipt without creating a Purchase Order first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Order' checkbox in the Supplier master.","Якщо вибрано «Так», ERPNext вимагає спочатку створити замовлення постачальнику, а вже потім рахунок постачальника чи надходження товарів. Для окремого постачальника цю вимогу можна вимкнути: позначте «Дозволити створення рахунку постачальника без замовлення постачальнику» в його картці."
+"If this option is configured 'Yes', ERPNext will prevent you from creating a Purchase Invoice without creating a Purchase Receipt first. This configuration can be overridden for a particular supplier by enabling the 'Allow Purchase Invoice Creation Without Purchase Receipt' checkbox in the Supplier master.","Якщо вибрано «Так», ERPNext вимагає спочатку оформити надходження товарів, а вже потім рахунок постачальника. Для окремого постачальника цю вимогу можна вимкнути: позначте «Дозволити створення рахунку постачальника без надходження товарів» у його картці."
+"If two or more Pricing Rules are found based on the above conditions, Priority is applied. Priority is a number between 0 to 20 while default value is zero (blank). Higher number means it will take precedence if there are multiple Pricing Rules with same conditions.","Якщо умовам відповідають кілька правил ціноутворення, застосовується правило з вищим пріоритетом. Пріоритет задається числом від 0 до 20; порожнє поле означає 0. Більше число означає вищий пріоритет."
+Ignore Existing Ordered Qty,Не враховувати вже замовлену кількість
+Incorrect Check in (group) Warehouse for Reorder,Неправильно вибрано групу складів для дозамовлення
+Installation Note,Акт монтажу
+Installation Note {0} has already been submitted,Акт монтажу {0} уже проведено
+Inter Company Purchase Order,Міжфірмове замовлення постачальнику
+Inter Company Sales Order,Міжфірмове замовлення клієнта
+Internal Purchase Order,Внутрішнє замовлення постачальнику
+Internal Sales Order,Внутрішнє замовлення клієнта
+Total Payment Amount in Payment Schedule must be equal to Grand / Rounded Total,Загальна сума в графіку платежів має дорівнювати загальній або округленій сумі документа.
+Total allocated percentage for sales team should be 100,"Сума часток, розподілених між учасниками команди продажу, має становити 100 %."
+Unit of Measure {0} has been entered more than once in Conversion Factor Table,Одиницю виміру {0} вказано в таблиці коефіцієнтів перерахунку більше одного разу.
+Valid from and valid upto fields are mandatory for the cumulative,Для накопичувального правила потрібно вказати початкову та кінцеву дати дії.
+Validity period of this quotation has ended.,Строк дії цієї комерційної пропозиції закінчився.
+Variant Based On cannot be changed,Не можна змінити основу варіанта.
+Variant creation has been queued.,Створення варіантів додано до черги.
+Warehouses with existing transaction can not be converted to group.,"Склад, за яким уже є операції, не можна перетворити на групу."
+You are not allowed to update as per the conditions set in {} Workflow.,Умови процесу погодження {} не дозволяють оновити документ.
+You can only redeem max {0} points in this order.,У цьому замовленні можна використати не більше {0} балів.
+{0} Coupon used are {1}. Allowed quantity is exhausted,Купон {0} використано {1} разів. Ліміт використань вичерпано.
+{0} is mandatory. Maybe Currency Exchange record is not created for {1} to {2}.,"Потрібно вказати {0}. Можливо, не створено запис курсу обміну з {1} на {2}."
+{0} must be negative in return document,У документі повернення значення {0} має бути від’ємним.
+{0} variants created.,Створено варіантів: {0}.
+{0} {1} has been modified. Please refresh.,Документ {0} {1} змінено. Оновіть сторінку.
+{0} {1} is cancelled so the action cannot be completed,"Документ {0} {1} скасовано, тому дію неможливо виконати."
+{0}% Billed,Виставлено рахунків: {0}%
+{count} Assets created for {item_code},Для {item_code} створено активів: {count}
+Invalid Blanket Order for the selected Customer and Item,Рамкова угода не підходить для вибраного клієнта й товару
+Invalid Item Defaults,Некоректні значення за замовчуванням для товару
+Invalid Purchase Invoice,Некоректний рахунок постачальника
+Invalid Source and Target Warehouse,Некоректний склад-відправник або склад-одержувач
+"Invalid lost reason {0}, please create a new lost reason",Причина втрати {0} не існує. Створіть нову причину втрати.
+Invalid naming series (. missing) for {0},Некоректна серія нумерації для {0}: бракує крапки (.).
+Issue Material,Списати матеріали
+Item Code > Item Group > Brand,Код товару > Група товарів > Бренд
+Item Code required at Row No {0},У рядку № {0} потрібно вказати код товару
+Item Group not mentioned in item master for item {0},У картці товару {0} не вказано групу товарів
+"Item Price appears multiple times based on Price List, Supplier/Customer, Currency, Item, Batch, UOM, Qty, and Dates.","Уже існує ціна з таким самим поєднанням прайс-листа, постачальника / клієнта, валюти, товару, партії, одиниці виміру, кількості та дат."
+Item Price created at rate {0},Створено ціну товару: {0}
+Item Variant Settings,Налаштування варіантів товару
+Item for row {0} does not match Material Request,Товар у рядку {0} не відповідає заявці на товари
+Item name,Назва товару
+Items for Raw Material Request,Товари для заявки на сировину
+Link to Material Request,Пов’язати із заявкою на товари
+Make Return Entry,Оформити повернення
+Make Stock Entry,Створити складську операцію
+Mandatory Missing,Не заповнено обов’язкові поля
+Mandatory Purchase Order,Потрібне замовлення постачальнику
+Mandatory Purchase Receipt,Потрібне надходження товарів
+Material Consumption is not set in Manufacturing Settings.,У налаштуваннях виробництва не ввімкнено облік витрачання матеріалів.
+Material Request of maximum {0} can be made for Item {1} against Sales Order {2},За замовленням клієнта {2} можна створити заявку на товар {1} у кількості не більше {0}.
+Material Request {0} submitted.,Заявку на товари {0} проведено.
+Min Amt can not be greater than Max Amt,Мінімальна сума не може перевищувати максимальну.
+Missing Item,Не вказано товар
+Net total calculation precision loss,Втрата точності під час розрахунку суми без податків
+New credit limit is less than current outstanding amount for the customer. Credit limit has to be atleast {0},Новий кредитний ліміт менший за поточну заборгованість клієнта. Встановіть ліміт не менше {0}.
+New release date should be in the future,Нова дата розблокування має бути в майбутньому.
+No Items with Bill of Materials.,Немає товарів зі специфікацією матеріалів.
+No active item prices found.,Активних цін товару не знайдено.
+No pending Material Requests found to link for the given items.,"Для вибраних товарів немає незавершених заявок, які можна пов’язати з документом."
+No {0} found for Inter Company Transactions.,Не знайдено {0} для міжфірмових операцій.
+"Note: To merge the items, create a separate Stock Reconciliation for the old item {0}","Щоб об’єднати товари, створіть окрему інвентаризацію для старого товару {0}."
+Opening Stock entry created with zero valuation rate: {0},Початкові складські залишки введено з нульовою обліковою вартістю: {0}
+Opening Stock entry created: {0},Створено документ введення початкових залишків: {0}
+Pending Qty,Кількість до виконання
+Please enter Account for Change Amount,Вкажіть рахунок для обліку решти.
+Please save the Sales Order before adding a delivery schedule.,"Збережіть замовлення клієнта, перш ніж додавати графік відвантаження."
+Please select Apply Discount On,Виберіть значення в полі «Застосувати знижку до».
+Please select Charge Type first,Спочатку виберіть тип нарахування.
+Please select atleast one item to continue,"Виберіть щонайменше один товар, щоб продовжити."
+Please set Company,Вкажіть компанію.
+Please set default Cash or Bank account in Mode of Payment {},Задайте касовий або банківський рахунок за замовчуванням для способу оплати {}.
+Posting Date will change to today's date as Edit Posting Date and Time is unchecked. Are you sure want to proceed?,"Дату проведення буде змінено на сьогоднішню, оскільки «Змінити дату й час проведення» не позначено. Продовжити?"
+Posting date and posting time is mandatory,Потрібно вказати дату й час проведення.
+"Pricing Rule is first selected based on 'Apply On' field, which can be Item, Item Group or Brand.","Спочатку правило ціноутворення вибирається за полем «Застосувати до»: товар, група товарів або бренд."
+Purchase Invoice can be held after submitting.,Рахунок постачальника можна призупинити після проведення.
+Purchase Invoice without any outstanding amount cannot be held.,"Не можна призупинити рахунок постачальника, за яким немає заборгованості."
+Purchase Invoices,Рахунки постачальників
+Purchase Order Required,Потрібне замовлення постачальнику
+Purchase Order Required for item {},Для товару {} потрібне замовлення постачальнику.
+Purchase Order already created for all Sales Order items,Замовлення постачальнику вже створено для всіх позицій замовлення клієнта.
+Purchase Order number required for Item {0},Для товару {0} потрібно вказати номер замовлення постачальнику.
+Purchase Order {0} is not submitted,Замовлення постачальнику {0} не проведено.
+Purchase Orders,Замовлення постачальникам
+Purchase Orders are not allowed for {0} due to a scorecard standing of {1}.,Замовлення постачальнику {0} заборонені через його оцінку {1} у картці оцінювання.
+Purchase Orders {0} are un-linked,Зв’язок із замовленнями постачальникам {0} скасовано.
+Purchase Receipt Required,Потрібне надходження товарів
+Purchase Receipt Required for item {},Для товару {} потрібне надходження товарів.
+Purchase Receipt doesn't have any Item for which Retain Sample is enabled.,"У надходженні товарів немає позицій, для яких увімкнено збереження зразків."
+Purchase Receipt {0} is not submitted,Надходження товарів {0} не проведено.
+Purchase Return,Повернення постачальнику
+Reason for Hold,Причина призупинення
+Received Stock Entries,Складські операції надходження
+Reference No and Reference Date is mandatory for Bank transaction,Для банківської операції потрібно вказати номер і дату документа-підстави.
+References to Sales Invoices are Incomplete,Не всі посилання на рахунки продажу заповнено
+References to Sales Orders are Incomplete,Не всі посилання на замовлення клієнтів заповнено
+Release date must be in the future,Дата розблокування має бути в майбутньому.
+Request for Raw Materials,Заявка на сировину
+Resume,Відновити
+Return Purchase Invoice cannot be held.,"Не можна призупинити рахунок постачальника, що оформлює повернення."
+Row #{0} (Payment Table): Amount must be positive,Рядок № {0} у таблиці платежів: сума має бути додатною.
+Row #{0}: Accepted Warehouse and Rejected Warehouse cannot be same,Рядок № {0}: склад прийнятих товарів і склад відхилених товарів мають відрізнятися.
+Row #{0}: Allocated Amount cannot be greater than outstanding amount.,Рядок № {0}: розподілена сума не може перевищувати залишок до сплати.
+"Row #{0}: Reference Document Type must be one of Purchase Order, Purchase Invoice or Journal Entry","Рядок № {0}: документом-підставою має бути замовлення постачальнику, рахунок постачальника або запис журналу проведень."
+"Row #{0}: Reference Document Type must be one of Sales Order, Sales Invoice, Journal Entry or Dunning","Рядок № {0}: документом-підставою має бути замовлення клієнта, рахунок продажу, запис журналу проведень або нагадування про сплату."
+Row #{0}: Rejected Warehouse is mandatory for the rejected Item {1},Рядок № {0}: для відхиленого товару {1} потрібно вказати склад відхилених товарів.
+Row #{0}: Service Start Date cannot be greater than Service End Date,Рядок № {0}: дата початку надання послуги не може бути пізнішою за дату її закінчення.
+Row #{0}: Service Start and End Date is required for deferred accounting,Рядок № {0}: для обліку майбутніх періодів потрібно вказати дати початку й закінчення надання послуги.
+Row #{0}: Source and Target Warehouse cannot be the same for Material Transfer,Рядок № {0}: під час переміщення товарів склад-відправник і склад-одержувач мають відрізнятися.
+"Row #{0}: Source, Target Warehouse and Inventory Dimensions cannot be the exact same for Material Transfer",Рядок № {0}: під час переміщення товарів склад і всі аналітики складського обліку не можуть одночасно збігатися для відправлення та отримання.
+Row #{0}: The batch {1} has already expired.,Рядок № {0}: строк придатності партії {1} уже закінчився.
+Row #{0}: You cannot use the inventory dimension '{1}' in Stock Reconciliation to modify the quantity or valuation rate. Stock reconciliation with inventory dimensions is intended solely for performing opening entries.,Рядок № {0}: не можна змінювати кількість чи облікову вартість через інвентаризацію з аналітикою складського обліку «{1}». Інвентаризація з додатковими аналітиками призначена лише для введення початкових залишків.
+Row {0}: Quantity not available for {4} in warehouse {1} at posting time of the entry ({2} {3}),Рядок {0}: на складі {1} недостатньо запасів для {4} на момент проведення документа ({2} {3}).
+Row {0}: Serial/Batch has been reset to values linked with Work Order {1} because the previously selected serial/batch does not belong to this Work Order.,"Рядок {0}: серійні номери / партії замінено на пов’язані з виробничим замовленням {1}, оскільки раніше вибрані номери / партії йому не належать."
+Row {0}: Update Stock must be checked for item {1} because it is against Pick List {2}.,"Рядок {0}: для товару {1} потрібно позначити «Оновити складські залишки», оскільки його відібрано за листом відбору {2}."
+Rows with duplicate due dates in other rows were found: {0},Знайдено рядки з однаковими строками оплати: {0}
+Sales & Purchase,Продажі та закупівлі
+Sales Invoice {0} has already been submitted,Рахунок продажу {0} уже проведено
+Sales Invoice {0} must be deleted before cancelling this Sales Order,"Перш ніж скасувати це замовлення клієнта, видаліть рахунок продажу {0}."
+Sales Order required for Item {0},Для товару {0} потрібне замовлення клієнта.
+"Sales Order {0} already exists against Customer's Purchase Order {1}. To allow multiple Sales Orders, Enable {2} in {3}","Замовлення клієнта {0} вже пов’язане з його замовленням на закупівлю {1}. Щоб дозволити кілька замовлень, увімкніть {2} у {3}."
+Sales Order {0} is not submitted,Замовлення клієнта {0} не проведено.
+Sales Return,Повернення від клієнта
+Sample Retention Stock Entry,Складська операція збереження зразків
+Select Alternative Items for Sales Order,Виберіть альтернативні товари для замовлення клієнта
+Select Items,Вибрати товари
+Select Items for Quality Inspection,Виберіть товари для перевірки якості
+Select Items to Manufacture,Виберіть товари для виробництва
+Select an Item Group.,Виберіть групу товарів.
+Select an item from each set to be used in the Sales Order.,Виберіть по одному товару з кожного набору для замовлення клієнта.
+Select at least one Item,Виберіть щонайменше один товар.
+Selected Price List should have buying and selling fields checked.,У вибраному прайс-листі потрібно позначити «Закупівлі» та «Продажі».
+Selling Settings,Налаштування продажів
+Serial No Series Overlap,Перетин серій нумерації серійних номерів
+Service Stop Date cannot be after Service End Date,Дата припинення надання послуги не може бути пізнішою за дату її закінчення.
+Set New Release Date,Задати нову дату розблокування
+Settings for Selling Module,Налаштування модуля продажів
+"Source Stock Entry {0} belongs to Work Order {1}, not {2}. Please use a manufacture entry from the same Work Order.","Початкова складська операція {0} належить виробничому замовленню {1}, а не {2}. Виберіть операцію виробництва за тим самим замовленням."
+Source Stock Entry {0} has no finished goods quantity,У початковій складській операції {0} не вказано кількість готової продукції.
+Stock Entries already created for Work Order {0}: {1},За виробничим замовленням {0} уже створено складські операції: {1}
+Stock Reconciliations,Інвентаризації
+Stock Settings,Налаштування складу
+Stock cannot be updated because the invoice contains a drop shipping item. Please disable 'Update Stock' or remove the drop shipping item.,Не можна оновити складські залишки: рахунок містить товар із прямою доставкою від постачальника. Зніміть прапорець «Оновити складські залишки» або видаліть цю позицію.
+Stock cannot be updated for Purchase Invoice {0} because a Purchase Receipt {1} has already been created for this transaction. Please disable the 'Update Stock' checkbox in the Purchase Invoice and save the invoice.,Не можна оновити складські залишки за рахунком постачальника {0}: для цієї операції вже створено надходження товарів {1}. Зніміть прапорець «Оновити складські залишки» в рахунку та збережіть його.
+Submit Action Failed,Не вдалося провести документ
+"Successfully changed Stock UOM, please redefine conversion factors for new UOM.",Складську одиницю виміру змінено. Задайте коефіцієнти перерахунку для нової одиниці.
+Supplier Invoice No exists in Purchase Invoice {0},Такий номер рахунку постачальника вже вказано в документі {0}.
+Temporarily on Hold,Тимчасово призупинено
+The Process Loss Qty has reset as per job cards Process Loss Qty,Кількість технологічних втрат оновлено відповідно до робочих карток.
+"The stock has been reserved for the following Items and Warehouses, un-reserve the same to {0} the Stock Reconciliation: <br /><br /> {1}","Запаси зарезервовано для наведених товарів і складів. Зніміть резерв, щоб {0} інвентаризацію: <br /><br /> {1}"
+"The task has been enqueued as a background job. In case there is any issue on processing in background, the system will add a comment about the error on this Stock Reconciliation and revert to the Draft stage","Завдання додано до черги фонової обробки. Якщо виникне помилка, система додасть коментар до цього документа інвентаризації та поверне його у стан «Чернетка»."
+"The task has been enqueued as a background job. In case there is any issue on processing in background, the system will add a comment about the error on this Stock Reconciliation and revert to the Submitted stage","Завдання додано до черги фонової обробки. Якщо виникне помилка, система додасть коментар до цього документа інвентаризації та поверне його у стан «Проведено»."
+This Item is a Template and cannot be used in transactions.<br>All fields present in the 'Copy Fields to Variant' table in Item Variant Settings will be copied to its variant items.,Цей товар є шаблоном і не може використовуватися в документах.<br>Поля з таблиці «Копіювати поля у варіант» у налаштуваннях варіантів товару будуть скопійовані до його варіантів.
+This Item is a Variant of {0} (Template).,Цей товар є варіантом шаблону {0}.
+This Payment Entry is reconciled with {0}. Cancelling will automatically unreconcile it. Do you want to proceed?,Цей платіж звірено з {0}. Скасування платежу автоматично скасує цю звірку. Продовжити?
+This option can be checked to edit the 'Posting Date' and 'Posting Time' fields.,"Позначте, щоб змінювати поля «Дата проведення» та «Час проведення»."
+"This table is used to set details about the 'Item', 'Qty', 'Basic Rate', etc.","У цій таблиці задаються товар, кількість, базова ціна та інші відомості."
+This tool helps you to update or fix the quantity and valuation of stock in the system. It is typically used to synchronise the system values and what actually exists in your warehouses.,Цей інструмент дає змогу скоригувати кількість і вартість запасів у системі відповідно до фактичних залишків на складах.
+To Date cannot be before From Date,Кінцева дата не може бути ранішою за початкову.
+"To allow over billing, update ""Over Billing Allowance"" in Accounts Settings or the Item.","Щоб дозволити перевищення суми рахунку, змініть «Допустиме перевищення суми рахунку (%)» у налаштуваннях бухгалтерського обліку або в картці товару."
+"To allow over receipt / delivery, update ""Over Receipt/Delivery Allowance"" in Stock Settings or the Item.","Щоб дозволити перевищення надходження / відвантаження, змініть «Допустиме перевищення відвантаження / надходження (%)» у налаштуваннях складу або в картці товару."
+To cancel this Sales Invoice you need to cancel the POS Closing Entry {}.,"Щоб скасувати цей рахунок продажу, спочатку скасуйте закриття касової зміни {}."
+To submit the invoice without purchase receipt please set {0} as {1} in {2},"Щоб провести рахунок без надходження товарів, задайте для {0} значення {1} у {2}."
+Margin,Націнка,Pricing Rule
+PIN,Поштовий індекс,Warehouse
+Release Date,Дата розблокування,Purchase Invoice
+Release Date,Дата розблокування,Supplier
+Internal Transfer,Внутрішній переказ,Payment Entry
+Medium,Канал залучення (UTM),Quotation
+Medium,Канал залучення (UTM),Sales Order
+Medium,Канал залучення (UTM),Sales Invoice
+Medium,Канал залучення (UTM),Delivery Note
+Sales Order Analysis,Аналіз замовлень клієнтів
+Sales Register,Реєстр продажів
+Item-wise Sales Register,Реєстр продажів за товарами
+Item-wise Sales History,Історія продажів за товарами
+Sales Order Trends,Динаміка замовлень клієнтів
+Quotation Trends,Динаміка комерційних пропозицій
+Sales Invoice Trends,Динаміка рахунків продажу
+Territory-wise Sales,Продажі за територіями
+Customers Without Any Sales Transactions,Клієнти без продажів
+Customer Acquisition and Loyalty,Залучення та лояльність клієнтів
+Payment Terms Status for Sales Order,Стан виконання умов оплати за замовленням клієнта
+Customer-wise Item Price,Ціни товарів за клієнтами
+Sales Person-wise Transaction Summary,Зведення операцій за продавцями
+Sales Person Commission Summary,Зведення комісій продавців
+Sales Partner Commission Summary,Зведення комісій торгових партнерів
+Sales Partner Transaction Summary,Зведення операцій торгових партнерів
+Sales Person Target Variance Based On Item Group,Відхилення від плану продавця за групами товарів
+Territory Target Variance Based On Item Group,Відхилення від плану території за групами товарів
+Sales Partner Target Variance based on Item Group,Відхилення від плану торгового партнера за групами товарів
+Sales Orders to Deliver,Замовлення клієнтів до відвантаження
+Sales Orders to Bill,Замовлення клієнтів до виставлення рахунків
+POS Invoice Merge Log,Журнал об’єднання POS-рахунків
+Items & Pricing,Товари та ціни
+Available Stock for Packing Items,Доступні залишки складових комплектів
+Sales Partner Target Variance Based On Item Group,Відхилення від плану торгового партнера за групами товарів
+Pending SO Items For Purchase Request,"Позиції замовлень клієнтів, що потребують заявки на закупівлю"
+Purchase Order Analysis,Аналіз замовлень постачальникам
+Item-wise Purchase Register,Реєстр закупівель за товарами
+Item-wise Purchase History,Історія закупівель за товарами
+Purchase Order Trends,Динаміка замовлень постачальникам
+Purchase Invoice Trends,Динаміка рахунків постачальників
+Supplier Quotation Comparison,Порівняння пропозицій постачальників
+Item Wise Consumption,Витрачання за товарами
+Accounts Payable Summary,Зведення заборгованості постачальникам
+Supplier Addresses And Contacts,Адреси та контакти постачальників
+Subcontracted Raw Materials To Be Transferred,Сировина до передачі субпідряднику
+Items To Be Received,Товари до отримання
+Subcontracted Item To Be Received,Товари до отримання від субпідрядника
+Supplier Scorecard Variable,Змінна для оцінювання постачальника
+Supplier Scorecard Standing,Рівень оцінки постачальника
+Purchase Orders to Receive,Замовлення постачальникам до отримання
+Purchase Orders to Bill,Замовлення постачальникам до виставлення рахунків
+Supplier Scorecard,Картка оцінювання постачальника
+Purchase Receipt Trends ,Динаміка надходжень товарів
+Stock Value by Item Group,Вартість запасів за групами товарів
+Warehouse wise Item Balance Age and Value,Вік і вартість залишків товарів за складами
+Item Shortage Report,Звіт про нестачу товарів
+Itemwise Recommended Reorder Level,Рекомендований рівень дозамовлення за товарами
+Stock Summary,Зведення залишків
+COGS By Item Group,Собівартість реалізації за групами товарів
+Item Price Stock,Ціни та залишки товарів
+Item-wise Price List Rate,Ціни за прайс-листом за товарами
+Item Variant Details,Відомості про варіанти товару
+Item Where Used,Використання товару
+Negative Batch Report,Звіт про від’ємні залишки партій
+Repost Item Valuation,Перепроведення оцінки товарів
+Item Alternative,Альтернативний товар
+Total Active Items,Усього активних товарів
+Inventory Dimension,Аналітика складського обліку
+Amend,Створити виправлення
+Discard,Відкинути зміни
+Discard,Відкинути зміни,Button in web form
+Discard,Відкинути лист,Discard Email
+New Email,Новий лист
+New {0},Створити: {0}
+Redo,Повторити останню дію
+Submit this Work Order for further processing.,"Проведіть це виробниче замовлення, щоб продовжити роботу."
+Submit this document to complete this step.,"Проведіть документ, щоб завершити цей крок."
+Submit this document to confirm,"Проведіть документ, щоб підтвердити його."
+This value is fetched from {0}'s {1} field,"Значення підставляється з документа «{0}», поле «{1}»."
+Undo,Скасувати останню дію
+Uploading...,Завантаження файлу…
+Daily Dispatch List,Щоденний список для комірника,
+Machine Service History,Історія сервісу верстата,
+Warehouse Operation Log,Журнал операцій,
+Warehouse Manufacturing,Виробництво та склад,
+Warehouse Service,Сервіс,
+Nova Poshta Settings,Налаштування Нової пошти
+Nova Poshta Shipment,Відправлення Нової пошти
+Uncertain,Потрібна звірка
+NonCash,Безготівково
+Order Readiness,Готовність замовлень до відправлення
+DocType,Тип документа
+Navbar Settings,Налаштування панелі навігації
+Navbar,Панель навігації
+Navbar Template,Шаблон панелі навігації
+Navbar Template Values,Значення шаблону панелі навігації
+Top Bar Items,Пункти верхньої панелі
+Close Issue After Days,Закривати звернення через (днів)
+Log DocType,Тип документа журналу
+Source DocType,Тип вихідного документа
+Disable Standard Email Footer,Вимкнути стандартний підпис листа
+Bypass Two Factor Auth for users who login from restricted IP Address,Не вимагати двофакторну автентифікацію для входу з дозволених IP-адрес
+Bypass restricted IP Address check If Two Factor Auth Enabled,"Не перевіряти обмеження за IP-адресою, якщо ввімкнено двофакторну автентифікацію"
+Bypass Restricted IP Address Check If Two Factor Auth Enabled,"Не перевіряти обмеження за IP-адресою, якщо ввімкнено двофакторну автентифікацію"
+Enable Two Factor Auth,Увімкнути двофакторну автентифікацію
+Two Factor Authentication,Двофакторна автентифікація
+Two Factor Authentication method,Спосіб двофакторної автентифікації
+"If enabled, users who login from Restricted IP Address, won't be prompted for Two Factor Auth","Якщо ввімкнено, під час входу з дозволених IP-адрес двофакторна автентифікація не запитуватиметься."
+OTP Issuer Name,Назва емітента одноразових кодів
+LDAP Email Field,Поле електронної пошти LDAP
+LDAP First Name Field,Поле імені LDAP
+LDAP Search String,Рядок пошуку LDAP
+LDAP User Creation and Mapping,Створення та зіставлення користувачів LDAP
+LDAP Group Mappings,Зіставлення груп LDAP
+Password for Base DN,Пароль для базового DN
+API Secret,Секретний ключ API
+Send enquiries to this email address,Надсилати запити на цю адресу електронної пошти
+"Show title in browser window as ""Prefix - title""",Показувати назву у вікні браузера як «Префікс — назва»
+FavIcon,Значок сайту
+An icon file with .ico extension. Should be 16 x 16 px. Generated using a favicon generator. [favicon-generator.org],Файл значка з розширенням .ico розміром 16 × 16 пікселів. Можна створити генератором значків [favicon-generator.org].
+"Footer ""Powered By""",Напис «Працює на» в нижній частині сторінки
+"Header, Robots",Заголовок і пошукові роботи
+Request for Quotations,Запити комерційних пропозицій
+Retail,Роздрібна торгівля
+Check,Прапорець,DocField
+Select,Вибір зі списку,DocField
+Resize app dock,Змінити ширину панелі застосунків
+Resize sidebar,Змінити ширину бічної панелі
+Hide button labels,Приховати підписи кнопок
+Show button labels,Показати підписи кнопок
+Detach app dock,Відкріпити панель застосунків
+Pin app dock,Закріпити панель застосунків
+Could not change app dock mode. Please try again.,Не вдалося змінити режим панелі застосунків. Спробуйте ще раз.
+Keep app dock open,Залишити панель застосунків відкритою
+Close app dock,Закрити панель застосунків
+Expected Production,Очікуваний випуск виробництва
+Machine Assembly Installation,Встановлення серійних вузлів
+"Permissions are set on Roles and Document Types (called DocTypes) by setting rights like Read, Write, Create, Delete, Submit, Cancel, Amend, Report, Import, Export, Print, Email and Set User Permissions.","Дозволи задаються для ролей і типів документів через права: читання, редагування, створення, видалення, проведення, скасування, внесення виправлень, перегляд звітів, імпорт, експорт, друк, надсилання електронною поштою та налаштування дозволів користувачів."
+"Once you have set this, the users will only be able access documents (eg. Blog Post) where the link exists (eg. Blogger).","Після цього користувачі матимуть доступ лише до документів (наприклад, дописів блогу), у яких є відповідне посилання (наприклад, на автора блогу)."

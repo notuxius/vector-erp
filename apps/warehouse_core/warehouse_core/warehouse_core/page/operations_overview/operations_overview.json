@@ -1,0 +1,10 @@
+{
+ "doctype": "Page",
+ "name": "operations-overview",
+ "page_name": "operations-overview",
+ "module": "Warehouse Core",
+ "title": "Dashboard",
+ "standard": "Yes",
+ "system_page": 0,
+ "roles": []
+}

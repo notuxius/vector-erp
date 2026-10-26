@@ -1,0 +1,6 @@
+{
+ "doctype": "Report", "name": "Machine Service History", "report_name": "Machine Service History",
+ "ref_doctype": "Maintenance Visit", "report_type": "Script Report", "is_standard": "Yes",
+ "module": "Warehouse Core", "disabled": 0, "prepared_report": 0,
+ "roles": [{"role": "Maintenance User"}]
+}

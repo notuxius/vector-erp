@@ -1,0 +1,40 @@
+/* Near-instant durations still deliver completion events to framework controls. */
+html.vector-animations-disabled,
+html.vector-animations-disabled *,
+html.vector-animations-disabled *::before,
+html.vector-animations-disabled *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+}
+
+/* Module sprites render inside SVG <use> trees, which document selectors cannot
+   reach. Their inherited motion controls must be disabled at the visible host,
+   including during hover and keyboard focus. Keep the resting icon visible. */
+html.vector-animations-disabled .dock-item,
+html.vector-animations-disabled svg {
+    --icon-motion: paused !important;
+    --icon-motion-opacity: 0 !important;
+}
+
+/* Keep hover feedback in both directions, without animating panel geometry or
+   state changes such as a sidebar button's rotating expand/collapse icon. */
+html.vector-animations-disabled :is(button, [role="button"], .btn, .es-button, input[type="button"], input[type="submit"]),
+html.vector-animations-disabled :is(button, [role="button"], .btn, .es-button, input[type="button"], input[type="submit"])::before,
+html.vector-animations-disabled :is(button, [role="button"], .btn, .es-button, input[type="button"], input[type="submit"])::after {
+    transition-property: color, background-color, border-color, box-shadow, filter !important;
+    transition-duration: 150ms !important;
+    transition-timing-function: ease !important;
+}
+
+/* Restore geometry before showing any navigation width transition on reload. */
+html.vector-navigation-restoring .body-sidebar-container,
+html.vector-navigation-restoring .body-sidebar,
+html.vector-navigation-restoring .sidebar-collapse-arrow,
+html.vector-navigation-restoring .main-section,
+html.vector-navigation-restoring #desk-dock {
+    transition: none !important;
+}

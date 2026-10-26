@@ -1,0 +1,200 @@
+/* Use the space left after navigation, including resized sidebars. */
+.page-head:has(.vector-navigation-breadcrumbs) > .container {
+    container-type: inline-size;
+}
+
+.page-head .page-head-content:has(.vector-navigation-breadcrumbs) {
+    display: flex;
+    flex-wrap: wrap !important;
+    height: auto;
+    min-height: var(--page-head-height);
+    align-items: center;
+    row-gap: 4px;
+}
+
+.page-head .page-title:has(.vector-navigation-breadcrumbs) {
+    min-width: 0;
+    max-width: 100%;
+    /* Preserve the first row's centering space when the actions wrap. Without
+       it, the 28px title loses the spare height of the 48px padded header. */
+    min-height: calc(var(--page-head-height) - 16px);
+    /* Absorb spare width before the actions on a shared row. The action
+       section can still grow across the full header after it wraps. */
+    flex: 10000 1 auto;
+}
+
+/* Search and notifications make a shared action row 44px tall. Reserve the
+   same height for the title after those controls move to the next row. */
+.page-head:has(.vector-top-actions:not([hidden])) .page-title:has(.vector-navigation-breadcrumbs) {
+    min-height: max(44px, calc(var(--page-head-height) - 16px));
+}
+
+.page-head .title-area:has(.vector-navigation-breadcrumbs) {
+    min-width: 0;
+    max-width: 100%;
+    flex: 1 1 auto;
+    white-space: normal;
+}
+
+.page-head:has(.vector-navigation-breadcrumbs) .standard-items-section {
+    margin-left: auto;
+    min-width: 0;
+    max-width: 100%;
+    flex: 1 1 auto;
+}
+
+.page-head:has(.vector-navigation-breadcrumbs) .page-actions {
+    min-width: 0;
+    max-width: 100%;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    row-gap: 4px;
+}
+
+.page-head:has(.vector-navigation-breadcrumbs) .standard-actions {
+    min-width: 0;
+    max-width: 100%;
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+}
+
+/* Keep view preferences at the start of the action row when it wraps below
+   the title, with document actions at the other end. */
+.page-head:has(.vector-navigation-breadcrumbs) .vector-appearance-button {
+    margin-right: auto;
+}
+
+/* The native desktop action mount disappears below 992px, even when it
+   contains the only view switcher. Keep that control reachable on resize. */
+.page-head:has(.vector-navigation-breadcrumbs) .custom-actions:has(.view-switcher) {
+    display: flex !important;
+}
+
+.page-head:has(.vector-navigation-breadcrumbs) :is(.custom-actions, .custom-mobile-actions):has(.view-switcher) {
+    flex-shrink: 0;
+}
+
+/* Native hidden-xs hides the view name below 768px even on a roomy action
+   row. Keep it readable down to a 480px header, including resized sidebars. */
+@container (max-width: 479.98px) {
+    /* A desktop viewport can still have a narrow header beside a wide sidebar.
+       Use the same icon-only control as mobile before action buttons collide. */
+    .page-head .page-actions .view-switcher .es-button {
+        width: 28px !important;
+        padding-inline: 0 !important;
+        justify-content: center;
+    }
+
+    .page-head .view-switcher .hidden-xs,
+    .page-head .view-switcher .es-button__label {
+        display: none !important;
+    }
+}
+
+@container (min-width: 480px) {
+    .page-head .page-actions .view-switcher .es-button {
+        width: auto !important;
+        padding-inline: 8px !important;
+    }
+
+    .page-head .view-switcher .hidden-xs {
+        display: inline-flex !important;
+    }
+
+    .page-head .view-switcher .es-button__label {
+        max-width: 180px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .page-head:has(.vector-navigation-breadcrumbs) .custom-actions > :not(.view-switcher) {
+        display: none;
+    }
+}
+
+.page-head:has(.vector-navigation-breadcrumbs) .standard-actions > :not(.primary-action) {
+    flex-shrink: 0;
+}
+
+.page-head:has(.vector-navigation-breadcrumbs) .primary-action {
+    min-width: 28px;
+    max-width: 100%;
+    flex-shrink: 1;
+}
+
+.page-head:has(.vector-navigation-breadcrumbs) .primary-action .es-button__label {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.page-head .navbar-breadcrumbs.vector-navigation-breadcrumbs {
+    max-width: 100%;
+}
+
+/* Keep the title and the row below it steady while resizing. Overflowing
+   labels truncate inside their existing crumbs instead of creating new rows. */
+.page-head .vector-navigation-breadcrumbs > ol,
+.page-head .vector-navigation-breadcrumbs li,
+.page-head .vector-navigation-breadcrumbs .es-breadcrumbs__item {
+    align-items: baseline;
+}
+
+.page-head .vector-navigation-breadcrumbs > ol {
+    width: 100%;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    row-gap: 0;
+    column-gap: 12px;
+}
+
+.page-head .vector-navigation-breadcrumbs li {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.page-head .vector-navigation-breadcrumbs .es-breadcrumbs__label {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.page-head .vector-navigation-breadcrumbs .es-breadcrumbs__item {
+    min-width: 0;
+    padding-block: 2px;
+}
+
+.page-head .vector-navigation-breadcrumbs li:not(:last-child) .es-breadcrumbs__item {
+    font-size: var(--text-sm);
+}
+
+.page-head .vector-navigation-breadcrumbs li:not(:last-child) {
+    display: flex;
+}
+
+.page-head .vector-navigation-breadcrumbs li + li::before,
+.page-head .vector-navigation-breadcrumbs.mobile-no-divider li + li::before {
+    content: "\00b7" / "";
+    flex: 0 0 0;
+    width: 0;
+    margin-inline: 0;
+    position: relative;
+    inset-inline-start: -8px;
+}
+
+.page-head .vector-navigation-breadcrumbs li:last-child .es-breadcrumbs__label {
+    /* Upstream caps phone titles at 105px even when more space is available. */
+    max-width: none;
+    overflow: hidden;
+}
+
+@container (max-width: 360px) {
+    .page-head .vector-appearance-button .es-button__label {
+        display: none;
+    }
+}

@@ -1,0 +1,166 @@
+/* Desk's .main-section owns page scrolling and reserves its own gutter.
+   Reserving another gutter on html leaves an empty strip at the window edge. */
+
+/* Center every open dialog in the viewport, independent of the sidebar/dock.
+   A minimum height (rather than a fixed height or translateY) lets tall dialogs
+   grow from the top margin and remain reachable through the modal scrollbar.
+   Minimized dialogs retain Frappe's native bottom-edge positioning. */
+.modal:not(.modal-minimize) {
+    /* Bootstrap's inline scrollbar compensation would offset the center. */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    scrollbar-gutter: stable both-edges;
+}
+
+.modal:not(.modal-minimize) > .modal-dialog {
+    display: flex;
+    align-items: center;
+    width: calc(100% - 2rem);
+    min-height: calc(100% - 2rem);
+    margin: 1rem auto;
+}
+
+/* Shared by standard dialogs, settings panels, and nested popup scroll areas.
+   Override the upstream mobile rule that hides the modal scrollbar. Leave
+   overflow ownership intact so short dialogs do not acquire extra scrollbars. */
+.modal,
+.modal * {
+    scrollbar-width: auto;
+}
+
+.modal::-webkit-scrollbar,
+.modal *::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+.modal,
+.modal .settings-dialog-panel-body,
+.modal .settings-dialog-sidebar {
+    scrollbar-gutter: stable;
+}
+
+/* Settings needs room for both its navigation and editable content. Bootstrap's
+   intermediate modal widths otherwise clip the right pane on small desktops. */
+.settings-dialog-wrapper:not(.modal-minimize) > .modal-dialog {
+    max-width: 64rem;
+}
+
+.settings-dialog-wrapper .modal-content {
+    height: min(48rem, calc(100dvh - 4rem));
+}
+
+.settings-dialog-wrapper .settings-dialog,
+.settings-dialog-wrapper .settings-dialog-panels,
+.settings-dialog-wrapper .settings-dialog-panel-heading {
+    min-width: 0;
+}
+
+.settings-dialog-wrapper .settings-dialog-panels {
+    container-type: inline-size;
+    container-name: vector-settings;
+}
+
+.settings-dialog-wrapper .settings-dialog-panel-header {
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+}
+
+.settings-dialog-wrapper .settings-dialog-panel-heading {
+    flex: 1 1 14rem;
+}
+
+.settings-dialog-wrapper .settings-dialog-panel-title {
+    height: auto;
+    line-height: 1.25;
+}
+
+.settings-dialog-wrapper .settings-dialog-panel-actions {
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin-left: auto;
+}
+
+/* Keep the avatar, long names/email and password action from competing for
+   one unbreakable row. These selectors survive native profile re-renders. */
+.settings-dialog-panel-body > div:has(> .profile-avatar-upload) {
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+
+.settings-dialog-panel-body .profile-avatar-upload + div {
+    flex: 1 1 12rem;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.settings-dialog-panel-body .profile-avatar-upload + div > div {
+    line-height: 1.4;
+}
+
+.settings-dialog-panel-body .change-password-btn {
+    flex-shrink: 0;
+    max-width: 100%;
+    white-space: normal;
+    height: auto;
+    min-height: 1.75rem;
+}
+
+@container vector-settings (max-width: 36rem) {
+    .settings-dialog-panel-body > div:has(> .profile-avatar-upload) {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    .settings-dialog-panel-body .change-password-btn {
+        grid-column: 2;
+        justify-self: start;
+        margin-left: 0;
+    }
+}
+
+@container vector-settings (max-width: 32rem) {
+    .settings-dialog-panel {
+        padding: 1.25rem 1rem;
+    }
+
+    .settings-dialog-panel:has(.profile-avatar-upload) .form-column {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* Below desktop width the tab rail moves above the panel, keeping complete
+   labels available in a horizontally scrollable navigation row. */
+@media (max-width: 767px) {
+    .settings-dialog-wrapper .modal-content {
+        height: calc(100dvh - 2rem);
+    }
+
+    .settings-dialog-wrapper .settings-dialog {
+        flex-direction: column;
+    }
+
+    .settings-dialog-wrapper .settings-dialog-sidebar {
+        width: 100%;
+        overflow-x: auto;
+        scrollbar-gutter: auto;
+        border-bottom-left-radius: 0;
+    }
+
+    .settings-dialog-wrapper .settings-dialog-tab-list {
+        flex-direction: row;
+        width: max-content;
+    }
+
+    .settings-dialog-wrapper .settings-dialog-tab-item {
+        width: auto;
+        flex-shrink: 0;
+    }
+
+    .settings-dialog-wrapper .settings-dialog-panels {
+        min-height: 0;
+    }
+}

@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "warehouse_core"
+version = "0.1.0"
+description = "Vector ERP operations foundation powered by ERPNext"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["warehouse_core*"]
+
+[tool.setuptools.package-data]
+warehouse_core = ["*.txt", "translations/*.csv", "translation_sources/*", "public/js/*.js", "templates/print_formats/*.html", "warehouse_core/doctype/*/*.json", "warehouse_core/report/*/*.json", "warehouse_core/report/*/*.js"]

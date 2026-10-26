@@ -1,0 +1,355 @@
+/* A single horizontal module row, with the native module menu below it. */
+/* Return / Dashboard scrolls with the modules in every panel layout. */
+#desk-dock .vector-dock-viewport {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    min-width: 0;
+}
+#desk-dock .vector-dock-viewport .dock-items {
+    flex: 0 0 auto;
+    overflow: visible;
+}
+/* The homepage uses the same icon, caption, and interaction treatment as modules. */
+#desk-dock .dock-logo .shell-header.vector-dashboard-link {
+    width: 100%;
+    height: auto;
+    min-height: 40px;
+    padding: 8px 12px;
+    gap: 8px;
+    flex-direction: column;
+    border-radius: 8px;
+    color: var(--dock-ink);
+    text-decoration: none;
+}
+#desk-dock .dock-logo .vector-dashboard-link .title-container,
+body:not(.dock-pinned) #desk-dock .dock-logo .vector-dashboard-link .title-container { display: none; }
+#desk-dock .dock-logo .vector-dashboard-link .header-logo,
+#desk-dock .dock-logo .vector-dashboard-link .header-logo img {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+}
+/* Render the same artwork mask in both states: changing a raster filter can
+   shift its antialiased edge even when the image's layout box stays fixed. */
+#desk-dock .dock-logo .vector-dashboard-link .header-logo {
+    position: relative;
+}
+#desk-dock .dock-logo .vector-dashboard-link.vector-logo-mask .header-logo img {
+    visibility: hidden;
+}
+#desk-dock .dock-logo .vector-dashboard-link.vector-logo-mask .header-logo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--ink-gray-5);
+    mask: var(--vector-logo-mask) center / contain no-repeat;
+}
+#desk-dock .dock-logo .vector-dashboard-link.active .header-logo::before {
+    background: var(--vector-logo-color, var(--dock-ink-strong));
+}
+/* Use the original full-size M, with a separate theme-aware corner arrow. */
+#desk-dock .dock-logo .vector-return-link.vector-logo-mask .header-logo img {
+    visibility: visible;
+}
+#desk-dock .dock-logo .vector-return-link.vector-logo-mask .header-logo::before {
+    display: none;
+}
+.es-menu__item.vector-return-menu-item .es-menu__image {
+    /* Inherit the menu's standard icon dimensions and label alignment. */
+    border-radius: 0;
+}
+.vector-return-logo {
+    position: relative;
+    display: inline-flex;
+    flex: 0 0 auto;
+}
+.vector-return-arrow {
+    position: absolute;
+    right: -4px;
+    bottom: -2px;
+    display: grid;
+    place-items: center;
+    width: 13px;
+    height: 13px;
+    border-radius: 3px;
+    background: var(--dock-bg, var(--bg-color));
+    color: var(--dock-ink-strong, var(--text-color));
+    --icon-stroke: currentColor;
+    pointer-events: none;
+}
+.vector-return-arrow .icon {
+    width: 12px;
+    height: 12px;
+    stroke-width: 1.5;
+}
+#desk-dock .vector-return-link:hover .vector-return-arrow,
+#desk-dock .vector-return-link:focus-visible .vector-return-arrow {
+    background: var(--dock-tile-hover);
+}
+.es-menu__item.vector-return-menu-item .vector-return-arrow {
+    /* Preserve the toolbar proportions in the menu's native 16px icon slot. */
+    width: 9px;
+    height: 9px;
+    right: -3px;
+    bottom: -1px;
+    border-radius: 2px;
+    background: var(--surface-elevation-2);
+    color: var(--ink-gray-6);
+}
+.es-menu__item.vector-return-menu-item .vector-return-arrow .icon {
+    width: 8px;
+    height: 8px;
+}
+.es-menu__item.vector-return-menu-item[data-highlighted] .vector-return-arrow {
+    background: linear-gradient(var(--surface-alpha-gray-2), var(--surface-alpha-gray-2)),
+        var(--surface-elevation-2);
+}
+/* Selected icons use the exact logo colour, with no pale secondary tone. */
+#desk-dock .dock-items > .dock-item.active .dock-item-icon {
+    color: var(--vector-logo-color, var(--dock-ink-strong));
+    --icon-stroke: currentColor;
+    --duotone-dark: currentColor;
+    --duotone-light: currentColor;
+}
+#desk-dock .dock-logo .vector-dashboard-link:hover,
+#desk-dock .dock-logo .vector-dashboard-link:focus-visible {
+    background: var(--dock-tile-hover);
+    color: var(--dock-ink-strong);
+}
+#desk-dock .dock-logo .vector-dashboard-link.active {
+    background: var(--dock-tile-active);
+    color: var(--dock-ink-strong);
+}
+body.vector-navigation-top #desk-dock .dock-logo .vector-dashboard-link,
+body:not(.dock-pinned) #desk-dock .dock-logo .vector-dashboard-link {
+    width: auto;
+    height: 40px;
+    flex-direction: row;
+}
+#desk-dock .dock-logo .vector-dashboard-link .vector-dashboard-label {
+    font-size: 11px;
+    font-weight: 400;
+    white-space: nowrap;
+    width: auto;
+}
+
+@media (max-width: 767.98px) {
+    body:not(.dock-pinned) #desk-dock .dock-logo { padding: 0 4px; }
+    body:not(.dock-pinned) #desk-dock .dock-logo .shell-header.vector-dashboard-link {
+        height: auto;
+        min-height: 48px;
+        padding: 10px 12px;
+        gap: 12px;
+        border-radius: 9px;
+    }
+    body:not(.dock-pinned) #desk-dock .dock-logo .vector-dashboard-link .header-logo,
+    body:not(.dock-pinned) #desk-dock .dock-logo .vector-dashboard-link .header-logo img {
+        width: 24px;
+        height: 24px;
+        flex: 0 0 24px;
+    }
+    body:not(.dock-pinned) #desk-dock .dock-logo .vector-dashboard-link .vector-dashboard-label {
+        line-height: 1.4;
+    }
+}
+
+.vector-top-actions[hidden],
+.body-sidebar .standard-items-band:not(:has(> :not(.hidden))) { display: none; }
+
+
+/* Keep the same native controls in a top panel in every navigation layout. */
+.vector-top-actions {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 4px;
+}
+.vector-top-actions .item-anchor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-width: 44px;
+    height: 44px;
+    padding: 8px 10px;
+    gap: 8px;
+    border-radius: 8px;
+    color: var(--dock-ink, var(--text-color));
+    --icon-stroke: currentColor;
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+}
+.vector-top-actions .item-anchor:hover,
+.vector-top-actions .sidebar-notification[aria-expanded="true"] .item-anchor {
+    background: var(--dock-tile-hover, var(--control-bg));
+    color: var(--dock-ink-strong, var(--text-color));
+}
+.vector-top-actions .item-anchor:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: -2px;
+}
+.vector-top-actions .sidebar-item-icon { display: flex; }
+.vector-top-actions .sidebar-item-label { font-size: var(--text-sm); }
+.vector-top-actions .sidebar-item-control,
+.vector-top-actions .nested-container { display: none; }
+/* An empty sidebar suffix still has a margin and participates in the flex gap. */
+.vector-top-actions .sidebar-item-suffix { margin: 0; }
+.vector-top-actions .sidebar-item-suffix:not(:has(> :not(.hidden))) { display: none; }
+/* Keep the icon-only hit area square, including when an unread count arrives. */
+.vector-top-actions:not(.vector-actions-labeled) .item-anchor {
+    width: 44px;
+    padding: 8px;
+}
+.vector-top-actions:not(.vector-actions-labeled) .sidebar-item-suffix {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.vector-top-actions:not(.vector-actions-labeled) .notification-count {
+    display: block;
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 1px solid var(--bg-color);
+    border-radius: 50%;
+    background: var(--ink-gray-9);
+    font-size: 0;
+    color: transparent;
+    overflow: hidden;
+}
+.sidebar-panel-notifications {
+    position: fixed;
+    top: var(--vector-notifications-top, 64px);
+    right: 16px;
+    left: auto;
+    width: min(360px, calc(100vw - 32px));
+    height: min(600px, calc(100dvh - var(--vector-notifications-top, 64px) - 16px));
+    min-height: 0;
+    z-index: 1031;
+    border: 1px solid var(--outline-gray-2);
+    border-radius: 0 0 12px 12px;
+    box-shadow: var(--shadow-lg);
+}
+
+.vector-top-actions .sidebar-item-label { display: none; }
+.vector-top-actions.vector-actions-labeled .sidebar-item-label { display: inline; }
+.page-head .standard-items-section:has(> .vector-top-actions) {
+    gap: 4px;
+}
+.page-head .standard-items-section > .vector-top-actions {
+    margin-left: 15px;
+}
+.page-head .standard-items-section:has(> .vector-top-actions) > .page-actions {
+    /* Allow labels on the primary action to ellipsize at phone widths. */
+    flex: 1 1 auto;
+    min-width: 0;
+}
+.vector-top-actions > .standard-sidebar-item { margin: 0; padding: 0; }
+.vector-top-actions .sidebar-item-icon { flex: 0 0 auto; }
+/* The native page search placeholder must not duplicate the relocated control. */
+.page-head .standard-items-section > .navbar-modal-search-mobile { display: none; }
+
+@media (min-width: 768px) {
+    body.vector-navigation-top.dock-active {
+        --vector-top-height: 64px;
+        /* Desk resets body padding with !important. */
+        padding-top: var(--vector-top-height) !important;
+    }
+    body.vector-navigation-top.dock-active #desk-dock {
+        position: fixed;
+        inset: 0 0 auto;
+        width: 100%;
+        height: var(--vector-top-height);
+        max-height: none;
+        flex-direction: row;
+        gap: 12px;
+        padding: 8px 16px;
+        border: 0;
+        border-bottom: 1px solid var(--outline-gray-2);
+        border-radius: 0;
+        box-shadow: none;
+        transform: none;
+    }
+    body.vector-navigation-top #desk-dock .dock-logo { width: auto; }
+    body.vector-navigation-top #desk-dock .vector-dock-viewport {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        width: auto;
+        height: 48px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        overscroll-behavior-x: contain;
+    }
+    body.vector-navigation-top #desk-dock .vector-navigation-scroll {
+        flex-direction: row;
+        align-items: center;
+        min-width: 0;
+        height: 48px;
+        width: auto;
+    }
+    body.vector-navigation-top #desk-dock .dock-items {
+        flex-direction: row;
+        justify-content: flex-start;
+        width: auto;
+        min-width: 0;
+        height: 48px;
+        gap: 4px;
+        padding: 3px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        overscroll-behavior-x: contain;
+    }
+    body.vector-navigation-top #desk-dock .dock-items::before { display: none; }
+    body.vector-navigation-top #desk-dock .dock-items > .dock-item,
+    body.vector-navigation-top #desk-dock .dock-user-button {
+        flex-direction: row;
+        width: auto;
+        height: 40px;
+        min-height: 40px;
+        padding: 8px 12px;
+        gap: 8px;
+        border-radius: 8px;
+    }
+    body.vector-navigation-top #desk-dock .dock-item-label {
+        display: block;
+        width: auto;
+        font-size: var(--text-sm);
+        white-space: nowrap;
+        hyphens: none;
+    }
+    body.vector-navigation-top #desk-dock .dock-user {
+        flex-shrink: 0;
+        width: auto;
+        padding: 0 0 0 12px;
+        border-left: 1px solid var(--outline-gray-2);
+    }
+    body.vector-navigation-top #desk-dock .dock-user-button { padding: 4px; }
+    body.vector-navigation-top #desk-dock .vector-user-label { display: none; }
+    body.vector-navigation-top #desk-dock[data-vector-user-name] .vector-user-label {
+        display: block;
+        order: -1;
+        width: auto;
+        white-space: nowrap;
+        font-size: var(--text-sm);
+        line-height: 1.25;
+    }
+    body.vector-navigation-top #desk-dock .vector-navigation-scroll-arrow {
+        width: 24px;
+        height: 40px;
+    }
+    body.vector-navigation-top #desk-dock .vector-navigation-scroll-arrow svg {
+        transform: rotate(-90deg);
+    }
+    body.vector-navigation-top.dock-active .body-sidebar,
+    body.vector-navigation-top.dock-active .main-section {
+        height: calc(100dvh - var(--vector-top-height));
+    }
+    body.vector-navigation-top.dock-active .page-head {
+        top: 0;
+    }
+}
+

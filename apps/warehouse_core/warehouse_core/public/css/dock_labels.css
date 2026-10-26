@@ -1,0 +1,506 @@
+/* The native dock already renders translated labels, but hides them. */
+#desk-dock {
+    --dock-width: var(--vector-dock-width, 88px);
+}
+
+/* The drawer and desktop sidebar share the same saved and fitted width. */
+:root {
+    --sidebar-width: var(--vector-sidebar-width, 400px);
+    --sidebar-collapsed-width: 56px;
+}
+
+/* Each list owns its scroll position; the arrows stay outside its viewport. */
+.body-sidebar > .sidebar-header {
+    /* Keep the dropdown trigger's text inset stable when the list overflows. */
+    flex-shrink: 0;
+}
+
+/* The module dropdown sits above the account row at the foot of the panel. */
+.body-sidebar > .sidebar-header .drop-icon svg {
+    transform: rotate(180deg);
+}
+
+.body-sidebar > .body-sidebar-bottom {
+    flex-shrink: 0;
+}
+
+.vector-navigation-scroll {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.vector-navigation-scroll > .vector-navigation-scroll-viewport {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scrollbar-width: none;
+}
+
+.vector-navigation-scroll-viewport::-webkit-scrollbar {
+    display: none;
+}
+
+.vector-navigation-scroll-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 24px;
+    width: 100%;
+    height: 24px;
+    color: var(--ink-gray-7);
+    border-radius: var(--radius);
+}
+
+.vector-navigation-scroll-arrow[hidden] { display: none; }
+.vector-navigation-scroll-arrow[aria-disabled="true"] { opacity: 0.25; cursor: default; }
+.vector-navigation-scroll-arrow:hover:not([aria-disabled="true"]) { background: var(--surface-gray-2); }
+.vector-navigation-scroll-arrow:focus-visible { outline: 2px solid var(--primary); outline-offset: -2px; }
+
+.body-sidebar .body-sidebar-top.vector-navigation-scroll-viewport {
+    padding-top: 12px;
+    padding-bottom: 8px;
+}
+
+/* Framework groups use the same full-width rows as the ERP navigation. */
+.body-sidebar[data-vector-app="frappe"] .indent + .nested-container {
+    margin-left: 0;
+    border-left: none;
+}
+
+/* The panel's actual width also covers its native collapsed rail. */
+@media (min-width: 768px) {
+    .body-sidebar { container-type: inline-size; container-name: vector-sidebar; }
+
+    /* The collapsed rail starts with navigation, without the All apps header. */
+    .body-sidebar-container:not(.expanded) .sidebar-header {
+        display: none;
+    }
+}
+
+@container vector-sidebar (max-width: 87px) {
+    .body-sidebar .sidebar-item-label,
+    .body-sidebar .sidebar-item-suffix,
+    .body-sidebar .shell-header .title-container {
+        display: none !important;
+    }
+
+    .body-sidebar .standard-sidebar-item {
+        width: 40px;
+        min-height: 40px;
+        margin-inline: auto;
+    }
+
+    .body-sidebar .standard-sidebar-item .item-anchor {
+        flex: 0 0 40px;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .body-sidebar .item-anchor:not(.section-break) .sidebar-item-control { display: none; }
+    /* Keep native section buttons keyboard-accessible over their square icon. */
+    .body-sidebar .item-anchor:not(.section-break) .sidebar-item-control:has(button) {
+        display: block;
+        position: absolute;
+        inset: 0;
+        width: 40px;
+        min-width: 40px;
+        opacity: 1;
+    }
+    .body-sidebar .item-anchor:not(.section-break) .sidebar-item-control button {
+        width: 40px;
+        height: 40px;
+        margin: 0;
+    }
+    .body-sidebar .item-anchor:not(.section-break) .sidebar-item-control button svg { visibility: hidden; }
+    .body-sidebar .item-anchor:not(.section-break):not(:has(.sidebar-item-icon))::before {
+        content: "≡";
+        font-size: 20px;
+        line-height: 1;
+    }
+    .body-sidebar .section-break .sidebar-item-control {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        min-width: 40px;
+        opacity: 1;
+        flex: none;
+    }
+    .body-sidebar .section-break .sidebar-item-control .drop-icon {
+        width: 40px;
+        height: 40px;
+        margin: 0;
+    }
+    .body-sidebar .indent + .nested-container { margin-left: 0; border-left: none; }
+    .body-sidebar .sidebar-header.shell-header {
+        width: 40px;
+        min-height: 40px;
+        margin-inline: auto;
+        padding: 0;
+        gap: 0;
+        justify-content: center;
+    }
+    .body-sidebar .sidebar-header .drop-icon { flex-shrink: 0; }
+}
+
+#desk-dock .dock-items > .dock-item,
+#desk-dock .dock-user-button {
+    width: 100%;
+    height: auto;
+    min-height: 72px;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 3px;
+}
+
+#desk-dock .dock-user-button .avatar {
+    flex-shrink: 0;
+}
+
+#desk-dock .dock-item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+#desk-dock .dock-item-label,
+.vector-user-button > .vector-user-label {
+    display: block;
+    width: 100%;
+    font-size: 11px;
+    line-height: 1.25;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+/* Wrap long module names without inserting hyphens. */
+#desk-dock .dock-item-label {
+    hyphens: none;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+.body-sidebar-container .body-sidebar .sidebar-user-button.vector-user-button {
+    width: 100% !important;
+    height: auto;
+    min-height: 40px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4px 8px;
+    padding: 6px 0;
+}
+
+.body-sidebar-container .body-sidebar .body-sidebar-bottom {
+    padding-inline: 8px;
+}
+
+.body-sidebar .sidebar-user-button.vector-user-button > div:first-child {
+    display: flex;
+    justify-content: center;
+    flex: 0 0 auto;
+}
+
+/* Keep the name to the right of the avatar, truncating it when needed. */
+.body-sidebar .sidebar-user-button.vector-user-button > .vector-user-label {
+    order: 1;
+    flex: 0 1 auto;
+    width: max-content;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+    font-size: var(--text-sm);
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+}
+
+.body-sidebar .vector-user-button > .avatar-name-email {
+    /* Sidebar.apply_expanded_state() restores this block with an inline display
+       style. Keep the compact avatar/name layout through expand and refresh. */
+    display: none !important;
+}
+
+#desk-dock .dock-logo .shell-header {
+    margin-inline: auto;
+}
+
+/* Scroll the module list without clipping its controls. */
+#desk-dock {
+    overflow: visible;
+}
+
+#desk-dock .dock-items {
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+#desk-dock .dock-user {
+    flex-shrink: 0;
+}
+
+/* The page header owns sidebar folding; mode selection lives in Appearance. */
+.body-sidebar-container .sidebar-collapse-arrow { display: none; }
+
+@media (max-width: 767.98px) {
+    .body-sidebar-container.expanded:not(.vector-sidebar-measure) {
+        height: 100vh;
+        height: 100dvh;
+    }
+}
+
+/* Width belongs in Edit Sidebar. Folding belongs to the page-header toggle. */
+.body-sidebar-container .sidebar-edge {
+    display: none;
+}
+
+.vector-sidebar-width-controls {
+    margin-bottom: 16px;
+}
+
+.vector-sidebar-width-label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.vector-sidebar-width-slider {
+    width: 100%;
+    min-width: 0;
+    flex: 1;
+    accent-color: var(--primary);
+}
+
+.vector-sidebar-width-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.vector-sidebar-width-number {
+    flex: 0 0 96px;
+    width: 96px;
+    appearance: auto;
+}
+
+.vector-sidebar-width-number::-webkit-inner-spin-button,
+.vector-sidebar-width-number::-webkit-outer-spin-button {
+    opacity: 1;
+    -webkit-appearance: auto;
+}
+
+.vector-sidebar-width-controls output {
+    display: block;
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    margin: 4px 0 12px;
+}
+
+.vector-sidebar-fit-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vector-sidebar-fit-label input { margin: 0; }
+
+.vector-sidebar-measure {
+    position: fixed !important;
+    left: -10000px !important;
+    top: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+.vector-sidebar-measure .body-sidebar {
+    width: 480px !important;
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
+    height: auto !important;
+    transition: none !important;
+}
+
+body.vector-sidebar-width-preview > .body-sidebar-container .body-sidebar,
+body.vector-sidebar-width-preview .body-sidebar {
+    transition: none !important;
+}
+
+.vector-workspace-chip[hidden] { display: none; }
+
+.vector-workspace-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-shrink: 0;
+    min-height: 36px;
+    padding: 6px 12px;
+    margin-right: 12px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--ink-gray-8);
+    --icon-stroke: currentColor;
+    font-size: var(--text-lg);
+    line-height: 24px;
+    white-space: nowrap;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+.vector-workspace-chip:hover,
+.vector-workspace-chip[aria-expanded="true"] { background: transparent; }
+.vector-workspace-chip[aria-expanded="true"] .vector-workspace-chip-chevron { transform: rotate(180deg); }
+.vector-workspace-chip:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.vector-workspace-chip-chevron { display: flex; }
+.vector-workspace-chip-action { display: flex; }
+/* Keep the header toggle beside the title at every width, including desktop
+   where upstream hides it at 992px. Do not let long titles shrink the control. */
+.page-title .sidebar-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    min-height: 36px;
+    padding-block: 0;
+    line-height: 1;
+}
+/* Always show the state-aware open/close icon; never the hamburger placeholder. */
+.page-title .sidebar-toggle-btn .sidebar-toggle-icon { display: flex; }
+.page-title :is(.sidebar-toggle-icon, .vector-workspace-chip-action, .vector-workspace-chip-chevron) svg { display: block; }
+.page-title .sidebar-toggle-btn .sidebar-toggle-placeholder { display: none; }
+/* Match the workspace icon to the sidebar toggle in either theme. */
+.vector-workspace-chip { --icon-stroke: var(--gray-700); }
+[data-theme="dark"] .vector-workspace-chip { --icon-stroke: var(--gray-300); }
+
+/* Unpinned navigation is used only by the mobile drawer. */
+@media (max-width: 767.98px) {
+    body:not(.dock-pinned) #desk-dock {
+        border: 1px solid var(--outline-gray-2);
+        visibility: hidden;
+        pointer-events: none;
+    }
+    body.dock-open:not(.dock-pinned) #desk-dock { visibility: visible; pointer-events: auto; }
+    body:not(.dock-pinned) #desk-dock .dock-logo .shell-header { gap: 10px; padding: 4px; }
+    body:not(.dock-pinned) #desk-dock .dock-logo .title-container { display: block; flex: 0 1 auto; min-width: 0; }
+    body:not(.dock-pinned) #desk-dock .dock-logo .header-title { white-space: normal; font-size: var(--text-sm); }
+    body:not(.dock-pinned) #desk-dock .dock-logo .header-logo img { width: 28px; height: 28px; }
+}
+
+/* Mobile keeps account access in the inner left sidebar. */
+body.dock-pinned.dock-active .body-sidebar .dropdown-navbar-user { display: none; }
+body:not(.dock-pinned) #desk-dock .dock-user {
+    display: none;
+}
+
+@media (max-width: 1023.98px) {
+    .vector-workspace-chip-label,
+    .vector-workspace-chip-chevron { display: none; }
+    .vector-workspace-chip { width: 44px; height: 44px; padding: 0; margin-right: 8px; }
+}
+@media (pointer: coarse) {
+    .vector-workspace-chip { min-height: 44px; }
+}
+@media (max-width: 767.98px) {
+    #desk-dock:not(.hidden) { display: flex; }
+}
+
+.vector-mobile-menu-close,
+.vector-mobile-menu-scrim { display: none; }
+
+@media (max-width: 767.98px) {
+    /* The page title stays in place above the overlay; no page content shifts. */
+    body:not(.dock-pinned) #desk-dock {
+        top: var(--vector-mobile-menu-top, 64px);
+        left: 0;
+        bottom: auto;
+        width: min(320px, calc(100vw - 56px));
+        max-width: none;
+        height: auto;
+        max-height: calc(100dvh - var(--vector-mobile-menu-top, 64px));
+        padding: 12px 12px max(12px, env(safe-area-inset-bottom));
+        border-left: 0;
+        border-radius: 0 14px 14px 0;
+        transform: translateX(-100%);
+        transition: transform .22s ease, visibility .22s;
+        overflow: hidden;
+        overscroll-behavior: contain;
+    }
+    body.dock-open:not(.dock-pinned) #desk-dock { transform: translateX(0); }
+    body:not(.dock-pinned) #desk-dock .dock-logo { display: flex; align-items: center; }
+    body:not(.dock-pinned) #desk-dock .dock-logo .shell-header {
+        flex: 1;
+        min-width: 0;
+        justify-content: flex-start;
+        height: auto;
+        min-height: 44px;
+    }
+    body:not(.dock-pinned) #desk-dock .dock-items {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        padding: 4px;
+        overscroll-behavior: contain;
+    }
+    body:not(.dock-pinned) #desk-dock .dock-items > .dock-item {
+        flex-direction: row;
+        justify-content: flex-start;
+        min-height: 48px;
+        gap: 12px;
+        padding: 10px 12px;
+        border-radius: 9px;
+    }
+    body:not(.dock-pinned) #desk-dock .dock-items .dock-item-label {
+        width: auto;
+        text-align: start;
+        font-size: var(--text-sm);
+        line-height: 1.4;
+    }
+    #desk-dock .vector-mobile-menu-close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 44px;
+        width: 44px;
+        height: 44px;
+        color: var(--dock-ink);
+        --icon-stroke: currentColor;
+        border-radius: 9px;
+    }
+    #desk-dock .vector-mobile-menu-close:hover { background: var(--dock-tile-hover); }
+    #desk-dock .vector-mobile-menu-close:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: -2px;
+    }
+    .vector-mobile-menu-scrim:not([hidden]) {
+        display: block;
+        position: fixed;
+        inset: var(--vector-mobile-menu-top, 64px) 0 0;
+        z-index: 1029;
+        background: rgba(0, 0, 0, .4);
+        touch-action: none;
+        overscroll-behavior: contain;
+    }
+    body.vector-mobile-menu-open,
+    body.vector-mobile-menu-open .main-section { overflow: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body:not(.dock-pinned) #desk-dock { transition: none; }
+}

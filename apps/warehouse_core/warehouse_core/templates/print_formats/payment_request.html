@@ -1,0 +1,32 @@
+<style>
+ .print-format { font-family: "DejaVu Sans", Arial, sans-serif; font-size: 11px; color: #172b3a; }
+ .vector-title { border-bottom: 2px solid #147d92; padding-bottom: 12px; font-size: 23px; }
+ .vector-meta { margin: 12px 0; } .vector-status { color: #a33; font-weight: bold; }
+ .vector-items { width: 100%; border-collapse: collapse; margin: 18px 0; }
+ .vector-items th, .vector-items td { border: 1px solid #cbd5df; padding: 7px; vertical-align: top; }
+ .vector-items th { background: #edf5f8; } .vector-number { text-align: right; white-space: nowrap; }
+ .vector-requisites { white-space: pre-line; } tr { page-break-inside: avoid; }
+</style>
+{% set company = frappe.get_doc("Company", doc.company) %}
+<h1 class="vector-title">Рахунок на оплату № {{ doc.name | e }}</h1>
+<p>від {{ frappe.utils.formatdate(doc.get("transaction_date") or doc.get("posting_date"), "dd.MM.yyyy") | e }}</p>
+{% if doc.docstatus != 1 %}<p class="vector-status">{{ "ЧЕРНЕТКА" if doc.docstatus == 0 else "СКАСОВАНО" }}</p>{% endif %}
+<div class="vector-meta"><strong>Постачальник:</strong> {{ company.company_name | e }}
+{% if company.tax_id %}<br>ЄДРПОУ / РНОКПП: {{ company.tax_id | e }}{% endif %}
+{% if company.custom_payment_details %}<p class="vector-requisites">{{ company.custom_payment_details | e }}</p>{% endif %}
+</div>
+<div class="vector-meta"><strong>Покупець:</strong> {{ doc.customer_name | e }}
+{% if doc.tax_id %}<br>ЄДРПОУ / РНОКПП: {{ doc.tax_id | e }}{% endif %}</div>
+<p>Валюта: {{ doc.currency | e }}</p>
+<table class="vector-items"><thead><tr><th>№</th><th>Товар / послуга</th><th>Кількість</th><th>Од.</th><th>Ціна</th><th>Сума</th></tr></thead><tbody>
+{% for row in doc.items %}<tr><td>{{ loop.index }}</td><td>{{ row.item_name | e }}<br><small>{{ row.item_code | e }}</small></td>
+<td class="vector-number">{{ row.get_formatted("qty", doc) | e }}</td><td>{{ _(row.uom) | e }}</td>
+<td class="vector-number">{{ row.get_formatted("rate", doc) | e }}</td><td class="vector-number">{{ row.get_formatted("amount", doc) | e }}</td></tr>{% endfor %}
+</tbody></table>
+<p class="vector-number">Сума товарів / послуг: {{ doc.get_formatted("total") | e }}</p>
+{% if doc.discount_amount %}<p class="vector-number">Додаткова знижка: {{ doc.get_formatted("discount_amount") | e }}</p>{% endif %}
+{% for tax in doc.taxes %}<p class="vector-number">{{ tax.description | e }}: {{ tax.get_formatted("tax_amount_after_discount_amount", doc) | e }}</p>{% endfor %}
+<p class="vector-number"><strong>Усього: {{ doc.get_formatted("grand_total") | e }}</strong></p>
+{% if doc.rounded_total and doc.rounded_total != doc.grand_total %}<p class="vector-number">Усього з округленням: {{ doc.get_formatted("rounded_total") | e }}</p>{% endif %}
+{% if doc.get("due_date") %}<p>Сплатити до: {{ frappe.utils.formatdate(doc.due_date, "dd.MM.yyyy") | e }}</p>{% endif %}
+<p>Призначення платежу: оплата за рахунком № {{ doc.name | e }}.</p>

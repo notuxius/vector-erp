@@ -1,0 +1,8 @@
+*
+!infra/
+!infra/Dockerfile
+!apps/
+!apps/warehouse_core/
+!apps/warehouse_core/**
+**/__pycache__/
+**/*.pyc

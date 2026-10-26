@@ -1,0 +1,24 @@
+{
+ "doctype": "DocType", "name": "Machine Assembly Installation", "module": "Warehouse Core",
+ "autoname": "format:MAI-{#####}", "engine": "InnoDB", "is_submittable": 1, "track_changes": 1,
+ "sort_field": "creation", "sort_order": "DESC",
+ "field_order": ["company", "machine_serial", "assembly_serial", "position", "installed_at", "installed_by", "notes", "removal_section", "removed_at", "removed_by", "removal_reason", "amended_from"],
+ "fields": [
+  {"fieldname": "company", "label": "Компанія", "fieldtype": "Link", "options": "Company", "reqd": 1, "in_standard_filter": 1, "search_index": 1},
+  {"fieldname": "machine_serial", "label": "Серійний номер верстата", "fieldtype": "Link", "options": "Serial No", "reqd": 1, "in_list_view": 1, "in_standard_filter": 1, "search_index": 1},
+  {"fieldname": "assembly_serial", "label": "Серійний номер вузла", "fieldtype": "Link", "options": "Serial No", "reqd": 1, "in_list_view": 1, "in_standard_filter": 1, "search_index": 1},
+  {"fieldname": "position", "label": "Місце встановлення", "fieldtype": "Data"},
+  {"fieldname": "installed_at", "label": "Дата встановлення", "fieldtype": "Datetime", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "installed_by", "label": "Встановлення зафіксував", "fieldtype": "Link", "options": "User", "read_only": 1, "no_copy": 1},
+  {"fieldname": "notes", "label": "Примітка про встановлення", "fieldtype": "Small Text"},
+  {"fieldname": "removal_section", "label": "Зняття вузла", "fieldtype": "Section Break"},
+  {"fieldname": "removed_at", "label": "Дата зняття", "fieldtype": "Datetime", "read_only": 1, "allow_on_submit": 1, "no_copy": 1, "in_list_view": 1},
+  {"fieldname": "removed_by", "label": "Зняття зафіксував", "fieldtype": "Link", "options": "User", "read_only": 1, "allow_on_submit": 1, "no_copy": 1},
+  {"fieldname": "removal_reason", "label": "Причина зняття", "fieldtype": "Small Text", "read_only": 1, "allow_on_submit": 1, "no_copy": 1},
+  {"fieldname": "amended_from", "label": "Змінено з", "fieldtype": "Link", "options": "Machine Assembly Installation", "read_only": 1, "no_copy": 1}
+ ],
+ "permissions": [
+  {"role": "Stock User", "read": 1, "write": 1, "create": 1, "submit": 1, "report": 1, "print": 1},
+  {"role": "Stock Manager", "read": 1, "write": 1, "create": 1, "submit": 1, "cancel": 1, "amend": 1, "report": 1, "print": 1}
+ ]
+}

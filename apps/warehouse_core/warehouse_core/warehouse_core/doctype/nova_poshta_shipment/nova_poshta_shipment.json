@@ -1,0 +1,236 @@
+{
+ "doctype": "DocType",
+ "name": "Nova Poshta Shipment",
+ "module": "Warehouse Core",
+ "engine": "InnoDB",
+ "track_changes": 1,
+ "allow_rename": 0,
+ "field_order": [
+  "delivery_note",
+  "company",
+  "state",
+  "shipment_date",
+  "recipient_section",
+  "last_name",
+  "first_name",
+  "middle_name",
+  "recipient_phone",
+  "recipient_city_name",
+  "recipient_city",
+  "recipient_warehouse_name",
+  "recipient_warehouse",
+  "parcel_section",
+  "weight",
+  "seats",
+  "declared_value",
+  "description",
+  "payer",
+  "payment_method",
+  "result_section",
+  "waybill",
+  "carrier_ref",
+  "delivery_cost",
+  "requested_by",
+  "requested_at",
+  "last_error"
+ ],
+ "fields": [
+  {
+   "fieldname": "delivery_note",
+   "label": "Відвантаження",
+   "fieldtype": "Link",
+   "options": "Delivery Note",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "company",
+   "label": "Компанія",
+   "fieldtype": "Link",
+   "options": "Company",
+   "read_only": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "state",
+   "label": "Стан створення ТТН",
+   "fieldtype": "Select",
+   "options": "Draft\nUncertain\nCreated",
+   "default": "Draft",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "shipment_date",
+   "label": "Дата відправлення",
+   "fieldtype": "Date",
+   "reqd": 1,
+   "default": "Today"
+  },
+  {
+   "fieldname": "recipient_section",
+   "label": "Отримувач — фізична особа",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "last_name",
+   "label": "Прізвище",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "first_name",
+   "label": "Ім’я",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "middle_name",
+   "label": "По батькові",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "recipient_phone",
+   "label": "Телефон отримувача",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "recipient_city_name",
+   "label": "Місто отримувача",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "recipient_city",
+   "label": "Код міста отримувача",
+   "fieldtype": "Data",
+   "hidden": 1
+  },
+  {
+   "fieldname": "recipient_warehouse_name",
+   "label": "Відділення отримувача",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "recipient_warehouse",
+   "label": "Код відділення отримувача",
+   "fieldtype": "Data",
+   "hidden": 1
+  },
+  {
+   "fieldname": "parcel_section",
+   "label": "Посилка — відділення / відділення",
+   "fieldtype": "Section Break",
+   "description": "Без післяплати. Оголошена вартість у гривнях; вага в кілограмах."
+  },
+  {
+   "fieldname": "weight",
+   "label": "Вага, кг",
+   "fieldtype": "Float"
+  },
+  {
+   "fieldname": "seats",
+   "label": "Кількість місць",
+   "fieldtype": "Int",
+   "default": "1"
+  },
+  {
+   "fieldname": "declared_value",
+   "label": "Оголошена вартість, грн",
+   "fieldtype": "Currency",
+   "options": "UAH"
+  },
+  {
+   "fieldname": "description",
+   "label": "Опис вантажу",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "payer",
+   "label": "Платник доставки",
+   "fieldtype": "Select",
+   "options": "Recipient\nSender",
+   "default": "Recipient"
+  },
+  {
+   "fieldname": "payment_method",
+   "label": "Оплата доставки",
+   "fieldtype": "Select",
+   "options": "Cash\nNonCash",
+   "default": "Cash"
+  },
+  {
+   "fieldname": "result_section",
+   "label": "Результат",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "waybill",
+   "label": "ТТН",
+   "fieldtype": "Data",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "carrier_ref",
+   "label": "Код ТТН",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivery_cost",
+   "label": "Вартість доставки, грн",
+   "fieldtype": "Currency",
+   "options": "UAH",
+   "read_only": 1
+  },
+  {
+   "fieldname": "requested_by",
+   "label": "Хто створив запит",
+   "fieldtype": "Link",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "requested_at",
+   "label": "Час запиту",
+   "fieldtype": "Datetime",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_error",
+   "label": "Повідомлення",
+   "fieldtype": "Small Text",
+   "read_only": 1
+  }
+ ],
+ "permissions": [
+  {
+   "role": "Stock User",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "report": 1
+  },
+  {
+   "role": "Stock Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "report": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "report": 1
+  }
+ ],
+ "autoname": "NP-.#####",
+ "title_field": "delivery_note",
+ "search_fields": "delivery_note,waybill",
+ "sort_field": "creation",
+ "sort_order": "DESC"
+}

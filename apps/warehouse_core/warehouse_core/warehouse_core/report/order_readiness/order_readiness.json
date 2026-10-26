@@ -1,0 +1,6 @@
+{
+ "doctype": "Report", "name": "Order Readiness", "report_name": "Order Readiness",
+ "ref_doctype": "Sales Order", "report_type": "Script Report", "is_standard": "Yes",
+ "module": "Warehouse Core", "disabled": 0, "prepared_report": 0,
+ "roles": [{"role": "Sales User"}, {"role": "Sales Manager"}, {"role": "Stock User"}, {"role": "Stock Manager"}]
+}

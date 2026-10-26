@@ -1,0 +1,229 @@
+--Select a group--,--Оберіть групу--
+--Select a period--,--Оберіть період--
+Item-wise Annual Sales,Річні продажі за товарами
+Ukraine Tax,Податок України
+Ukraine Tax - MTech,Податок України - MTech
+Jan,Січ,Month abbreviation
+Feb,Лют,Month abbreviation
+Mar,Бер,Month abbreviation
+Apr,Кві,Month abbreviation
+May,Тра,Month abbreviation
+Jun,Чер,Month abbreviation
+Jul,Лип,Month abbreviation
+Aug,Сер,Month abbreviation
+Sep,Вер,Month abbreviation
+Oct,Жов,Month abbreviation
+Nov,Лис,Month abbreviation
+Dec,Гру,Month abbreviation
+Academics User,Користувач навчального модуля
+Accountant,Бухгалтер
+Accounts,Бухгалтерія
+Accounts - DEMO,Бухгалтерія
+Accounts - MTech,Бухгалтерія
+Accounts Manager,Керівник бухгалтерії
+Accounts Payable Standard,Заборгованість постачальникам — стандартний формат
+Accounts Payable Summary Standard,Зведена заборгованість постачальникам — стандартний формат
+Accounts Receivable Standard,Заборгованість клієнтів — стандартний формат
+Accounts Receivable Summary Standard,Зведена заборгованість клієнтів — стандартний формат
+Accounts User,Працівник бухгалтерії
+Administrative Assistant,Адміністративний помічник
+Administrative Officer,Адміністратор
+Administrator,Адміністратор
+All,Усі
+All Departments,Усі підрозділи
+All Warehouses,Усі склади,Warehouse
+All Warehouses - MTech,Усі склади - MTech
+Analyst,Аналітик
+Analytics,Аналітика
+Associate,Спеціаліст
+Auditor,Аудитор
+Balance Sheet Standard,Баланс — стандартний формат
+Browse help topics,Перегляньте теми довідки
+Business Analyst,Бізнес-аналітик
+Business Development Manager,Менеджер із розвитку бізнесу
+Cash Flow Statement Standard,Звіт про рух грошових коштів — стандартний формат
+Chief Executive Officer,Генеральний директор
+Chief Financial Officer,Фінансовий директор
+Chief Operating Officer,Операційний директор
+Chief Technology Officer,Технічний директор
+Classic,Класичний
+Company Letterhead,Фірмовий бланк компанії
+Company Letterhead - Grey,Фірмовий бланк компанії — сірий
+Consultant,Консультант
+Currency Precision,Кількість десяткових знаків для валют
+Customer,Клієнт
+Customer Service,Обслуговування клієнтів
+Customer Service - DEMO,Обслуговування клієнтів
+Customer Service - MTech,Обслуговування клієнтів
+Customer Service Representative,Фахівець з обслуговування клієнтів
+Dashboard Manager,Адміністратор панелей показників
+Delivery Manager,Керівник доставки
+Delivery Note Bordered,Видаткова накладна — формат із рамкою
+Delivery Note Classic,Видаткова накладна — класичний формат
+Delivery Note Modern,Видаткова накладна — сучасний формат
+Delivery Note Modern with Images,Видаткова накладна — сучасний формат із зображеннями
+Delivery Note Standard,Видаткова накладна — стандартний формат
+Delivery Note with Item Image,Видаткова накладна — формат із зображенням товару
+Delivery User,Працівник доставки
+Designer,Дизайнер
+Desk User,Користувач робочого столу
+Dispatch,Відправлення
+Dispatch - DEMO,Відправлення
+Dispatch - MTech,Відправлення
+Dispatch Notification,Повідомлення про відправлення
+Disposed,Вибулі
+Distribution,Дистрибуція
+Employee,Працівник
+Enable Onboarding,Увімкнути ознайомлення із системою
+Engineer,Інженер
+Executive Assistant,Помічник керівника
+FIFO,"FIFO — першим надійшов, першим вибув"
+Finance Manager,Фінансовий менеджер
+Finished Goods,Готова продукція,Warehouse
+Finished Goods - MTech,Готова продукція - MTech
+Fleet Manager,Керівник автопарку
+Fulfillment User,Виконавець замовлень
+General Ledger Standard,Головна книга — стандартний формат
+Goods In Transit,Товари в дорозі,Warehouse
+Goods In Transit - MTech,Товари в дорозі - MTech
+Guest,Гість
+HR Manager,Керівник відділу персоналу
+HR User,Працівник відділу персоналу
+Head of Marketing and Sales,Керівник відділу маркетингу та продажів
+Human Resources,Управління персоналом
+Human Resources - DEMO,Управління персоналом
+Human Resources - MTech,Управління персоналом
+In Location,У наявності
+Inbox User,Користувач вхідної пошти
+Item Manager,Менеджер товарів
+Knowledge Base Contributor,Автор бази знань
+Knowledge Base Editor,Редактор бази знань
+LIFO,"LIFO — останнім надійшов, першим вибув"
+Legal,Legal (216 × 356 мм),Print Settings
+Legal,Юридичний відділ
+Legal - DEMO,Юридичний відділ
+Legal - MTech,Юридичний відділ
+MTech Main,Основний склад,Warehouse
+MTech Main - MTech,Основний склад - MTech
+MTech Production,Виробничий склад,Warehouse
+MTech Production - MTech,Виробничий склад - MTech
+MTech Secondary,Додатковий склад,Warehouse
+MTech Secondary - MTech,Додатковий склад - MTech
+Maintenance Manager,Керівник технічного обслуговування
+Maintenance User,Працівник технічного обслуговування
+Management,Керівництво
+Management - DEMO,Керівництво
+Management - MTech,Керівництво
+Manager,Менеджер
+Managing Director,Виконавчий директор
+Manufacturing Manager,Керівник виробництва
+Manufacturing User,Працівник виробництва
+Marketing,Маркетинг
+Marketing - DEMO,Маркетинг
+Marketing - MTech,Маркетинг
+Marketing Manager,Менеджер із маркетингу
+Marketing Specialist,Фахівець із маркетингу
+Modern,Сучасний
+Monochrome,Монохромний
+Newsletter Manager,Менеджер розсилок
+Operations,Операційна діяльність
+Operations - DEMO,Операційна діяльність
+Operations - MTech,Операційна діяльність
+P&L Statement Standard,Звіт про прибутки та збитки — стандартний формат
+POS Invoice Bordered,POS-рахунок — формат із рамкою
+POS Invoice Classic,POS-рахунок — класичний формат
+POS Invoice Modern,POS-рахунок — сучасний формат
+POS Invoice Modern with Images,POS-рахунок — сучасний формат із зображеннями
+POS Invoice Standard,POS-рахунок — стандартний формат
+POS Invoice with Item Image,POS-рахунок — формат із зображенням товару
+Prepared Report User,Користувач підготовлених звітів
+President,Президент
+Print UOM after Quantity,Друкувати одиницю виміру після кількості
+Product Manager,Менеджер продукту
+Production,Виробництво
+Production - DEMO,Виробництво
+Production - MTech,Виробництво
+Project Manager,Керівник проєкту
+Projects Manager,Керівник проєктів
+Projects User,Учасник проєктів
+Purchase,Закупівлі
+Purchase - DEMO,Закупівлі
+Purchase - MTech,Закупівлі
+Purchase Invoice Bordered,Рахунок постачальника — формат із рамкою
+Purchase Invoice Classic,Рахунок постачальника — класичний формат
+Purchase Invoice Modern,Рахунок постачальника — сучасний формат
+Purchase Invoice Modern with Images,Рахунок постачальника — сучасний формат із зображеннями
+Purchase Invoice Standard,Рахунок постачальника — стандартний формат
+Purchase Invoice with Item Image,Рахунок постачальника — формат із зображенням товару
+Purchase Manager,Керівник закупівель
+Purchase Master Manager,Адміністратор довідників закупівель
+Purchase Order Bordered,Замовлення постачальнику — формат із рамкою
+Purchase Order Classic,Замовлення постачальнику — класичний формат
+Purchase Order Modern,Замовлення постачальнику — сучасний формат
+Purchase Order Modern with Images,Замовлення постачальнику — сучасний формат із зображеннями
+Purchase Order Standard,Замовлення постачальнику — стандартний формат
+Purchase Order with Item Image,Замовлення постачальнику — формат із зображенням товару
+Purchase User,Працівник відділу закупівель
+Quality Management,Управління якістю
+Quality Management - DEMO,Управління якістю
+Quality Management - MTech,Управління якістю
+Quality Manager,Керівник із якості
+Quotation Bordered,Комерційна пропозиція — формат із рамкою
+Quotation Classic,Комерційна пропозиція — класичний формат
+Quotation Modern,Комерційна пропозиція — сучасний формат
+Quotation Modern with Images,Комерційна пропозиція — сучасний формат із зображеннями
+Quotation Standard,Комерційна пропозиція — стандартний формат
+Quotation with Item Image,Комерційна пропозиція — формат із зображенням товару
+Redesign,Оновлений дизайн
+Report Manager,Адміністратор звітів
+Request for Quotation Bordered,Запит комерційної пропозиції — формат із рамкою
+Request for Quotation Classic,Запит комерційної пропозиції — класичний формат
+Request for Quotation Modern,Запит комерційної пропозиції — сучасний формат
+Request for Quotation Modern with Images,Запит комерційної пропозиції — сучасний формат із зображеннями
+Request for Quotation Standard,Запит комерційної пропозиції — стандартний формат
+Request for Quotation with Item Image,Запит комерційної пропозиції — формат із зображенням товару
+Research & Development,Дослідження та розробки
+Research & Development - DEMO,Дослідження та розробки
+Research & Development - MTech,Дослідження та розробки
+Researcher,Дослідник
+Sales,Продажі
+Sales - DEMO,Продажі
+Sales - MTech,Продажі
+Sales Invoice Bordered,Рахунок продажу — формат із рамкою
+Sales Invoice Classic,Рахунок продажу — класичний формат
+Sales Invoice Modern,Рахунок продажу — сучасний формат
+Sales Invoice Modern with Images,Рахунок продажу — сучасний формат із зображеннями
+Sales Invoice Standard,Рахунок продажу — стандартний формат
+Sales Invoice with Item Image,Рахунок продажу — формат із зображенням товару
+Sales Manager,Керівник продажів
+Sales Master Manager,Адміністратор довідників продажів
+Sales Order Bordered,Замовлення клієнта — формат із рамкою
+Sales Order Classic,Замовлення клієнта — класичний формат
+Sales Order Modern,Замовлення клієнта — сучасний формат
+Sales Order Modern with Images,Замовлення клієнта — сучасний формат із зображеннями
+Sales Order Standard,Замовлення клієнта — стандартний формат
+Sales Order with Item Image,Замовлення клієнта — формат із зображенням товару
+Sales Representative,Торговий представник
+Sales User,Працівник відділу продажів
+Script Manager,Адміністратор скриптів
+Secretary,Секретар
+Software Developer,Розробник програмного забезпечення
+Stock Manager,Керівник складу
+Stock User,Працівник складу
+Stores,Склад,Warehouse
+Stores - MTech,Склад - MTech
+Supplier,Постачальник
+Support Team,Команда підтримки
+System Manager,Адміністратор системи
+Translator,Перекладач
+Trial Balance Standard,Оборотно-сальдова відомість — стандартний формат
+Vector Delivery Note,Вектор ERP — видаткова накладна
+Vector Payment Request,Вектор ERP — рахунок на оплату
+Vector Sales Invoice,Вектор ERP — рахунок продажу
+Vice President,Віцепрезидент
+We're here to help,Ми готові допомогти
+Website Manager,Адміністратор сайту
+Work In Progress,Склад незавершеного виробництва,Warehouse
+Work In Progress - MTech,Склад незавершеного виробництва - MTech
+Workspace Manager,Адміністратор робочих просторів
+Your order is out for delivery!,Ваше замовлення передано на доставку!

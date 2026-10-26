@@ -1,0 +1,1766 @@
+ Search..., Пошук…
+"""{0}"" does not match any field. Map it in the Preview step, otherwise it will be ignored.","«{0}» не відповідає жодному полю. Зіставте його на кроці попереднього перегляду, інакше його буде пропущено."
+"""{0}"" is not a valid date. Use {1}",«{0}» — некоректна дата. Використайте {1}
+"""{0}"" is not a valid datetime. Use {1}",«{0}» — некоректні дата й час. Використайте {1}
+"""{0}"" is not a valid number, or could mean two numbers. Write it like {1}",«{0}» — некоректне або неоднозначне число. Запишіть його як {1}
+"""{0}"" is not a valid {1} — {2}",«{0}» — некоректне значення {1}: {2}
+"""{0}"" is not valid — {1}",«{0}» — некоректне значення: {1}
+"""{0}"" is not valid. Use duration format: d h m s",«{0}» — некоректне значення. Формат тривалості: d h m s
+(A) Balance Qty,(A) Кількісний залишок
+(B) Expected Balance Qty,(B) Очікуваний кількісний залишок
+(C) Change in Stock Value,(C) Зміна вартості запасів
+(D) Expected Change in Stock Value,(D) Очікувана зміна вартості запасів
+(E) Valuation Rate,(E) Облікова вартість одиниці
+(F) Expected Valuation Rate,(F) Очікувана облікова вартість одиниці
+(G) Balance Stock Value,(G) Вартість залишку запасів
+(H) Expected Balance Stock Value,(H) Очікувана вартість залишку запасів
++{0} more,ще +{0}
+".csv, .xlsx up to {0} MB",".csv, .xlsx до {0} МБ"
+"0 means this row references a base item: non-empty fields override it, empty fields mean no opinion. 1 means a full item the layer added, rendered as it stands.","0 означає посилання на базовий елемент: заповнені поля замінюють його значення, порожні залишають їх без змін. 1 означає повний елемент, доданий цим рівнем налаштувань."
+1 node,1 вузол
+1 of N,1 із N
+1 row,1 рядок
+1 warning found.,Знайдено 1 попередження.
+<b>{0}</b> has been customized on this site since the upgrade. Restoring replaces that customization with the pre-upgrade layout.,Після оновлення <b>{0}</b> було налаштовано на цьому сайті. Відновлення замінить ці налаштування макетом до оновлення.
+"<b>{0}</b> is shipped by its app. Saving this layout keeps your arrangement, and the app's later changes to this page's layout will stop showing up here. Its roles, icon and visibility keep following the app either way, and <b>Reset to Standard</b> undoes this.","<b>{0}</b> постачається із застосунком. Збереження цього макета фіксує ваше розташування елементів; подальші зміни макета в застосунку тут не відображатимуться. Ролі, піктограма та видимість і надалі оновлюються із застосунку. Дія <b>Скинути до стандартного</b> скасовує ці налаштування."
+"<div class=""section-head import-log-title"">Import Log</div>","<div class=""section-head import-log-title"">Журнал імпорту</div>"
+A Single (Settings) doctype.,Одиничний тип документа (налаштування).
+"A band of scores, and what happens to suppliers in it.",Діапазон оцінок і правила для постачальників у ньому.
+A bank account of yours or of a customer or supplier.,"Банківський рахунок вашої компанії, клієнта або постачальника."
+A bank you or your customers and suppliers hold accounts with.,"Банк, у якому ви, клієнти або постачальники мають рахунки."
+A batch of payments to send to your bank.,Пакет платежів для надсилання до банку.
+A bill from a supplier for what you bought.,Рахунок постачальника за придбані товари або послуги.
+A bill to a customer for what you sold.,Рахунок клієнту за продані товари або послуги.
+A branch of your company.,Філія вашої компанії.
+A brand your items are sold under.,"Бренд, під яким продаються товари."
+A certificate that lets you withhold less tax from a supplier.,"Довідка, що дозволяє утримувати менший податок із постачальника."
+"A channel customers reach you on, like a phone line.","Канал зв’язку з клієнтами, наприклад телефонна лінія."
+"A class of shares, like equity or preference.","Клас акцій, наприклад звичайні або привілейовані."
+A code customers enter to get a discount from a pricing rule.,"Код, який клієнт вводить для отримання знижки за правилом ціноутворення."
+A code from a code list and what it maps to.,Код із переліку та його відповідність.
+A company or person you buy goods or services from.,"Компанія або особа, у якої ви купуєте товари чи послуги."
+A company or person you sell goods or services to.,"Компанія або особа, якій ви продаєте товари чи послуги."
+A company that makes the items you buy or sell.,"Компанія-виробник товарів, які ви купуєте або продаєте."
+"A company you are trying to win as a customer, with its leads.","Компанія, яку ви прагнете залучити як клієнта, та її потенційні контакти."
+A custom settings map already exists for {0}.,Для {0} уже існує користувацька карта налаштувань.
+A customer's claim to repair or replace an item under warranty.,Звернення клієнта щодо гарантійного ремонту або заміни товару.
+A customer's confirmed order.,Підтверджене замовлення клієнта.
+A customization for {0} already exists for this layer.,Для {0} на цьому рівні вже існують налаштування.
+A date range you can close so no one posts into it.,"Період, який можна закрити для заборони проведення операцій."
+A department of your company.,Підрозділ вашої компанії.
+"A direct entry in your books, for anything without its own form.",Безпосередній бухгалтерський запис для операцій без окремої форми.
+"A distributor, dealer or reseller who sells for you on commission.","Дистриб’ютор, дилер або посередник, який продає за комісійну винагороду."
+"A finer grouping of bank accounts, like savings or current.","Детальніша група банківських рахунків, наприклад ощадні або поточні."
+A group of tax withholding categories that apply together.,"Група категорій утримання податків, що застосовуються разом."
+A group of units of an item made or received together.,"Партія одиниць товару, виготовлених або отриманих разом."
+"A grouping of bank accounts, like checking or credit card.","Група банківських рахунків, наприклад поточні або карткові."
+"A grouping of calls, like sales or support.","Група дзвінків, наприклад продажі або підтримка."
+A grouping of inspection parameters.,Група параметрів перевірки.
+"A grouping of issues, like billing or technical.","Група звернень, наприклад фінансові або технічні."
+"A grouping of projects, like internal or external.","Група проєктів, наприклад внутрішні або зовнішні."
+"A grouping of tasks, like bug or feature.","Група завдань, наприклад помилки або нові функції."
+"A grouping of units, like weight or length.","Група одиниць виміру, наприклад маса або довжина."
+"A grouping of warehouses, like transit or store.","Група складів, наприклад транзитні або торговельні."
+"A guarantee a bank gives on your behalf, or on a customer's or supplier's.",Гарантія банку від вашого імені або від імені клієнта чи постачальника.
+"A job title, like manager or accountant.","Посада, наприклад менеджер або бухгалтер."
+"A kind of stock entry, like material transfer or manufacture.","Тип складської операції, наприклад переміщення або виробництво."
+"A kind of work you track time against, like design or support.","Вид робіт для обліку часу, наприклад проєктування або підтримка."
+"A kind of workstation, with its costs.",Тип робочого центру та його витрати.
+A layout saved on {0} could not be read and was skipped.,"Не вдалося прочитати макет, збережений {0}; його пропущено."
+A layout with this name already exists,Макет із такою назвою вже існує
+A ledger in your chart of accounts that entries are posted to.,"Рахунок плану рахунків, на який проводяться записи."
+"A legal entity with its own books, like your business or a subsidiary.","Юридична особа з власним обліком, наприклад ваша або дочірня компанія."
+"A line from your bank statement, ready to be matched with a payment.",Рядок банківської виписки для зіставлення з платежем.
+A machine or place where operations are done.,Обладнання або місце виконання операцій.
+"A marketing campaign, to see which leads and sales it brought in.",Маркетингова кампанія для відстеження залучених клієнтів і продажів.
+A meeting booked with a lead or customer.,Запланована зустріч із потенційним або наявним клієнтом.
+"A meeting to review quality, with its agenda and minutes.","Нарада з якості, її порядок денний і протокол."
+A new area to place fields in,Нова область для розміщення полів
+A parcel size you ship often.,"Розмір пакування, яке ви часто відправляєте."
+A parcel you send through a carrier.,Відправлення через перевізника.
+"A part of your business you track income and expenses for, like a branch or product line.","Частина бізнесу для обліку доходів і витрат, наприклад філія або напрямок продукції."
+A periodic check of how a quality goal is going.,Періодична перевірка досягнення цілі з якості.
+A person or company that owns shares in your company.,"Особа або компанія, яка володіє акціями вашої компанії."
+"A person you deal with, at a customer, supplier or anywhere else.","Особа, з якою ви співпрацюєте у клієнта, постачальника або іншої організації."
+A phone call made or received.,Вхідний або вихідний телефонний дзвінок.
+"A piece of work to be done, often part of a project.","Робота до виконання, часто в межах проєкту."
+"A piece of work with tasks, time and costs.","Робота із завданнями, строками та витратами."
+A place where you keep stock.,Місце зберігання запасів.
+A place where your assets are kept.,Місце зберігання активів.
+"A postal address of a customer, supplier, company or contact.","Поштова адреса клієнта, постачальника, компанії або контакту."
+A potential sale to a lead or customer.,Можливий продаж потенційному або наявному клієнту.
+A private workspace is yours alone. Only you can see it.,Особистий робочий простір доступний лише вам.
+A problem or question raised by a customer.,Проблема або запитання клієнта.
+"A product or service you buy, sell or keep in stock.","Товар або послуга, які ви купуєте, продаєте чи зберігаєте на складі."
+A progress update collected from the project team.,"Оновлення про поступ, отримане від команди проєкту."
+"A property item variants differ by, like size or colour.","Властивість варіантів товару, наприклад розмір або колір."
+"A published list of codes, like units or tax categories, used in e-invoicing.","Опублікований перелік кодів для електронних рахунків, наприклад одиниць виміру або податків."
+A record of maintenance done on an asset.,Запис про обслуговування активу.
+"A record of shares issued, bought back or moved between shareholders.","Запис про випуск, викуп або передачу акцій між акціонерами."
+"A region you sell in, to group customers and set targets.",Регіон продажів для групування клієнтів і встановлення цілей.
+A regular email summing up how the business is doing.,Регулярний лист із підсумками роботи бізнесу.
+A reminder to a customer about an overdue invoice.,Нагадування клієнту про прострочений рахунок.
+"A repair made to an asset, and what it cost.",Ремонт активу та його вартість.
+"A request to buy, transfer or make items.","Заявка на закупівлю, переміщення або виробництво товарів."
+A sale made at the point of sale.,Продаж через касовий термінал.
+A saved set of accounts to start journal entries from.,Збережений набір рахунків для створення бухгалтерських проведень.
+"A separate set of books, for example to depreciate assets under another rule.","Окремий набір облікових книг, наприклад для амортизації за іншими правилами."
+A series of emails sent to leads or contacts on a schedule.,Серія листів потенційним клієнтам або контактам за розкладом.
+"A set of discounts and free items, like buy two get one free.","Набір знижок і безкоштовних товарів, наприклад «два плюс один у подарунок»."
+"A set of item prices for buying, selling or both.","Набір цін товарів для закупівлі, продажу або обох напрямків."
+A set of payment terms to apply to invoices and orders.,Набір умов оплати для рахунків і замовлень.
+A set of tasks to start new projects from.,Набір завдань для створення нових проєктів.
+A shared workspace needs a module other than {0}.,"Для спільного робочого простору потрібен модуль, відмінний від {0}."
+"A short code added to account names, like Cash - AC.","Короткий код у назвах рахунків, наприклад «Каса — AC»."
+"A sidebar needs at least one entry that leads somewhere. Put one back, or use Reset to drop this arrangement.",Бічна панель повинна містити хоча б одне робоче посилання. Поверніть його або скиньте це розташування.
+"A sidebar's name is part of its desk URL, so it cannot contain {0}.",Назва бічної панелі є частиною URL-адреси робочого столу й не може містити {0}.
+"A single unit of an item, tracked by its own number.",Окрема одиниця товару з власним серійним номером.
+"A site's overrides on a standard (app-shipped) workspace. Site-owned and standard-only: there is no user layer, deliberately -- a private workspace is already yours to edit directly, and a public one is the site's. The merge is split on purpose. Roles, icon, visibility and sequence are a true diff, so an app's later changes to them keep flowing through. Content is a snapshot, so customizing the layout freezes it against app updates: workspace content is nested editor blocks where headings, paragraphs and spacers carry no key at all, and a delta cannot be written against unkeyed prose. Do not ""fix"" this into one or the other; `reset_workspace_customization` is the escape hatch.","Перевизначення стандартного робочого простору на рівні сайту. Рівня користувача немає: особистий простір редагує його власник, а спільний належить сайту. Ролі, піктограма, видимість і порядок зберігаються як відмінності, тому оновлення застосунку продовжують діяти. Вміст зберігається як знімок: налаштування макета фіксує його щодо оновлень. Вкладені блоки редактора, заголовки, абзаци й відступи не мають ключів для зіставлення. Для скидання використовується `reset_workspace_customization`."
+A snippet named {0} already exists for {1}.,Фрагмент із назвою {0} вже існує для {1}.
+A standard Kanban Board cannot be private,Стандартна канбан-дошка не може бути особистою
+A standard Kanban Board cannot be renamed,Стандартну канбан-дошку не можна перейменувати
+A standard Kanban Board must use Kanban v2,Стандартна канбан-дошка має використовувати Kanban v2
+A standard list layout cannot belong to a user,Стандартний макет списку не може належати користувачу
+A standard settings map already exists for {0} in {1}.,Стандартна карта налаштувань для {0} вже існує в {1}.
+A standard sidebar needs a module or an app to be written to.,Для запису стандартної бічної панелі потрібно вказати модуль або застосунок.
+A standard workspace belongs to the module that ships it.,"Стандартний робочий простір належить модулю, з яким постачається."
+A standard workspace is shipped by the app; changes are saved as customizations.,Стандартний робочий простір постачається із застосунком; зміни зберігаються як окремі налаштування.
+A standard workspace stays in the module that ships it.,"Стандартний робочий простір залишається в модулі, з яким постачається."
+"A step in making an item, like cutting or assembly.","Етап виготовлення товару, наприклад різання або складання."
+"A step in your sales process, like qualification or negotiation.","Етап продажу, наприклад кваліфікація або переговори."
+A task becomes Overdue on its own once its Expected End Date passes,Завдання автоматично стає простроченим після очікуваної дати завершення
+"A unit you measure items in, like kg or box.","Одиниця виміру товару, наприклад кг або коробка."
+A value a scorecard criterion is calculated from.,Значення для розрахунку критерію оцінки постачальника.
+A value from a linked document,Значення з пов’язаного документа
+A vehicle's route to deliver to several customers.,Маршрут автомобіля для доставки кільком клієнтам.
+A view of your workstations and what each is doing.,Огляд робочих центрів і їхніх поточних операцій.
+A visit to service or repair what a customer bought.,Візит для обслуговування або ремонту придбаного клієнтом товару.
+"A way you pay or get paid, like cash, bank transfer or card.","Спосіб оплати, наприклад готівка, банківський переказ або картка."
+Access,Доступ
+Access added.,Доступ додано.
+Action failed.,Не вдалося виконати дію.
+Add Account,Додати рахунок
+Add More,Додати ще
+Add Opening Stock,Додати початкові залишки
+Add Page,Додати сторінку
+Add Permission,Додати дозвіл
+Add Permission for {0},Додати дозвіл для {0}
+Add Price,Додати ціну
+Add Raw Material,Додати сировину
+Add Report,Додати звіт
+Add Section,Додати розділ
+Add Series,Додати серію
+Add To Folder,Додати до папки
+Add User,Додати користувача
+Add User Permission,Додати дозвіл користувача
+Add User to {0},Додати користувача до {0}
+Add Workspace,Додати робочий простір
+Add a link to your own private workspaces in the user menu.,Додати до меню користувача посилання на власні особисті робочі простори.
+Add a section,Додати розділ
+Add a section to the canvas to see it here.,"Додайте розділ на полотно, щоб побачити його тут."
+Add assignee,Додати виконавця
+Add card,Додати картку
+Add column...,Додати стовпець…
+Add demo data so you can explore,Додати демонстраційні дані для ознайомлення
+Add field...,Додати поле…
+Add new attachments,Додати нові вкладення
+Add role,Додати роль
+Add to the Sidebar,Додати на бічну панель
+Add to the dock,Додати на панель застосунків
+Add {0} Access to {1},Надати доступ {0} для {1}
+Add {0} to a module,Додати {0} до модуля
+Added Roles,Додані ролі
+Added Widgets,Додані віджети
+Added to global search,Додано до загального пошуку
+Added {0} to {1},Додано {0} до {1}
+Adding demo data,Додавання демонстраційних даних
+Additional Discount has been removed as Pricing Rule {0} is no longer applicable,"Додаткову знижку видалено, оскільки правило ціноутворення {0} більше не застосовується"
+"Adds freight, duty and other charges to the cost of received items.","Додає перевезення, мито та інші витрати до вартості отриманих товарів."
+Adjusted By,Скориговано документом
+Adjustment Date,Дата коригування
+Adjustment Entry,Коригувальна операція
+Adjustment Time,Час коригування
+Administration,Адміністрування
+"After the adjustment, Item {0} in Warehouse {1} would hold a qty of {2} worth {3}, instead of {4} worth {5}.",Після коригування товар {0} на складі {1} матиме кількість {2} вартістю {3} замість {4} вартістю {5}.
+Align center,Вирівняти по центру
+Align left,Вирівняти ліворуч
+Align right,Вирівняти праворуч
+All ({0}),Усі ({0})
+All Differences,Усі розбіжності
+All DocTypes,Усі типи документів
+All Entries,Усі записи
+All Stock Ledger Entries and Serial and Batch Bundles of the selected vouchers will be cancelled and reposting will be queued. Continue?,"Усі складські записи та набори серійних номерів і партій вибраних документів буде скасовано, а перепроведення додано до черги. Продовжити?"
+All apps,Усі застосунки
+All available columns added.,Усі доступні стовпці додано.
+All set! Opening your workspace,Усе готово! Відкриваємо ваш робочий простір
+Allow bulk actions,Дозволити масові дії
+Allow notifications,Дозволити сповіщення
+"Allow switching between list, kanban, report, and other views from the toolbar","Дозволити перемикання між списком, канбаном, звітом та іншими поданнями з панелі інструментів"
+Allowed: {0},Дозволено: {0}
+Allows the user to amend a cancelled document into a new copy.,Дозволяє створити виправлену копію скасованого документа.
+Allows the user to cancel submitted documents.,Дозволяє скасовувати проведені документи.
+Allows the user to export document data from the system.,Дозволяє експортувати дані документів із системи.
+Allows the user to print or download the document as a PDF.,Дозволяє друкувати або завантажувати документ як PDF.
+Allows the user to search and select records in other forms. This does not allow the user to view the record itself.,Дозволяє шукати та вибирати записи в інших формах. Не надає доступу до перегляду самого запису.
+Allows the user to send emails linked to the document.,"Дозволяє надсилати листи, пов’язані з документом."
+Allows the user to share document access with other users who may not have access to the document themselves.,"Дозволяє надавати доступ до документа іншим користувачам, які його не мають."
+Allows the user to submit documents.,Дозволяє проводити документи.
+Allows the user to use import documents into the system.,Дозволяє імпортувати документи до системи.
+Allows the user to view the value of a masked field in the document.,Дозволяє переглядати значення прихованого поля документа.
+Almost done,Майже готово
+Already imported row {0},Рядок {0} уже імпортовано
+An agreement to buy or sell an item at a fixed price over a period.,Угода про купівлю або продаж товару за фіксованою ціною протягом періоду.
+"An agreement with a customer, supplier or employee.","Угода з клієнтом, постачальником або працівником."
+An edit to a shipped row in {0} cannot be carried by a customization.,Зміну стандартного рядка в {0} не можна зберегти як окреме налаштування.
+An error occurred while updating your session defaults.,Сталася помилка під час оновлення стандартних значень сеансу.
+"An extra way to tag entries, like branch or region, beyond cost centers.","Додаткова аналітика записів, наприклад філія або регіон, крім центрів витрат."
+"An extra way to tag stock, like a rack or bin.","Додаткова аналітика запасів, наприклад стелаж або комірка."
+An item you can use in place of another.,"Товар, який можна використати замість іншого."
+An order for a subcontractor to make items from your materials.,Замовлення підряднику на виготовлення товарів із ваших матеріалів.
+An order to make a quantity of an item.,Замовлення на виготовлення певної кількості товару.
+An order to make items for a customer from materials they send.,Замовлення на виготовлення товарів для клієнта з його матеріалів.
+An order you place with a supplier.,"Замовлення, яке ви розміщуєте в постачальника."
+"Another {0} in this workspace is already labelled {1}. Labels are used to tell widgets apart when the workspace is saved, so the two would overwrite each other. Please pick a different label.","Інший віджет {0} у цьому просторі вже має назву {1}. Назви розрізняють віджети під час збереження, тому однакові назви призведуть до перезапису. Виберіть іншу назву."
+"App {0} is not installed, so a standard dock cannot be written to it.",Застосунок {0} не встановлено; записати до нього стандартну панель застосунків неможливо.
+"App {0} is not installed, so a standard sidebar cannot be written to it.",Застосунок {0} не встановлено; записати до нього стандартну бічну панель неможливо.
+App-shipped roles whose access is revoked on this site.,"Стандартні ролі застосунку, для яких на цьому сайті відкликано доступ."
+Appearance,Зовнішній вигляд
+Applied,Застосовано
+Applies a tax template automatically when its conditions match.,Автоматично застосовує шаблон податків за виконання умов.
+Applies to DocType,Застосовується до типу документа
+Applying recommended settings,Застосування рекомендованих налаштувань
+Applying…,Застосування…
+Apps shows the hook-driven apps screen. Desktop Icons shows the arrangeable desktop icon grid instead.,"Режим «Застосунки» показує екран застосунків, визначений хуками. Режим «Піктограми робочого столу» показує сітку піктограм із довільним розташуванням."
+Archive of the previous navigation. Nothing reads it at runtime; it is kept as the migration's source so the conversion to module sidebars can be run again.,Архів попередньої навігації. Не використовується під час роботи; зберігається як джерело міграції для повторного перетворення на бічні панелі модулів.
+Arrange,Упорядкувати
+Arranging,Упорядкування
+"Ask a customer to pay, by email with a payment link.",Запит оплати клієнту електронною поштою з платіжним посиланням.
+Ask suppliers for prices on the items you need.,Запит цін постачальникам на потрібні товари.
+Attach Image field for card thumbnail.,Поле зображення для мініатюри картки.
+Attach Image field shown as a thumbnail before the card title.,"Поле зображення, що відображається мініатюрою перед заголовком картки."
+Attach an import file to validate rows and mappings.,Додайте файл імпорту для перевірки рядків і зіставлень.
+Attach document print,Додати друковану форму документа
+Attach files,Додати файли
+Auto-generated thumbnail of this format. Use the 'Generate Preview' button to (re)generate.,Автоматично створена мініатюра цього формату. Для створення або оновлення натисніть «Створити попередній перегляд».
+Autoname: {0},Автоматична назва: {0}
+Autosave failed,Автозбереження не вдалося
+Available to all users,Доступно всім користувачам
+Average Commission Rate,Середній відсоток комісії
+Back to the builder,Назад до конструктора
+Backdated Entry Before Adjustment Entry,Операція заднім числом перед коригуванням
+Backflush Materials from WIP Warehouse,Списувати матеріали зі складу незавершеного виробництва
+Background,Тло
+Background Tasks,Фонові завдання
+Background color,Колір тла
+Backing up,Створення резервної копії
+Barcode or QR code from a field or static value,Штрихкод або QR-код зі значення поля чи заданого тексту
+Barcode that is not a QR code,"Штрихкод, відмінний від QR-коду"
+Barcode value must be text under 2000 characters,Значення штрихкоду має бути текстом до 2000 символів
+Based on,На основі
+Bills a customer or supplier for the same things on a schedule.,Регулярно виставляє клієнту або постачальнику рахунки за розкладом.
+"Blank means the site layer, which applies to everyone and is overridden by each user's own arrangement.","Порожнє значення означає рівень сайту, що діє для всіх і може бути перевизначений особистим розташуванням користувача."
+Blockquote,Цитата
+Blocks,Блоки
+Board Name,Назва дошки
+Board Settings,Налаштування дошки
+Board name is required,Потрібна назва дошки
+Board settings saved,Налаштування дошки збережено
+Books deferred revenue or expense for a period.,Визнає доходи або витрати майбутніх періодів за період.
+Border,Рамка
+Border color,Колір рамки
+Borders,Рамки
+Brands,Бренди
+Breadcrumb,Навігаційний шлях
+Bring every entry back onto the dock.,Повернути всі елементи на панель застосунків.
+Bring in a bank statement to match its lines against your books.,Завантаження банківської виписки для звіряння з обліком.
+Bring in your chart of accounts from a spreadsheet.,Імпорт плану рахунків з електронної таблиці.
+Build a multi-level BOM in one place.,Створення багаторівневої специфікації в одному місці.
+Builder is visual. HTML is hand-written.,Конструктор призначений для візуального редагування. HTML редагується вручну.
+Bulk Transaction,Масова операція
+Bullet list,Маркований список
+Camera access needs a secure (HTTPS) connection and a browser with camera support.,Для доступу до камери потрібні захищене з’єднання HTTPS і браузер із підтримкою камери.
+Camera permission was denied. Allow camera access in your browser settings and try again.,Доступ до камери відхилено. Дозвольте його в налаштуваннях браузера та повторіть спробу.
+Can only unlink an Address or a Contact,Від’єднати можна лише адресу або контакт
+Can't check this condition,Не вдалося перевірити цю умову
+Cancel Stock Ledger Entries,Скасувати складські записи
+Cannot create Material Request for item {0} in group warehouse {1}.,Не можна створити заявку для товару {0} на груповому складі {1}.
+Cannot edit filters for standard Web Forms,Не можна редагувати фільтри стандартних вебформ
+Cannot fetch image from {0}: {1},Не вдалося отримати зображення з {0}: {1}
+Cannot generate PDF for more than {0} documents at a time,Не можна створювати PDF більш ніж для {0} документів одночасно
+Canvas,Полотно
+Card Fields,Поля картки
+Card and Preview Fields,Поля картки та попереднього перегляду
+Card title…,Заголовок картки…
+Cell padding,Внутрішні відступи комірки
+Change Language,Змінити мову
+Change Time Zone,Змінити часовий пояс
+Change print settings,Змінити налаштування друку
+Changes a price or gives a discount when its conditions are met.,Змінює ціну або надає знижку за виконання умов.
+Changes an asset's value outside its depreciation.,Змінює вартість активу окремо від амортизації.
+"Changes how many shifts an asset works, which changes its depreciation.",Змінює кількість робочих змін активу та його амортизацію.
+Checking import file for issues...,Перевірка файлу імпорту…
+Checks an item against its quality parameters.,Перевіряє товар за параметрами якості.
+Child table rows laid out with your own template,Рядки дочірньої таблиці за вашим шаблоном
+"Choose a bank account in this chart's filters, or set a default bank account on {0}, to see its balance.",Виберіть банківський рахунок у фільтрах діаграми або задайте стандартний рахунок у {0} для перегляду залишку.
+Choose a company in this chart's filters to see its bank balance.,Виберіть компанію у фільтрах діаграми для перегляду банківського залишку.
+Choose a starting point for your print format.,Виберіть основу для друкованої форми.
+Choose whether forms should be displayed in compact or full width.,Виберіть компактну або повну ширину форм.
+Chromium renderer unavailable,Засіб формування Chromium недоступний
+Chromium unavailable: this format uses a Typst block.,Chromium недоступний: цей формат містить блок Typst.
+Circular parent reference for {0},Циклічне посилання на батьківський запис для {0}
+Classic Format Data,Дані класичної друкованої форми
+Clear Customizations,Очистити користувацькі налаштування
+Clear selection,Скасувати вибір
+Clear the filters to see all records.,"Очистьте фільтри, щоб побачити всі записи."
+Click Customize to add your first widget.,"Натисніть «Налаштувати», щоб додати перший віджет."
+Click below to login.,"Натисніть нижче, щоб увійти."
+Click below to reset your password.,"Натисніть нижче, щоб скинути пароль."
+Click on the {0} menu to edit,Натисніть меню {0} для редагування
+Closes a POS shift and totals what was collected.,Закриває касову зміну та підсумовує отримані кошти.
+Closes a fiscal year by moving its profit or loss to equity.,Закриває фінансовий рік перенесенням прибутку або збитку на власний капітал.
+Closes stock balances for a period so reports run faster.,Закриває складські залишки за період для пришвидшення звітів.
+Code block,Блок коду
+Collapse all,Згорнути все
+Collapse sidebar,Згорнути бічну панель
+Colon after labels,Двокрапка після підписів
+Colours that are not hex codes: {0},"Кольори, які не є шістнадцятковими кодами: {0}"
+Column Field,Поле стовпця
+Column name is required,Потрібна назва стовпця
+Column settings,Налаштування стовпця
+Column warnings,Попередження щодо стовпців
+Columns matched,Стовпці зіставлено
+Combine two or more accounts into one.,Об’єднання двох або більше рахунків в один.
+Compact,Компактний
+Company Abbreviation cannot have more than {0} characters,Скорочення компанії не може перевищувати {0} символів
+Complete Onboarding,Завершити ознайомлення
+Complete registration,Завершити реєстрацію
+Complete the earlier steps before continuing.,Завершіть попередні кроки перед продовженням.
+Component Explorer,Огляд компонентів
+Condition based field,Поле за умовою
+Configure conditional naming rules for {0}. Rules are applied in priority order.,Налаштуйте умовні правила нумерації для {0}. Правила застосовуються за пріоритетом.
+Configure fields,Налаштувати поля
+Configure fields to show when searching for {0} globally. Open global search via {1}.,Налаштуйте поля загального пошуку для {0}. Відкрити пошук: {1}.
+Configure form view behaviour.,Налаштуйте вигляд і поведінку форми.
+Configure list view behaviour.,Налаштуйте вигляд і поведінку списку.
+Configure naming series options for {0}. You can choose a series when creating a document.,Налаштуйте серії нумерації для {0}. Серію можна вибрати під час створення документа.
+Configure print formats for {0}. You can choose a format when printing or emailing a document.,Налаштуйте друковані форми для {0}. Формат можна вибрати під час друку або надсилання документа.
+Configure report view behaviour.,Налаштуйте вигляд і поведінку звіту.
+Configure your email settings.,Налаштуйте електронну пошту.
+Content must be a JSON object,Вміст має бути об’єктом JSON
+Content must be valid JSON,Вміст має бути коректним JSON
+"Control who can access {0}, by role.",Керуйте доступом до {0} за ролями.
+Control who can see this workspace and how it appears.,Визначте доступ і вигляд цього робочого простору.
+Convert to Phantom Item,Перетворити на фантомну специфікацію
+Convert to Sub Assembly,Перетворити на складальну одиницю
+Convert to new builder,Перетворити для нового конструктора
+Converted from the old Print Format Builder,Перетворено зі старого конструктора друкованих форм
+Copy,Копіювати
+Copy file URL to clipboard,Копіювати URL-адресу файлу
+Copy this board to change its setup,"Скопіюйте цю дошку, щоб змінити її налаштування"
+Core,Основа системи
+Could not convert this print format,Не вдалося перетворити цю друковану форму
+Could not load groups.,Не вдалося завантажити групи.
+Could not load import file,Не вдалося завантажити файл імпорту
+Could not load the dock. Please try again.,Не вдалося завантажити панель застосунків. Повторіть спробу.
+Could not load the sidebar. Please try again.,Не вдалося завантажити бічну панель. Повторіть спробу.
+Could not load this document,Не вдалося завантажити цей документ
+Could not load this image,Не вдалося завантажити це зображення
+Could not load this section. Please refresh the page.,Не вдалося завантажити цей розділ. Оновіть сторінку.
+Could not load this tab.,Не вдалося завантажити цю вкладку.
+Could not move {0},Не вдалося перемістити {0}
+Could not move {0} cards,Не вдалося перемістити {0} карток
+Could not open Settings. Please refresh the page.,Не вдалося відкрити налаштування. Оновіть сторінку.
+Could not open the dock manager. Please refresh the page.,Не вдалося відкрити керування панеллю застосунків. Оновіть сторінку.
+Could not open the sidebar editor. Please refresh the page.,Не вдалося відкрити редактор бічної панелі. Оновіть сторінку.
+Could not render the preview,Не вдалося сформувати попередній перегляд
+Could not start the camera.,Не вдалося запустити камеру.
+Could not update,Не вдалося оновити
+Could not write {0} to {1}. Left unchanged.,Не вдалося записати {0} до {1}. Змін не внесено.
+Could not write {0}'s dock to it. Left unchanged.,Не вдалося записати панель застосунків {0}. Змін не внесено.
+Couldn't load options,Не вдалося завантажити варіанти
+Couldn't render this letter head for the previewed document,Не вдалося сформувати бланк для вибраного документа
+Couldn't render this template for the previewed document,Не вдалося застосувати шаблон до вибраного документа
+Create Board,Створити дошку
+Create Folder,Створити папку
+Create Layout,Створити макет
+Create Material Request,Створити заявку на товари
+Create New User,Створити користувача
+Create a notification to alert users about {0} events.,Створіть сповіщення для подій {0}.
+Create a print format to customize how {0} prints.,Створіть друковану форму для налаштування друку {0}.
+Create a template to reuse when emailing {0}.,Створіть шаблон для повторного використання в листах щодо {0}.
+Create a workflow to control the states {0} moves through.,Створіть процес погодження для керування станами {0}.
+Create a {0} document first to preview this print format.,Спочатку створіть документ {0} для попереднього перегляду цієї друкованої форми.
+Create a {0} to finish this step.,"Створіть {0}, щоб завершити цей крок."
+Create copy,Створити копію
+Create layout,Створити макет
+Create your account,Створіть обліковий запис
+Create your first Material Request to get started.,Для початку створіть першу заявку на товари.
+Create your first invoice to get started.,Для початку створіть перший рахунок.
+Create your first {0} to get started.,Для початку створіть перший запис {0}.
+Created {0},Створено {0}
+Creating Opening Stock Entry...,Створення початкових складських залишків…
+Creating your company,Створення компанії
+Creator's Access,Доступ автора
+Current value,Поточне значення
+Current version,Поточна версія
+Currently hidden,Зараз приховано
+Currently visible,Зараз відображається
+Custom Block,Користувацький блок
+Custom CSS in the Style box,Власний CSS у полі стилю
+Custom CSS on fields: {0},Власний CSS у полях: {0}
+Custom HTML format,Власна форма HTML
+Custom Module Renamed,Користувацький модуль перейменовано
+Custom Sidebar,Користувацька бічна панель
+Custom Table,Користувацька таблиця
+Custom Workspace,Користувацький робочий простір
+Customized since,Налаштовано після
+Data Import Skipped Row,Пропущений рядок імпорту
+Data Import Value Mapping,Зіставлення значень імпорту
+Date format,Формат дати
+Declare opportunities lost one at a time,Позначайте втрачені можливості продажу по одній
+Decrease,Зменшити
+Decrease indent,Зменшити відступ
+Default Layout,Стандартний макет
+Default removed,Стандартне значення видалено
+Default source Warehouse,Стандартний склад-відправник
+Default template: {0},Стандартний шаблон: {0}
+Default updated,Стандартне значення оновлено
+Default warehouse from Item Defaults.,Стандартний склад із налаштувань товару.
+Defaults to the company's Stock Adjustment Account,За замовчуванням — рахунок коригування запасів компанії
+Delete Item,Видалити товар
+Delete layout <strong>{0}</strong>?,Видалити макет <strong>{0}</strong>?
+Delete naming rule {0}?,Видалити правило нумерації {0}?
+Delete series {0}?,Видалити серію {0}?
+Delete snippet,Видалити фрагмент
+Delete the <b>{0}</b> workspace? This cannot be undone.,Видалити робочий простір <b>{0}</b>? Цю дію неможливо скасувати.
+Delete the snippet '{0}'?,Видалити фрагмент «{0}»?
+Delete this user permission?,Видалити цей дозвіл користувача?
+Delete this version,Видалити цю версію
+Deleted {0} records from {1} doctype,Видалено {0} записів типу {1}
+"Deletes a company's transactions, keeping its masters.",Видаляє операції компанії зі збереженням довідників.
+Deleting...,Видалення…
+Delivered,Доставлено
+Depends on: {0},Залежить від: {0}
+Deprecated,Застаріло
+"Deprecated, removed in version 17",Застаріло; вилучено у версії 17
+"Deprecated, removed in version 17. Renders with the v16 stylesheet; new blocks and styling need Chromium or Typst.",Застаріло; вилучено у версії 17. Використовується таблиця стилів v16; для нових блоків і стилів потрібен Chromium або Typst.
+Desk,Робочий стіл
+Desktop Icons,Піктограми робочого столу
+Desktop Page,Сторінка робочого столу
+Direction,Напрямок
+Disable,Вимкнути
+Disable all notification and alert sounds across the application.,Вимкнути всі звуки сповіщень у застосунку.
+Discard the draft and go back to this,Відкинути чернетку й повернутися до цієї версії
+Discard your unapplied changes and go back to what this format prints?,Відкинути незастосовані зміни та повернутися до поточної друкованої форми?
+Discarding…,Скасування змін…
+Discount Removed,Знижку видалено
+"Display a sidebar in forms with attachments, preview image, tags, and other details.","Показувати у формах бічну панель із вкладеннями, зображенням, тегами та іншими відомостями."
+Display exact timestamps instead of relative time in the activity timeline.,Показувати точні часові позначки замість відносного часу в стрічці активності.
+Display the filter and group-by sidebar in list views.,Показувати бічну панель фільтрів і групування у списках.
+Display the search bar in the navigation area for quick access.,Показувати рядок пошуку в області навігації.
+Do you want to continue?,Бажаєте продовжити?
+Doc Status Reset,Статус документа скинуто
+DocType Settings,Налаштування типу документа
+DocType Settings Map,Карта налаштувань типу документа
+DocType Settings Map Item,Елемент карти налаштувань типу документа
+DocType {0} not found,Тип документа {0} не знайдено
+DocTypes this role can access.,"Типи документів, доступні цій ролі."
+Dock,Панель застосунків
+Dock Item,Елемент панелі застосунків
+Dock Items,Елементи панелі застосунків
+Dock updated,Панель застосунків оновлено
+Dock updated for everyone,Панель застосунків оновлено для всіх
+Document Permissions,Права доступу до документа
+Domains,Сфери діяльності
+Don't panic. Run this command and reload the page:,Виконайте цю команду та перезавантажте сторінку:
+Done: {0},Готово: {0}
+Download Failed Rows,Завантажити помилкові рядки
+Download Skipped Rows,Завантажити пропущені рядки
+Draft Data,Дані чернетки
+Draft data must be an object,Дані чернетки мають бути об’єктом
+Draft discarded,Чернетку відкинуто
+"Drag a CSV or Excel file here, or click to browse",Перетягніть сюди CSV або Excel чи натисніть для вибору
+"Drag into the layout, or click to insert","Перетягніть у макет або натисніть, щоб вставити"
+Drag to change corner radius,Перетягніть для зміни радіуса кутів
+Drag to change {0} {1},Перетягніть для зміни {0} {1}
+Drag to reorder,"Перетягніть, щоб змінити порядок"
+"Drag to reorder, and under a section to put an entry in it. The eye takes an entry off the sidebar; the pencil renames it.","Перетягуйте для зміни порядку або розміщення під розділом. Піктограма ока приховує елемент, олівця — перейменовує."
+"Drag to reorder, and under a section to put an entry in it. The eye takes an entry off the sidebar; the pencil renames one and says how a section draws.","Перетягуйте для зміни порядку або розміщення під розділом. Піктограма ока приховує елемент, олівця — змінює назву та вигляд розділу."
+Drag to reorder. The eye takes an entry off the dock.,Перетягуйте для зміни порядку. Піктограма ока приховує елемент панелі.
+Drag to resize,Перетягніть для зміни розміру
+"Draw it as a row with its entries nested under it, rather than as a heading over them.",Показувати як рядок із вкладеними елементами замість заголовка над ними.
+Drop fields here,Перетягніть поля сюди
+"Drop the site's arrangement of this sidebar and every person's own, so what you save here is what shows.","Скинути розташування цієї бічної панелі для сайту та всіх користувачів, щоб усі бачили збережений тут варіант."
+Drop this arrangement and go back to {0}.,Скинути це розташування й повернутися до {0}.
+"Drops every person's own arrangement of this rail as well as the site's, so everybody is back on what the app ships.",Скидає особисті та загальні налаштування цієї панелі й повертає всіх до стандартного вигляду застосунку.
+Duplicate ID {0} in rows {1},Повторний ідентифікатор {0} у рядках {1}
+Duplicate Kanban Board,Дублювати канбан-дошку
+Duplicate Label,Повторна назва
+"Duplicate {0} labels: {1}. Labels are used to tell widgets apart when a workspace is saved, so each {0} needs a unique label.","Повторні назви {0}: {1}. Назви розрізняють віджети під час збереження, тому кожен {0} повинен мати унікальну назву."
+Dynamic Filter Error,Помилка динамічного фільтра
+ERPNext Integrations,Інтеграції ERPNext
+Each row maps a field on a Single (Settings) doctype to surface for this doctype.,"Кожен рядок визначає поле одиничного документа налаштувань, доступне для цього типу документа."
+Edit Layout,Редагувати макет
+Edit Letter Head HTML,Редагувати HTML бланка
+Edit Series,Редагувати серію
+Edit Typst,Редагувати Typst
+Edit in the visual builder.,Редагуйте у візуальному конструкторі.
+Edit layout,Редагувати макет
+Edited,Відредаговано
+Email Templates,Шаблони листів
+Emails customers their statements on a schedule.,Надсилає клієнтам виписки за розкладом.
+Empty State Message,Повідомлення порожнього стану
+Empty Typst block,Порожній блок Typst
+Empty canvas. Drag and drop fields to build from scratch.,"Порожнє полотно. Перетягуйте поля, щоб створити макет із нуля."
+Empty text,Порожній текст
+Enable checkboxes to select multiple records and perform bulk operations.,Увімкнути прапорці для вибору кількох записів і масових операцій.
+Enable developer mode to change whether a dock is standard -- it is backed by a file in its app.,"Щоб змінити стандартність панелі застосунків, увімкніть режим розробника: вона зберігається у файлі застосунку."
+Enable developer mode to change whether a sidebar is standard -- it is backed by a file in its app.,"Щоб змінити стандартність бічної панелі, увімкніть режим розробника: вона зберігається у файлі застосунку."
+Enable developer mode to create a standard Print Format Snippet,Увімкніть режим розробника для створення стандартного фрагмента друкованої форми
+Enable this option to include the field in the data import template,"Увімкніть, щоб додати поле до шаблону імпорту даних"
+Enter expressions that will be evaluated when the card is displayed. For example:,"Уведіть вирази, що обчислюватимуться під час показу картки. Наприклад:"
+Enter this code to complete your login.,Уведіть цей код для завершення входу.
+Entries,Записи
+Everyone is back on the dock this app ships,Для всіх відновлено стандартну панель застосунку
+Exit full screen,Вийти з повноекранного режиму
+Expand / Collapse All,Розгорнути / згорнути все
+Expand all,Розгорнути все
+Expand sidebar,Розгорнути бічну панель
+Expand/Collapse,Розгорнути / згорнути
+Expected Value Based On,Джерело очікуваного значення
+Expected an unsaved Print Format document,Очікувався незбережений документ друкованої форми
+Export this snippet to its module so it ships with the app. Requires developer mode.,Експортуйте фрагмент до модуля для постачання із застосунком. Потрібен режим розробника.
+Export to app,Експортувати до застосунку
+Exported to the app,Експортовано до застосунку
+Exported to the module and shipped with its app,Експортовано до модуля для постачання із застосунком
+Failed ({0}),Помилки ({0})
+Failed to add access.,Не вдалося надати доступ.
+Failed to add user.,Не вдалося додати користувача.
+Failed to create user.,Не вдалося створити користувача.
+Failed to load Kanban board,Не вдалося завантажити канбан-дошку
+Failed to load data.,Не вдалося завантажити дані.
+Failed to load import file,Не вдалося завантажити файл імпорту
+Failed to load settings,Не вдалося завантажити налаштування
+Failed to load the import wizard bundle.,Не вдалося завантажити компоненти майстра імпорту.
+Failed to load the import wizard. Please hard-refresh and try again.,Не вдалося завантажити майстер імпорту. Повністю оновіть сторінку та повторіть спробу.
+Failed to remove permission.,Не вдалося видалити дозвіл.
+Failed to render template: {0},Не вдалося сформувати шаблон: {0}
+Failed to save,Не вдалося зберегти
+Failed to save permission.,Не вдалося зберегти дозвіл.
+Feedback on your quality from a customer or employee.,Відгук клієнта або працівника про якість.
+Fetching latest status...,Отримання поточного стану…
+Field Template block,Блок шаблону поля
+Field \u201c{0}\u201d no longer exists on {1},Поле «{0}» більше не існує в {1}
+Field borders,Рамки полів
+Field label,Підпис поля
+Field of the board's reference doctype to show on the card.,Поле основного типу документа дошки для відображення на картці.
+Field saved as snippet,Поле збережено як фрагмент
+Field shown as the card title: ID or a text field.,Поле заголовка картки: ідентифікатор або текстове поле.
+Fieldname on the Settings DocType to surface for this doctype.,Назва поля документа налаштувань для відображення в цьому типі документа.
+"Fields shown in the card hover preview, in order. Icon and Label behave the same as Card Fields. Leave empty to use the doctype's preview fields, then card fields.","Поля попереднього перегляду картки в заданому порядку. Піктограма та підпис діють як у полях картки. Порожній список використовує поля перегляду типу документа, а потім поля картки."
+Fields shown on cards and in the hover preview.,Поля карток і попереднього перегляду.
+"Fields shown on each card, in order. Set an Icon to show it on the card (label on hover); leave Icon empty to show the Label text. Leave the table empty to auto-pick.",Поля картки в заданому порядку. Піктограма відображається з підписом під час наведення; без піктограми показується підпис. Порожня таблиця означає автоматичний вибір.
+Fields the board can group cards by (swimlanes). New boards are pre-filled with the doctype's Select fields (except the column field). Add Link fields to offer more groupings; leave empty to hide the Group button.,"Поля для групування карток за доріжками. Нові дошки містять поля вибору типу документа, крім поля стовпця. Додайте поля посилань для інших групувань; порожній список приховує кнопку групування."
+Fields the board can group cards into swimlanes by.,Поля групування карток за доріжками.
+File upload,Вивантаження файлу
+"Filter Name, Reference Document Type and Module are required for a standard list layout","Для стандартного макета списку потрібні назва фільтра, тип документа та модуль"
+Filter import log,Фільтр журналу імпорту
+Filter nodes,Фільтрувати вузли
+Filters & Sorting,Фільтри та сортування
+Finish {0} to finish this step.,"Завершіть {0}, щоб закінчити цей крок."
+Finishing up...,Завершення…
+First Difference per Item-Warehouse,Перша розбіжність за парою товар–склад
+Fix Differences,Виправити розбіжності
+Fix issues,Виправити помилки
+Fix issues summary,Підсумок виправлення помилок
+Fixed text like a title or a note,"Фіксований текст, наприклад заголовок або примітка"
+Floating,Плаваюча
+Font Size (px),Розмір шрифту (пікселі)
+Font size,Розмір шрифту
+Footer Date,Дата в нижньому колонтитулі
+For Qty,Для кількості
+For Warehouse {0} must be a non-group warehouse under {1}.,Цільовий склад {0} має бути негруповим складом усередині {1}.
+For everyone,Для всіх
+For {0},Для {0}
+Force a new page,Починати з нової сторінки
+Formatting options,Параметри форматування
+Forms,Форми
+Frozen - entries restricted,Заморожено — записи обмежено
+Full screen,Повноекранний режим
+Gantt View Mode,Режим діаграми Ґанта
+Gap,Проміжок
+Generating preview…,Створення попереднього перегляду…
+Geo,Географія
+Get Started,Почати
+Get around the system quickly with keyboard shortcuts.,Швидко пересувайтеся системою за допомогою сполучень клавіш.
+Get notified when a recipient opens an email you send.,"Отримувати сповіщення, коли одержувач відкриває ваш лист."
+Get notified when there's a new reply in an email thread you're part of.,"Отримувати сповіщення про нові відповіді в листуванні, у якому ви берете участь."
+Getting started,Початок роботи
+Give the version a name,Назвіть версію
+Global,Загальний
+Global Layouts,Загальні макети
+Global Search,Загальний пошук
+Global search updated,Загальний пошук оновлено
+Go back to the current version before applying,Поверніться до поточної версії перед застосуванням
+Go to list,Перейти до списку
+Good afternoon,Добрий день
+"Good afternoon, {0}","Добрий день, {0}"
+Good evening,Добрий вечір
+"Good evening, {0}","Добрий вечір, {0}"
+Good morning,Доброго ранку
+"Good morning, {0}","Доброго ранку, {0}"
+Google Sheet,Таблиця Google
+Granted,Надано
+Great,Чудово
+Grid,Сітка
+Grid lines,Лінії сітки
+Groups accounts into the lines your financial statements show.,Групує рахунки в рядки фінансової звітності.
+Groups assets that share accounts and depreciation rules.,Групує активи зі спільними рахунками та правилами амортизації.
+"Groups customers, for pricing and reporting.",Групує клієнтів для ціноутворення та звітності.
+"Groups items, for pricing, defaults and reporting.","Групує товари для ціноутворення, стандартних налаштувань і звітності."
+"Groups suppliers, for terms and reporting.",Групує постачальників для умов співпраці та звітності.
+HTML block,Блок HTML
+Half Day,Пів дня
+Heading {0},Заголовок {0}
+Height,Висота
+"Hi {0}, an account has been created for you at {1}. Before you can log in, you'll need to set your password.","Вітаємо, {0}! Для вас створено обліковий запис у {1}. Перед входом установіть пароль."
+"Hi {0}, let's get the basics right","Вітаємо, {0}! Почнімо з основних налаштувань"
+Hide colon,Приховати двокрапку
+"Hide this item. Explicit rather than implied by the row's presence, which is what lets a user's `hidden: 0` un-hide something the site hid.","Приховати цей елемент. Явне значення дозволяє особистому параметру `hidden: 0` знову показати елемент, прихований на рівні сайту."
+Horizontal,Горизонтальний
+Horizontal rule,Горизонтальна лінія
+How cards look in the new Kanban experience.,Вигляд карток у новому канбані.
+How do you want to start?,Із чого бажаєте почати?
+How fast issues must be answered and resolved.,Строки відповіді на звернення та їх вирішення.
+How it reads on the rail.,Назва на панелі.
+"How items, warehouses and stock transactions work.","Налаштування товарів, складів і складських операцій."
+"How leads, opportunities and appointments work.","Налаштування потенційних клієнтів, можливостей продажу та зустрічей."
+How long it takes to get or make an item.,Час отримання або виготовлення товару.
+"How many of one unit make another, like 1000 g in a kg.","Коефіцієнт перерахунку одиниць, наприклад 1000 г у 1 кг."
+How much a cost center or project may spend over a fiscal year.,Допустимі витрати центру витрат або проєкту за фінансовий рік.
+How much faster an asset depreciates on a given shift.,Коефіцієнт прискорення амортизації активу для певної зміни.
+"How much of each item to make, and when.",Обсяги та строки виготовлення кожного товару.
+"How much you expect to sell, to plan production.",Очікувані продажі для планування виробництва.
+"How quotations, sales orders and pricing work.","Налаштування пропозицій, замовлень клієнтів і ціноутворення."
+"How this entry reads on the rail. Required when the row adds and optional when it references, exactly as `icon` is -- and outside the row's identity, so re-labelling can never detach a row from itself.","Назва елемента на панелі. Обов’язкова для доданих рядків і необов’язкова для посилань, як і `icon`. Не входить до ідентифікатора рядка, тому перейменування не порушує його зв’язки."
+How urgent an issue is.,Терміновість звернення.
+ID or a text field.,Ідентифікатор або текстове поле.
+IP address:,IP-адреса:
+If this was you:,Якщо це були ви:
+If this wasn't you:,Якщо це були не ви:
+"If you didn't request this code, you can safely ignore this email.","Якщо ви не запитували цей код, проігноруйте лист."
+"If you didn't request this, you can safely ignore this email. Your account is safe.","Якщо ви цього не запитували, проігноруйте лист. Ваш обліковий запис у безпеці."
+"If you didn't request this, you can safely ignore this email. Your password won't be changed.","Якщо ви цього не запитували, проігноруйте лист. Ваш пароль не зміниться."
+"If you weren't expecting this account, you can safely ignore this email.","Якщо ви не очікували створення цього облікового запису, проігноруйте лист."
+"If you weren't expecting this, you can safely ignore this email.","Якщо ви цього не очікували, проігноруйте лист."
+Ignore Differences Below,Ігнорувати розбіжності менші за
+Image loaded from a web address,Зображення з вебадреси
+Image size,Розмір зображення
+Import Action,Дія імпорту
+Import could not start. Please resolve the errors in the import file.,Не вдалося почати імпорт. Виправте помилки у файлі імпорту.
+Import failed,Помилка імпорту
+Import is running. Progress updates will appear shortly.,Імпорт виконується. Оновлення поступу з’являться незабаром.
+Import log,Журнал імпорту
+Import settings,Налаштування імпорту
+Import steps,Кроки імпорту
+Import {0},Імпортувати {0}
+Imported,Імпортовано
+Importing,Імпортування
+"Importing or updating {0} of {1}, {2}","Імпортування або оновлення {0} із {1}, {2}"
+Importing row {0} of {1},Імпортування рядка {0} із {1}
+Importing your data,Імпортування ваших даних
+"In developer mode a standard workspace's edits belong to the app's JSON, not to a customization.","У режимі розробника зміни стандартного простору записуються до JSON застосунку, а не до окремих налаштувань."
+Include in Import Template,Включити до шаблону імпорту
+Include {0} in global search,Включити {0} до загального пошуку
+Incorrect configuration,Некоректні налаштування
+Increase,Збільшити
+Increase indent,Збільшити відступ
+Inherit,Успадкувати
+Insert image,Вставити зображення
+Insert link,Вставити посилання
+Insert or Update Records,Додати або оновити записи
+Insert video,Вставити відео
+Inserted,Додано
+Invalid Condition,Некоректна умова
+Invalid Snippet,Некоректний фрагмент
+Invalid Typst block,Некоректний блок Typst
+Invalid Typst markup,Некоректна розмітка Typst
+Invalid arguments,Некоректні аргументи
+Invalid expression in Web Form Dynamic Filter for {0}: {1},Некоректний вираз динамічного фільтра вебформи для {0}: {1}
+Invalid group field,Некоректне поле групування
+Invalid operator {0},Некоректний оператор {0}
+Invalid sort order,Некоректний порядок сортування
+Invalid value for {0},Некоректне значення для {0}
+Invoiced Amount (Excl. Tax),Сума рахунків без податків
+Is Default Module,Основний модуль
+Is Dismissible,Можна закрити
+Is Optional,Необов’язково
+It expires in 1 minute.,Код діє 1 хвилину.
+It expires in {0} minutes.,Код діє {0} хвилин.
+It has no stock transactions by then.,До цієї дати складських операцій немає.
+Italic,Курсив
+"Item definitions (shortcuts / charts / cards ...) backing blocks the site added, so they can be rendered. Managed by the workspace editor.","Визначення елементів (посилань, діаграм, карток тощо) для блоків, доданих на сайті. Керується редактором робочого простору."
+Item {0} in Warehouse {1} cannot be adjusted on {2}: {3},Товар {0} на складі {1} не можна скоригувати на {2}: {3}
+"Item {0} in Warehouse {1} was adjusted by {2} on {3}, so no stock transaction dated before it can be posted or cancelled. Post it on or after that date, or cancel the Adjustment Entry first.",Товар {0} на складі {1} скориговано документом {2} на {3}. Проведення та скасування попередніх складських операцій заборонено. Укажіть цю або пізнішу дату чи спочатку скасуйте коригування.
+Items received from a subcontractor.,"Товари, отримані від підрядника."
+Items received from a supplier.,"Товари, отримані від постачальника."
+Items shipped to a customer.,"Товари, відвантажені клієнту."
+Its difference on {0} is not before the adjustment date.,Дата розбіжності {0} не передує даті коригування.
+Its sidebar is derived from the module that owns it.,"Бічна панель визначається модулем, якому він належить."
+Its stock qty and value are already right on this date.,Кількість і вартість запасів на цю дату вже правильні.
+"Its stock should be negative on this date, which cannot be counted in.","На цю дату залишок мав би бути від’ємним, що не можна відобразити під час підрахунку."
+Job was not running; status updated.,Завдання не виконувалося; статус оновлено.
+Just for me,Лише для мене
+Kanban Board Field,Поле канбан-дошки
+Kanban Board Group Field,Поле групування канбан-дошки
+Kanban Board {0} not found.,Канбан-дошку {0} не знайдено.
+"Keep Row {0}, Skip Rest","Залишити рядок {0}, решту пропустити"
+Keep scanner open after scan,Не закривати сканер після сканування
+"Keep the app dock beside the sidebar, or let it slide in from the left edge.",Закріпити панель застосунків біля бічної панелі або висувати її з лівого краю.
+Keep together,Не розривати
+"Kept in the row so an explicitly hidden entry stays hidden when its app later adds entries, instead of reappearing because it is simply absent.","Зберігається в рядку, щоб явно прихований елемент залишався прихованим після додавання нових елементів застосунком."
+Kind,Вид
+Label Color,Колір підпису
+Label gap,Відступ підпису
+Label side,Розташування підпису
+"Language, timezone and notification preferences.","Мова, часовий пояс і сповіщення."
+Last modified by,Востаннє змінив
+Last modified on,Дата останньої зміни
+Layers,Шари
+Layout <b>{0}</b> created,Макет <b>{0}</b> створено
+Layout <b>{0}</b> deleted,Макет <b>{0}</b> видалено
+Layout <b>{0}</b> updated,Макет <b>{0}</b> оновлено
+Layout Order,Порядок макетів
+Layout and fields used by the new Kanban experience for this board.,Макет і поля нового канбану для цієї дошки.
+Layout name,Назва макета
+Layout name is required,Потрібна назва макета
+Layouts you create will show up here.,Створені вами макети з’являться тут.
+Leave anyway,Усе одно вийти
+Leave as 0 to allow zero valuation rate.,Залиште 0 для дозволу нульової облікової вартості.
+Leave blank to inherit the app-shipped color.,"Залиште порожнім, щоб успадкувати колір застосунку."
+Leave blank to inherit the app-shipped icon.,"Залиште порожнім, щоб успадкувати піктограму застосунку."
+Leave blank to make this snippet available for all document types,"Залиште порожнім, щоб фрагмент був доступний для всіх типів документів"
+Leave blank to make this template available in all print formats,"Залиште порожнім, щоб шаблон був доступний у всіх друкованих формах"
+Leave blank to show every row. Reference the row with,Залиште порожнім для показу всіх рядків. Звертайтеся до рядка через
+Leave empty to grant {0} directly.,"Залиште порожнім, щоб надати {0} безпосередньо."
+Leave it empty to keep the one it inherits.,Залиште порожнім для збереження успадкованого значення.
+Leaves the desk. It has no sidebar.,Відкриває сторінку поза робочим столом без бічної панелі.
+Let's get the basics right,Налаштуймо основне
+Let's get your workspace ready. It only takes a few minutes.,Підготуймо ваш робочий простір. Це займе лише кілька хвилин.
+Letter head changes are saved right away and apply to every print format that uses it.,"Зміни бланка зберігаються одразу та діють у всіх друкованих формах, що його використовують."
+Letterhead footer with HTML content,Нижня частина бланка з HTML
+Letterhead image loaded from a web address,Зображення бланка з вебадреси
+Letterhead with HTML content,Бланк із HTML
+Letterhead with custom CSS,Бланк із власним CSS
+Linked Field,Пов’язане поле
+Links To,Посилається на
+List virtualization failed to load. Rendering full list.,Не вдалося завантажити віртуалізацію списку. Показується повний список.
+Lists,Списки
+Live activity updates will appear here.,Оновлення активності з’являтимуться тут.
+Load a document to see live status,Завантажте документ для перегляду поточного стану
+Load the template from a file in a module instead of the Template field. Requires developer mode.,Завантажувати шаблон із файлу модуля замість поля шаблону. Потрібен режим розробника.
+Loading full tree...,Завантаження повного дерева…
+Loading groups…,Завантаження груп…
+Loading import log,Завантаження журналу імпорту
+Loading import preview...,Завантаження попереднього перегляду імпорту…
+Loading preview...,Завантаження попереднього перегляду…
+Loading tree preview...,Завантаження попереднього перегляду дерева…
+Locale,Регіональні налаштування
+Login to {0},Увійти до {0}
+Make Adjustment Entry,Створити коригувальну операцію
+Manage,Керування
+Manage Dock,Керування панеллю застосунків
+Manage Layouts,Керування макетами
+Manage Workspaces,Керування робочими просторами
+Manage priority,Керування пріоритетом
+Manage your preferences,Керування особистими налаштуваннями
+Manage your profile information and display picture.,Змініть дані профілю та зображення.
+Manage {0} Dock,Керування панеллю застосунків {0}
+Manage {0} Sidebar,Керування бічною панеллю {0}
+Map To,Зіставити з
+Map each file column to a field. Save to apply changes.,Зіставте кожен стовпець файлу з полем. Збережіть зміни для застосування.
+Mapping warnings,Попередження зіставлення
+Mappings,Зіставлення
+Margin,Зовнішній відступ
+Margins (mm),Поля сторінки (мм)
+Mark as Standard,Позначити як стандартний
+Mark as group,Позначити як групу
+Mark as leaf,Позначити як кінцевий вузол
+"Marks this DocType as deprecated. It will continue to work, but users will be warned against using it.","Позначає тип документа як застарілий. Він працюватиме, але користувачі бачитимуть попередження."
+Matches payments to invoices in the background.,Зіставляє платежі з рахунками у фоновому режимі.
+Max Bulk Print Documents,Максимум документів для масового друку
+Max Concurrent Bulk Exports Per User,Максимум одночасних масових експортів на користувача
+Maximum number of bulk PDF export jobs a single user can have queued or running at once.,Максимальна кількість завдань масового експорту PDF одного користувача в черзі та у виконанні.
+Maximum number of documents that can be combined into a single bulk PDF export.,Максимальна кількість документів в одному масовому експорті PDF.
+Merge fields,Об’єднати поля
+Merged From,Об’єднано з
+Merged table columns,Об’єднані стовпці таблиці
+Min height,Мінімальна висота
+Minimize,Згорнути
+"Minimum 8 characters, including at least one number or special character.","Щонайменше 8 символів, зокрема хоча б одна цифра або спеціальний символ."
+Mixed,Змішаний
+Modified By,Змінив
+Module is required for a standard Kanban Board,Для стандартної канбан-дошки потрібен модуль
+Module is required for a standard Print Format Snippet,Для стандартного фрагмента друкованої форми потрібен модуль
+Module is required for a standard Print Template,Для стандартного шаблону друку потрібен модуль
+Module is required for a standard layout,Для стандартного макета потрібен модуль
+"Module {0} has no folder in an app, so a standard sidebar cannot be written to it.",Модуль {0} не має папки в застосунку; записати до нього стандартну бічну панель неможливо.
+Module {0} is now shipped by {1}; this site's module of that name is now {2}.,Модуль {0} тепер постачається з {1}; модуль сайту з такою назвою перейменовано на {2}.
+"Money you received or paid, matched against invoices.","Отримані або сплачені кошти, зіставлені з рахунками."
+More actions,Інші дії
+More options,Інші параметри
+More send options,Інші параметри надсилання
+Mount On,Розмістити на
+Move to,Перемістити до
+Move to...,Перемістити до…
+Move to…,Перемістити до…
+Move {0},Перемістити {0}
+Moves an asset to another location or person.,Передає актив до іншого місця або іншій особі.
+"Moves, receives, issues or manufactures stock.","Переміщує, оприбутковує, списує або виробляє запаси."
+Moving {0},Переміщення {0}
+Mute sounds,Вимкнути звуки
+Muted,Звук вимкнено
+My Action,Моя дія
+My Bulk,Моя масова дія
+My Filter,Мій фільтр
+My Space,Мій простір
+Naming Rules,Правила нумерації
+Navigation on the desktop has two modes:,Навігація робочого столу має два режими:
+New Format Name,Назва нової форми
+New Kanban,Новий канбан
+New Parent,Новий батьківський запис
+New Print Format,Нова друкована форма
+New Template,Новий шаблон
+New Workflow,Новий процес погодження
+New login to the Administrator account,Новий вхід до облікового запису Administrator
+Next page,Наступна сторінка
+Next: {0},Далі: {0}
+No Company Found,Компанію не знайдено
+No Email Templates found,Шаблони листів не знайдено
+No HTML content yet.,HTML-вмісту ще немає.
+No Kanban Board specified.,Канбан-дошку не вказано.
+No Material Request created,Заявку на товари не створено
+No New Notifications,Немає нових сповіщень
+No Print Formats found,Друковані форми не знайдено
+No Role Profiles include this role.,Жоден профіль ролей не містить цієї ролі.
+No Workflows found,Процеси погодження не знайдено
+No access,Немає доступу
+No actions available,Немає доступних дій
+No active user found with email address {0},Активного користувача з адресою {0} не знайдено
+No addresses added yet,Адрес ще не додано
+No available parents,Немає доступних батьківських записів
+No barcode value — set one in the panel,Немає значення штрихкоду — вкажіть його на панелі
+No cards to group.,Немає карток для групування.
+No charts or cards yet,Діаграм і карток ще немає
+No columns configured,Стовпці не налаштовано
+No contact details,Немає контактних даних
+No contacts added yet,Контактів ще не додано
+No data yet,Даних ще немає
+No default warehouse set for this company. Entry will use Stock Settings default.,Для компанії не задано стандартний склад. Буде використано склад із налаштувань складського обліку.
+No document available to preview,Немає документа для попереднього перегляду
+No document to preview,Немає документа для перегляду
+No documents added.,Документів не додано.
+No documents found.,Документів не знайдено.
+No email account associated with the User. Please add an account under User > Settings > User Emails.,Користувач не має поштового облікового запису. Додайте його: Користувач → Налаштування → Електронна пошта користувача.
+No error log found for this import.,Журнал помилок для цього імпорту не знайдено.
+No failed log entries,Немає помилкових записів журналу
+No fields match,Відповідних полів немає
+No filters available for this report,Для цього звіту немає фільтрів
+No image — set one in the panel,Немає зображення — вкажіть його на панелі
+No invoices yet,Рахунків ще немає
+No issues to fix,Немає помилок для виправлення
+No letter head,Немає бланка
+No linked field set,Пов’язане поле не задано
+No matching field,Відповідного поля немає
+No matching records,Відповідних записів немає
+No matching records.,Відповідних записів немає.
+No module,Без модуля
+No notifications configured,Сповіщення не налаштовано
+No options,Немає варіантів
+No pages found.,Сторінок не знайдено.
+No pre-upgrade edits to standard workspaces were found.,Змін стандартних робочих просторів до оновлення не знайдено.
+No pre-upgrade layout edit is recorded for {0}.,Для {0} не збережено змін макета до оновлення.
+No preview data for this row,Немає даних для перегляду цього рядка
+No printable fields,Немає полів для друку
+No private workspaces yet,Особистих робочих просторів ще немає
+No problem. You can try it anytime from Desktop Settings.,Можна спробувати пізніше в налаштуваннях робочого столу.
+No records found.,Записів не знайдено.
+No related settings,Немає пов’язаних налаштувань
+No reports found.,Звітів не знайдено.
+No results,Нічого не знайдено
+No roles have access yet.,Жодна роль ще не має доступу.
+No rows were imported,Жодного рядка не імпортовано
+No rules found.,Правил не знайдено.
+No saved layouts yet,Збережених макетів ще немає
+No sections yet,Розділів ще немає
+No session defaults configured.,Стандартні значення сеансу не налаштовано.
+No settings from other areas are linked to {0}.,До {0} не прив’язано налаштувань з інших розділів.
+No source table selected,Вихідну таблицю не вибрано
+No successful log entries,Немає успішних записів журналу
+No templates,Немає шаблонів
+No thanks,"Ні, дякую"
+No user permissions yet.,Дозволів користувачів ще немає.
+No users have this role.,Жоден користувач не має цієї ролі.
+No valid tree nodes found in the import file.,У файлі імпорту не знайдено коректних вузлів дерева.
+No value to encode,Немає значення для кодування
+No warehouse found for company {0}. Please set a Default Warehouse in Item Defaults or Stock Settings.,Склад для компанії {0} не знайдено. Укажіть стандартний склад у налаштуваннях товару або складського обліку.
+No warnings or mapping issues were found. You can continue to import.,Попереджень і помилок зіставлення не знайдено. Можна продовжити імпорт.
+No workspaces found.,Робочих просторів не знайдено.
+No workspaces in this module.,У цьому модулі немає робочих просторів.
+No {0} created,Записів {0} не створено
+No {0} linked to this Work Order.,До цього замовлення на виробництво не прив’язано {0}.
+No {0} records yet,Записів {0} ще немає
+No. of Rows,Кількість рядків
+Not Editable,Не редагується
+Not a builder format,Форма не створена конструктором
+Not imported:,Не імпортовано:
+Not in any app,Не належить жодному застосунку
+Not set,Не задано
+Not yet overwritten,Ще не перезаписано
+Not your workspace,Це не ваш робочий простір
+Note: On checking Is Mandatory the accounting dimension will become mandatory against that specific account for all accounting transactions,Позначка обов’язковості робить цю аналітику обов’язковою для зазначеного рахунку в усіх бухгалтерських операціях
+Nothing has been added yet.,Нічого ще не додано.
+Nothing here yet,Тут поки порожньо
+Nothing left to navigate to,Немає доступних переходів
+Nothing on the dock,Панель застосунків порожня
+Nothing on the sidebar,Бічна панель порожня
+Nothing to paste,Немає вмісту для вставлення
+Nothing to restore,Немає даних для відновлення
+Notification categories,Категорії сповіщень
+Numbered list,Нумерований список
+"One entry on the dock. `link_type` says what kind of thing it opens, and each kind answers the two questions a click asks -- which page comes up and which shell comes up beside it -- in its own way. A `Sidebar` row *is* the shell: it selects that sidebar and opens its landing route. A `Workspace` row opens a page and derives its shell from the module that owns it. A `URL` row leaves the desk and has no shell at all. Every row also carries its own `icon` and `title`, so the rail reads the way its author wrote it -- blank at an upper layer means inherit. What a row points at *is* its identity, and none of it is stored: re-labelling cannot detach a row from itself, and re-pointing is not an edit but a different row. The same rows at all three layers -- the app's own dock, the site's arrangement and one person's -- told apart by the parent `Dock`, never by the row.","Елемент панелі застосунків. `link_type` визначає сторінку та супровідну бічну панель: `Sidebar` відкриває її початкову сторінку, `Workspace` — простір із панеллю його модуля, `URL` — зовнішню сторінку без панелі. Кожен рядок має власні `icon` і `title`; порожні значення на вищому рівні успадковуються. Ідентичність визначається ціллю посилання: перейменування її не змінює, зміна цілі створює інший рядок. Рівні застосунку, сайту й користувача розрізняються батьківським `Dock`."
+"One layer of one app's dock. Three of them share this table, told apart by `app`, `user` and `standard`: the app's own dock, which an app ships as an exported document and a developer authors; the site's arrangement of it, curated by a Workspace Manager and applying to everyone; and one person's own, applied last and winning. A dock belongs to an app, so arranging ERPNext's rail does not touch frappe's -- and a layer is addressed by app plus user rather than by user alone. Same shape at all three, because the rows are identical and the parent is what says whose they are; see `Custom Sidebar`, which layers a sidebar the same way in a table of its own.","Рівень панелі застосунку. Таблиця містить три рівні, визначені `app`, `user` і `standard`: стандартний рівень застосунку; рівень сайту для всіх, керований адміністратором просторів; особистий рівень користувача з найвищим пріоритетом. Панель належить застосунку, тому налаштування ERPNext не впливають на Frappe. Рівень визначається застосунком і користувачем. Рядки всіх рівнів мають однакову структуру, а власника визначає батьківський запис. Аналогічно працює `Custom Sidebar`."
+"One ordered list holding both references to base items (`added` unset -- non-empty fields override, empty fields mean no opinion) and items this layer added (`added` set -- full items, rendered as they stand). Row order is the arrangement; base items not named here keep their base order and follow the ones that are, which is how a newly installed app's items still reach someone who has already reordered.","Упорядкований список посилань на базові елементи та нових елементів. Без `added` заповнені поля перевизначають базові значення, а порожні їх успадковують. З `added` елемент повністю заданий цим рівнем. Порядок рядків визначає розташування; невказані базові елементи додаються в кінці у своєму порядку, тому нові елементи застосунків залишаються доступними."
+Only a new Kanban Board can be made standard,Лише нову канбан-дошку можна зробити стандартною
+Only a new list layout can be made standard,Лише новий макет списку можна зробити стандартним
+Only files up to {0} MB are supported for preview.,Попередній перегляд підтримує файли до {0} МБ.
+Only if Creator,Лише для автора
+"Only meaningful on a `Custom Sidebar` row referring to a base item that has no link -- a Section Break or a spacer -- which is the one kind of row with nothing else to name it by. A base row stores none: an unlinked one is identified by a hash of its type and label, and a linked one by its own link columns, which is what lets a rename repair the base row and the customization naming it together.","Застосовується лише до рядка `Custom Sidebar`, який посилається на базовий елемент без посилання: розділ або відступ. Такий базовий рядок визначається хешем типу та назви, а рядок із посиланням — його полями посилання. Це дозволяє узгоджено оновлювати базовий рядок і налаштування під час перейменування."
+"Only meaningful on a `Custom Sidebar`, where a row is either a reference to a base item or an item the site or the user added.","Застосовується лише в `Custom Sidebar`, де рядок є посиланням на базовий елемент або елементом, доданим сайтом чи користувачем."
+Only own,Лише власні
+Only records belonging to {0} will be deleted,"Буде видалено лише записи, що належать {0}"
+Only standard (app-shipped) workspaces can be customized.,Окремі налаштування доступні лише для стандартних робочих просторів застосунку.
+Only to you,Лише вам
+Open Role Permissions Manager,Відкрити керування правами ролей
+Open a linked document in a side panel instead of navigating away from the report. Not available on mobile.,Відкривати пов’язаний документ у бічній панелі без виходу зі звіту. Недоступно на мобільних пристроях.
+Open file,Відкрити файл
+Open file in new tab,Відкрити файл у новій вкладці
+Open in Desk,Відкрити на робочому столі
+Open in New Tab,Відкрити в новій вкладці
+Open in full page,Відкрити на повній сторінці
+Open linked documents in a side panel instead of navigating away from the report.,Відкривати пов’язані документи у бічній панелі без виходу зі звіту.
+Open the app dock,Відкрити панель застосунків
+"Open this board in the new Kanban experience. When off, the classic Kanban is used. Same List / Kanban route either way.","Відкривати цю дошку в новому канбані. Якщо вимкнено, використовується класичний канбан. Маршрут списку / канбану залишається однаковим."
+Open {0} Workspace,Відкрити робочий простір {0}
+Opening Stock can only be set for stock items.,Початкові залишки можна задати лише для складських товарів.
+Opening Stock cannot be created as stock transactions already exist for item {0}.,Неможливо створити початкові залишки: для товару {0} вже є складські операції.
+Opening Stock for serialised or batch items must be set via the Stock Reconciliation form.,Початкові залишки товарів із серійним або партійним обліком задаються через інвентаризацію.
+Opening Stock reconciliation created with zero valuation rate: {0},Створено інвентаризацію початкових залишків із нульовою обліковою вартістю: {0}
+Opening Stock reconciliation created: {0},Створено інвентаризацію початкових залишків: {0}
+Opening stock creation has been queued and will be created in the background. Please check the Stock Reconciliation after some time.,Створення початкових залишків додано до фонової черги. Перевірте інвентаризацію пізніше.
+Opens a POS shift with the cash in the drawer.,Відкриває касову зміну із залишком готівки в касі.
+Opens the module's home and shows its sidebar.,Відкриває головну сторінку модуля та його бічну панель.
+Optional,Необов’язково
+Optional group warehouse. Raw material availability is checked across its child warehouses; material is still received into For Warehouse.,Необов’язковий груповий склад. Наявність сировини перевіряється на всіх його дочірніх складах; надходження відбувається на цільовий склад.
+Optional heading,Необов’язковий заголовок
+"Optional. When set, the card shows this icon and the label on hover; when empty, the label is shown directly.","Якщо задано, картка показує піктограму й підпис під час наведення; інакше підпис відображається безпосередньо."
+Or copy and paste:,Або скопіюйте та вставте:
+Or skip rows instead,Або пропустіть рядки
+Override Sidebar Position,Перевизначити розташування бічної панелі
+"Override whether the standard workspace is shown. ""Inherit"" keeps the app-shipped value.",Перевизначає видимість стандартного робочого простору. «Успадкувати» зберігає значення застосунку.
+Overrides the dock label for this module.,Перевизначає назву цього модуля на панелі застосунків.
+Overwritten,Перезаписано
+"Owned by an app: exported to its module's folder -- or to the app's own folder when it has no module -- and re-imported by migrate. Set via the Mark as Standard action, not by hand -- a standard sidebar with no exported file is an orphan and gets deleted on the next migrate. Everything else belongs to this site, however it got here.",Належить застосунку: експортується до папки модуля або застосунку й повторно імпортується під час міграції. Установлюється дією «Позначити як стандартний». Стандартна бічна панель без експортованого файлу видаляється під час наступної міграції. Решта панелей належить сайту.
+"Owned by the app: exported to `<app>/dock/<app>/<app>.json` and re-imported by migrate. This is the app layer, and the layer the other two are laid over. Ordinarily set via the Export to App action rather than by hand, which is why it is writable only in developer mode -- a standard dock with no exported file is an orphan and gets deleted on the next migrate.",Належить застосунку: експортується до `<app>/dock/<app>/<app>.json` і повторно імпортується під час міграції. Це базовий рівень для рівнів сайту й користувача. Установлюється дією «Експортувати до застосунку» в режимі розробника. Стандартна панель без експортованого файлу видаляється під час наступної міграції.
+Owner,Власник
+PDF Renderer,Засіб формування PDF
+PDF encryption is not supported by the Typst renderer,Засіб формування Typst не підтримує шифрування PDF
+Padding,Внутрішній відступ
+Page break must follow a section,Розрив сторінки має йти після розділу
+Pages,Сторінки
+Pages this role can access.,"Сторінки, доступні цій ролі."
+Paragraph,Абзац
+Parent {0} not found in file,Батьківський запис {0} не знайдено у файлі
+Pass either an existing {0} name or a {1} to import into.,Передайте назву наявного {0} або {1} для імпорту.
+Password changed,Пароль змінено
+"Path to the template file inside the app, e.g. templates/print_formats/my_template.html","Шлях до файлу шаблону в застосунку, наприклад templates/print_formats/my_template.html"
+Pending Repost,Очікує перепроведення
+Pending qty,Невиконана кількість
+"Per-row parent / is_group overrides for tree DocType imports, keyed by sheet row number. Applied at import time.",Перевизначення батьківських записів та is_group для імпорту дерев за номером рядка аркуша. Застосовуються під час імпорту.
+Permission added.,Дозвіл додано.
+Permission removed.,Дозвіл видалено.
+Permission row not found after add. Please refresh.,Після додавання рядок дозволу не знайдено. Оновіть сторінку.
+Permission row not found after conversion. Please refresh.,Після перетворення рядок дозволу не знайдено. Оновіть сторінку.
+Permission updated.,Дозвіл оновлено.
+Permissions for this doctype have been customized.,Права доступу для цього типу документа змінено.
+Permissions reset,Права доступу скинуто
+Pick a module,Виберіть модуль
+Pick a record in the toolbar above to preview it.,Виберіть запис на панелі вгорі для попереднього перегляду.
+Pick a source table,Виберіть вихідну таблицю
+Pick a {0} to preview...,Виберіть {0} для попереднього перегляду…
+Pick another title,Виберіть іншу назву
+Pick something for it to open.,"Виберіть, що має відкриватися."
+"Picks the right tax template for a customer, supplier or address.","Визначає податковий шаблон для клієнта, постачальника або адреси."
+Pinned sits beside the sidebar. Floating slides in from the left edge.,Закріплена панель розташована біля бічної панелі. Плаваюча висувається з лівого краю.
+Places,Місця
+Planned visits to service what a customer bought.,Планові візити для обслуговування придбаного клієнтом товару.
+Plans the work orders and materials needed for your demand.,Планує виробничі замовлення та матеріали відповідно до потреб.
+Play video,Відтворити відео
+Please add at least one row in Item Defaults with a Company before setting opening stock.,Перед установленням початкових залишків додайте до стандартних налаштувань товару хоча б один рядок із компанією.
+Please attach an import file or provide a Google Sheets URL.,Додайте файл імпорту або URL-адресу Google Таблиці.
+Please configure the start field for this Doctype in the controller file.,Налаштуйте початкове поле цього типу документа у файлі контролера.
+Please enter a valid URL,Уведіть коректну URL-адресу
+Please enter a valid date for when your financial year begins.,Укажіть коректну дату початку фінансового року.
+Please pick a company name other than Company.,"Виберіть назву компанії, відмінну від Company."
+Please select Document Type and Import Type.,Виберіть тип документа та тип імпорту.
+Please select a Document Type first,Спочатку виберіть тип документа
+Please select a Report first,Спочатку виберіть звіт
+Please set a Temporary Opening account for company {0} to create an Opening Stock reconciliation.,Для створення початкових залишків укажіть тимчасовий початковий рахунок компанії {0}.
+Please set at least one filter: User or DocType,Укажіть хоча б один фільтр: користувача або тип документа
+"Please {0}, click on the three dots (⋯) and select Manage to configure it.","Будь ласка, {0}, натисніть три крапки (⋯) і виберіть «Керування» для налаштування."
+Point Of Sale,Касовий термінал
+Points a customer earned or spent under a loyalty program.,"Бали, зароблені або витрачені клієнтом за програмою лояльності."
+Poor,Слабкий
+Pre-filled with all document fields. Customize from there.,Попередньо заповнено всіма полями документа. Налаштуйте за потреби.
+Preferences,Особисті налаштування
+Preparing import...,Підготовка імпорту…
+Preview Fields,Поля попереднього перегляду
+Preview Image,Зображення попереднього перегляду
+Preview not available for this file type.,Попередній перегляд цього типу файлу недоступний.
+Preview: {0},Попередній перегляд: {0}
+Previous page,Попередня сторінка
+Prices a supplier offered you.,"Ціни, запропоновані постачальником."
+Prices you offer a customer or lead.,"Ціни, які ви пропонуєте клієнту або потенційному клієнту."
+Print Format Snippet,Фрагмент друкованої форми
+Print Formats,Друковані форми
+Print Settings updated,Налаштування друку оновлено
+Print format,Друкована форма
+Print if empty,Друкувати порожнє поле
+Process Loss qty,Кількість технологічних втрат
+Progress summary,Підсумок виконання
+Projected,Прогноз
+Projected Quantity as Source,Прогнозована кількість як джерело
+Protect,Захистити
+Published version,Опублікована версія
+"Put <b>{0}</b> back to the sidebar its app ships? This removes the site's arrangement and every person's own, so nobody keeps a customization of this module.",Відновити стандартну бічну панель <b>{0}</b>? Налаштування сайту й усіх користувачів для цього модуля буде видалено.
+Put this sidebar back to the site's arrangement? Everything you have arranged here is dropped.,Відновити розташування бічної панелі сайту? Усі ваші зміни буде скинуто.
+"Put this sidebar back to what the apps ship? Everything the site has arranged here is dropped, for everyone.",Відновити стандартну бічну панель застосунків? Налаштування сайту буде скинуто для всіх.
+QZ Tray Connection Active!,З’єднання з QZ Tray активне!
+Qty to Manufacture,Кількість до виробництва
+Qty to Transfer,Кількість до переміщення
+Quantity must be greater than zero.,Кількість має бути більшою за нуль.
+Quarter Day,Чверть дня
+Quick List,Швидкий список
+Radius,Радіус
+Raise money against unpaid sales invoices.,Залучення коштів під неоплачені рахунки продажу.
+Rates a supplier over time on criteria you choose.,Оцінює постачальника в часі за вибраними критеріями.
+"Rates and thresholds for tax withheld on payments, like TDS.","Ставки й пороги утримання податків із платежів, наприклад TDS."
+Raw HTML or Jinja template,Код HTML або шаблон Jinja
+Raw Material Group Warehouse,Груповий склад сировини
+Raw Typst markup,Код розмітки Typst
+Read the migration guide,Переглянути посібник із міграції
+Rebuilds the ledger entries of transactions that were posted wrongly.,Перебудовує бухгалтерські записи помилково проведених операцій.
+Rebuilds the payment ledger so outstanding amounts are right again.,Перебудовує платіжний реєстр для відновлення правильних сум заборгованості.
+Recalculates stock values after a backdated change.,Перераховує вартість запасів після зміни заднім числом.
+Receive a copy of every email you send in your inbox.,Отримувати у вхідних копію кожного надісланого листа.
+Recent activity,Остання активність
+Records you add will appear here.,Додані записи з’являться тут.
+Refresh to see changes,"Оновіть сторінку, щоб побачити зміни"
+Related Reports,Пов’язані звіти
+Reload Tree,Перезавантажити дерево
+Remove Default,Прибрати стандартне значення
+Remove Permission,Видалити дозвіл
+Remove formatting,Очистити форматування
+Remove selected,Видалити вибране
+Remove this role's access to {0}?,Видалити доступ цієї ролі до {0}?
+Remove this role's permission on {0}?,Видалити дозвіл цієї ролі для {0}?
+Remove {0} from this role?,Видалити {0} із цієї ролі?
+Removed Roles,Вилучені ролі
+Removed from global search,Вилучено із загального пошуку
+Rename Entry,Перейменувати елемент
+Renderer unavailable,Засіб формування недоступний
+"Replace a BOM everywhere it is used, or update the cost of all BOMs.",Замінює специфікацію в усіх місцях використання або оновлює вартість усіх специфікацій.
+Replace your current draft with {0}? Nothing prints differently until you Save & Apply.,Замінити поточну чернетку на {0}? Друк не зміниться до натискання «Зберегти й застосувати».
+Report Settings,Налаштування звітів
+Reporting & Sharing,Звіти та спільний доступ
+Reports this role can access.,"Звіти, доступні цій ролі."
+Repost Item Valuation will be made for:,Переоцінку товарів буде виконано для:
+Repost {0} is already pending.,Перепроведення {0} уже очікується.
+Reposting could not be queued for:,Не вдалося додати перепроведення до черги для:
+Reposting has been queued for:,Перепроведення додано до черги для:
+Request read receipts for outgoing emails,Запитувати підтвердження прочитання вихідних листів
+Requires approval for transactions above a limit.,Вимагає погодження операцій понад установлений ліміт.
+"Reset <b>{0}</b> to the standard, app-shipped version? This removes all site customizations.",Відновити стандартну версію <b>{0}</b> із застосунку? Усі налаштування сайту буде видалено.
+Reset all,Скинути все
+Reset for everyone,Скинути для всіх
+Reset node,Скинути вузол
+Reset password,Скинути пароль
+Reset to Standard,Скинути до стандартного
+Reset {0} permissions to their default? This removes all customizations.,Відновити стандартні права доступу {0}? Усі зміни буде видалено.
+Resizing preview...,Зміна розміру попереднього перегляду…
+Restates foreign currency balances at today's exchange rate.,Перераховує валютні залишки за поточним курсом.
+Restore Workspace,Відновити робочий простір
+Restore Workspace Edits,Відновити зміни робочого простору
+Restore again,Відновити знову
+Restore classic layout,Відновити класичний макет
+"Restore the pre-upgrade layout of <b>{0}</b>? The layout becomes a site customization, so later layout changes from the app will not show until it is reset to standard.",Відновити макет <b>{0}</b> до оновлення? Він стане налаштуванням сайту; наступні зміни макета застосунку не відображатимуться до скидання до стандартного.
+Restore this version,Відновити цю версію
+Restore this version as your draft,Відновити цю версію як чернетку
+Restored with limits,Відновлено з обмеженнями
+Restoring…,Відновлення…
+Restrict specific users to specific {0} records.,Обмежте користувачам доступ конкретними записами {0}.
+Reuse email templates when emailing {0}.,Використовуйте шаблони під час надсилання листів щодо {0}.
+Review pending imports,Переглянути незавершені імпорти
+Rewards customers with points they can spend on later purchases.,Нараховує клієнтам бали для оплати наступних покупок.
+Role Managed by Role Profile,Роль керується профілем ролей
+Role Profiles that include this role.,"Профілі ролей, що містять цю роль."
+Roles granted access on top of the app-shipped roles.,Ролі з додатковим доступом понад стандартні ролі застосунку.
+Root records can't be deleted,Кореневі записи не можна видаляти
+Root records can't be renamed,Кореневі записи не можна перейменовувати
+Route Signature,Сигнатура маршруту
+Row #{0},Рядок №{0}
+"Row #{0}: Cannot return {1} of Batch {2}, only {3} was delivered and not returned yet.",Рядок №{0}: не можна повернути {1} із партії {2}; відвантажено та ще не повернуто лише {3}.
+Row #{0}: Stock cannot be reserved for the Item {1} as its delivery is ensured based on the produced Serial Nos. The Work Order will reserve them on manufacture.,"Рядок №{0}: товар {1} не можна зарезервувати, оскільки його поставка забезпечується виробленими серійними одиницями. Замовлення на виробництво зарезервує їх під час виготовлення."
+"Row #{0}: a dock entry opens a Sidebar, a Workspace or a web address, not a {1}.","Рядок №{0}: елемент панелі відкриває бічну панель, робочий простір або вебадресу, а не {1}."
+Row #{0}: an entry on this dock needs an icon and a title of its own.,Рядок №{0}: елемент цієї панелі потребує власної піктограми та назви.
+Row Data,Дані рядка
+Row Numbers,Номери рядків
+Row errors,Помилки рядків
+Row validation failed,Перевірка рядка не пройдена
+Row {0} failed,Помилка рядка {0}
+Rows,Рядки
+Rows checked,Перевірено рядків
+Rows skipped,Пропущено рядків
+Sales Order Item {0} does not belong to {1},Товар замовлення клієнта {0} не належить {1}
+Same as what prints,Як у друкованій версії
+Save & Apply,Зберегти й застосувати
+Save & Apply Print Format,Зберегти й застосувати друковану форму
+Save Field as Snippet,Зберегти поле як фрагмент
+Save Filters,Зберегти фільтри
+Save Layout,Зберегти макет
+Save Section as Snippet,Зберегти розділ як фрагмент
+Save a named version,Зберегти іменовану версію
+Save as snippet,Зберегти як фрагмент
+Save failed,Не вдалося зберегти
+Save the Work Order to view linked documents.,Збережіть замовлення на виробництво для перегляду пов’язаних документів.
+Save the role first to view this information.,Спочатку збережіть роль для перегляду цих відомостей.
+Save version,Зберегти версію
+Save your changes before importing.,Збережіть зміни перед імпортом.
+Saved Reports,Збережені звіти
+Saved Snippets,Збережені фрагменти
+Saved versions,Збережені версії
+Saving your language and region,Збереження мови та регіону
+Saving…,Збереження…
+Schedule Send,Запланувати надсилання
+Schedule email,Запланувати лист
+Scheduling & Costing,Планування та калькуляція
+Search by label or field name,Пошук за підписом або назвою поля
+Secondary,Додатковий
+"Section background, padding, radius or custom CSS","Тло, відступи, радіус кутів або власний CSS розділу"
+Section saved as snippet,Розділ збережено як фрагмент
+Section:,Розділ:
+Sections hold the columns and fields of your document.,Розділи містять стовпці й поля документа.
+See warning icons on nodes below or check the Warnings section.,Перегляньте позначки попереджень на вузлах або розділ попереджень.
+Select Options,Варіанти вибору
+Select a Document Type to upload a file or Google Sheet.,Виберіть тип документа для завантаження файлу або Google Таблиці.
+Select a field,Виберіть поле
+Select a link field,Виберіть поле посилання
+Select at least one field,Виберіть принаймні одне поле
+Select attachments,Виберіть вкладення
+Select date format,Виберіть формат дати
+Select field whose options become the board columns.,"Поле вибору, варіанти якого утворюють стовпці дошки."
+Select format,Виберіть формат
+Select or Link field of the board's reference doctype to group cards by (swimlanes).,Поле вибору або посилання основного типу документа дошки для групування карток за доріжками.
+Select parent section (Esc),Вибрати батьківський розділ (Esc)
+Select table…,Виберіть таблицю…
+Select the differences to fix.,Виберіть розбіжності для виправлення.
+Selection,Вибір
+Sells several items together as one item.,Продаж кількох товарів одним комплектом.
+Send automatic notifications for events on any {0}.,Надсилайте автоматичні сповіщення про події в {0}.
+Send me a copy of outgoing emails,Надсилати мені копію вихідних листів
+Send notifications for email threads,Сповіщати про нові листи в обговореннях
+Send raw ESC/POS commands to a label or thermal printer.,Надсилати команди ESC/POS безпосередньо на етикетковий або термопринтер.
+Send read receipt,Надіслати підтвердження прочитання
+Series added,Серію додано
+Series already exists,Серія вже існує
+Series removed,Серію видалено
+Series updated,Серію оновлено
+Set <strong>{0}</strong> = <em>?</em> to auto complete,Установіть <strong>{0}</strong> = <em>?</em> для автоматичного заповнення
+Set Opening Stock,Задати початкові залишки
+Set as Primary,Зробити основним
+Set as default,Використовувати за замовчуванням
+Set default values for the current session. Values set here will be autofilled in forms and reports.,Установіть стандартні значення поточного сеансу для автоматичного заповнення форм і звітів.
+Set dynamic filter values as Python expressions.,Задайте значення динамічних фільтрів як вирази Python.
+Set this to decide which position a layout appears in the dropdown,Укажіть позицію макета в розкривному списку
+Set up your authenticator app,Налаштуйте застосунок автентифікації
+Set up your company,Налаштуйте компанію
+Set {0} in {1} to finish this step.,"Установіть {0} у {1}, щоб завершити цей крок."
+Set {0}…,Установити {0}…
+Sets stock quantities and values to what is actually in your warehouses.,Установлює кількість і вартість запасів відповідно до фактичних залишків на складах.
+Setting Field,Поле налаштування
+Setting things up,Налаштування системи
+Setting up the basics,Основне налаштування
+Setting up your apps,Налаштування застосунків
+Settings DocType,Тип документа налаштувань
+"Settings for a point of sale, like its warehouse, price list and payment methods.","Налаштування касового термінала: склад, прайс-лист і способи оплати."
+"Settings from Single doctypes applied to a doctype, with one standard and one custom record shown in DocType Settings → General.",Налаштування одиничних документів для типу документа: один стандартний і один користувацький запис у розділі «Налаштування типу документа → Загальне».
+Settings from across the system that apply to {0}.,Налаштування з різних розділів системи для {0}.
+Setup Wizard,Майстер налаштування
+Setup a multi-step workflow for {0}.,Налаштуйте багатокроковий процес погодження для {0}.
+Share usage data to help us improve,Надавати дані використання для покращення продукту
+"Ship as files in an app, tracked in git.",Зберігати у файлах застосунку з відстеженням у git.
+"Ship as files in an app, tracked in git. Developer mode only; duplicate to edit.",Зберігати у файлах застосунку з відстеженням у git. Лише в режимі розробника; створіть копію для редагування.
+Ship this off by default,Постачати вимкненим за замовчуванням
+Ship with the app,Постачати із застосунком
+Shortcut,Швидке посилання
+Show Assigned To,Показувати виконавців
+Show Colon After Field Labels,Двокрапка після підписів полів
+Show Differences Settled by Adjustment Entries,"Показувати розбіжності, усунені коригувальними операціями"
+Show My Space,Показувати мій простір
+Show Tags on Cards,Показувати теги на картках
+"Show a colon after field labels (e.g. ""Name:""), matching the older print style.","Показувати двокрапку після підписів полів, наприклад «Назва:», як у старому стилі друку."
+"Show a summary dashboard with charts and statistics, where available, at the top of forms.","Показувати вгорі форми панель діаграм і статистики, якщо вона доступна."
+Show absolute datetime in timeline,Точні дата й час у стрічці активності
+Show all (including disabled),"Показувати всі, зокрема вимкнені"
+Show column when,Показувати стовпець за умови
+Show dashboard,Показувати панель показників
+Show desktop and in-app notifications for activity on your account.,Показувати системні та внутрішні сповіщення про активність облікового запису.
+"Show document tags on cards (left of footer date), using the standard colored tag style.",Показувати кольорові теги документа на картках ліворуч від дати.
+Show label,Показувати підпис
+Show navigation buttons,Показувати кнопки навігації
+Show navigation buttons to view the previous and next record in the form toolbar.,Показувати на панелі форми кнопки переходу до попереднього й наступного запису.
+Show row when,Показувати рядок за умови
+Show search bar,Показувати рядок пошуку
+"Show the activity timeline with comments, emails, and version history.","Показувати стрічку активності з коментарями, листами та історією версій."
+Show the assignee stack and Assign control on cards and in the hover preview.,Показувати виконавців і керування призначенням на картках та в попередньому перегляді.
+Show timeline,Показувати стрічку активності
+Show title,Показувати заголовок
+Show view switcher,Показувати перемикач подань
+Showing all {0} rows,Показано всі {0} рядків
+Showing first {0} rows of {1},Показано перші {0} рядків із {1}
+Showing {0},Показано {0}
+Showing {0} of {1},Показано {0} із {1}
+Showing {0} of {1} columns.,Показано {0} із {1} стовпців.
+Showing {0} of {1} rows and {2} of {3} columns.,Показано {0} із {1} рядків та {2} із {3} стовпців.
+Showing {0} of {1} rows.,Показано {0} із {1} рядків.
+"Shown as the field label, or as the icon tooltip when an icon is set. Auto-filled from the field; edit to override.",Підпис поля або підказка піктограми. Заповнюється автоматично з поля; можна змінити.
+Shown as the group option's name. Auto-filled from the field; edit to override.,Назва варіанта групування. Заповнюється автоматично з поля; можна змінити.
+Shown only when: {0},Показувати лише за умови: {0}
+Shows which POS invoices were merged into a sales invoice.,"Показує касові рахунки, об’єднані в рахунок продажу."
+Sidebar Item,Елемент бічної панелі
+Sidebar Menu,Меню бічної панелі
+Sidebar Moved,Бічну панель переміщено
+Sidebar Position,Розташування бічної панелі
+"Sidebar intent for a module, at either of the two layers a site has. `user` is what tells them apart: blank is the site layer, curated by a Workspace Manager and applying to everyone; a user's name is that person's own arrangement, which is applied on top and wins. The `Custom *` prefix elsewhere in this repo means site-owned override of app-shipped content, and this doctype knowingly overloads it: with the layers structurally identical there is nothing to gain from a second doctype, and `user` makes the layer unambiguous at a glance. Do not ""fix"" this by splitting it.","Налаштування бічної панелі модуля на рівні сайту або користувача. Порожній `user` означає рівень сайту для всіх під керуванням адміністратора просторів; ім’я користувача — його особисте розташування з вищим пріоритетом. Префікс `Custom *` позначає перевизначення вмісту застосунку. Обидва рівні мають однакову структуру та зберігаються в одному типі документа, а `user` однозначно їх розрізняє."
+Sidebar is no longer shipped with {0},Бічна панель більше не постачається з {0}
+Sidebar reset for everyone,Бічну панель скинуто для всіх
+Sidebar reset to the site's,Відновлено бічну панель сайту
+Sidebar saved to its app,Бічну панель збережено до її застосунку
+Sidebar updated,Бічну панель оновлено
+Sidebar updated for everyone,Бічну панель оновлено для всіх
+"Since you are reposting transactions from the previous fiscal year {0}, the closing balances of that fiscal year can change. The reposting might also take time to complete.",Перепроведення операцій попереднього фінансового року {0} може змінити його кінцеві залишки. Виконання може зайняти певний час.
+Skip Row,Пропустити рядок
+Skip every row that has one of these values. Skipped rows are not imported.,Пропускати всі рядки з одним із цих значень. Пропущені рядки не імпортуються.
+Skipped Rows,Пропущені рядки
+Skipped row {0},Пропущено рядок {0}
+Snippet Type,Тип фрагмента
+Snippet name,Назва фрагмента
+Some cards were saved in another column,Деякі картки збережено в іншому стовпці
+"Some columns have invalid values. Map them to valid values below, or skip the rows that have them. Affected columns: {0}.",Деякі стовпці містять некоректні значення. Зіставте їх із правильними значеннями нижче або пропустіть відповідні рядки. Стовпці: {0}.
+Some of its serial nos or batches should be short of stock on this date.,На цю дату очікується нестача деяких серійних одиниць або партій.
+Some settings tabs may not load. Please refresh the page.,Деякі вкладки налаштувань можуть не завантажитися. Оновіть сторінку.
+Someone who can log in to your site.,"Особа, яка може входити на ваш сайт."
+Someone who might buy from you.,"Особа, яка може стати вашим клієнтом."
+"Someone who sells for you, with targets and commission.",Ваш продавець із плановими показниками та комісійною винагородою.
+"Something a supplier is scored on, like on-time delivery.","Критерій оцінки постачальника, наприклад своєчасність доставки."
+"Something an item is checked for, like weight or colour.","Параметр перевірки товару, наприклад маса або колір."
+Something that did not meet your quality standard.,Випадок невідповідності стандарту якості.
+"Something you measure and improve on a schedule, like on-time delivery.","Показник для регулярного вимірювання й покращення, наприклад своєчасність доставки."
+"Something your business owns and uses over time, like a machine or a laptop.","Майно тривалого використання, наприклад верстат або ноутбук."
+Source Warehouse is required for item {0},Для товару {0} потрібен склад-відправник
+Space Between,Проміжки між елементами
+Space Evenly,Рівномірні проміжки
+Spacing,Відступи
+Split across pages,Розбивати між сторінками
+Split view,Розділений перегляд
+Split view in reports,Розділений перегляд у звітах
+Splits one cost center's amounts across others by percentage.,Розподіляє суми одного центру витрат між іншими у відсотках.
+Spreads a yearly budget or target across months for seasonal businesses.,Розподіляє річний бюджет або план за місяцями з урахуванням сезонності.
+Sr. No,№ з/п
+Stage,Етап
+Standard Cost,Нормативна собівартість
+Standard DocType Settings Map can only be changed in Developer Mode.,Стандартну карту налаштувань типу документа можна змінювати лише в режимі розробника.
+Standard Kanban Boards can only be changed in developer mode,Стандартні канбан-дошки можна змінювати лише в режимі розробника
+Standard Kanban Boards can only be deleted in developer mode,Стандартні канбан-дошки можна видаляти лише в режимі розробника
+Standard Report,Стандартний звіт
+Standard list layout {0} already exists with a similar name,Стандартний макет списку {0} зі схожою назвою вже існує
+Standard list layouts can only be changed in developer mode,Стандартні макети списків можна змінювати лише в режимі розробника
+Standard list layouts can only be deleted in developer mode,Стандартні макети списків можна видаляти лише в режимі розробника
+Standard maps are shipped with an app and can only be changed in Developer Mode. Leave unchecked for user-created (custom) maps.,Стандартні карти постачаються із застосунком і змінюються лише в режимі розробника. Для власних карт залиште прапорець знятим.
+Standard print formats can only be converted in developer mode,Стандартні друковані форми можна перетворювати лише в режимі розробника
+Standard print formats can only be restored in developer mode,Стандартні друковані форми можна відновлювати лише в режимі розробника
+"Standard terms to add to quotes, orders and invoices.","Стандартні умови для пропозицій, замовлень і рахунків."
+Standard workspaces can't be edited directly. Your changes are saved as a customization.,Стандартні робочі простори не редагуються безпосередньо. Зміни зберігаються як окремі налаштування.
+Standard workspaces cannot be deleted. Reset to standard instead.,Стандартні робочі простори не можна видаляти. Скористайтеся скиданням до стандартного.
+Start Closed,Починати згорнутим
+Start blank,Почати з порожнього
+Start from default,Почати зі стандартного
+Start the import before opening the Import step.,Запустіть імпорт перед відкриттям кроку імпорту.
+Start with,Почати з
+Start with # to search by tag,Почніть із # для пошуку за тегом
+Started by,Запустив
+Started on,Час запуску
+Starting from the default layout instead.,Натомість використовується стандартний макет.
+Starting import...,Запуск імпорту…
+Static value,Фіксоване значення
+Step {0} of {1},Крок {0} із {1}
+Stock Entries,Складські операції
+Stock Ledger Entries of Cancelled Vouchers,Складські записи скасованих документів
+Stock Ledger Entries of the selected vouchers have been cancelled and reposting has been queued.,"Складські записи вибраних документів скасовано, перепроведення додано до черги."
+Stock Valuation Comparison,Порівняння оцінки запасів
+Stock Value Difference,Різниця вартості запасів
+Stock set aside for a sales order or production.,"Запаси, зарезервовані для замовлення клієнта або виробництва."
+"Stop shipping this sidebar with {0}? Its document and its exported file are both removed, and the module goes back to the sidebar generated from its contents.","Припинити постачання цієї бічної панелі з {0}? Документ і експортований файл буде видалено, а модуль повернеться до автоматично сформованої панелі."
+"Stop shipping {0} with its app? Its exported file and this document are removed, and {1} goes back to the sidebar computed from its contents.","Припинити постачання {0} із застосунком? Файл і документ буде видалено, а {1} повернеться до автоматично сформованої бічної панелі."
+Strength:,Надійність:
+Strikethrough,Закреслення
+Striped,Черезрядкове тло
+Styled,З оформленням
+Submit a {0} to finish this step.,"Проведіть {0}, щоб завершити цей крок."
+Submit it to finish this step.,"Проведіть документ, щоб завершити цей крок."
+Submitting...,Проведення…
+Subscript,Нижній індекс
+Success ({0}),Успішно ({0})
+Successfully inserted {0},Успішно додано {0}
+Successfully inserted {0} and updated {1} out of {2} records.,Успішно додано {0} та оновлено {1} із {2} записів.
+Superscript,Верхній індекс
+Swimlanes,Доріжки
+Swimlanes (Group By),Доріжки (групування)
+"Switch between light, dark, or system theme.","Перемикання світлої, темної або системної теми."
+Switched back to Chromium: {0},Повернуто Chromium: {0}
+Switching you to the new navigation…,Перехід до нової навігації…
+System default,Стандартне значення системи
+Table column conditions,Умови стовпців таблиці
+Table styling,Оформлення таблиці
+Table title,Назва таблиці
+Target Warehouse is required for item {0},Для товару {0} потрібен склад-одержувач
+Task Name,Назва завдання
+Task Progress,Виконання завдання
+Task list,Список завдань
+Tax rates for items that are taxed differently from the rest.,"Податкові ставки для товарів, що оподатковуються інакше за решту."
+Telephony,Телефонія
+Template Name,Назва шаблону
+Text color,Колір тексту
+Text direction,Напрямок тексту
+Text style,Стиль тексту
+The <strong>Doc Status</strong> for all states has been reset to <strong>0</strong> because <strong>{0}</strong> is not submittable,"<strong>Статус документа</strong> для всіх станів скинуто до <strong>0</strong>, оскільки <strong>{0}</strong> не підтримує проведення"
+The <strong>Doc Status</strong> for all states has been reset to <strong>Draft</strong> because <strong>{0}</strong> is not submittable,"<strong>Статус документа</strong> для всіх станів скинуто до <strong>Чернетка</strong>, оскільки <strong>{0}</strong> не підтримує проведення"
+The Administrator account may be compromised. Change the Administrator password immediately.,Обліковий запис Administrator може бути скомпрометовано. Негайно змініть його пароль.
+The DocType these settings apply to.,"Тип документа, до якого застосовуються ці налаштування."
+The Typst block could not render its template: {0},Не вдалося сформувати шаблон блоку Typst: {0}
+The Typst block in {0} does not compile: {1},Блок Typst у {0} не компілюється: {1}
+The Typst block in {0} has a template error: {1},Помилка шаблону блоку Typst у {0}: {1}
+The Typst renderer cannot embed this image: {0},Typst не може вбудувати це зображення: {0}
+The VAT accounts to report in the South Africa VAT audit report.,Рахунки ПДВ для аудиторського звіту ПДВ Південної Африки.
+"The app this one mounts on, for a companion app -- one with no rail of its own, whose entries live on a host's. Blank on every ordinary dock. An **app name** rather than a Link to a `Dock`: every consumer wants a string, and a pin aimed at a record would be a pin aimed at one of that app's three layers, which means nothing. App-layer only: `depends_on` hides it elsewhere and `validate` blanks it, because hiding a field does not stop an API write.","Застосунок-основа для супровідного застосунку без власної панелі. Для звичайної панелі значення порожнє. Це назва застосунку, а не посилання на `Dock`, оскільки панель має три рівні. Поле діє лише на рівні застосунку: `depends_on` приховує його на інших рівнях, а `validate` очищує, зокрема під час запису через API."
+"The app this sidebar is placed in. Derived from the module when there is one -- a module sits in exactly one app. Author-set when there is not: an app-rooted sidebar has no module to derive it from, and this is then the only thing that says which app ships the file.","Застосунок, у якому розміщено бічну панель. Визначається модулем, якщо його задано. Для панелі без модуля застосунок указує автор; це визначає місце зберігання файлу."
+The app whose dock lists this module. A custom module may leave it empty and stand on its own.,"Застосунок, на панелі якого показано цей модуль. Власний модуль може не мати застосунку й бути окремим."
+"The app whose dock this layer arranges. Required: a dock belongs to an app, and a layer that named none would be one arrangement spanning every rail. An `Autocomplete` over installed apps rather than a Link, because there is no `App` doctype -- the house spelling, shared with `Sidebar.app` and `Desktop Icon.app`.","Застосунок, панель якого налаштовує цей рівень. Обов’язковий, оскільки панель належить конкретному застосунку. Вибір через `Autocomplete` зі встановлених застосунків, а не посилання: типу документа `App` немає. Формат узгоджено з `Sidebar.app` і `Desktop Icon.app`."
+The block {0} points at a {1} this version of the app no longer ships.,"Блок {0} посилається на {1}, який більше не постачається з цією версією застосунку."
+The card was saved in another column,Картку збережено в іншому стовпці
+The change to {0} cannot be carried by a customization.,Зміну {0} не можна зберегти як окреме налаштування.
+The classic builder can no longer create formats,Класичний конструктор більше не створює форми
+The classic builder will be removed in version 17.,Класичний конструктор буде вилучено у версії 17.
+The classic builder will be removed in version 17. Convert this format to the new builder to keep editing it.,"Класичний конструктор буде вилучено у версії 17. Перетворіть форму для нового конструктора, щоб продовжити редагування."
+The colour {0} is not one the desk offers and was skipped.,Колір {0} недоступний на робочому столі; його пропущено.
+The contents and weight of each package in a delivery.,Вміст і маса кожного пакування в доставці.
+The dock as this arrangement leaves it.,Панель застосунків із цим розташуванням.
+"The field cards are grouped into columns by, and the column list.",Поле розподілу карток за стовпцями та список стовпців.
+The holidays and weekly offs of a company or employee.,Святкові та вихідні дні компанії або працівника.
+The items and quantities to pick from the warehouse.,Товари та кількості для відбору зі складу.
+The latest changes could not be saved and will be lost if you leave.,Останні зміни не збережено. Вони будуть втрачені після виходу.
+The latest changes to this letter head are not saved.,Останні зміни цього бланка не збережено.
+The latest changes to this print format are not saved.,Останні зміни цієї друкованої форми не збережено.
+The latest changes to {0} could not be saved.,Не вдалося зберегти останні зміни {0}.
+The layout of {0} will be rewritten for the new builder. The original layout is kept as a backup you can restore from the Print Format form. Continue?,"Макет {0} буде перетворено для нового конструктора. Оригінал зберігається як резервна копія, доступна для відновлення з форми документа. Продовжити?"
+The link expires in 1 minute.,Посилання діє 1 хвилину.
+The link expires in {0} minutes.,Посилання діє {0} хвилин.
+The link {0} was added to a shipped card and cannot be carried by a customization.,Посилання {0} додано до стандартної картки; його не можна перенести як окреме налаштування.
+The materials a subcontractor uses to make an item for you.,"Матеріали, які підрядник використовує для виготовлення вашого товару."
+The materials and operations it takes to make an item.,Матеріали та операції для виготовлення товару.
+"The module this sidebar belongs to. Neither required nor unique: one module may own several sidebars, and which of them answers for the module itself is decided by the name -- the one called after the module -- rather than by a column here. May also be blank, which means the sidebar belongs to its app rather than to any one of the app's modules; such a sidebar is exported to the app's own folder and says which app in `app`.","Модуль бічної панелі. Необов’язковий і неунікальний: модуль може мати кілька панелей, а основна визначається збігом назви з модулем. Без модуля панель належить застосунку з поля `app` і експортується до його папки."
+The module this workspace belongs to. Decides which module's dock entry and sidebar it appears under.,"Модуль робочого простору. Визначає, під яким елементом панелі застосунків і бічною панеллю він відображається."
+The next generated name continues after this number.,Наступна автоматична назва продовжить нумерацію після цього числа.
+The order of operations to make an item.,Послідовність операцій виготовлення товару.
+"The ordered entries this layer has an opinion about. Row order is the arrangement; an entry this layer never names keeps its incoming order and follows the ones it does, which is how a newly installed app's modules still reach someone who has already arranged their dock.","Упорядковані елементи, задані цим рівнем. Невказані елементи зберігають попередній порядок і додаються в кінці, щоб модулі нових застосунків залишалися доступними після налаштування панелі."
+The parameters to check an item for.,Параметри перевірки товару.
+The people responsible for maintaining assets.,"Особи, відповідальні за обслуговування активів."
+"The person whose own arrangement this is. Blank means the app's own dock or the site's arrangement of it, told apart by `standard`.","Користувач, якому належить це розташування. Порожнє значення означає панель застосунку або сайту; їх розрізняє `standard`."
+The price of an item in a price list.,Ціна товару в прайс-листі.
+The progress of a BOM replacement or cost update.,Стан заміни специфікації або оновлення її вартості.
+The questions to ask when collecting quality feedback.,Запитання для збору відгуків про якість.
+The rate to convert one currency into another.,Курс перерахунку однієї валюти в іншу.
+"The record this entry opens, in the doctype `link_type` names. A `Sidebar` target need not exist as a document: most modules have a computed base and no `Sidebar` row at all, so a row of that kind names a shell rather than referencing one, which is why link validation on a `Dock` is a deliberate no-op.","Запис, який відкриває елемент, у типі документа `link_type`. Ціль `Sidebar` може бути обчисленою панеллю без документа, тому такий рядок задає панель, а не посилається на запис. Через це перевірка посилань у `Dock` навмисно не виконується."
+The result of creating or submitting many documents at once.,Результат масового створення або проведення документів.
+The rows and formulas of a custom financial statement.,Рядки та формули власного фінансового звіту.
+The rows of Item {0} in Warehouse {1} are not the stock it should hold on this date. Make the Adjustment Entry again from the Stock Valuation Comparison report.,Рядки товару {0} на складі {1} не відповідають належним залишкам на цю дату. Створіть коригування повторно зі звіту порівняння оцінки запасів.
+The serial numbers and batches moved in a transaction.,"Серійні номери та партії, переміщені операцією."
+The sidebar as this arrangement leaves it.,Бічна панель із цим розташуванням.
+"The site's editor.js block layout for this workspace, shown verbatim. Once set, the app's later changes to this workspace's layout stop reaching the site; roles, icon and visibility keep updating. Managed by the workspace editor.","Макет блоків editor.js для цього робочого простору на рівні сайту. Після збереження зміни макета застосунку не застосовуються; ролі, піктограма й видимість продовжують оновлюватися. Керується редактором простору."
+The standard chart for your country works for most businesses.,Стандартний план рахунків вашої країни підходить більшості підприємств.
+The steps of a process you follow to keep quality in check.,Етапи процесу забезпечення якості.
+"The stock qty and value of the selected items are set right on this date, without reposting. Stock and accounting reports before it keep the old values, and no stock transaction can be posted before it for these items afterwards.",Кількість і вартість вибраних товарів виправляються на цю дату без перепроведення. Попередні складські й бухгалтерські звіти зберігають старі значення; надалі складські операції за цими товарами до цієї дати заборонені.
+The tariff code an item is declared under at customs.,Код товару для митного декларування.
+"The taxes and charges, like shipping or insurance, to add to purchases.","Податки та збори для закупівель, наприклад доставка або страхування."
+"The taxes and charges, like shipping or insurance, to add to sales.","Податки та збори для продажів, наприклад доставка або страхування."
+The title of a standard workspace is managed by the app.,Назвою стандартного робочого простору керує застосунок.
+"The upkeep tasks an asset needs, and who does them.",Роботи з обслуговування активу та відповідальні особи.
+The wording and fee for a kind of payment reminder.,Текст і збір для певного типу платіжного нагадування.
+The work done for one operation of a work order.,"Робота, виконана за однією операцією виробничого замовлення."
+The workspace list may not load. Please refresh the page.,Список робочих просторів може не завантажитися. Оновіть сторінку.
+The workspace's place in the sidebar is not restored.,Позиція робочого простору на бічній панелі не відновлюється.
+The year your books are kept and closed for.,Рік ведення та закриття бухгалтерського обліку.
+Theme and layout preferences.,Налаштування теми та розташування.
+There are no differences to fix.,Розбіжностей для виправлення немає.
+There is already a section called {0}.,Розділ із назвою {0} уже існує.
+There is nothing else you need to do.,Більше нічого робити не потрібно.
+There is nothing to export for {0}. Put some entries on its dock first.,Немає даних для експорту {0}. Спочатку додайте елементи на панель застосунків.
+These already have a pending repost and are left out:,"Для цих записів перепроведення вже очікується, тому їх пропущено:"
+These announcements will appear inside an alert below the Navbar.,Ці оголошення відображатимуться під панеллю навігації.
+These cannot be settled by an Adjustment Entry and need a repost:,Ці розбіжності потребують перепроведення й не усуваються коригувальною операцією:
+These fields no longer exist in the DocType and were removed from the layout: {0},Цих полів більше немає в типі документа; їх вилучено з макета: {0}
+"These set how dates, numbers and money look across the app.","Визначають відображення дат, чисел і сум у застосунку."
+This DocType is deprecated and may be removed in a future release,Цей тип документа застарів і може бути вилучений у наступних версіях
+This app has nothing to arrange,У цьому застосунку немає елементів для впорядкування
+This can take a minute. Please keep this page open.,Це може зайняти хвилину. Не закривайте сторінку.
+This can't be saved with a Typst block: {0},Неможливо зберегти з блоком Typst: {0}
+This chart couldn't load,Не вдалося завантажити діаграму
+This doctype isn't named by a series.,Цей тип документа не використовує серії нумерації.
+This document is a draft and cannot be printed.,"Документ є чернеткою, і його друк заборонено."
+This document is cancelled and cannot be printed.,"Документ скасовано, і його друк заборонено."
+This document is locked,Документ заблоковано
+This document type has no fields to print.,Цей тип документа не має полів для друку.
+"This drops the dock arrangement of every person on this site for {0}, and the site's own, back to what the app ships. It cannot be undone.",Скидає розташування панелі {0} для сайту й усіх користувачів до стандартного. Цю дію неможливо скасувати.
+This feature is deprecated and may be removed in a future release,Ця функція застаріла й може бути вилучена в наступних версіях
+This format can no longer render through Typst: {0},Цю форму більше не можна сформувати через Typst: {0}
+This format cannot use the Typst renderer: {0},Ця форма не може використовувати Typst: {0}
+This format still has a classic layout. Convert it to the new builder first.,Ця форма має класичний макет. Спочатку перетворіть його для нового конструктора.
+"This format uses a Typst block, so its PDF Renderer must be Typst.","Ця форма містить блок Typst, тому для PDF потрібно вибрати Typst."
+"This format uses a Typst block, which only the Typst renderer can print. Set the PDF Renderer to Typst or remove the block.","Ця форма містить блок Typst, який може друкувати лише Typst. Виберіть цей засіб формування PDF або видаліть блок."
+This import is complete. There are no pending warnings or mapping issues.,Імпорт завершено. Невирішених попереджень і помилок зіставлення немає.
+This invitation expires in 1 day.,Запрошення діє 1 день.
+This invitation expires in {0} days.,Запрошення діє {0} днів.
+This invitation has expired,Термін дії запрошення минув
+This is an archive of the previous navigation. Customize the module's sidebar instead.,Це архів попередньої навігації. Налаштовуйте бічну панель модуля.
+This label is already used by another {0} in this workspace.,Цю назву вже використовує інший {0} у цьому просторі.
+This module has nothing to arrange,У цьому модулі немає елементів для впорядкування
+"This module is the linked entity's default home — where it opens when nothing else decides — even when another app defines it. A sidebar that already lists the entity still holds you, so this settles cold entry rather than overriding where you are. Flag what you mean to own: a claim is declarative, so set it on the entities your app is about rather than only where you expect the default to disagree with you. Only an app-shipped sidebar may claim.","Цей модуль є стандартним місцем відкриття пов’язаного об’єкта, навіть якщо його визначено іншим застосунком. Поточна бічна панель зі своїм посиланням зберігає контекст переходу. Позначайте об’єкти, за які відповідає застосунок: це декларація належності, доступна лише стандартним бічним панелям застосунків."
+This restores the classic layout backup and discards the converted layout. Continue?,"Класичний макет буде відновлено з резервної копії, а перетворений — відкинуто. Продовжити?"
+This role does not have access to any pages.,Ця роль не має доступу до сторінок.
+This role does not have access to any reports.,Ця роль не має доступу до звітів.
+This role does not have access to any workspaces.,Ця роль не має доступу до робочих просторів.
+"This row *is* the entry, rather than an opinion about one a lower layer holds. Stored rather than inferred from the row carrying a body: under partial opinions a reference may carry an icon and no title, so body-presence stops telling the two apart -- and a reference to a row the app has since deleted would resurrect as a label-less button.","Рядок є повним елементом, а не перевизначенням елемента нижчого рівня. Ознака зберігається явно, оскільки посилання може містити лише частину даних. Це також запобігає відновленню видаленого застосунком рядка як кнопки без назви."
+This row has fewer cells than the header — check for missing commas or columns,"У рядку менше комірок, ніж у заголовку. Перевірте пропущені коми або стовпці"
+This row has more cells than the header — check for extra commas or columns,"У рядку більше комірок, ніж у заголовку. Перевірте зайві коми або стовпці"
+"This sidebar is customized on this site, and that arrangement is applied on top of what you save here.",На сайті налаштовано цю бічну панель. Ці налаштування застосовуються поверх збережених тут змін.
+"This site is in developer mode, so edits to standard workspaces belong to the app's JSON and there is nothing to restore.","Сайт працює в режимі розробника: зміни стандартних просторів належать JSON застосунку, тому відновлювати нічого."
+This site is in read-only mode - it is undergoing maintenance or being updated.,Сайт доступний лише для читання через обслуговування або оновлення.
+This site needs a migration,Сайту потрібна міграція
+This version does not belong to {0},Ця версія не належить {0}
+This workspace is hidden from other users. You can see it because you're a Workspace Manager.,Цей простір прихований від інших користувачів. Ви бачите його завдяки ролі адміністратора робочих просторів.
+"This workspace isn't in any app's sidebar, so it can only be found through search. Ask a Workspace Manager to add it to an app.",Цей простір не входить до бічної панелі жодного застосунку й доступний лише через пошук. Попросіть адміністратора просторів додати його до застосунку.
+"This workspace isn't in any module's sidebar yet, so there's no way to navigate to it. Pick the module it belongs to.","Цей простір ще не входить до бічної панелі модуля, тому перейти до нього неможливо. Виберіть його модуль."
+"Time a workstation stood idle, and why.",Час простою робочого центру та його причина.
+Time logs,Записи часу
+"Time spent on tasks and activities, to bill or cost.",Час роботи над завданнями для виставлення рахунків або обліку витрат.
+Time:,Час:
+To Manufacture,До виробництва
+To Produce,До виготовлення
+To a group of users,Групі користувачів
+To everyone,Усім
+Toggle Flash,Увімкнути або вимкнути спалах
+Toggle error details,Показати або приховати подробиці помилки
+Top level,Верхній рівень
+Total Completed qty,Загальна виконана кількість
+Total rows,Усього рядків
+Transparent,Прозорий
+Tree Parent Overrides,Перевизначення батьківських вузлів дерева
+Tree Preview,Попередній перегляд дерева
+Tree preview of {0} nodes,Попередній перегляд дерева з {0} вузлів
+Try a different search.,Спробуйте інший пошуковий запит.
+Try a different word.,Спробуйте інше слово.
+Try it,Спробувати
+Try the new navigation,Спробуйте нову навігацію
+"Turns stock items or services into an asset, or one asset into another.",Перетворює товари чи послуги на актив або один актив на інший.
+Type something...,Уведіть текст…
+"Type text, / for a field",Уведіть текст або / для вставлення поля
+Typst (fast),Typst (швидкий)
+Typst Markup,Розмітка Typst
+Typst block requires the Typst renderer,Для блоку Typst потрібен засіб формування Typst
+Typst block — content appears in the PDF,Блок Typst — вміст відображається в PDF
+Typst cannot render:,Typst не може відобразити:
+Typst renderer unavailable,Засіб формування Typst недоступний
+Unassign,Скасувати призначення
+Unassign {0} from {1}?,Скасувати призначення {0} для {1}?
+Unassigned {0},Призначення {0} скасовано
+Uncancelled Serial and Batch Bundle,Нескасований набір серійних номерів і партій
+Underline,Підкреслення
+Undo Skip,Скасувати пропуск
+Undo Skip Duplicates,Скасувати пропуск дублікатів
+Undo a payment's match against invoices.,Скасовує зіставлення платежу з рахунками.
+Undo skip,Скасувати пропуск
+Unlink {0},Від’єднати {0}
+Unlink {0} {1} from {2}?,Від’єднати {0} {1} від {2}?
+Unmark as Standard,Зняти позначку стандартного
+Unsaved changes,Незбережені зміни
+Unset as Primary,Зняти позначку основного
+Untitled,Без назви
+Untitled section,Розділ без назви
+Untitled {0},{0} без назви
+Upcoming events,Майбутні події
+Updated {0},Оновлено {0}
+Updating global search,Оновлення загального пошуку
+Upload Failed,Не вдалося завантажити файл
+Upload Photo,Додати фото
+Upload an image or use a URL,Вивантажте зображення або вкажіть URL-адресу
+Upsert,Додати або оновити
+"Use 'Download Failed Rows' on the Failed metric, fix the errors and import again.","Завантажте помилкові рядки через відповідний показник, виправте помилки та повторіть імпорт."
+Use 'Download Skipped Rows' on the Skipped metric to export the skipped rows.,"Завантажте пропущені рядки через відповідний показник, щоб експортувати їх."
+Use HTML editor,Використати редактор HTML
+Use Kanban v2 (New Experience),Використати Kanban v2 (новий інтерфейс)
+Use template,Використати шаблон
+Use {0} for values from the document.,Використовуйте {0} для значень документа.
+User Workspaces,Робочі простори користувачів
+User added.,Користувача додано.
+User created.,Користувача створено.
+User permission added,Дозвіл користувача додано
+Users who have this role.,Користувачі з цією роллю.
+Users with any of these roles can see this workspace,Користувачі з будь-якою з цих ролей бачать цей простір
+Utilities,Службові засоби
+Valuation Rate cannot be negative.,Облікова вартість одиниці не може бути від’ємною.
+Value Based On field is required to create a dashboard chart,Для створення діаграми потрібне поле джерела значення
+Value Color,Колір значення
+Value Mappings,Зіставлення значень
+Value from,Значення з
+Value in File,Значення у файлі
+Value text,Текст значення
+Variants,Варіанти товару
+Version History,Історія версій
+Version deleted,Версію видалено
+Version history,Історія версій
+Version name,Назва версії
+Version restored,Версію відновлено
+Version saved,Версію збережено
+Vertical whitespace,Вертикальний відступ
+Visibility conditions,Умови видимості
+Visible,Видимий
+Visual Plant Floor,Візуальна панель цеху
+We couldn't add the demo data,Не вдалося додати демонстраційні дані
+We couldn't apply the recommended settings,Не вдалося застосувати рекомендовані налаштування
+We couldn't create your company,Не вдалося створити компанію
+We couldn't finish setting things up,Не вдалося завершити налаштування
+We couldn't finish setting up your apps,Не вдалося завершити налаштування застосунків
+We couldn't personalize your setup,Не вдалося застосувати особисті налаштування
+We couldn't save your language and region,Не вдалося зберегти мову та регіон
+We couldn't set up the basics,Не вдалося виконати основне налаштування
+We do not allow editing of this document.,Редагування цього документа заборонено.
+We'll use these to create your company and its accounts.,Ці дані використовуватимуться для створення компанії та її рахунків.
+WeasyPrint cannot render this format: {0}. Switch the PDF Renderer to Chrome.,WeasyPrint не може сформувати цю форму: {0}. Виберіть Chrome для формування PDF.
+WeasyPrint cannot render:,WeasyPrint не може відобразити:
+WeasyPrint cannot render: {0},WeasyPrint не може відобразити: {0}
+WeasyPrint is deprecated and cannot be selected for a new format. Use Chrome instead.,WeasyPrint застарів і недоступний для нових форм. Використовуйте Chrome.
+WeasyPrint is deprecated and will be removed in version 17. Switch this format to Chrome.,WeasyPrint застарів і буде вилучений у версії 17. Переведіть цю форму на Chrome.
+WeasyPrint renderer unavailable,Засіб формування WeasyPrint недоступний
+Web address,Вебадреса
+Welcome to the Portal,Ласкаво просимо на портал
+"What a subscription bills for, and at what price.","Послуги й ціни, за якими виставляються рахунки за підпискою."
+What an employee costs and bills per hour for an activity.,Собівартість і тариф години роботи працівника за видом діяльності.
+What it opens,Що відкривається
+"What kind of thing this entry opens. Spelled the way `Sidebar Item` spells it, so `frappe.ui.sidebar_item.get_route(row)` takes the two page kinds unchanged. `Sidebar` is a value here because a module entry is an entry like any other: it opens the shell, which is the one destination that is not a page.","Тип об’єкта, який відкриває елемент. Значення узгоджені із `Sidebar Item`, тому `frappe.ui.sidebar_item.get_route(row)` обробляє їх без змін. `Sidebar` відкриває бічну панель, а не сторінку."
+What prints now,Поточна друкована версія
+"What the rail draws this entry with. Required when the row *adds* an entry, because nothing below it holds one; optional when it references an entry a lower layer already has, where blank means inherit and filled is an override.","Піктограма елемента панелі. Обов’язкова для нового елемента; для посилання на нижчий рівень порожнє значення означає успадкування, заповнене — перевизначення."
+"What this sidebar is called, on screen and as its record name (`autoname: field:title`). Defaults to the module's name, and the default is stored -- so a module's own sidebar keeps the name it has always had, and a second sidebar under that module is told apart by being called something else. `unique` on top of that adds one thing the primary key does not: it refuses a second sidebar claiming the title of a row whose name has drifted away from it -- a legacy row, or one written straight to the table.","Назва бічної панелі на екрані й у записі (`autoname: field:title`). За замовчуванням збігається з назвою модуля та зберігається. Інші панелі модуля мають інші назви. Ознака `unique` також запобігає використанню назви старого запису, ідентифікатор якого вже відрізняється від неї."
+What you did to fix or prevent a quality problem.,Дії для усунення або запобігання проблемі якості.
+"When active, this map is used for its doctype. An active custom map overrides the standard one.",Активна карта використовується для свого типу документа. Активна користувацька карта замінює стандартну.
+"When an asset depreciates, and by how much.",Строки та суми амортизації активу.
+"When part of an invoice is due, like 50% in 30 days.","Строк оплати частини рахунку, наприклад 50% протягом 30 днів."
+Where a web address entry goes. A URL row has no shell and is gated by nothing.,Адреса переходу вебпосилання. Рядок URL не має бічної панелі та обмежень доступу.
+Where each detail goes when you print on your bank's cheque.,Розміщення реквізитів під час друку банківського чека.
+Which module's sidebar this workspace appears in,"Бічна панель модуля, у якій відображається простір"
+Which timestamp to show in the card footer.,Часова позначка внизу картки.
+Which warehouse received items go to.,Склад розміщення отриманих товарів.
+"Who answers incoming calls, and when.",Відповідальні та графік відповіді на вхідні дзвінки.
+Who can see this workspace,Хто бачить цей робочий простір
+Widget Color,Колір віджета
+Width (px),Ширина (пікселі)
+Width in pixels,Ширина в пікселях
+"Workflow State '{0}' has Document Status {1}, but DocType '{2}' is not submittable. Only Document Status 0 (Draft) is allowed for non-submittable DocTypes.","Стан процесу '{0}' має статус документа {1}, але тип '{2}' не підтримує проведення. Для нього дозволено лише статус 0 (чернетка)."
+Working draft · not applied yet,Робоча чернетка · ще не застосовано
+Working...,Виконання…
+Works out the shipping charge on a sale or purchase.,Розрахунок вартості доставки для продажу або закупівлі.
+Workspace reset to standard,Робочий простір скинуто до стандартного
+Workspace updated,Робочий простір оновлено
+Workspace {0} deleted,Робочий простір {0} видалено
+Workspaces this role can access.,"Робочі простори, доступні цій ролі."
+"Workspaces this site edited before the upgrade, as recorded in their version history. Restoring writes the edit as a customization, so the workspace shows it again at its usual address.","Робочі простори, змінені сайтом до оновлення згідно з історією версій. Відновлення зберігає зміни як налаштування, щоб простір знову відображав їх за звичною адресою."
+Workspaces whose sidebars were merged to build this one. Read by the module-split tool.,"Простори, бічні панелі яких об’єднано для створення цієї. Використовується засобом розділення модулів."
+Write Typst here. Use {0} for values from the document. Check the PDF preview to see the result.,Уведіть Typst тут. Використовуйте {0} для значень документа. Перевірте результат у попередньому перегляді PDF.
+Write the format by hand in HTML and Jinja.,Створіть форму вручну мовами HTML і Jinja.
+Write the text to print,Уведіть текст для друку
+Write {0} into {1} so the app ships it?,Записати {0} до {1} для постачання із застосунком?
+You already have the maximum number of bulk PDF exports in progress. Please wait for one to finish.,Уже виконується максимальна кількість масових експортів PDF. Дочекайтеся завершення одного з них.
+You are about to permanently delete data for {0} entries for company {1}.,Ви збираєтеся безповоротно видалити дані {0} записів компанії {1}.
+You are impersonating {0}.,Ви працюєте від імені {0}.
+You are not allowed to assign layouts to other users,Ви не можете призначати макети іншим користувачам
+You are not allowed to create or edit global layouts,Ви не можете створювати або редагувати загальні макети
+You are not allowed to delete global layouts,Ви не можете видаляти загальні макети
+You are not allowed to delete this layout,Ви не можете видалити цей макет
+You are not allowed to see this onboarding step,Ви не можете переглянути цей крок ознайомлення
+You are not allowed to update global layouts,Ви не можете оновлювати загальні макети
+You are not allowed to update this layout,Ви не можете оновити цей макет
+You are not allowed to update this onboarding step,Ви не можете оновити цей крок ознайомлення
+You are not permitted to access Company {0},Ви не маєте доступу до компанії {0}
+You are not permitted to access {0}.,Ви не маєте доступу до {0}.
+You are not permitted to change Print Settings,Ви не можете змінювати налаштування друку
+You are not permitted to print one of the selected documents,Ви не можете друкувати один із вибраних документів
+You are not permitted to repair the Stock Ledger Entries of {0} {1},Ви не можете виправляти складські записи {0} {1}
+You can also drag column borders directly in the list view to resize,Розмір стовпців також можна змінювати перетягуванням їхніх меж у списку
+You can continue other work while this runs. Progress updates will appear here.,Можна продовжувати іншу роботу. Оновлення поступу з’являтимуться тут.
+You can delete it anytime.,Їх можна видалити будь-коли.
+You can only create a private workspace for yourself.,Особистий робочий простір можна створити лише для себе.
+You don't have permission to view this.,Ви не маєте дозволу на перегляд.
+You have 1 pending {0} import with a file attached.,У вас є 1 незавершений імпорт {0} із доданим файлом.
+You have no new notifications,Нових сповіщень немає
+You have {0} pending {1} imports with files attached.,У вас є {0} незавершених імпортів {1} із доданими файлами.
+You need the Workspace Manager role to create a workspace others can see.,Для створення спільного простору потрібна роль адміністратора робочих просторів.
+You need the Workspace Manager role to delete this workspace.,Для видалення цього простору потрібна роль адміністратора робочих просторів.
+You need the Workspace Manager role to make a workspace public.,Для публікації простору потрібна роль адміністратора робочих просторів.
+You need the Workspace Manager role to manage this workspace.,Для керування цим простором потрібна роль адміністратора робочих просторів.
+You need the Workspace Manager role to move this workspace.,Для переміщення цього простору потрібна роль адміністратора робочих просторів.
+You need the Workspace Manager role to restore workspace edits.,Для відновлення змін простору потрібна роль адміністратора робочих просторів.
+You need the Workspace Manager role to see pre-upgrade workspace edits.,Для перегляду змін просторів до оновлення потрібна роль адміністратора робочих просторів.
+You need to be Workspace Manager to change the dock for everyone.,Для зміни панелі застосунків усім користувачам потрібна роль адміністратора робочих просторів.
+You need to be Workspace Manager to change this for everyone.,Для зміни цих налаштувань усім користувачам потрібна роль адміністратора робочих просторів.
+You need to be Workspace Manager to reset a workspace.,Для скидання простору потрібна роль адміністратора робочих просторів.
+You need to be Workspace Manager to reset the dock for everyone.,Для скидання панелі застосунків усім користувачам потрібна роль адміністратора робочих просторів.
+You need to be Workspace Manager to reset this for everyone.,Для скидання цих налаштувань усім користувачам потрібна роль адміністратора робочих просторів.
+You need to be Workspace Manager to see the dock's site layer.,Для перегляду рівня сайту панелі застосунків потрібна роль адміністратора робочих просторів.
+You need to be Workspace Manager to see the sidebar's site layer.,Для перегляду рівня сайту бічної панелі потрібна роль адміністратора робочих просторів.
+You will receive a copy of this email,Ви отримаєте копію цього листа
+You will receive a copy of this email and a read receipt,Ви отримаєте копію листа та підтвердження прочитання
+You will receive a read receipt,Ви отримаєте підтвердження прочитання
+You'll use these details to sign in.,Ці дані використовуватимуться для входу.
+You're all set.,Усе готово.
+You're invited to join {0},Вас запрошено до {0}
+YouTube video player,Відеопрогравач YouTube
+Your Layouts,Ваші макети
+"Your calling preferences, like when you take calls.","Налаштування дзвінків, зокрема часу їх приймання."
+"Your icons and their layout stay just as they are, and you can switch back anytime from Desktop Settings.",Ваші піктограми й розташування збережуться. Повернутися можна будь-коли в налаштуваннях робочого столу.
+Your invitation has been cancelled,Ваше запрошення скасовано
+Your invitation to join {0} is no longer valid. Ask your team to send a new invitation if you'd still like to join.,"Запрошення до {0} більше не дійсне. Попросіть команду надіслати нове, якщо бажаєте приєднатися."
+"Your invitation to join {0} was cancelled by the site administrator. If this was a mistake, reach out to your team to request a new invitation.","Адміністратор сайту скасував ваше запрошення до {0}. Якщо це помилка, зверніться до команди по нове запрошення."
+Your session has expired due to inactivity. Please log in again to continue.,Сеанс завершився через неактивність. Увійдіть знову для продовження.
+Your verification code,Ваш код підтвердження
+Zoom,Масштаб
+added,додано
+app ships this off,вимкнено в застосунку за замовчуванням
+applied the builder draft,застосовано чернетку конструктора
+auto,автоматично
+card,картка
+chart,діаграма
+custom block,користувацький блок
+e.g. doc.apply_discount,"наприклад, doc.apply_discount"
+e.g. row.qty > 0,"наприклад, row.qty > 0"
+edited {0} by {1},змінено {0} на {1}
+from {0},від {0}
+inverted,інвертований
+its app,його застосунок
+none,немає
+number card,числова картка
+onboarding,ознайомлення
+or image URL,або URL-адреса зображення
+quick list,швидкий список
+removed,видалено
+row {0},рядок {0}
+rows {0},рядки {0}
+saved version {0},збережено версію {0}
+shortcut,швидке посилання
+the app,застосунок
+the sidebar generated from this module's contents,"бічна панель, сформована з вмісту цього модуля"
+the site's,налаштування сайту
+unlinked,від’єднано
+what the apps ship,стандартний вміст застосунків
+widget,віджет
+wkhtmltopdf is deprecated. Chrome is the supported PDF renderer.,wkhtmltopdf застарів. Підтримуваний засіб формування PDF — Chrome.
+wkhtmltopdf is deprecated; Chrome is the supported renderer.,wkhtmltopdf застарів; підтримуваний засіб формування — Chrome.
+{0} (Copy),{0} (копія)
+{0} (New Builder),{0} (новий конструктор)
+{0} (detected),{0} (визначено)
+{0} Permission for {1},Дозвіл {0} для {1}
+"{0} already answers to the URL {1}, and two shells cannot share one.",{0} уже використовує URL-адресу {1}; дві панелі не можуть мати одну адресу.
+{0} and {1} more,{0} і ще {1}
+{0} belongs to its app and can only be edited in developer mode. Customize the sidebar instead to change it for this site.,{0} належить застосунку й редагується лише в режимі розробника. Для змін на сайті налаштуйте бічну панель.
+{0} block,{0} блок
+{0} blocks,{0} блоків
+{0} converted,Перетворено: {0}
+{0} documents become searchable for everyone in this site,Документи {0} стануть доступними в пошуку всім користувачам сайту
+{0} fields,{0} полів
+{0} has changed since you opened it. Refresh to get the latest version.,{0} змінено після відкриття. Оновіть сторінку для отримання останньої версії.
+{0} has children but Is Group is 0 — parent must be a group node,"{0} має дочірні елементи, але ознака групи дорівнює 0. Батьківський вузол має бути групою"
+{0} has invited you to join {1}.,{0} запросив вас до {1}.
+{0} has no classic layout to restore,{0} не має класичного макета для відновлення
+{0} in {1},{0} у {1}
+{0} is a custom HTML format and cannot be edited in the builder.,"{0} — власна форма HTML, яку не можна редагувати в конструкторі."
+{0} is a shipped {1} edited in place; the app's version is shown.,"{0} — стандартний {1}, змінений безпосередньо; показано версію застосунку."
+{0} is a standard format and cannot be changed. A copy with this name will open in the new builder.,"{0} — стандартна форма, яку не можна змінювати. Копія з цією назвою відкриється в новому конструкторі."
+{0} is already on the sidebar,{0} уже є на бічній панелі
+{0} is an archive of the previous navigation and can no longer be edited. Customize the module's sidebar instead.,"{0} — архів попередньої навігації, який більше не редагується. Налаштуйте бічну панель модуля."
+"{0} is another module's name, and a sidebar's title is what the desk calls it by.",{0} — назва іншого модуля; заголовок панелі є її назвою на робочому столі.
+{0} is back to standard,Для {0} відновлено стандартні налаштування
+{0} is empty — click to add,{0} порожній — натисніть для додавання
+{0} is no longer a sidebar of {1}. Reopen the one you meant to arrange.,{0} більше не є бічною панеллю {1}. Відкрийте потрібну панель знову.
+{0} is no longer standard; its exported file has been removed.,{0} більше не є стандартним; експортований файл видалено.
+{0} is not a classic print format,{0} не є класичною друкованою формою
+{0} is not a module you can assign a workspace to.,До модуля {0} не можна призначити робочий простір.
+{0} is not a module.,{0} не є модулем.
+{0} is not a standard workspace.,{0} не є стандартним робочим простором.
+{0} is not a valid condition: {1},{0} не є коректною умовою: {1}
+{0} is not an app on this site.,{0} не є застосунком цього сайту.
+{0} is now standard and exported to {1}.,{0} тепер є стандартним і експортований до {1}.
+{0} is rendered from an HTML file and cannot be converted,{0} формується з HTML-файлу й не може бути перетворений
+{0} is rendered from an HTML file and cannot be edited in the builder.,{0} формується з HTML-файлу й не редагується в конструкторі.
+"{0} is rendered from an HTML file, so this format starts from the standard layout","{0} формується з HTML-файлу, тому ця форма починається зі стандартного макета"
+{0} is required to get raw materials when {1} is set.,"Для отримання сировини потрібно вказати {0}, якщо задано {1}."
+{0} is set from the lead's linked documents,{0} визначається пов’язаними документами потенційного клієнта
+{0} is set from the opportunity's quotations,{0} визначається пропозиціями можливості продажу
+{0} is the default print format for {1}. Disabling it will remove it as the default. Do you want to continue?,{0} — стандартна друкована форма для {1}. Вимкнення скасує її використання за замовчуванням. Продовжити?
+{0} items,{0} елементів
+{0} missing,Відсутні: {0}
+{0} more not shown,Ще {0} не показано
+{0} moved under {1},{0} переміщено до {1}
+{0} must be a group warehouse of company {1}.,{0} має бути груповим складом компанії {1}.
+{0} must be a hex color code like #1a5fb4,"{0} має бути шістнадцятковим кодом кольору, наприклад #1a5fb4"
+{0} must be text,{0} має бути текстом
+{0} now has no rail; its exported dock has been removed.,{0} більше не має панелі; експортовану панель застосунків видалено.
+{0} of this app's modules are on no tier at all,"Модулі цього застосунку, не включені до жодного рівня: {0}"
+{0} of {1} cards could not be moved,Не вдалося перемістити {0} із {1} карток
+{0} of {1} done · {2} skipped,Виконано {0} із {1} · пропущено {2}
+{0} of {1} steps done,Завершено {0} із {1} кроків
+{0} role changes,Змін ролей: {0}
+{0} rows,{0} рядків
+{0} saved section(s) already exist by name and were not imported,Збережені розділи ({0}) з такими назвами вже існують і не були імпортовані
+{0} selected,Вибрано: {0}
+{0} ships no dock yet. Export one to the app first.,{0} ще не має стандартної панелі. Спочатку експортуйте її до застосунку.
+{0} unlinked,Від’єднано: {0}
+{0} warnings found.,Знайдено попереджень: {0}.
+"{0} was hidden, and is back on the sidebar",{0} був прихований і знову відображається на бічній панелі
+"{0} workspace(s) have no module, so nothing can navigate to them. Give each one a module below.",Робочі простори ({0}) не мають модуля й недоступні через навігацію. Призначте кожному модуль нижче.
+"{0} workspace(s) in this module, which this site owns.","Робочі простори цього модуля, що належать сайту: {0}."
+"{0} workspace(s) in this module, which {1} ships.","Робочі простори цього модуля, що постачаються з {1}: {0}."
+"{0} workspace(s) name the module {1}, which doesn't exist on this site — nothing can navigate to them. Give each one a module below.",Робочі простори ({0}) посилаються на відсутній модуль {1} і недоступні через навігацію. Призначте кожному модуль нижче.
+{0}'s dock belongs to its app and can only be authored in developer mode. Arrange the dock instead to change it for this site.,Панель {0} належить застосунку й редагується лише в режимі розробника. Для змін на сайті налаштуйте її розташування.
+{0}'s dock is now standard and exported to the app.,Панель {0} стала стандартною та експортована до застосунку.
+{0}'s roles come from the Role Profile {1}. Edit that to change this.,Ролі {0} визначаються профілем ролей {1}. Змініть цей профіль для налаштування.
+{0}: pre-upgrade edits restored,{0}: зміни до оновлення відновлено
+{0}: {1} did not match any results.,{0}: для {1} нічого не знайдено.
+{0}: {1} is not a valid field on {2},{0}: {1} не є коректним полем {2}

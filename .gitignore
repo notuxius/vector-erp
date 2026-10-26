@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+data/
+backups/
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+build/
+.artifacts/
+.wrangler/
+node_modules/
+
+# Separate website repositories and deployment archives.
+/sites/
+

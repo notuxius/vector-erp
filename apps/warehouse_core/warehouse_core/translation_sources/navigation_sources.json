@@ -1,0 +1,787 @@
+{
+  "Failed Scheduled Jobs": [
+    "core/number_card/failed_scheduled_jobs/failed_scheduled_jobs.json",
+    "system/workspace/system/system.json"
+  ],
+  "Scheduled Jobs": [
+    "core/number_card/scheduled_jobs/scheduled_jobs.json",
+    "system/workspace/system/system.json"
+  ],
+  "Active RQ Worker": [
+    "core/number_card/active_rq_worker/active_rq_worker.json"
+  ],
+  "Total System Users": [
+    "desk/number_card/users/users.json"
+  ],
+  "Total Website Users": [
+    "desk/number_card/total_website_users/total_website_users.json"
+  ],
+  "Profiles": [
+    "users/sidebar/users/users.json"
+  ],
+  "Jobs": [
+    "system/sidebar/system/system.json"
+  ],
+  "Background Task": [
+    "system/sidebar/system/system.json"
+  ],
+  "Background Job Activity": [
+    "system/workspace/system/system.json"
+  ],
+  "Notifications By Type": [
+    "system/workspace/system/system.json"
+  ],
+  "ERPNext": [
+    "desktop_icon/erpnext.json"
+  ],
+  "Incoming Leads": [
+    "crm/workspace/crm/crm.json"
+  ],
+  "Open Opportunity": [
+    "crm/workspace/crm/crm.json",
+    "crm/number_card/open_opportunity/open_opportunity.json"
+  ],
+  "Serial & Batch": [
+    "stock/sidebar/stock/stock.json"
+  ],
+  "Keep track of your stock": [
+    "stock/module_onboarding/stock_onboarding/stock_onboarding.json",
+    "setup/onboarding_step/complete_stock_onboarding/complete_stock_onboarding.json"
+  ],
+  "From the store to the shop floor, or between branches. See [Stock Entry](https://docs.frappe.io/erpnext/user/manual/en/stock-entry).": [
+    "stock/onboarding_step/move_stock/move_stock.json"
+  ],
+  "Move stock between warehouses": [
+    "stock/onboarding_step/move_stock/move_stock.json"
+  ],
+  "Open Warehouse": [
+    "stock/onboarding_step/setup_warehouse/setup_warehouse.json"
+  ],
+  "We created a few to start with. Rename them, or add the places you actually keep stock. See [Warehouse](https://docs.frappe.io/erpnext/user/manual/en/warehouse).": [
+    "stock/onboarding_step/setup_warehouse/setup_warehouse.json"
+  ],
+  "Review your warehouses": [
+    "stock/onboarding_step/setup_warehouse/setup_warehouse.json"
+  ],
+  "Anything you keep on shelves and count. See [Item](https://docs.frappe.io/erpnext/user/manual/en/item).": [
+    "stock/onboarding_step/create_item/create_item.json"
+  ],
+  "Add an item you stock": [
+    "stock/onboarding_step/create_item/create_item.json"
+  ],
+  "Stock goes down as the goods leave, and the invoice can be made from the delivery. See [Delivery Note](https://docs.frappe.io/erpnext/user/manual/en/delivery-note).": [
+    "stock/onboarding_step/create_delivery_note/create_delivery_note.json"
+  ],
+  "Ship to a customer": [
+    "stock/onboarding_step/create_delivery_note/create_delivery_note.json"
+  ],
+  "Stock goes up in the warehouse you receive into, and the bill can be made from the receipt. See [Purchase Receipt](https://docs.frappe.io/erpnext/user/manual/en/purchase-receipt).": [
+    "stock/onboarding_step/create_purchase_receipt/create_purchase_receipt.json"
+  ],
+  "Receive goods from a supplier": [
+    "stock/onboarding_step/create_purchase_receipt/create_purchase_receipt.json"
+  ],
+  "Open Stock Ledger": [
+    "stock/onboarding_step/view_stock_ledger/view_stock_ledger.json"
+  ],
+  "Every movement of every item, in and out, with the balance after each. See [Stock Ledger](https://docs.frappe.io/erpnext/user/manual/en/stock-ledger).": [
+    "stock/onboarding_step/view_stock_ledger/view_stock_ledger.json"
+  ],
+  "Follow every movement": [
+    "stock/onboarding_step/view_stock_ledger/view_stock_ledger.json"
+  ],
+  "Create Stock Reconciliation": [
+    "stock/onboarding_step/create_opening_stock/create_opening_stock.json"
+  ],
+  "How much of each item is on your shelves, and what it is worth. From here, every receipt and delivery keeps it up to date. See [Stock Reconciliation](https://docs.frappe.io/erpnext/user/manual/en/stock-reconciliation).": [
+    "stock/onboarding_step/create_opening_stock/create_opening_stock.json"
+  ],
+  "Enter the stock you have today": [
+    "stock/onboarding_step/create_opening_stock/create_opening_stock.json"
+  ],
+  "Open Stock Balance": [
+    "stock/onboarding_step/view_stock_balance_report/view_stock_balance_report.json"
+  ],
+  "What you have in each warehouse, and what it is worth.": [
+    "stock/onboarding_step/view_stock_balance_report/view_stock_balance_report.json"
+  ],
+  "Check your stock levels": [
+    "stock/onboarding_step/view_stock_balance_report/view_stock_balance_report.json"
+  ],
+  "Serial & Batch Reports": [
+    "stock/workspace/stock/stock.json"
+  ],
+  "Movement Reports": [
+    "stock/workspace/stock/stock.json"
+  ],
+  "Item Reports": [
+    "stock/workspace/stock/stock.json"
+  ],
+  "Audit Reports": [
+    "stock/workspace/stock/stock.json"
+  ],
+  "Item Standard Cost": [
+    "stock/workspace/stock/stock.json"
+  ],
+  "Budgeting": [
+    "accounts/sidebar/accounts/accounts.json",
+    "accounts/workspace/accounting/accounting.json"
+  ],
+  "Get your books ready": [
+    "accounts/module_onboarding/accounting_onboarding/accounting_onboarding.json",
+    "setup/onboarding_step/complete_accounting_onboarding/complete_accounting_onboarding.json"
+  ],
+  "It posts the expense, and what you owe the supplier, to your ledger. See [Purchase Invoice](https://docs.frappe.io/erpnext/user/manual/en/purchase-invoice).": [
+    "accounts/onboarding_step/create_accounting_purchase_invoice/create_accounting_purchase_invoice.json"
+  ],
+  "Enter a supplier's bill": [
+    "accounts/onboarding_step/create_accounting_purchase_invoice/create_accounting_purchase_invoice.json"
+  ],
+  "For anything that isn't an invoice or a payment: accruals, depreciation, or fixing a mistake. See [Journal Entry](https://docs.frappe.io/erpnext/user/manual/en/journal-entry).": [
+    "accounts/onboarding_step/create_journal_entry/create_journal_entry.json"
+  ],
+  "Post a journal entry": [
+    "accounts/onboarding_step/create_journal_entry/create_journal_entry.json"
+  ],
+  "Open Chart of Accounts": [
+    "accounts/onboarding_step/chart_of_accounts/chart_of_accounts.json"
+  ],
+  "We set up a standard chart of accounts for your country. See how your accounts are grouped, and rename or add any to match how you report. See [Chart of Accounts](https://docs.frappe.io/erpnext/user/manual/en/chart-of-accounts).": [
+    "accounts/onboarding_step/chart_of_accounts/chart_of_accounts.json"
+  ],
+  "Review your chart of accounts": [
+    "accounts/onboarding_step/chart_of_accounts/chart_of_accounts.json"
+  ],
+  "Add Bank Account": [
+    "accounts/onboarding_step/add_bank_account/add_bank_account.json"
+  ],
+  "The account your customers pay into and you pay from, linked to its account in your chart of accounts. See [Bank Account](https://docs.frappe.io/erpnext/user/manual/en/bank-account).": [
+    "accounts/onboarding_step/add_bank_account/add_bank_account.json"
+  ],
+  "Add the bank account you use": [
+    "accounts/onboarding_step/add_bank_account/add_bank_account.json"
+  ],
+  "Open Profit and Loss": [
+    "accounts/onboarding_step/view_profit_and_loss/view_profit_and_loss.json"
+  ],
+  "Income against expenses for any period, built from every invoice and payment you have recorded.": [
+    "accounts/onboarding_step/view_profit_and_loss/view_profit_and_loss.json"
+  ],
+  "Check your profit": [
+    "accounts/onboarding_step/view_profit_and_loss/view_profit_and_loss.json"
+  ],
+  "Open Banking": [
+    "accounts/onboarding_step/open_banking/open_banking.json"
+  ],
+  "Import a statement from your bank and pair each line with a payment, so your books agree with it. See [Bank Reconciliation](https://docs.frappe.io/erpnext/user/manual/en/bank-reconciliation).": [
+    "accounts/onboarding_step/open_banking/open_banking.json"
+  ],
+  "Match your bank statement": [
+    "accounts/onboarding_step/open_banking/open_banking.json"
+  ],
+  "Open General Ledger": [
+    "accounts/onboarding_step/view_general_ledger/view_general_ledger.json"
+  ],
+  "Every posting from your invoices and payments, with its debit and credit. See [General Ledger](https://docs.frappe.io/erpnext/user/manual/en/general-ledger).": [
+    "accounts/onboarding_step/view_general_ledger/view_general_ledger.json"
+  ],
+  "Trace every posting": [
+    "accounts/onboarding_step/view_general_ledger/view_general_ledger.json"
+  ],
+  "Open Balance Sheet": [
+    "accounts/onboarding_step/view_balance_sheet/view_balance_sheet.json"
+  ],
+  "Assets, liabilities and equity on any date, straight from your ledger. See [Balance Sheet](https://docs.frappe.io/erpnext/user/manual/en/balance-sheet).": [
+    "accounts/onboarding_step/view_balance_sheet/view_balance_sheet.json"
+  ],
+  "Know what you own and owe": [
+    "accounts/onboarding_step/view_balance_sheet/view_balance_sheet.json"
+  ],
+  "Open Sales Taxes and Charges Template": [
+    "accounts/onboarding_step/review_taxes/review_taxes.json"
+  ],
+  "The taxes that fill in on every invoice. We added your country's where we had them; check the rates match what you charge. Purchase taxes live in [Purchase Taxes and Charges Template](/desk/purchase-taxes-and-charges-template). See [Setting Up Taxes](https://docs.frappe.io/erpnext/user/manual/en/setting-up-taxes).": [
+    "accounts/onboarding_step/review_taxes/review_taxes.json"
+  ],
+  "Review your taxes": [
+    "accounts/onboarding_step/review_taxes/review_taxes.json"
+  ],
+  "Outgoing Bills (Sales Invoice)": [
+    "accounts/workspace/invoicing/invoicing.json"
+  ],
+  "Total Outgoing Bills": [
+    "accounts/workspace/invoicing/invoicing.json",
+    "accounts/workspace/financial_reports/financial_reports.json",
+    "accounts/workspace/accounting/accounting.json",
+    "accounts/workspace/payments/payments.json",
+    "accounts/number_card/total_outgoing_bills/total_outgoing_bills.json"
+  ],
+  "Total Incoming Bills": [
+    "accounts/workspace/invoicing/invoicing.json",
+    "accounts/workspace/financial_reports/financial_reports.json",
+    "accounts/workspace/accounting/accounting.json",
+    "accounts/number_card/total_incoming_bills/total_incoming_bills.json"
+  ],
+  "Total Outgoing Payment": [
+    "accounts/workspace/invoicing/invoicing.json",
+    "accounts/workspace/financial_reports/financial_reports.json",
+    "accounts/workspace/payments/payments.json",
+    "accounts/number_card/total_outgoing_payment/total_outgoing_payment.json"
+  ],
+  "Receivables & Payables": [
+    "accounts/workspace/accounting/accounting.json"
+  ],
+  "Registers & Profitability": [
+    "accounts/workspace/accounting/accounting.json"
+  ],
+  "Tax & Compliance": [
+    "accounts/workspace/accounting/accounting.json"
+  ],
+  "Invoicing & Payments": [
+    "accounts/workspace/accounting/accounting.json"
+  ],
+  "Bank Reconciliation (old)": [
+    "accounts/workspace/accounting/accounting.json"
+  ],
+  "Reconciliation": [
+    "accounts/workspace/accounting/accounting.json"
+  ],
+  "Ledger Tools": [
+    "accounts/workspace/accounting/accounting.json"
+  ],
+  "Total Incoming Payment": [
+    "accounts/workspace/accounting/accounting.json",
+    "accounts/workspace/payments/payments.json",
+    "accounts/number_card/total_incoming_payment/total_incoming_payment.json"
+  ],
+  "Banking Setup": [
+    "accounts/workspace/payments/payments.json"
+  ],
+  "Make your first sale": [
+    "selling/module_onboarding/selling_onboarding/selling_onboarding.json",
+    "setup/onboarding_step/complete_selling_onboarding/complete_selling_onboarding.json"
+  ],
+  "Open Sales Analytics": [
+    "selling/onboarding_step/view_sales_analytics/view_sales_analytics.json"
+  ],
+  "Sales by customer, item or territory, over any period. See [Sales Analytics](https://docs.frappe.io/erpnext/user/manual/en/sales-analytics).": [
+    "selling/onboarding_step/view_sales_analytics/view_sales_analytics.json"
+  ],
+  "Spot your best sellers": [
+    "selling/onboarding_step/view_sales_analytics/view_sales_analytics.json"
+  ],
+  "Open Accounts Receivable": [
+    "selling/onboarding_step/view_accounts_receivable/view_accounts_receivable.json"
+  ],
+  "Who owes you, how much, and for how long. See [Accounts Receivable](https://docs.frappe.io/erpnext/user/manual/en/accounts-receivable).": [
+    "selling/onboarding_step/view_accounts_receivable/view_accounts_receivable.json"
+  ],
+  "Follow up on unpaid invoices": [
+    "selling/onboarding_step/view_accounts_receivable/view_accounts_receivable.json"
+  ],
+  "Add Customer": [
+    "selling/onboarding_step/create_customer/create_customer.json"
+  ],
+  "A business or person you sell to. See [Customer](https://docs.frappe.io/erpnext/user/manual/en/customer).": [
+    "selling/onboarding_step/create_customer/create_customer.json"
+  ],
+  "Add a customer": [
+    "selling/onboarding_step/create_customer/create_customer.json"
+  ],
+  "Bill your customer for the item. Submit it, then use **Print** to see it on paper or send it as a PDF. See [Sales Invoice](https://docs.frappe.io/erpnext/user/manual/en/sales-invoice).": [
+    "selling/onboarding_step/create_sales_invoice/create_sales_invoice.json"
+  ],
+  "Send your first invoice": [
+    "selling/onboarding_step/create_sales_invoice/create_sales_invoice.json"
+  ],
+  "Once the customer agrees, turn it into a sales order or an invoice from the quotation itself. See [Quotation](https://docs.frappe.io/erpnext/user/manual/en/quotation).": [
+    "selling/onboarding_step/create_quotation/create_quotation.json"
+  ],
+  "Quote a price": [
+    "selling/onboarding_step/create_quotation/create_quotation.json"
+  ],
+  "A product or a service you sell. See [Item](https://docs.frappe.io/erpnext/user/manual/en/item).": [
+    "selling/onboarding_step/create_selling_item/create_selling_item.json"
+  ],
+  "Add an item you sell": [
+    "selling/onboarding_step/create_selling_item/create_selling_item.json"
+  ],
+  "When your customer pays, record it here. It is matched against their invoice, so you can see what is still owed. See [Payment Entry](https://docs.frappe.io/erpnext/user/manual/en/payment-entry).": [
+    "selling/onboarding_step/create_payment_entry/create_payment_entry.json"
+  ],
+  "Get paid": [
+    "selling/onboarding_step/create_payment_entry/create_payment_entry.json"
+  ],
+  "Confirm what the customer ordered and when it is due. Deliver and invoice from the order itself. See [Sales Order](https://docs.frappe.io/erpnext/user/manual/en/sales-order).": [
+    "selling/onboarding_step/create_sales_order/create_sales_order.json"
+  ],
+  "Confirm a sales order": [
+    "selling/onboarding_step/create_sales_order/create_sales_order.json"
+  ],
+  "Sales Reports": [
+    "selling/workspace/selling/selling.json"
+  ],
+  "Customer Reports": [
+    "selling/workspace/selling/selling.json"
+  ],
+  "Sales Team Reports": [
+    "selling/workspace/selling/selling.json"
+  ],
+  "Annual Sales": [
+    "selling/workspace/selling/selling.json",
+    "selling/number_card/annual_sales/annual_sales.json",
+    "setup/workspace/home/home.json"
+  ],
+  "Average Sales Order Value": [
+    "selling/number_card/average_sales_order_value/average_sales_order_value.json"
+  ],
+  "Sales Orders Count": [
+    "selling/number_card/sales_orders_count/sales_orders_count.json"
+  ],
+  "Active Customers": [
+    "selling/number_card/active_customers/active_customers.json",
+    "setup/workspace/erpnext_settings/erpnext_settings.json"
+  ],
+  "Meetings & Feedback": [
+    "quality_management/sidebar/quality/quality.json"
+  ],
+  "Keep quality in check": [
+    "quality_management/module_onboarding/quality_onboarding/quality_onboarding.json",
+    "setup/onboarding_step/complete_quality_onboarding/complete_quality_onboarding.json"
+  ],
+  "Create Quality Review": [
+    "quality_management/onboarding_step/create_quality_review/create_quality_review.json"
+  ],
+  "Compare the results against the goal, and decide what to change. See [Quality Management](https://docs.frappe.io/erpnext/user/manual/en/quality-management).": [
+    "quality_management/onboarding_step/create_quality_review/create_quality_review.json"
+  ],
+  "Review how a goal is going": [
+    "quality_management/onboarding_step/create_quality_review/create_quality_review.json"
+  ],
+  "Create Quality Inspection": [
+    "quality_management/onboarding_step/create_quality_inspection/create_quality_inspection.json"
+  ],
+  "Record the results against a receipt or a delivery, and accept or reject the goods. See [Quality Inspection](https://docs.frappe.io/erpnext/user/manual/en/quality-inspection).": [
+    "quality_management/onboarding_step/create_quality_inspection/create_quality_inspection.json"
+  ],
+  "Inspect goods coming in or going out": [
+    "quality_management/onboarding_step/create_quality_inspection/create_quality_inspection.json"
+  ],
+  "Create Maintenance Schedule": [
+    "quality_management/onboarding_step/create_maintenance_schedule/create_maintenance_schedule.json"
+  ],
+  "Regular service visits for equipment you sold, planned ahead for the whole contract. See [Maintenance Schedule](https://docs.frappe.io/erpnext/user/manual/en/maintenance-schedule).": [
+    "quality_management/onboarding_step/create_maintenance_schedule/create_maintenance_schedule.json"
+  ],
+  "Plan maintenance visits": [
+    "quality_management/onboarding_step/create_maintenance_schedule/create_maintenance_schedule.json"
+  ],
+  "Create Quality Goal": [
+    "quality_management/onboarding_step/create_quality_goal/create_quality_goal.json"
+  ],
+  "Something you want to measure and improve, like on-time delivery or returns, reviewed on a schedule you choose. See [Quality Management](https://docs.frappe.io/erpnext/user/manual/en/quality-management).": [
+    "quality_management/onboarding_step/create_quality_goal/create_quality_goal.json"
+  ],
+  "Set a quality goal": [
+    "quality_management/onboarding_step/create_quality_goal/create_quality_goal.json"
+  ],
+  "Create Quality Inspection Template": [
+    "quality_management/onboarding_step/create_quality_inspection_template/create_quality_inspection_template.json"
+  ],
+  "The parameters to inspect and what counts as a pass, reused on every inspection. See [Quality Inspection Template](https://docs.frappe.io/erpnext/user/manual/en/quality-inspection-template).": [
+    "quality_management/onboarding_step/create_quality_inspection_template/create_quality_inspection_template.json"
+  ],
+  "Decide what to check": [
+    "quality_management/onboarding_step/create_quality_inspection_template/create_quality_inspection_template.json"
+  ],
+  "Create Quality Procedure": [
+    "quality_management/onboarding_step/create_quality_procedure/create_quality_procedure.json"
+  ],
+  "The steps your team follows, so it is done the same way every time. See [Quality Management](https://docs.frappe.io/erpnext/user/manual/en/quality-management).": [
+    "quality_management/onboarding_step/create_quality_procedure/create_quality_procedure.json"
+  ],
+  "Write down how the work is done": [
+    "quality_management/onboarding_step/create_quality_procedure/create_quality_procedure.json"
+  ],
+  "Create Non Conformance": [
+    "quality_management/onboarding_step/create_non_conformance/create_non_conformance.json"
+  ],
+  "When something falls short of the procedure, note what happened, the cause, and what you will do about it. See [Non Conformance](https://docs.frappe.io/erpnext/user/manual/en/non-conformance).": [
+    "quality_management/onboarding_step/create_non_conformance/create_non_conformance.json"
+  ],
+  "Log a problem": [
+    "quality_management/onboarding_step/create_non_conformance/create_non_conformance.json"
+  ],
+  "Quality Reports": [
+    "quality_management/workspace/quality/quality.json"
+  ],
+  "Open Quality Actions": [
+    "quality_management/workspace/quality/quality.json",
+    "quality_management/number_card/open_quality_actions/open_quality_actions.json"
+  ],
+  "Open Non Conformances": [
+    "quality_management/workspace/quality/quality.json",
+    "quality_management/number_card/open_non_conformances/open_non_conformances.json"
+  ],
+  "Open Quality Reviews": [
+    "quality_management/workspace/quality/quality.json",
+    "quality_management/number_card/open_quality_reviews/open_quality_reviews.json"
+  ],
+  "Order from your suppliers": [
+    "buying/module_onboarding/buying_onboarding/buying_onboarding.json",
+    "setup/onboarding_step/complete_buying_onboarding/complete_buying_onboarding.json"
+  ],
+  "The bill your supplier sent, so you know what you owe and when it is due. See [Purchase Invoice](https://docs.frappe.io/erpnext/user/manual/en/purchase-invoice).": [
+    "buying/onboarding_step/create_purchase_invoice/create_purchase_invoice.json"
+  ],
+  "Enter their bill": [
+    "buying/onboarding_step/create_purchase_invoice/create_purchase_invoice.json"
+  ],
+  "Note down a price a supplier offered, so you can compare suppliers before you order. See [Supplier Quotation](https://docs.frappe.io/erpnext/user/manual/en/supplier-quotation).": [
+    "buying/onboarding_step/create_supplier_quotation/create_supplier_quotation.json"
+  ],
+  "Record a supplier's quote": [
+    "buying/onboarding_step/create_supplier_quotation/create_supplier_quotation.json"
+  ],
+  "Add Supplier": [
+    "buying/onboarding_step/create_supplier/create_supplier.json"
+  ],
+  "A business or person you buy from. See [Supplier](https://docs.frappe.io/erpnext/user/manual/en/supplier).": [
+    "buying/onboarding_step/create_supplier/create_supplier.json"
+  ],
+  "Add a supplier": [
+    "buying/onboarding_step/create_supplier/create_supplier.json"
+  ],
+  "Order from the supplier. When the goods arrive, receive them and record the bill from the order itself. See [Purchase Order](https://docs.frappe.io/erpnext/user/manual/en/purchase-order).": [
+    "buying/onboarding_step/create_purchase_order/create_purchase_order.json"
+  ],
+  "Place a purchase order": [
+    "buying/onboarding_step/create_purchase_order/create_purchase_order.json"
+  ],
+  "Goods or services you buy from suppliers. See [Item](https://docs.frappe.io/erpnext/user/manual/en/item).": [
+    "buying/onboarding_step/create_buying_item/create_buying_item.json"
+  ],
+  "Add an item you buy": [
+    "buying/onboarding_step/create_buying_item/create_buying_item.json"
+  ],
+  "Open Accounts Payable": [
+    "buying/onboarding_step/view_accounts_payable/view_accounts_payable.json"
+  ],
+  "Who you owe, how much, and when each bill is due.": [
+    "buying/onboarding_step/view_accounts_payable/view_accounts_payable.json"
+  ],
+  "Check what you owe": [
+    "buying/onboarding_step/view_accounts_payable/view_accounts_payable.json"
+  ],
+  "It clears their bill and takes the money out of your bank or cash account. See [Payment Entry](https://docs.frappe.io/erpnext/user/manual/en/payment-entry).": [
+    "buying/onboarding_step/pay_supplier/pay_supplier.json"
+  ],
+  "Pay your supplier": [
+    "buying/onboarding_step/pay_supplier/pay_supplier.json"
+  ],
+  "Open Purchase Order Analysis": [
+    "buying/onboarding_step/view_purchase_order_analysis/view_purchase_order_analysis.json"
+  ],
+  "What you ordered, what has arrived, and what is still to come.": [
+    "buying/onboarding_step/view_purchase_order_analysis/view_purchase_order_analysis.json"
+  ],
+  "Track your orders": [
+    "buying/onboarding_step/view_purchase_order_analysis/view_purchase_order_analysis.json"
+  ],
+  "Purchase Reports": [
+    "buying/workspace/buying/buying.json"
+  ],
+  "Order Status Reports": [
+    "buying/workspace/buying/buying.json"
+  ],
+  "Supplier Reports": [
+    "buying/workspace/buying/buying.json"
+  ],
+  "Subcontracting Reports": [
+    "buying/workspace/buying/buying.json"
+  ],
+  "Annual Purchase": [
+    "buying/workspace/buying/buying.json",
+    "buying/number_card/annual_purchase/annual_purchase.json",
+    "setup/workspace/home/home.json"
+  ],
+  "Active Suppliers": [
+    "buying/number_card/active_suppliers/active_suppliers.json",
+    "setup/workspace/erpnext_settings/erpnext_settings.json"
+  ],
+  "Plan and run production": [
+    "manufacturing/module_onboarding/manufacturing_onboarding/manufacturing_onboarding.json",
+    "setup/onboarding_step/complete_manufacturing_onboarding/complete_manufacturing_onboarding.json"
+  ],
+  "Decide how many to make. The raw materials you need are worked out from the BOM. See [Work Order](https://docs.frappe.io/erpnext/user/manual/en/work-order).": [
+    "manufacturing/onboarding_step/create_work_order/create_work_order.json"
+  ],
+  "Plan a work order": [
+    "manufacturing/onboarding_step/create_work_order/create_work_order.json"
+  ],
+  "What comes out at the end of production, kept in the Products group. See [Item](https://docs.frappe.io/erpnext/user/manual/en/item).": [
+    "manufacturing/onboarding_step/create_finished_goods/create_finished_goods.json"
+  ],
+  "Add a product you make": [
+    "manufacturing/onboarding_step/create_finished_goods/create_finished_goods.json"
+  ],
+  "Raw materials come out of stock and the finished products go in. From the work order, **Finish** fills this in for you. See [Stock Entry](https://docs.frappe.io/erpnext/user/manual/en/stock-entry).": [
+    "manufacturing/onboarding_step/finish_work_order/finish_work_order.json"
+  ],
+  "Finish making it": [
+    "manufacturing/onboarding_step/finish_work_order/finish_work_order.json"
+  ],
+  "Open Work Order Summary": [
+    "manufacturing/onboarding_step/view_work_order_summary_report/view_work_order_summary_report.json"
+  ],
+  "Every work order, how far along it is, and what is running late. See [Work Order Summary](https://docs.frappe.io/erpnext/user/manual/en/work-order-summary).": [
+    "manufacturing/onboarding_step/view_work_order_summary_report/view_work_order_summary_report.json"
+  ],
+  "See how production is going": [
+    "manufacturing/onboarding_step/view_work_order_summary_report/view_work_order_summary_report.json"
+  ],
+  "Create BOM": [
+    "manufacturing/onboarding_step/create_bill_of_materials/create_bill_of_materials.json"
+  ],
+  "The raw materials, and how much of each, that go into one unit of your product. Submit it to use it in production. See [BOM](https://docs.frappe.io/erpnext/user/manual/en/bill-of-materials).\n\nSending some of the work to a supplier? See [Subcontracting](https://docs.frappe.io/erpnext/user/manual/en/subcontracting).": [
+    "manufacturing/onboarding_step/create_bill_of_materials/create_bill_of_materials.json"
+  ],
+  "Write its bill of materials": [
+    "manufacturing/onboarding_step/create_bill_of_materials/create_bill_of_materials.json"
+  ],
+  "Create Production Plan": [
+    "manufacturing/onboarding_step/create_production_plan/create_production_plan.json"
+  ],
+  "Pull in open sales orders and work out what to make, and what to buy, to fill them.": [
+    "manufacturing/onboarding_step/create_production_plan/create_production_plan.json"
+  ],
+  "Plan production from your orders": [
+    "manufacturing/onboarding_step/create_production_plan/create_production_plan.json"
+  ],
+  "Something you use to make your products, kept in the Raw Material group. See [Item](https://docs.frappe.io/erpnext/user/manual/en/item).": [
+    "manufacturing/onboarding_step/create_raw_materials/create_raw_materials.json"
+  ],
+  "Add a raw material": [
+    "manufacturing/onboarding_step/create_raw_materials/create_raw_materials.json"
+  ],
+  "Production Reports": [
+    "manufacturing/workspace/manufacturing/manufacturing.json"
+  ],
+  "Planning Reports": [
+    "manufacturing/workspace/manufacturing/manufacturing.json"
+  ],
+  "BOM Reports": [
+    "manufacturing/workspace/manufacturing/manufacturing.json"
+  ],
+  "Monthly Completed Work Order": [
+    "manufacturing/workspace/manufacturing/manufacturing.json"
+  ],
+  "Issues Opened": [
+    "support/workspace/support/support.json"
+  ],
+  "Overdue Issues": [
+    "support/workspace/support/support.json",
+    "support/number_card/overdue_issues/overdue_issues.json"
+  ],
+  "Resolved Issues": [
+    "support/workspace/support/support.json",
+    "support/number_card/resolved_issues/resolved_issues.json"
+  ],
+  "Value Changes": [
+    "assets/sidebar/assets/assets.json"
+  ],
+  "Track what your business owns": [
+    "assets/module_onboarding/asset_onboarding/asset_onboarding.json",
+    "setup/onboarding_step/complete_asset_onboarding/complete_asset_onboarding.json"
+  ],
+  "Open Fixed Asset Register": [
+    "assets/onboarding_step/view_fixed_asset_register/view_fixed_asset_register.json"
+  ],
+  "What you own, where it is, and what it is worth today.": [
+    "assets/onboarding_step/view_fixed_asset_register/view_fixed_asset_register.json"
+  ],
+  "See everything you own": [
+    "assets/onboarding_step/view_fixed_asset_register/view_fixed_asset_register.json"
+  ],
+  "Add Asset": [
+    "assets/onboarding_step/create_existing_asset/create_existing_asset.json"
+  ],
+  "Something you bought before using ERPNext, with what you paid, where it is, and how much has already depreciated. See [Asset](https://docs.frappe.io/erpnext/user/manual/en/asset).": [
+    "assets/onboarding_step/create_existing_asset/create_existing_asset.json"
+  ],
+  "Record an asset you already own": [
+    "assets/onboarding_step/create_existing_asset/create_existing_asset.json"
+  ],
+  "Computers, vehicles, furniture: how each kind depreciates, and which accounts it posts to. See [Asset Category](https://docs.frappe.io/erpnext/user/manual/en/asset-category).": [
+    "assets/onboarding_step/create_asset_category/create_asset_category.json"
+  ],
+  "Set up an asset category": [
+    "assets/onboarding_step/create_asset_category/create_asset_category.json"
+  ],
+  "Create Asset Maintenance": [
+    "assets/onboarding_step/create_asset_maintenance/create_asset_maintenance.json"
+  ],
+  "Servicing, inspections and calibration, with reminders to the team doing it. See [Asset Maintenance](https://docs.frappe.io/erpnext/user/manual/en/asset-maintenance).": [
+    "assets/onboarding_step/create_asset_maintenance/create_asset_maintenance.json"
+  ],
+  "Schedule its upkeep": [
+    "assets/onboarding_step/create_asset_maintenance/create_asset_maintenance.json"
+  ],
+  "Create Asset Movement": [
+    "assets/onboarding_step/create_asset_movement/create_asset_movement.json"
+  ],
+  "Record who has it and where it is, so you always know. See [Asset Movement](https://docs.frappe.io/erpnext/user/manual/en/asset-movement).": [
+    "assets/onboarding_step/create_asset_movement/create_asset_movement.json"
+  ],
+  "Hand it to a person or place": [
+    "assets/onboarding_step/create_asset_movement/create_asset_movement.json"
+  ],
+  "Open Asset Depreciation Ledger": [
+    "assets/onboarding_step/view_asset_depreciation/view_asset_depreciation.json"
+  ],
+  "Depreciation is posted on schedule, asset by asset, without a journal entry from you. See [Depreciation](https://docs.frappe.io/erpnext/user/manual/en/asset-depreciation).": [
+    "assets/onboarding_step/view_asset_depreciation/view_asset_depreciation.json"
+  ],
+  "Check its depreciation": [
+    "assets/onboarding_step/view_asset_depreciation/view_asset_depreciation.json"
+  ],
+  "The kind of thing you own, marked as a fixed asset. See [Item](https://docs.frappe.io/erpnext/user/manual/en/item).": [
+    "assets/onboarding_step/create_asset_item/create_asset_item.json"
+  ],
+  "Add an asset item": [
+    "assets/onboarding_step/create_asset_item/create_asset_item.json"
+  ],
+  "Asset Reports": [
+    "assets/workspace/assets/assets.json"
+  ],
+  "Asset Maintenance Report": [
+    "assets/workspace/assets/assets.json"
+  ],
+  "Total Assets": [
+    "assets/workspace/assets/assets.json",
+    "assets/number_card/total_assets/total_assets.json"
+  ],
+  "New Assets (This Year)": [
+    "assets/workspace/assets/assets.json",
+    "assets/number_card/new_assets_(this_year)/new_assets_(this_year).json"
+  ],
+  "Plan and deliver projects": [
+    "projects/module_onboarding/projects_onboarding/projects_onboarding.json",
+    "setup/onboarding_step/complete_projects_onboarding/complete_projects_onboarding.json"
+  ],
+  "Create Project Template": [
+    "projects/onboarding_step/create_project_template/create_project_template.json"
+  ],
+  "Save the tasks you repeat on every job, and start the next project from them.": [
+    "projects/onboarding_step/create_project_template/create_project_template.json"
+  ],
+  "Reuse it as a template": [
+    "projects/onboarding_step/create_project_template/create_project_template.json"
+  ],
+  "Open Project Summary": [
+    "projects/onboarding_step/view_project_summary/view_project_summary.json"
+  ],
+  "Progress, hours and costs for every project.": [
+    "projects/onboarding_step/view_project_summary/view_project_summary.json"
+  ],
+  "Track progress and costs": [
+    "projects/onboarding_step/view_project_summary/view_project_summary.json"
+  ],
+  "Who does what, by when. Tasks roll up into the project's progress. See [Task](https://docs.frappe.io/erpnext/user/manual/en/task).": [
+    "projects/onboarding_step/create_tasks/create_tasks.json"
+  ],
+  "Break it into tasks": [
+    "projects/onboarding_step/create_tasks/create_tasks.json"
+  ],
+  "Open Delayed Tasks Summary": [
+    "projects/onboarding_step/view_delayed_tasks/view_delayed_tasks.json"
+  ],
+  "Tasks past their due date, and how late each one is.": [
+    "projects/onboarding_step/view_delayed_tasks/view_delayed_tasks.json"
+  ],
+  "Spot delayed tasks": [
+    "projects/onboarding_step/view_delayed_tasks/view_delayed_tasks.json"
+  ],
+  "Record the hours spent on tasks. Bill them to the customer or use them to cost the project. See [Timesheet](https://docs.frappe.io/erpnext/user/manual/en/timesheets).": [
+    "projects/onboarding_step/create_timesheet/create_timesheet.json"
+  ],
+  "Log time against it": [
+    "projects/onboarding_step/create_timesheet/create_timesheet.json"
+  ],
+  "Anything with a start and an end: a client job, an installation, an internal initiative. See [Project](https://docs.frappe.io/erpnext/user/manual/en/project).": [
+    "projects/onboarding_step/create_project/create_project.json"
+  ],
+  "Start a project": [
+    "projects/onboarding_step/create_project/create_project.json"
+  ],
+  "Project Reports": [
+    "projects/workspace/projects/projects.json"
+  ],
+  "Timesheet Working Hours": [
+    "projects/workspace/projects/projects.json",
+    "projects/number_card/timesheet_working_hours/timesheet_working_hours.json"
+  ],
+  "Appointment Booking": [
+    "setup/sidebar/setup/setup.json"
+  ],
+  "Stock Reposting": [
+    "setup/sidebar/setup/setup.json"
+  ],
+  "Get to know ERPNext": [
+    "setup/module_onboarding/organization_onboarding/organization_onboarding.json"
+  ],
+  "Open Accounts": [
+    "setup/onboarding_step/complete_accounting_onboarding/complete_accounting_onboarding.json"
+  ],
+  "Check your chart of accounts and taxes, and add the bank account you use.": [
+    "setup/onboarding_step/complete_accounting_onboarding/complete_accounting_onboarding.json"
+  ],
+  "Add the people you work with and choose what they can see.": [
+    "setup/onboarding_step/invite_users/invite_users.json"
+  ],
+  "Invite your team": [
+    "setup/onboarding_step/invite_users/invite_users.json"
+  ],
+  "Open Buying": [
+    "setup/onboarding_step/complete_buying_onboarding/complete_buying_onboarding.json"
+  ],
+  "Add a supplier, order from them and pay their bill.": [
+    "setup/onboarding_step/complete_buying_onboarding/complete_buying_onboarding.json"
+  ],
+  "Break a project into tasks and log the time your team spends.": [
+    "setup/onboarding_step/complete_projects_onboarding/complete_projects_onboarding.json"
+  ],
+  "Open Manufacturing": [
+    "setup/onboarding_step/complete_manufacturing_onboarding/complete_manufacturing_onboarding.json"
+  ],
+  "Write down what goes into a product and make it with a work order.": [
+    "setup/onboarding_step/complete_manufacturing_onboarding/complete_manufacturing_onboarding.json"
+  ],
+  "Open Stock": [
+    "setup/onboarding_step/complete_stock_onboarding/complete_stock_onboarding.json"
+  ],
+  "Set up your warehouses and enter the stock you have today.": [
+    "setup/onboarding_step/complete_stock_onboarding/complete_stock_onboarding.json"
+  ],
+  "Open Selling": [
+    "setup/onboarding_step/complete_selling_onboarding/complete_selling_onboarding.json"
+  ],
+  "Add an item and a customer, bill them and collect the payment.": [
+    "setup/onboarding_step/complete_selling_onboarding/complete_selling_onboarding.json"
+  ],
+  "Open Quality": [
+    "setup/onboarding_step/complete_quality_onboarding/complete_quality_onboarding.json"
+  ],
+  "Set up an inspection and record your first check.": [
+    "setup/onboarding_step/complete_quality_onboarding/complete_quality_onboarding.json"
+  ],
+  "Open Assets": [
+    "setup/onboarding_step/complete_asset_onboarding/complete_asset_onboarding.json"
+  ],
+  "Record an asset and see what it's worth year by year.": [
+    "setup/onboarding_step/complete_asset_onboarding/complete_asset_onboarding.json"
+  ],
+  "Top Customers": [
+    "setup/workspace/erpnext_settings/erpnext_settings.json"
+  ]
+}
