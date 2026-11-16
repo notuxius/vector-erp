@@ -20,6 +20,7 @@
     frappe.boot.module_sidebars[shell] = definition;
     let root = null;
     let sections = [];
+    let hasOverviewData = false;
     let active = null;
     let selected = null;
     let frame = 0;
@@ -48,7 +49,10 @@
         if (this.current_module === shell) {
             this.$items_container.attr("aria-label", "Розділи огляду");
             if (!definition.items.length) {
-                this.$items_container.empty().append($("<p>", { class: "vo-empty", text: "Немає доступних розділів." }));
+                this.$items_container.empty();
+                if (hasOverviewData) {
+                    this.$items_container.append($("<p>", { class: "vo-empty", text: "Немає доступних розділів." }));
+                }
             }
             this.$items_container.find("a.item-anchor").each((index, anchor) => {
                 const key = definition.items[index].section_key;
@@ -130,6 +134,7 @@
         paint();
     }
     function setItems(data) {
+        hasOverviewData = data != null;
         const count = data?.cards.filter(card => ["overdue", "late_purchases"].includes(card.key))
             .reduce((total, card) => total + Number(card.value), 0) || 0;
         sections = [
@@ -174,6 +179,7 @@
             cancelAnimationFrame(frame);
             frame = 0;
             root = null;
+            hasOverviewData = false;
             selected = null;
         },
     };
