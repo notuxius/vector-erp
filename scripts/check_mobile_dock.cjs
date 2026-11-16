@@ -20,7 +20,7 @@ const base = `http://127.0.0.1:${env.HTTP_PORT || 8080}`;
         page.on('pageerror', error => errors.push(error.stack || error.message));
         // Exercise source changes before rebuilding the local deployment.
         if (process.env.VECTOR_TEST_LOCAL_ASSETS) {
-            for (const asset of ['js/navigation_mobile.js', 'js/navigation_resize.js', 'css/dock_labels.css']) {
+            for (const asset of ['js/navigation_position.js', 'js/navigation_mobile.js', 'js/navigation_resize.js', 'css/dock_labels.css']) {
                 await page.route(`**/assets/warehouse_core/${asset}*`, route => route.fulfill({
                     path: path.join(root, 'apps/warehouse_core/warehouse_core/public', asset),
                     contentType: asset.endsWith('.js') ? 'application/javascript' : 'text/css',
@@ -33,7 +33,6 @@ const base = `http://127.0.0.1:${env.HTTP_PORT || 8080}`;
     async function ready() {
         await page.waitForFunction(() => window.frappe?.app?.sidebar?.dock?.enabled);
         await page.evaluate(() => new Promise(resolve => frappe.after_ajax(resolve)));
-        await page.evaluate(() => frappe.vector_navigation_position.set('left'));
     }
     async function opened(value) {
         await page.waitForFunction(value => frappe.app.sidebar.dock.is_open === value, value);
@@ -143,10 +142,11 @@ const base = `http://127.0.0.1:${env.HTTP_PORT || 8080}`;
             await opened(false);
             await page.locator('.vector-workspace-chip:visible').waitFor({ state: 'visible' });
 
-            // Returning to desktop applies the preference without a reload or a server write.
+            // Returning to desktop restores the top panel without a reload or a server write.
             for (const width of [768, 1440]) {
                 await page.setViewportSize({ width, height: 1000 });
                 await page.waitForFunction(() => frappe.app.sidebar.dock.is_pinned);
+                assert(await page.locator('body').evaluate(el => el.classList.contains('vector-navigation-top')));
                 assert.equal(await page.locator('.vector-workspace-chip:visible').count(), 0);
                 await opened(true);
             }
@@ -243,7 +243,7 @@ const base = `http://127.0.0.1:${env.HTTP_PORT || 8080}`;
             dock: frappe.app.sidebar.dock.is_open,
             pinned: frappe.app.sidebar.dock.is_pinned,
             preference: frappe.boot.desk_settings.dock_mode,
-            position: frappe.vector_navigation_position.get(),
+            top: document.body.classList.contains('vector-navigation-top'),
             modal: !!document.querySelector(".modal.show, .modal.in, .es-menu[data-state='open']"),
         })));
         await page.screenshot({ path: path.join(root, '.artifacts/workspace-chip-failure.png') }).catch(() => {});

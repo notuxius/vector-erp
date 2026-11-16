@@ -128,24 +128,21 @@ const base = `http://localhost:${env.HTTP_PORT || 8080}`;
             }
             previous = { width, height: m.head.height };
         }
-        for (const position of ['top', 'left']) {
-            await page.evaluate(position => frappe.vector_navigation_position.set(position), position);
-            for (const full of [false, true]) {
-                await page.evaluate(full => {
-                    if (document.body.classList.contains('full-width') !== full) {
-                        frappe.ui.toolbar.toggle_full_width();
-                    }
-                }, full);
-                for (const width of [1440, 1280, 1200, 1100, 1000, 900, 800, 768]) {
-                    await page.setViewportSize({ width, height: 900 });
-                    check(await measure(), `${position} ${full ? 'full' : 'compact'} ${width}`);
+        for (const full of [false, true]) {
+            await page.evaluate(full => {
+                if (document.body.classList.contains('full-width') !== full) {
+                    frappe.ui.toolbar.toggle_full_width();
                 }
-                await page.setViewportSize({ width: 1440, height: 900 });
-                for (const sidebarWidth of [56, 128, 320, 480]) {
-                    await page.evaluate(width => document.documentElement.style
-                        .setProperty('--vector-sidebar-width', `${width}px`), sidebarWidth);
-                    check(await measure(), `${position} sidebar ${sidebarWidth}`);
-                }
+            }, full);
+            for (const width of [1440, 1280, 1200, 1100, 1000, 900, 800, 768]) {
+                await page.setViewportSize({ width, height: 900 });
+                check(await measure(), `top ${full ? 'full' : 'compact'} ${width}`);
+            }
+            await page.setViewportSize({ width: 1440, height: 900 });
+            for (const sidebarWidth of [56, 128, 320, 480]) {
+                await page.evaluate(width => document.documentElement.style
+                    .setProperty('--vector-sidebar-width', `${width}px`), sidebarWidth);
+                check(await measure(), `top sidebar ${sidebarWidth}`);
             }
         }
         await page.setViewportSize({ width: 1098, height: 900 });
@@ -156,10 +153,9 @@ const base = `http://localhost:${env.HTTP_PORT || 8080}`;
         const wide = await measure();
         assert(wide.parents.every(parent => parent.y < wide.title.bottom && parent.bottom > wide.title.y),
             '1098px: breadcrumbs and title share a line');
-        const utilityLabels = () => header().locator('.vector-top-actions .sidebar-item-label:visible').count();
-        // The sidebar now defaults to 400px. At 1098px, icon-only utilities
-        // are valid; test optional captions on a genuinely roomy action row.
-        await page.setViewportSize({ width: 1440, height: 900 });
+        const utilityLabels = () => page.locator('.vector-top-actions .sidebar-item-label:visible').count();
+        // Leave room for module names and both utility captions in the top bar.
+        await page.setViewportSize({ width: 2400, height: 900 });
         check(await measure(), 'wide utility controls');
         assert.equal(await utilityLabels(), 2, 'wide action row shows utility labels');
         await page.setViewportSize({ width: 320, height: 900 });
@@ -175,33 +171,29 @@ const base = `http://localhost:${env.HTTP_PORT || 8080}`;
             await page.addStyleTag({ path: path.join(root,
                 'apps/warehouse_core/warehouse_core/public/css/navigation_breadcrumbs.css') });
         }
-        for (const position of ['top', 'left']) {
-            await page.evaluate(position => frappe.vector_navigation_position.set(position), position);
-            let reference;
-            const rows = new Set();
-            const widths = Array.from({ length: 63 }, (_, i) => 1800 - i * 16);
-            for (const width of [...widths, ...widths.toReversed()]) {
-                await page.setViewportSize({ width, height: 900 });
-                const m = await measure();
-                check(m, `role ${position} ${width}`);
-                const offsets = [m.toggle, ...m.parents, m.title].map(r => r.y - m.head.y);
-                if (reference) {
-                    offsets.forEach((value, i) => assert(Math.abs(value - reference[i]) <= 0.5,
-                        `role ${position} ${width}: arrow and breadcrumbs must not jump when actions wrap`));
-                }
-                reference = offsets;
-                const wrapped = m.actions.y >= m.title.bottom;
-                if (!rows.has(wrapped)) {
-                    await header().screenshot({ path: path.join(root,
-                        `.artifacts/header-role-${position}-${wrapped ? 'wrapped' : 'shared'}.png`) });
-                }
-                rows.add(wrapped);
+        let reference;
+        const rows = new Set();
+        const widths = Array.from({ length: 63 }, (_, i) => 1800 - i * 16);
+        for (const width of [...widths, ...widths.toReversed()]) {
+            await page.setViewportSize({ width, height: 900 });
+            const m = await measure();
+            check(m, `role top ${width}`);
+            const offsets = [m.toggle, ...m.parents, m.title].map(r => r.y - m.head.y);
+            if (reference) {
+                offsets.forEach((value, i) => assert(Math.abs(value - reference[i]) <= 0.5,
+                    `role top ${width}: arrow and breadcrumbs must not jump when actions wrap`));
             }
-            assert.equal(rows.size, 2, `${position}: checked both shared and wrapped action rows`);
+            reference = offsets;
+            const wrapped = m.actions.y >= m.title.bottom;
+            if (!rows.has(wrapped)) {
+                await header().screenshot({ path: path.join(root,
+                    `.artifacts/header-role-top-${wrapped ? 'wrapped' : 'shared'}.png`) });
+            }
+            rows.add(wrapped);
         }
+        assert.equal(rows.size, 2, `top: checked both shared and wrapped action rows`);
         // Reproduce the recording's page, including the desktop-only mount
         // crossing 992px and the different mount used by a fresh mobile load.
-        await page.evaluate(() => frappe.vector_navigation_position.set('top'));
         await page.goto(`${base}/desk/email-account`);
         await header().locator('.view-switcher button').waitFor();
         await page.evaluate(() => new Promise(resolve => frappe.after_ajax(resolve)));
@@ -270,7 +262,7 @@ const base = `http://localhost:${env.HTTP_PORT || 8080}`;
             }
         }
         assert.deepEqual(errors, []);
-        console.log('PASS: single-line breadcrumbs, shared utility/action rows, and visible controls at 320–1440px; both navigation positions and sidebar widths.');
+        console.log('PASS: single-line breadcrumbs, shared utility/action rows, and visible controls at 320–1440px; top navigation and varying sidebar widths.');
     } finally {
         await browser.close();
     }

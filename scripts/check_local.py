@@ -3,6 +3,7 @@ import http.cookiejar
 import html as html_module
 from hashlib import sha256
 import json
+import os
 import re
 from pathlib import Path
 import urllib.parse
@@ -13,12 +14,19 @@ def check_realtime(opener, base):
     """Exercise Socket.IO authentication through the actual reverse proxy."""
     port = urllib.parse.urlsplit(base).port
     endpoint = base + "/socket.io/?EIO=4&transport=polling"
-    for host, origin, accepted in [
-        (f"127.0.0.1:{port}", f"http://127.0.0.1:{port}", True),
-        (f"localhost:{port}", f"http://localhost:{port}", True),
-        (f"localhost:{port}", "http://untrusted.example.test", False),
+    for host, origin, fetch_site, accepted in [
+        (f"127.0.0.1:{port}", f"http://127.0.0.1:{port}", None, True),
+        (f"localhost:{port}", f"http://localhost:{port}", None, True),
+        (f"localhost:{port}", None, "same-origin", True),
+        (f"localhost:{port}", None, "cross-site", False),
+        (f"localhost:{port}", None, None, False),
+        (f"localhost:{port}", "http://untrusted.example.test", "same-origin", False),
     ]:
-        headers = {"Host": host, "Origin": origin, "Content-Type": "text/plain;charset=UTF-8"}
+        headers = {"Host": host, "Content-Type": "text/plain;charset=UTF-8"}
+        if origin:
+            headers["Origin"] = origin
+        if fetch_site:
+            headers["Sec-Fetch-Site"] = fetch_site
 
         def request(url, data=None):
             with opener.open(urllib.request.Request(url, data=data, headers=headers), timeout=15) as response:
@@ -67,7 +75,8 @@ def main():
         for line in env_path.read_text(encoding="utf-8").splitlines()
         if line and not line.startswith("#")
     )
-    base = f"http://127.0.0.1:{int(values.get('HTTP_PORT', '8080'))}"
+    port = int(os.environ.get("HTTP_PORT") or values.get("HTTP_PORT", "8080"))
+    base = f"http://127.0.0.1:{port}"
     logo_bytes = (env_path.parent / "apps/warehouse_core/warehouse_core/public/images/vector-mark.svg").read_bytes()
     logo = "/assets/warehouse_core/images/vector-mark.svg?v=" + sha256(logo_bytes).hexdigest()[:12]
     favicon_bytes = (env_path.parent / "apps/warehouse_core/warehouse_core/public/images/mtech-mark.svg").read_bytes()

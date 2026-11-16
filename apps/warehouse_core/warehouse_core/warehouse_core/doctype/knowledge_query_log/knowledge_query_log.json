@@ -1,0 +1,55 @@
+{
+ "doctype": "DocType",
+ "name": "Knowledge Query Log",
+ "module": "Warehouse Core",
+ "engine": "InnoDB",
+ "field_order": [
+  "requested_by",
+  "query_hash",
+  "mode",
+  "outcome",
+  "sources"
+ ],
+ "fields": [
+  {
+   "fieldname": "requested_by",
+   "label": "Користувач",
+   "fieldtype": "Link",
+   "options": "User",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "query_hash",
+   "label": "Відбиток запиту",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "mode",
+   "label": "Режим",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "outcome",
+   "label": "Результат",
+   "fieldtype": "Data",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "sources",
+   "label": "Джерела та редакції",
+   "fieldtype": "Long Text",
+   "read_only": 1
+  }
+ ],
+ "autoname": "hash",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1
+  }
+ ]
+}

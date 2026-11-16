@@ -1,16 +1,8 @@
-// Desktop navigation stays attached at the top or left; mobile uses its drawer.
+// Desktop navigation stays attached at the top; mobile uses its drawer.
 (() => {
     const prototype = frappe.ui.Dock?.prototype;
     if (!prototype || prototype.should_pin.vectorNavigationPosition) return;
     const desktop = window.matchMedia("(min-width: 768px)");
-    const key = `vector-navigation-position:${frappe.session.user || frappe.boot.user?.name}`;
-    let position = "top";
-    try {
-        if ((localStorage.getItem(key) ?? localStorage.getItem("vector-navigation-position:undefined")) === "left") {
-            position = "left";
-        }
-    } catch (_) {}
-    const atTop = () => desktop.matches && position === "top";
     prototype.should_pin = function () {
         // Ignore legacy Floating preferences without rewriting user records.
         return desktop.matches && this.enabled;
@@ -35,7 +27,7 @@
     }
     function fitLabels() {
         if (!actions?.isConnected || !actionHost?.getClientRects().length) return;
-        const dock = actionHost.id === "desk-dock" && atTop() ? actionHost : null;
+        const dock = actionHost.id === "desk-dock" && desktop.matches ? actionHost : null;
         // Probe the complete name first on each resize; the attribute is not
         // observed by actionObserver, so our own fitting cannot reschedule it.
         dock?.setAttribute("data-vector-user-name", "");
@@ -110,7 +102,7 @@
             actions.className = "vector-top-actions";
             new ResizeObserver(positionNotifications).observe(actions);
         }
-        const showInDock = atTop() && dock && !dock.classList.contains("hidden");
+        const showInDock = desktop.matches && dock && !dock.classList.contains("hidden");
         const page = frappe.container?.page;
         const desktopHeader = page?.querySelector(".desktop-navbar .desktop-avatar")?.parentElement;
         const host = showInDock ? dock : desktopHeader
@@ -193,20 +185,10 @@
         return result;
     };
     function sync() {
-        document.body.classList.toggle("vector-navigation-top", atTop());
+        document.body.classList.toggle("vector-navigation-top", desktop.matches);
         placeActions();
         window.dispatchEvent(new Event("vector-navigation-position"));
     }
-    frappe.vector_navigation_position = {
-        get: () => position,
-        set(value) {
-            if (!["left", "top"].includes(value)) return;
-            position = value;
-            try { localStorage.setItem(key, value); } catch (_) {}
-            sync();
-            frappe.app?.sidebar?.dock?.apply_pin();
-        },
-    };
     desktop.addEventListener("change", () => {
         sync();
         frappe.app?.sidebar?.dock?.apply_pin();

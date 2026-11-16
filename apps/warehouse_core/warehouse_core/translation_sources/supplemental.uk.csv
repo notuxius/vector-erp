@@ -1545,6 +1545,8 @@ Value from,Значення з
 Value in File,Значення у файлі
 Value text,Текст значення
 Variants,Варіанти товару
+Vectoria ✦ AI-assistant,Векторія ✦ ШІ-помічник
+Vectoria uses the articles you can access to explain how to work in Vector ERP. You can also ask about stock. Use /usage to see how many questions you have left and when you can ask again.,"Векторія пояснює за доступними статтями, як працювати у Вектор ERP. Запитайте також про залишки. Команда /usage покаже, скільки запитань залишилося й коли можна поставити наступне."
 Version History,Історія версій
 Version deleted,Версію видалено
 Version history,Історія версій
@@ -1764,3 +1766,10 @@ wkhtmltopdf is deprecated; Chrome is the supported renderer.,wkhtmltopdf зас�
 {0}: pre-upgrade edits restored,{0}: зміни до оновлення відновлено
 {0}: {1} did not match any results.,{0}: для {1} нічого не знайдено.
 {0}: {1} is not a valid field on {2},{0}: {1} не є коректним полем {2}
+Knowledge Article,Стаття бази знань
+Knowledge Attachment,Захищений файл бази знань
+Knowledge Query Log,Журнал запитів до бази знань
+Knowledge Access Role,Роль доступу до знань
+Knowledge Access User,Користувач доступу до знань
+Knowledge Editor,Редактор бази знань
+Knowledge Publisher,Видавець бази знань

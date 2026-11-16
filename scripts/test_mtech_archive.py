@@ -7,7 +7,7 @@ from types import SimpleNamespace
 
 from PIL import Image
 
-from extract_mtech_sample import Archive, digest
+from extract_mtech_sample import Archive, digest, category_from_breadcrumbs
 
 
 def photo(color):
@@ -17,6 +17,35 @@ def photo(color):
 
 
 class ArchiveSafetyTests(unittest.TestCase):
+    def test_category_uses_recognized_parent_for_nested_groups(self):
+        crumbs = [{"url": "https://mtech-cnc.com.ua/ua/g134852871-shvp-vinty-gajki"},
+                  {"url": "https://mtech-cnc.com.ua/ua/g134871409-komplekty-shvp-vint"},
+                  {"url": "https://mtech-cnc.com.ua/ua/p123-example.html"}]
+        self.assertEqual(category_from_breadcrumbs(crumbs), "ball-screws")
+        self.assertIsNone(category_from_breadcrumbs([{"url": "/ua/g999-unknown"}]))
+
+    def test_discovery_combines_sitemaps_categories_and_language_duplicates(self):
+        with tempfile.TemporaryDirectory() as directory:
+            archive = Archive(SimpleNamespace(output=Path(directory), refresh_images=False))
+            base = "https://mtech-cnc.com.ua"
+            def xml(root, urls):
+                return '<'+root+' xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+u+'</loc></url>' for u in urls)+'</'+root+'>'
+            pages = {
+                base+"/sitemap.xml": xml("sitemapindex", [base+"/sitemap_products-0.xml", base+"/sitemap_products-1.xml", base+"/sitemap_groups-0.xml"]),
+                base+"/sitemap_products-0.xml": xml("urlset", [base+"/p123-one.html", base+"/ua/p123-one.html"]),
+                base+"/sitemap_products-1.xml": xml("urlset", [base+"/ua/p456-two.html"]),
+                base+"/sitemap_groups-0.xml": xml("urlset", [base+"/ua/g1-group"]),
+                base+"/ua/g1-group": '<a href="/ua/p789-extra.html">extra</a><div data-pagination-pages-count="2" data-pagination-url-pattern="/ua/g1-group/page_0"></div><a href="https://unrelated.example/ua/p999-test.html">offsite</a>',
+                base+"/ua/g1-group/page_2": '<a href="/ua/p234-another.html">another</a><a href="/ua/g1-group">back</a>',
+                base+"/ua/product_list": '<a href="/ua/g1-group">group</a>',
+            }
+            archive.get = lambda url: SimpleNamespace(content=pages[url].encode(), text=pages[url])
+            discovered = archive.discover(crawl_categories=True)
+            self.assertEqual(set(discovered), {"123", "456", "789", "234"})
+            self.assertEqual(archive.report["sitemap_unique_uk_products"], 2)
+            self.assertEqual(archive.report["category_pages_checked"], 3)
+            self.assertFalse(archive.report["errors"])
+
     def test_reuse_and_source_change_preserve_original_and_edit(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

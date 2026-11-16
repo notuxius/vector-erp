@@ -1,0 +1,79 @@
+{
+ "doctype": "DocType",
+ "name": "Knowledge Attachment",
+ "module": "Warehouse Core",
+ "engine": "InnoDB",
+ "field_order": [
+  "article",
+  "file_name",
+  "byte_size",
+  "sha256",
+  "extraction_status",
+  "extraction_message",
+  "extracted_characters",
+  "payload"
+ ],
+ "fields": [
+  {
+   "fieldname": "article",
+   "label": "Стаття",
+   "fieldtype": "Link",
+   "options": "Knowledge Article",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "file_name",
+   "label": "Назва файлу",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "byte_size",
+   "label": "Розмір, байт",
+   "fieldtype": "Int",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sha256",
+   "label": "SHA-256",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "extraction_status",
+   "label": "Стан витягування",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "extraction_message",
+   "label": "Результат витягування",
+   "fieldtype": "Small Text",
+   "read_only": 1
+  },
+  {
+   "fieldname": "extracted_characters",
+   "label": "Витягнуто символів",
+   "fieldtype": "Int",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payload",
+   "label": "Вміст файлу",
+   "fieldtype": "Long Text",
+   "hidden": 1,
+   "read_only": 1
+  }
+ ],
+ "autoname": "hash",
+ "allow_rename": 0,
+ "permissions": [
+  {
+   "role": "All",
+   "read": 1,
+   "select": 1
+  }
+ ]
+}

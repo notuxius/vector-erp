@@ -1,0 +1,5 @@
+*
+!Dockerfile
+!guard.py
+!server.py
+!notifications.py

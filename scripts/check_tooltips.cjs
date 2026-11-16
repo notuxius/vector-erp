@@ -97,7 +97,6 @@ const base = `http://localhost:${env.HTTP_PORT || 8080}`;
 
         await page.setViewportSize({ width: 1440, height: 900 });
         await page.evaluate(() => {
-            frappe.vector_navigation_position.set('left');
             frappe.app.sidebar.dock.set_pinned(true);
             frappe.app.sidebar.dock.open();
         });
@@ -107,7 +106,6 @@ const base = `http://localhost:${env.HTTP_PORT || 8080}`;
         await link.waitFor();
         await hover(link, await link.getAttribute('aria-label'));
         await compact.evaluate(e => e.remove());
-        await page.evaluate(() => frappe.vector_navigation_position.set('top'));
         await page.setViewportSize({ width: 800, height: 900 });
         const arrow = page.locator('#desk-dock .vector-navigation-scroll-arrow:visible').first();
         await hover(arrow, await arrow.getAttribute('aria-label'));

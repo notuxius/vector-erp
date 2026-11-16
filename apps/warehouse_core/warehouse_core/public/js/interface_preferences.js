@@ -59,21 +59,12 @@
             appearance.render = function (panel) {
                 render.call(this, panel);
                 const uk = frappe.boot.lang === "uk";
-                // The native pinned/floating choice is replaced by panel position.
+                // Desktop navigation is always pinned at the top.
                 panel.body.find(".dock-preview-rail, .dock-preview-tray")
                     .closest(".theme-card-wrapper").parent().remove();
                 panel.body.find(".settings-dialog-section-title").filter((_, el) => el.textContent === __("Dock"))
                     .closest(".settings-dialog-section-heading").remove();
                 const fields = panel.add_fields([
-                    {
-                        fieldtype: "Select", fieldname: "vector_navigation_position",
-                        label: uk ? "Розташування панелі" : "Panel position",
-                        options: [
-                            { label: uk ? "Угорі" : "Top", value: "top" },
-                            { label: uk ? "Ліворуч" : "Left", value: "left" },
-                        ],
-                        default: frappe.vector_navigation_position.get(),
-                    },
                     {
                         fieldtype: "Switch", fieldname: "vector_animations",
                         label: uk ? "Анімації інтерфейсу" : "Interface animations",
@@ -83,8 +74,6 @@
                         default: enabled() ? 1 : 0,
                     },
                 ]);
-                fields.fields_dict.vector_navigation_position.$input.on("change", () =>
-                    frappe.vector_navigation_position.set(fields.get_value("vector_navigation_position")));
                 fields.fields_dict.vector_animations.$input.on("change", () =>
                     frappe.vector_animations.set(Boolean(fields.get_value("vector_animations"))));
             };

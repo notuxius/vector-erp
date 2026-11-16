@@ -1,6 +1,39 @@
 # Local Vector ERP sandbox, powered by ERPNext. See README.md for upstream provenance.
 name: vector-erp
 services:
+  ai-gateway:
+    build:
+      context: ./services/ai_gateway
+    image: vector-erp-ai-gateway:0.1.0
+    restart: unless-stopped
+    # Only the guard receives the API key. No public port or admin HTTP API.
+    env_file:
+      - path: .env.local
+        required: false
+      - path: .env.telegram
+        required: false
+    environment:
+      AI_TELEGRAM_ALERTS_ENABLED: "true"
+      AI_TELEGRAM_TESTS_ENABLED: "false"
+      AI_ALERT_TELEGRAM_USER: notuxius
+      AI_ALERT_TELEGRAM_BOT: mtech_customer_support_bot
+    networks:
+      - frappe_network
+    volumes:
+      - ai-ledger:/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8091/health', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
   backend:
     build:
       context: .
@@ -15,6 +48,7 @@ services:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
     environment:
+      GUNICORN_TIMEOUT: 240
       DB_HOST: db
       DB_PORT: "3306"
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:?Run scripts/init_env.py first}
@@ -142,7 +176,7 @@ services:
       UPSTREAM_REAL_IP_ADDRESS: 127.0.0.1
       UPSTREAM_REAL_IP_HEADER: X-Forwarded-For
       UPSTREAM_REAL_IP_RECURSIVE: "off"
-      PROXY_READ_TIMEOUT: 120
+      PROXY_READ_TIMEOUT: 240
       CLIENT_MAX_BODY_SIZE: 50m
     volumes:
       - sites:/home/frappe/frappe-bench/sites
@@ -253,6 +287,7 @@ services:
         condition: service_completed_successfully
 
 volumes:
+  ai-ledger:
   db-data:
   redis-queue-data:
   sites:

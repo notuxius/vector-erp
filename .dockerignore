@@ -1,6 +1,10 @@
 *
 !infra/
 !infra/Dockerfile
+!infra/realtime_origin.conf
+!infra/patch_banking.py
+!infra/patch_realtime.py
+!infra/patch_trend_translations.py
 !apps/
 !apps/warehouse_core/
 !apps/warehouse_core/**

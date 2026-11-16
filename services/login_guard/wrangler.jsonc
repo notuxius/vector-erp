@@ -1,0 +1,11 @@
+{
+  "name": "mtech-login-guard",
+  "main": "worker.mjs",
+  "account_id": "3a9bd3cbf25c195f1635a9576379f117",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": false,
+  "preview_urls": false,
+  "durable_objects": {"bindings": [{"name": "ATTEMPTS", "class_name": "LoginAttempts"}]},
+  "migrations": [{"tag": "v1", "new_sqlite_classes": ["LoginAttempts"]}],
+  "observability": {"enabled": false}
+}

@@ -21,7 +21,7 @@ try {
     $ComposeArgs = @('compose', '--project-name', 'vector-erp', '--env-file', '.env', '-f', 'compose.yaml')
     switch ($Action) {
         'start' {
-            & docker @ComposeArgs build backend
+            & docker @ComposeArgs build backend ai-gateway
             if ($LASTEXITCODE -ne 0) { throw 'Building the Vector ERP image failed.' }
             & docker @ComposeArgs up -d --quiet-pull
             if ($LASTEXITCODE -ne 0) { throw 'Vector ERP startup failed.' }

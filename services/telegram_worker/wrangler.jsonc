@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mtech-telegram-bot",
+  "main": "worker.mjs",
+  "account_id": "3a9bd3cbf25c195f1635a9576379f117",
+  "compatibility_date": "2026-10-30",
+  "workers_dev": true,
+  "preview_urls": false,
+  "durable_objects": { "bindings": [{ "name": "REPLY_TYPING", "class_name": "ReplyTyping" }] },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["ReplyTyping"] }],
+  "vars": { "BOT_ENABLED": "true", "QUOTA_GUARD_ENABLED": "true", "AI_PILOT_ENABLED": "true" },
+  "services": [{ "binding": "QUOTA_GUARD", "service": "mtech-quota-guard" }],
+  "triggers": { "crons": ["* * * * *"] },
+  "observability": { "enabled": false },
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "mtech-telegram-bot",
+    "database_id": "a3521b98-1965-49ac-b02d-f34daa87567c"
+  }]
+}

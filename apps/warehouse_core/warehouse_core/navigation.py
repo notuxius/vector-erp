@@ -1,5 +1,11 @@
-"""Place the custom operations inside Vector ERP's existing Stock navigation."""
+"""Place operations in Stock and shared knowledge in Administration."""
 import frappe
+
+ADMINISTRATION_SECTIONS = (
+    ("Знання та інструкції", "Page", (
+        ("База знань", "knowledge-base"),
+    )),
+)
 
 SECTIONS = (
     ("Відправлення та контроль", "DocType", (
@@ -17,36 +23,59 @@ SECTIONS = (
 )
 
 SECTION_ICONS = {
+    "Знання та інструкції": "book-open",
     "Відправлення та контроль": "truck",
     "Звіти операцій": "sheet",
 }
 
 
 def apply():
+    _apply_sidebar("Stock", SECTIONS)
+    _apply_sidebar("Setup", ADMINISTRATION_SECTIONS)
+
+    # Retire the old entry, retaining its layout and all business records. The
+    # code_only_modules hook makes bare document/report routes resolve to Stock.
+    frappe.db.set_value("Workspace", "Warehouse Core", "is_hidden", 1, update_modified=False)
+    for name in frappe.get_all("User", filters={"default_workspace": "Warehouse Core"}, pluck="name"):
+        frappe.db.set_value("User", name, "default_workspace", "Stock", update_modified=False)
+        frappe.clear_cache(user=name)
+
+
+def _apply_sidebar(module, sections):
     from frappe.desk.doctype.custom_sidebar.custom_sidebar import get_customization
     from frappe.desk.doctype.sidebar.sidebar import item_key
 
-    existing = get_customization("Stock", None)
+    existing = get_customization(module, None)
     if existing:
         sidebar = frappe.get_doc("Custom Sidebar", existing.name)
     else:
         sidebar = frappe.new_doc("Custom Sidebar")
-        sidebar.update({"module": "Stock", "user": ""})
+        sidebar.update({"module": module, "user": ""})
         # References preserve the shipped order and inherit future label changes.
         # Copying whole base rows would freeze upstream labels and destinations.
-        for row in frappe.get_doc("Sidebar", "Stock").items:
+        for row in frappe.get_doc("Sidebar", module).items:
             sidebar.append("sidebar_items", {
                 **{key: row.get(key) for key in ("type", "link_type", "link_to", "url", "child")},
                 "key": item_key(row), "added": 0,
             })
-    seen = {item_key(row): row for row in sidebar.sidebar_items}
     changed = sidebar.is_new()
     # The shared homepage lives above individual modules. Retire only our old link.
     for row in list(sidebar.sidebar_items):
-        if row.added and row.link_type == "Page" and row.link_to == "operations-overview":
+        if (module == "Stock" and row.added and row.link_type == "Page"
+                and row.link_to in {"operations-overview", "knowledge-base"}):
             sidebar.sidebar_items.remove(row)
             changed = True
-    for label, kind, entries in SECTIONS:
+    # Remove our retired knowledge heading only when it has no remaining links.
+    if module == "Stock":
+        for row in list(sidebar.sidebar_items):
+            if row.added and row.type == "Section Break" and row.label == "Знання та інструкції":
+                index = sidebar.sidebar_items.index(row)
+                following = sidebar.sidebar_items[index + 1:]
+                if not following or following[0].type == "Section Break":
+                    sidebar.sidebar_items.remove(row)
+                    changed = True
+    seen = {item_key(row): row for row in sidebar.sidebar_items}
+    for label, kind, entries in sections:
         # Use the same native icon-row presentation as Stock's Tools/Setup groups.
         rows = [{"type": "Section Break", "label": label, "collapsible": 1,
                  "keep_closed": 0, "indent": 1, "icon": SECTION_ICONS[label]}]
@@ -91,14 +120,6 @@ def apply():
             item.idx = index
         sidebar.save(ignore_permissions=True)
 
-    # Retire the old entry, retaining its layout and all business records. The
-    # code_only_modules hook makes bare document/report routes resolve to Stock.
-    frappe.db.set_value("Workspace", "Warehouse Core", "is_hidden", 1, update_modified=False)
-    for name in frappe.get_all("User", filters={"default_workspace": "Warehouse Core"}, pluck="name"):
-        frappe.db.set_value("User", name, "default_workspace", "Stock", update_modified=False)
-        frappe.clear_cache(user=name)
-
-
 def verify():
     """Check real resolved navigation, idempotence, and preservation of roles/data."""
     from frappe.boot import get_module_sidebars, build_entity_module_map
@@ -110,7 +131,8 @@ def verify():
         return {
             "records": {dt: frappe.db.count(dt) for dt in (
                 "Delivery Note", "Sales Order", "Stock Ledger Entry", "GL Entry",
-                "Warehouse Operation Log", "Nova Poshta Shipment", "Nova Poshta Settings")},
+                "Warehouse Operation Log", "Nova Poshta Shipment", "Nova Poshta Settings",
+                "Knowledge Article", "Knowledge Attachment", "Knowledge Access Role", "Knowledge Access User")},
             "roles": sorted((r.parent, r.role) for r in frappe.get_all("Has Role", fields=["parent", "role"])),
         }
 
@@ -119,13 +141,15 @@ def verify():
         frappe.set_user("Administrator")
         before = snapshot()
         apply()
-        first = get_customization("Stock", None).as_dict()
+        first = {module: get_customization(module, None).as_dict() for module in ("Stock", "Setup")}
         apply()
-        second = get_customization("Stock", None).as_dict()
-        assert first == second, "Navigation migration is not idempotent"
+        second_by_module = {module: get_customization(module, None).as_dict() for module in ("Stock", "Setup")}
+        second = second_by_module["Stock"]
+        assert first == second_by_module, "Navigation migration is not idempotent"
         assert snapshot() == before, "Navigation changed business data or role assignments"
-        keys = [item_key(row) for row in second.sidebar_items]
-        assert len(keys) == len(set(keys)), "Duplicate sidebar rows"
+        for module, customization in second_by_module.items():
+            keys = [item_key(row) for row in customization.sidebar_items]
+            assert len(keys) == len(set(keys)), f"Duplicate sidebar rows in {module}"
         section = None
         for row in second.sidebar_items:
             if row.type == "Section Break":
@@ -142,9 +166,15 @@ def verify():
             for _, target in entries:
                 assert any(row.get("link_to") == target for row in sidebars["Stock"]["items"]), target
                 assert canonical[kind][target] == "Stock", target
+        for _, kind, entries in ADMINISTRATION_SECTIONS:
+            for _, target in entries:
+                assert any(row.get("link_to") == target for row in sidebars["Setup"]["items"]), target
+                assert not any(row.get("link_to") == target for row in sidebars["Stock"]["items"]), target
+                assert canonical[kind][target] == "Setup", target
         assert frappe.db.get_value("Workspace", "Warehouse Core", "is_hidden")
         assert {"frappe", "erpnext", "warehouse_core"}.issubset(frappe.get_installed_apps())
-        return {"ok": True, "destination": "Vector ERP / Stock", "moved_links": sum(len(entries) for _, _, entries in SECTIONS),
+        return {"ok": True, "destination": "Vector ERP / Stock", "knowledge_destination": "Vector ERP / Administration",
+                "moved_links": sum(len(entries) for _, _, entries in SECTIONS + ADMINISTRATION_SECTIONS),
                 "separate_shell_hidden": True, "repeatable": True, "records_and_roles_preserved": True}
     finally:
         frappe.db.rollback()

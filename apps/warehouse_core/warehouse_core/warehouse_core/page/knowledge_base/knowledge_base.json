@@ -1,0 +1,10 @@
+{
+ "doctype": "Page",
+ "name": "knowledge-base",
+ "page_name": "knowledge-base",
+ "module": "Warehouse Core",
+ "title": "База знань",
+ "standard": "Yes",
+ "system_page": 0,
+ "roles": []
+}

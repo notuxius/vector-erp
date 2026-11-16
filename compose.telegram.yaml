@@ -1,0 +1,24 @@
+# Independent bot service. Does not start or migrate the ERP services.
+name: vector-erp
+services:
+  telegram-bot:
+    build:
+      context: .
+      dockerfile: services/telegram_bot/Dockerfile
+    image: vector-erp:telegram-bot
+    env_file: .env.telegram
+    environment:
+      TELEGRAM_DATABASE: /data/bot.sqlite3
+    volumes:
+      - telegram-data:/data
+    restart: unless-stopped
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    init: true
+    stop_grace_period: 30s
+
+volumes:
+  telegram-data:

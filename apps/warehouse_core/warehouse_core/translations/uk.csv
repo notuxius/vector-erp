@@ -18389,6 +18389,8 @@ Vector Delivery Note,Вектор ERP — видаткова накладна
 Vector ERP,Вектор ERP
 Vector Payment Request,Вектор ERP — рахунок на оплату
 Vector Sales Invoice,Вектор ERP — рахунок продажу
+Vectoria ✦ AI-assistant,Векторія ✦ ШІ-помічник
+Vectoria uses the articles you can access to explain how to work in Vector ERP. You can also ask about stock. Use /usage to see how many questions you have left and when you can ask again.,"Векторія пояснює за доступними статтями, як працювати у Вектор ERP. Запитайте також про залишки. Команда /usage покаже, скільки запитань залишилося й коли можна поставити наступне."
 Vehicle,Транспортний засіб
 Vehicle Date,Дата
 Vehicle No,Номер автомобіля
@@ -20065,3 +20067,10 @@ yyyy-mm-dd,рррр-мм-дд
 {} {} is already linked with {} {},{} {} уже пов’язано з {} {}
 {} {} is not affecting bank account {},{} {} не впливає на банківський рахунок {}
 ← Back to upload files,"← Назад, щоб завантажити файли"
+Knowledge Article,Стаття бази знань
+Knowledge Attachment,Захищений файл бази знань
+Knowledge Query Log,Журнал запитів до бази знань
+Knowledge Access Role,Роль доступу до знань
+Knowledge Access User,Користувач доступу до знань
+Knowledge Editor,Редактор бази знань
+Knowledge Publisher,Видавець бази знань

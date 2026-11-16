@@ -56,11 +56,8 @@
             // A mobile drawer overlays the page, so it does not reserve content width.
             // Keep the settings range unchanged even when the screen is narrower.
             if (window.innerWidth < 768) return panels.sidebar.max;
-            const dockBesideSidebar = document.body.classList.contains("dock-pinned")
-                && !document.body.classList.contains("vector-navigation-top");
-            const dockWidth = dockBesideSidebar ? panels.dock.width || panels.dock.preferred : 0;
             return Math.max(panels.sidebar.min,
-                Math.min(panels.sidebar.max, window.innerWidth - 320 - dockWidth));
+                Math.min(panels.sidebar.max, window.innerWidth - 320));
         }
         const other = panels[name === "dock" ? "sidebar" : "dock"];
         return Math.max(panels[name].min, Math.min(panels[name].max,

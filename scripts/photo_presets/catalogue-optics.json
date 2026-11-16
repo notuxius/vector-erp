@@ -1,0 +1,28 @@
+{
+  "model": "birefnet-general",
+  "mask_black_point": 12,
+  "mask_white_point": 243,
+  "auto_exposure": true,
+  "target_highlight": 235,
+  "max_exposure_ev": 0.2,
+  "shadow_lift": 0.07,
+  "contrast": 1.015,
+  "white_balance_rgb": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "sharpen_radius": 0.7,
+  "sharpen_percent": 40,
+  "sharpen_threshold": 3,
+  "canvas": [
+    1280,
+    960
+  ],
+  "margin_fraction": 0.08,
+  "allow_upscale": false,
+  "edge_cleanup": {
+    "enabled": false
+  },
+  "background_policy": "preserve-source"
+}

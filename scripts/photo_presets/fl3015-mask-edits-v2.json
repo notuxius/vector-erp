@@ -1,0 +1,156 @@
+{
+  "source_sha256": "2cee25dad8c6be8159c581277a66da6a67fbc443f4baeb040c02220fbe452e0d",
+  "size": [
+    1280,
+    853
+  ],
+  "note": "Photo-specific alpha corrections: remove loose floor cable, retain rear white housing and three small visible feet. No RGB painting. V2: tighten only the lower white-panel silhouette to exclude mixed floor-shadow pixels.",
+  "polygons": [
+    {
+      "action": "exclude",
+      "points": [
+        [
+          250,
+          681
+        ],
+        [
+          490,
+          681
+        ],
+        [
+          493,
+          710
+        ],
+        [
+          550,
+          747
+        ],
+        [
+          550,
+          853
+        ],
+        [
+          250,
+          853
+        ]
+      ]
+    },
+    {
+      "action": "include",
+      "points": [
+        [
+          280,
+          378
+        ],
+        [
+          318,
+          378
+        ],
+        [
+          318,
+          427
+        ],
+        [
+          280,
+          416
+        ]
+      ]
+    },
+    {
+      "action": "include",
+      "points": [
+        [
+          283,
+          565
+        ],
+        [
+          300,
+          571
+        ],
+        [
+          292,
+          572
+        ],
+        [
+          283,
+          570
+        ]
+      ]
+    },
+    {
+      "action": "include",
+      "points": [
+        [
+          346,
+          600
+        ],
+        [
+          366,
+          608
+        ],
+        [
+          355,
+          608
+        ],
+        [
+          347,
+          606
+        ]
+      ]
+    },
+    {
+      "action": "include",
+      "points": [
+        [
+          431,
+          645
+        ],
+        [
+          455,
+          654
+        ],
+        [
+          443,
+          655
+        ],
+        [
+          431,
+          652
+        ]
+      ]
+    },
+    {
+      "action": "exclude",
+      "points": [
+        [
+          492,
+          703
+        ],
+        [
+          496,
+          709
+        ],
+        [
+          549,
+          739.8
+        ],
+        [
+          583,
+          742
+        ],
+        [
+          1075,
+          642
+        ],
+        [
+          1080,
+          765
+        ],
+        [
+          490,
+          765
+        ]
+      ]
+    }
+  ]
+}

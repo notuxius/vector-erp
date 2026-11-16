@@ -48,7 +48,6 @@ const base = `http://127.0.0.1:${env.HTTP_PORT || 8080}`;
             await page.evaluate(() => new Promise(resolve => frappe.after_ajax(resolve)));
             // Reproduce the video's wide panel and previously expanded groups.
             await page.evaluate(() => {
-                frappe.vector_navigation_position.set('left');
                 const sidebar = frappe.app.sidebar;
                 sidebar.items.filter(item => item.wrapper?.[0]?.isConnected && item.item.type === 'Section Break')
                     .forEach(item => item.open());

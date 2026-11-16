@@ -40,7 +40,7 @@ def seed():
         year = getdate(nowdate()).year
         setup_complete(frappe._dict({
             "language": "English", "lang": "en", "country": "Ukraine", "currency": "UAH",
-            "timezone": "Europe/Kiev", "company_name": COMPANY, "company_abbr": "MTech",
+            "timezone": "Europe/Kyiv", "company_name": COMPANY, "company_abbr": "MTech",
             "chart_of_accounts": "Standard", "domain": "Distribution",
             "fy_start_date": f"{year}-01-01", "fy_end_date": f"{year}-12-31",
             "bank_account": "Bank", "setup_demo": 0, "enable_telemetry": 0,

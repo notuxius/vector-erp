@@ -7,11 +7,11 @@ name = "warehouse_core"
 version = "0.1.0"
 description = "Vector ERP operations foundation powered by ERPNext"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = ["pypdf==6.15.0", "defusedxml==0.7.1", "openpyxl==3.1.5"]
 
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["warehouse_core*"]
 
 [tool.setuptools.package-data]
-warehouse_core = ["*.txt", "translations/*.csv", "translation_sources/*", "public/js/*.js", "templates/print_formats/*.html", "warehouse_core/doctype/*/*.json", "warehouse_core/report/*/*.json", "warehouse_core/report/*/*.js"]
+warehouse_core = ["*.txt", "assistant_content/*.json", "translations/*.csv", "translation_sources/*", "public/js/*.js", "templates/print_formats/*.html", "warehouse_core/doctype/*/*.json", "warehouse_core/report/*/*.json", "warehouse_core/report/*/*.js"]

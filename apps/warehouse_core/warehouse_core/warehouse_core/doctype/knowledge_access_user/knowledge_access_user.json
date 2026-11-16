@@ -1,0 +1,20 @@
+{
+ "doctype": "DocType",
+ "name": "Knowledge Access User",
+ "module": "Warehouse Core",
+ "engine": "InnoDB",
+ "field_order": [
+  "user"
+ ],
+ "fields": [
+  {
+   "fieldname": "user",
+   "label": "Користувач",
+   "fieldtype": "Link",
+   "options": "User",
+   "reqd": 1,
+   "in_list_view": 1
+  }
+ ],
+ "istable": 1
+}

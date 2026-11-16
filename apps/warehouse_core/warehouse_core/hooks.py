@@ -25,7 +25,7 @@ app_include_js = [f"/assets/warehouse_core/js/uk_ui.js?v={_ui_version}"]
 _shipping_version = _sha256((_Path(__file__).parent / "public/js/nova_poshta.js").read_bytes()).hexdigest()[:12]
 app_include_js.append(f"/assets/warehouse_core/js/nova_poshta.js?v={_shipping_version}")
 # Keep essential navigation separate from onboarding display customization.
-for _ui_asset in ("interface_preferences", "chart_rendering", "styled_tooltips", "onboarding_labels", "navigation_logo", "user_navigation", "dashboard_navigation", "navigation_localization", "navigation_resize", "navigation_mobile", "navigation_position", "dock_labels", "navigation_scroll", "navigation_sections", "page_appearance", "dialog_navigation", "pos_navigation"):
+for _ui_asset in ("interface_preferences", "chart_rendering", "styled_tooltips", "onboarding_labels", "navigation_logo", "user_navigation", "dashboard_navigation", "navigation_localization", "navigation_resize", "navigation_mobile", "navigation_position", "dock_labels", "navigation_scroll", "navigation_sections", "page_appearance", "dialog_navigation", "pos_navigation", "list_updates"):
     _asset_version = _sha256((_Path(__file__).parent / f"public/js/{_ui_asset}.js").read_bytes()).hexdigest()[:12]
     app_include_js.append(f"/assets/warehouse_core/js/{_ui_asset}.js?v={_asset_version}")
 _tutorial_version = _sha256((_Path(__file__).parent / "public/js/tutorial_media.js").read_bytes()).hexdigest()[:12]
@@ -46,6 +46,10 @@ app_include_css.append(f"/assets/warehouse_core/css/interface_preferences.css?v=
 _settings_version = _sha256((_Path(__file__).parent / "public/js/settings_ui.js").read_bytes()).hexdigest()[:12]
 app_include_js.append(f"/assets/warehouse_core/js/settings_ui.js?v={_settings_version}")
 
+for _kind, _assets in (("js", app_include_js), ("css", app_include_css)):
+    _chat_version = _sha256((_Path(__file__).parent / f"public/{_kind}/ai_chat.{_kind}").read_bytes()).hexdigest()[:12]
+    _assets.append(f"/assets/warehouse_core/{_kind}/ai_chat.{_kind}?v={_chat_version}")
+
 doctype_js = {
     "Sales Order": "public/js/sales_completion.js",
     "Domain Settings": "public/js/domain_settings.js",
@@ -56,8 +60,9 @@ doctype_js = {
 
 after_install = "warehouse_core.install.apply"
 after_migrate = "warehouse_core.install.apply"
+auth_hooks = ["warehouse_core.telegram_access.restrict_api"]
 boot_session = ["warehouse_core.branding.boot_session", "warehouse_core.user_identity.boot_session",
-                "warehouse_core.dashboard.boot_session"]
+                "warehouse_core.dashboard.boot_session", "warehouse_core.ai_chat.boot_session"]
 override_whitelisted_methods = {
     "frappe.desk.query_report.run": "warehouse_core.report_fixes.run",
 }
@@ -79,3 +84,13 @@ has_permission = {"Nova Poshta Shipment": "warehouse_core.warehouse_core.doctype
 permission_query_conditions = {"Nova Poshta Shipment": "warehouse_core.warehouse_core.doctype.nova_poshta_shipment.nova_poshta_shipment.permission_query"}
 has_permission["Machine Assembly Installation"] = "warehouse_core.warehouse_core.doctype.machine_assembly_installation.machine_assembly_installation.has_permission"
 permission_query_conditions["Machine Assembly Installation"] = "warehouse_core.warehouse_core.doctype.machine_assembly_installation.machine_assembly_installation.permission_query"
+has_permission["Knowledge Article"] = "warehouse_core.knowledge.article_permission"
+permission_query_conditions["Knowledge Article"] = "warehouse_core.knowledge.article_query"
+has_permission["Knowledge Attachment"] = "warehouse_core.knowledge.attachment_permission"
+permission_query_conditions["Knowledge Attachment"] = "warehouse_core.knowledge.attachment_query"
+permission_query_conditions["Knowledge Access User"] = "warehouse_core.knowledge.access_user_query"
+permission_query_conditions["Knowledge Access Role"] = "warehouse_core.knowledge.access_role_query"
+doc_events["File"] = {"before_insert": "warehouse_core.knowledge.reject_standard_attachment",
+                      "validate": "warehouse_core.knowledge.reject_standard_attachment"}
+doc_events["DocShare"] = {"before_insert": "warehouse_core.knowledge.reject_share",
+                          "validate": "warehouse_core.knowledge.reject_share"}

@@ -1,0 +1,7 @@
+# This build needs only the bot, not ERP data, credentials, photos or backups.
+**
+!services/
+!services/telegram_bot/
+!services/telegram_bot/*.py
+!services/telegram_bot/content.json
+!services/telegram_bot/profiles.sql

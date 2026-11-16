@@ -1,0 +1,20 @@
+{
+ "doctype": "DocType",
+ "name": "Knowledge Access Role",
+ "module": "Warehouse Core",
+ "engine": "InnoDB",
+ "field_order": [
+  "role"
+ ],
+ "fields": [
+  {
+   "fieldname": "role",
+   "label": "Роль",
+   "fieldtype": "Link",
+   "options": "Role",
+   "reqd": 1,
+   "in_list_view": 1
+  }
+ ],
+ "istable": 1
+}

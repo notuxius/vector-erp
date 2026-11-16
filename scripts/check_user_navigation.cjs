@@ -35,10 +35,6 @@ const root = path.resolve(__dirname, '..');
             assert(await page.evaluate(() => Object.hasOwn(frappe.boot.user, 'middle_name')),
                 'boot supplies the middle name for the current user');
         }
-        await page.evaluate(() => {
-            frappe.vector_navigation_position.set('top');
-            frappe.app.sidebar.dock.set_pinned(true);
-        });
         const settle = () => page.waitForTimeout(200);
         const label = page.locator('#desk-dock .vector-user-label');
         const button = page.locator('#desk-dock .dock-user-button');

@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Вхід до Вектор ERP</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f3f5f6;color:#172a35;font:16px/1.5 system-ui,sans-serif}main{width:min(26rem,90vw);padding:2rem 0}h1{font-size:2.4rem;letter-spacing:-.04em;margin:0 0 .4rem}p{margin:0 0 1.6rem}label{font-weight:600}input,button,a{width:100%;padding:.8rem 1rem;border-radius:.35rem;font:inherit}input{margin:.4rem 0 .8rem;border:1px solid #81919a}button,a{display:block;text-align:center;font-weight:600}button{border:0;background:#186486;color:white;cursor:pointer}a{margin-top:.7rem;border:1px solid #186486;text-decoration:none;color:#135a79}.error{color:#912c28;margin:.3rem 0 .6rem}
+</style>
+<main><h1>Вектор ERP</h1><p>Скористайтеся паролем доступу або отримайте одноразовий код на дозволену електронну адресу. Далі увійдіть у свій обліковий запис ERP.</p>
+<form method="post" action="/_vector_access/login"><label for="password">Пароль доступу</label>
+<input type="password" id="password" name="password" autocomplete="current-password" maxlength="160" required>
+{{if .Error}}<p role="alert" class="error">{{.Error}}</p>{{end}}
+<button type="submit">Увійти за паролем</button></form>
+<a href="{{.EmailURL}}">Увійти через email і код</a></main></html>

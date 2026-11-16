@@ -110,23 +110,19 @@ const base = `http://127.0.0.1:${env.HTTP_PORT || 8080}`;
         }), 321);
         // Legacy floating preferences must never detach desktop navigation.
         assert.equal(await page.locator('.dock-preview-rail, .dock-preview-tray').count(), 0);
-        await page.locator('[data-fieldname="vector_navigation_position"] select').selectOption('top');
+        assert.equal(await page.locator('[data-fieldname="vector_navigation_position"]').count(), 0);
         await closeSettings();
-        await page.evaluate(() => frappe.db.set_value('User', frappe.session.user, 'dock_mode', 'Floating'));
+        await page.evaluate(() => {
+            localStorage.setItem(`vector-navigation-position:${frappe.session.user}`, 'left');
+            return frappe.db.set_value('User', frappe.session.user, 'dock_mode', 'Floating');
+        });
         await page.reload();
         await ready();
         assert.equal(await page.evaluate(() => frappe.app.sidebar.dock.is_pinned), true);
-        assert.equal(await page.locator('body').evaluate(el => el.classList.contains('vector-navigation-top')), true);
-        await settings();
-        assert.equal(await page.locator('.dock-preview-rail, .dock-preview-tray').count(), 0);
-        await page.locator('[data-fieldname="vector_navigation_position"] select').selectOption('left');
-        assert.equal(await page.locator('body').evaluate(el => el.classList.contains('vector-navigation-top')), false);
-        await closeSettings();
-        await page.reload();
-        await ready();
-        assert.equal(await page.evaluate(() => frappe.vector_navigation_position.get()), 'left');
-        assert.equal(await page.locator('body').evaluate(el => el.classList.contains('vector-navigation-top')), false);
-        assert.equal(await page.evaluate(() => frappe.app.sidebar.dock.is_pinned), true);
+        assert(await page.locator('body').evaluate(el => el.classList.contains('vector-navigation-top')));
+        const dock = await page.locator('#desk-dock').boundingBox();
+        assert.equal(dock.y, 0);
+        assert.equal(dock.width, await page.evaluate(() => document.documentElement.clientWidth));
         await page.evaluate(() => {
             localStorage.setItem('vector-dock-labels:Administrator', 'hidden');
             frappe.app.sidebar.dock.set_pinned(false);
@@ -136,10 +132,7 @@ const base = `http://127.0.0.1:${env.HTTP_PORT || 8080}`;
         assert.equal(await page.evaluate(() => frappe.app.sidebar.dock.is_pinned), true);
         assert.equal(await page.locator('.vector-workspace-chip:visible, .vector-dock-label-toggle').count(), 0);
         assert.equal(await page.locator('#desk-dock .dock-item-label').first().isVisible(), true);
-        const dockWidth = await page.locator('#desk-dock').evaluate(el => el.getBoundingClientRect().width);
-        assert(dockWidth >= 88, 'legacy hidden-label widths respect the labeled minimum');
         await settings();
-        await page.locator('[data-fieldname="vector_navigation_position"] select').selectOption('top');
         fs.mkdirSync(path.join(root, '.artifacts'), { recursive: true });
         await page.screenshot({ path: path.join(root, '.artifacts/interface-preferences.png') });
         await closeSettings();
@@ -175,7 +168,7 @@ const base = `http://127.0.0.1:${env.HTTP_PORT || 8080}`;
         assert.equal(await page.evaluate(() => frappe.vector_animations.enabled()), true);
         await closeSettings();
         assert.deepEqual(errors, []);
-        console.log('PASS: animations default off, button hover in/out remains animated in ERP and framework, switch persistence, CSS/jQuery/Web Animations, attached panel positions and legacy preference fallback, and stable reload widths.');
+        console.log('PASS: animations default off, button hover in/out remains animated in ERP and framework, switch persistence, CSS/jQuery/Web Animations, fixed top panel and legacy preference fallback, and stable reload widths.');
     } finally {
         if (originalMode !== undefined) await page.evaluate(mode =>
             frappe.db.set_value('User', frappe.session.user, 'dock_mode', mode), originalMode);

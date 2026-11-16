@@ -1,0 +1,22 @@
+{
+  "$schema": "../telegram_worker/node_modules/wrangler/config-schema.json",
+  "name": "mtech-quota-guard",
+  "main": "worker.mjs",
+  "account_id": "3a9bd3cbf25c195f1635a9576379f117",
+  "compatibility_date": "2026-10-31",
+  "workers_dev": false,
+  "preview_urls": false,
+  "triggers": { "crons": ["* * * * *"] },
+  "vars": {
+    "CF_ACCOUNT_ID": "3a9bd3cbf25c195f1635a9576379f117",
+    "ALERTS_ENABLED": "false",
+    "TELEGRAM_ALERTS_ENABLED": "false"
+  },
+  "durable_objects": { "bindings": [{ "name": "STATE", "class_name": "QuotaState" }] },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["QuotaState"] }],
+  "observability": { "enabled": false }
+  // Before activation: add CF_ANALYTICS_TOKEN secret. Email is intentionally disabled.
+  // To enable later: set ALERTS_ENABLED=true, verified ALERT_FROM var,
+  // and send_email: [{name:"ALERT_EMAIL", allowed_destination_addresses:
+  // ["notuxius@gmail.com"]}].
+}

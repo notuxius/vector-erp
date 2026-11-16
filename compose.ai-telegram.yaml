@@ -1,0 +1,17 @@
+# Optional owner-only local pilot. Does not replace the cloud Telegram webhook.
+name: vector-erp
+services:
+  telegram-ai-bridge:
+    build:
+      context: ./services/telegram_ai_bridge
+    image: vector-erp-telegram-ai-bridge:0.1.0
+    restart: unless-stopped
+    env_file: .env.ai-telegram
+    networks: [frappe_network]
+    volumes: [telegram-ai-bridge:/data]
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+volumes:
+  telegram-ai-bridge:

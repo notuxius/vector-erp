@@ -1,0 +1,151 @@
+{
+ "doctype": "DocType",
+ "name": "Knowledge Article",
+ "module": "Warehouse Core",
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "category",
+  "status",
+  "content",
+  "access_section",
+  "allowed_roles",
+  "allowed_users",
+  "cloud_allowed",
+  "valid_until",
+  "revision",
+  "approved_by",
+  "approved_at",
+  "files_section",
+  "protected_files"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "label": "Назва",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "category",
+   "label": "Категорія",
+   "fieldtype": "Select",
+   "options": "Інструкції\nТовари\nСервіс і гарантія\nПродажі\nЗакупівлі\nВнутрішні правила",
+   "default": "Інструкції",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "status",
+   "label": "Стан",
+   "fieldtype": "Select",
+   "options": "Draft\nReview\nPublished\nArchived",
+   "default": "Draft",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "content",
+   "label": "Текст статті",
+   "fieldtype": "Long Text",
+   "reqd": 0,
+   "description": "PDF/DOCX/XLSX/TXT додають витягнутий текст сюди та повертають статтю до чернетки. Перевірте текст перед публікацією. Скановані зображення не розпізнаються."
+  },
+  {
+   "fieldname": "access_section",
+   "label": "Доступ і публікація",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "allowed_roles",
+   "label": "Ролі з доступом",
+   "fieldtype": "Table",
+   "options": "Knowledge Access Role"
+  },
+  {
+   "fieldname": "allowed_users",
+   "label": "Користувачі з доступом",
+   "fieldtype": "Table",
+   "options": "Knowledge Access User"
+  },
+  {
+   "fieldname": "cloud_allowed",
+   "label": "Дозволити використання тексту в ШІ",
+   "fieldtype": "Check",
+   "default": "0",
+   "description": "Дозволяє передавати знайдені уривки до OpenAI. Вкладення не передаються. Без цієї позначки стаття доступна лише для локального перегляду та пошуку."
+  },
+  {
+   "fieldname": "valid_until",
+   "label": "Чинна до",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "revision",
+   "label": "Редакція",
+   "fieldtype": "Int",
+   "read_only": 1,
+   "default": "1"
+  },
+  {
+   "fieldname": "approved_by",
+   "label": "Опублікував",
+   "fieldtype": "Link",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approved_at",
+   "label": "Дата публікації",
+   "fieldtype": "Datetime",
+   "read_only": 1
+  },
+  {
+   "fieldname": "files_section",
+   "label": "Захищені файли",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "protected_files",
+   "label": "Файли",
+   "fieldtype": "HTML"
+  }
+ ],
+ "autoname": "format:KB-{#####}",
+ "title_field": "title",
+ "search_fields": "title,category",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 0,
+ "allow_rename": 0,
+ "show_name_in_global_search": 0,
+ "permissions": [
+  {
+   "role": "All",
+   "read": 1,
+   "select": 1
+  },
+  {
+   "role": "Knowledge Editor",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "select": 1
+  },
+  {
+   "role": "Knowledge Publisher",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "select": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "select": 1
+  }
+ ]
+}

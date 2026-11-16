@@ -44,15 +44,6 @@
                     if (fullWidth() !== value) frappe.ui.toolbar.toggle_full_width();
                 })),
             },
-            {
-                group: frappe.boot.lang === "uk" ? "Меню модулів" : "Module menu",
-                options: [
-                    [frappe.boot.lang === "uk" ? "Угорі" : "Top", "panel-top", "top"],
-                    [frappe.boot.lang === "uk" ? "Ліворуч" : "Left", "panel-left", "left"],
-                ].map(([label, icon, value]) => choice(label, icon,
-                    frappe.vector_navigation_position.get() === value,
-                    () => frappe.vector_navigation_position.set(value))),
-            },
         ];
     }
 

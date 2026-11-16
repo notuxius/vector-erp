@@ -57,8 +57,10 @@ CARDS = [
 
 def apply():
     from warehouse_core.report_fixes import apply as apply_report_fixes
+    from warehouse_core.knowledge_setup import apply as apply_knowledge
 
     migrate_legacy_names()
+    apply_knowledge()
     create_custom_fields({doctype: [{
         "fieldname": "custom_moysklad_id",
         "label": "MoySklad ID",
