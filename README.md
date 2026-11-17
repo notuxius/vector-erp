@@ -120,7 +120,9 @@ The first run downloads ERPNext, builds our app into the image, and creates the 
 - Username: `Administrator`
 - Password: `ADMIN_PASSWORD` in the local `.env` file
 - Site name inside containers: `frontend`
-- Local image: `vector-erp:0.1.0`, based on `frappe/erpnext:v16.50.0`
+- Local image: `vector-erp:0.1.0`. The Dockerfile pins the upstream image digest for ERPNext 16.50.0 and Frappe 16.52.0; the version tag alone has served different framework versions.
+
+For a shared laptop/VPS release, build the ERP, AI gateway and Telegram relay images once from the same Git revision. Load those images on both hosts and compare their image config digests. Recreate the backend, frontend, websocket, scheduler and both queues together, and run `bench --site frontend migrate` on each existing site. Keep each host's environment, overrides and volumes; back up the site with files and the SQLite spending ledger before deploying. Only the VPS runs the Telegram relay and enables AI spending. Verify installed apps, rollback-only transaction checks and [spending guard acceptance](docs/ai-spending-control.uk.md) on each host. If the shared Telegram content changed, test and deploy the Worker too.
 
 The proxy preserves the browser's Origin for realtime authentication. When the initial Socket.IO polling request omits Origin, the proxy reconstructs it only for requests marked `Sec-Fetch-Site: same-origin`. `infra/patch_realtime.py` adds the trusted `FRAPPE_REALTIME_BACKEND_URL` override so the websocket service contacts `http://frontend:8080` inside Docker while retaining Frappe's origin validation. `check_local.py` checks both local hostnames and rejects a mismatched origin. The build deliberately fails if the upstream URL helper changes and the patch needs review.
 

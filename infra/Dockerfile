@@ -1,4 +1,4 @@
-FROM frappe/erpnext:v16.50.0
+FROM frappe/erpnext:v16.50.0@sha256:072fd4092b546477a0969cec3fe2d2104d743d879a084bd76b98d37d7a14f426
 USER root
 COPY infra/realtime_origin.conf /etc/nginx/conf.d/realtime_origin.conf
 RUN sed -i 's@proxy_set_header Origin .*;@proxy_set_header Origin $realtime_origin;@' /templates/nginx/frappe.conf.template

@@ -44,6 +44,7 @@
     to { clip-path: inset(0 round 18px); opacity: 1; }
 }
 .vector-ai-header { display: flex; align-items: center; gap: 10px; padding: 16px 18px 10px; }
+.vector-ai-header button:disabled { opacity: .55; }
 .vector-ai-heading { font-size: 16px; font-weight: 650; margin: 0; flex: 1; }
 .vector-ai-state { padding: 0 18px 12px; border-bottom: 1px solid var(--border-color); font-size: 12px; color: var(--text-muted); }
 .vector-ai-state.is-unavailable { color: var(--text-color); }

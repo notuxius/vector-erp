@@ -4,6 +4,39 @@ const fs = require("node:fs");
 const path = require("node:path");
 const { chromium } = require("playwright");
 
+async function checkNewChat(page) {
+    const reset = page.getByRole("button", {name: "Новий чат", exact: true});
+    const input = page.locator("#vector-ai-input");
+    const opacity = () => reset.evaluate(button => Number(getComputedStyle(button).opacity));
+    const idleOpacity = await opacity();
+    for (const ok of [true, false]) {
+        await page.route("**/api/method/warehouse_core.ai_chat.route", route => route.fulfill({
+            json: {message: {requests: [{mode: "knowledge", message: "Перевірка"}]}},
+        }), {times: 1});
+        let release;
+        const held = new Promise(resolve => { release = resolve; });
+        await page.route("**/api/method/warehouse_core.ai_chat.send*", async route => {
+            await held;
+            await route.fulfill({json: {message: {ok, text: "Готово", message: "Помилка"}}});
+        }, {times: 1});
+        await input.fill("Перевірка");
+        const sending = page.waitForRequest("**/api/method/warehouse_core.ai_chat.send*");
+        await input.press("Enter");
+        await sending;
+        await page.getByRole("button", {name: "Закрити чат"}).click();
+        await page.locator("#vector-ai-launcher").click();
+        assert.ok(await reset.isDisabled());
+        assert.ok(await opacity() < idleOpacity);
+        await reset.evaluate(button => button.click());
+        assert.ok(await page.locator(".vector-ai-message.is-pending").isVisible());
+        release();
+        await page.locator(".vector-ai-message.is-pending").waitFor({state: "detached"});
+        assert.ok(await reset.isEnabled());
+        await reset.click();
+        assert.equal(await page.locator(".vector-ai-message").count(), 0);
+    }
+}
+
 async function main() {
     const env = Object.fromEntries(fs.readFileSync(path.join(__dirname, "../.env"), "utf8")
         .split(/\r?\n/).filter(line => line && !line.startsWith("#")).map(line => {
@@ -88,6 +121,7 @@ async function main() {
         });
         await page.goto(base + "/desk");
         await page.locator("#vector-ai-launcher").click();
+        await checkNewChat(page);
         const input = page.locator("#vector-ai-input");
         const send = page.locator('.vector-ai-compose-footer button[type="submit"]');
         assert.ok(await send.isDisabled());
@@ -340,4 +374,5 @@ async function main() {
         await browser.close();
     }
 }
-main().catch(error => { console.error(error); process.exitCode = 1; });
+module.exports = {checkNewChat};
+if (require.main === module) main().catch(error => { console.error(error); process.exitCode = 1; });
