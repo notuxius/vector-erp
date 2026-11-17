@@ -40,3 +40,13 @@
     };
     desktop.addEventListener("change", refresh);
 })();
+
+frappe.ui.form.ToDoQuickEntryForm = class extends frappe.ui.form.QuickEntryForm {
+    render_dialog() {
+        if (this.doc.__islocal) {
+            this.title = frappe.boot.lang === "uk" ? "Створити: Запит" : __("New {0}", [__("Request")]);
+            this.docfields = this.docfields.filter(field => field.fieldname !== "date");
+        }
+        super.render_dialog();
+    }
+};
