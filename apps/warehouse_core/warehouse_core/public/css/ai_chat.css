@@ -98,8 +98,7 @@
 .vector-ai-suggestion { padding: 11px 12px; text-align: left; font-size: 12px; line-height: 1.5; color: inherit; border: 1px solid var(--border-color); border-radius: 9px; background: transparent; }
 .vector-ai-suggestion:hover { background: var(--control-bg); }
 .vector-ai-follow-up { margin-top: 10px; }
-.vector-ai-retry-action { display: grid; width: fit-content; gap: 2px; text-align: center; }
-.vector-ai-retry-countdown { color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.vector-ai-retry { white-space: nowrap; font-variant-numeric: tabular-nums; }
 .vector-ai-follow-up summary {
     width: fit-content; padding: 6px 10px; cursor: pointer; font-size: 12px; font-weight: 500;
     border: 1px solid var(--border-color); border-radius: 8px; background: var(--control-bg);

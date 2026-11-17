@@ -318,30 +318,25 @@
         });
     }
     function appendRetry(row, retry) {
-        const action = make("div", "vector-ai-retry-action");
-        const button = make("button", "btn btn-default btn-sm vector-ai-retry", "Повторити");
-        const countdown = make("small", "vector-ai-retry-countdown", "10");
-        countdown.setAttribute("role", "timer");
-        countdown.setAttribute("aria-label", "Секунд до повторної спроби");
+        const button = make("button", "btn btn-default btn-sm vector-ai-retry", "Повторити (10)");
         button.type = "button";
         button.disabled = true;
         button.dataset.waiting = "true";
         button.onclick = () => {
             if (busy || button.disabled) return;
-            action.remove();
+            button.remove();
             retry();
         };
-        action.append(button, countdown);
-        row.append(action);
+        row.append(button);
         const readyAt = Date.now() + 10000;
         const timer = setInterval(() => {
             const seconds = Math.ceil((readyAt - Date.now()) / 1000);
-            if (seconds > 0 && action.isConnected) {
-                countdown.textContent = String(seconds);
+            if (seconds > 0 && button.isConnected) {
+                button.textContent = `Повторити (${seconds})`;
                 return;
             }
             clearInterval(timer);
-            countdown.remove();
+            button.textContent = "Повторити";
             delete button.dataset.waiting;
             button.disabled = busy;
         }, 1000);

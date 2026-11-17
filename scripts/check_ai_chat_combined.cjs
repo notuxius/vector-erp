@@ -231,19 +231,13 @@ async function main() {
         await page.route("**/api/method/warehouse_core.ai_chat.route", route => route.fulfill({json: {message: null}}), {times: 1});
         await ask("Покажи залишки");
         assert.match(await error.innerText(), /Не вдалося підготувати відповідь/);
-        const countdown = error.getByRole("timer");
-        const countdownBox = await countdown.boundingBox();
-        const retryBox = await retry.boundingBox();
-        assert.ok(countdownBox.y >= retryBox.y + retryBox.height);
         assert.equal(await error.locator("summary").count(), 0);
         const beforeCountdown = calls.length;
         for (let seconds = 10; seconds >= 1; seconds--) {
-            assert.equal(await countdown.textContent(), String(seconds));
-            assert.equal(await retry.textContent(), "Повторити");
+            assert.equal(await retry.textContent(), `Повторити (${seconds})`);
             assert.ok(await retry.isDisabled());
             await page.clock.fastForward(1000);
         }
-        assert.equal(await countdown.count(), 0);
         assert.equal(await retry.textContent(), "Повторити");
         assert.ok(await retry.isEnabled());
         assert.equal(calls.length, beforeCountdown);
@@ -258,8 +252,7 @@ async function main() {
         await ask(warranty);
         assert.equal(await error.locator("strong").innerText(), "База знань");
         assert.equal(await error.locator("p.vector-ai-text").innerText(), quotaMessage);
-        assert.equal(await retry.textContent(), "Повторити");
-        assert.equal(await countdown.textContent(), "10");
+        assert.equal(await retry.textContent(), "Повторити (10)");
         assert.ok(await retry.isDisabled());
         await page.clock.fastForward(10000);
         await retry.click();
