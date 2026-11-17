@@ -2,7 +2,7 @@
 (() => {
     if (!frappe.boot.vector_ai_chat || document.getElementById("vector-ai-launcher")) return;
     const feedbackApi = "warehouse_core.warehouse_core.doctype.vectoria_feedback.vectoria_feedback.";
-    const queueKey = "vectoria-errors:" + encodeURIComponent(frappe.session.user) + "/";
+    const queueKey = "vectoria-errors:" + encodeURIComponent(frappe.boot.user.name) + "/";
     const scriptUrl = document.currentScript?.src;
     const build = scriptUrl && new URL(scriptUrl).searchParams.get("v");
     function diagnostics() {
