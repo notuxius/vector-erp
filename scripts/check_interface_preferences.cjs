@@ -53,7 +53,8 @@ const base = `http://127.0.0.1:${env.HTTP_PORT || 8080}`;
         originalMode = await page.evaluate(() => frappe.boot.desk_settings.dock_mode);
         await settings();
         const toggle = page.locator('[data-fieldname="vector_animations"] input');
-        assert.equal(await toggle.isChecked(), false, 'animations default to off on a fresh browser');
+        assert.equal(await toggle.isChecked(), true, 'animations default to on in a fresh browser');
+        await page.locator('[data-fieldname="vector_animations"] .switch-visual').click();
         assert.equal(await page.evaluate(() => frappe.vector_animations.enabled()), false);
         const effects = await page.evaluate(async () => {
             const button = document.createElement('div');
@@ -150,12 +151,27 @@ const base = `http://127.0.0.1:${env.HTTP_PORT || 8080}`;
             assert(frames.every(value => Math.abs(value - width) < 1), 'no intermediate maximum-width flash');
             assert.equal(await page.evaluate(() => frappe.vector_animations.enabled()), true);
         }
-        // With no explicit choice, animations are off regardless of OS preference.
+        // Follow a real Desk route change while the expanded sidebar refits to different labels.
+        const fromWidth = await page.locator('.body-sidebar').evaluate(el => el.offsetWidth);
+        await page.evaluate(() => {
+            window.sidebarTransitions = [];
+            document.querySelector('.body-sidebar-container').addEventListener('transitionrun', event => {
+                if (['width', 'left', 'transform', 'opacity'].includes(event.propertyName))
+                    window.sidebarTransitions.push(event.propertyName);
+            });
+            return frappe.set_route('operations-overview');
+        });
+        await page.locator('.body-sidebar [data-overview-section]').first().waitFor();
+        await ready();
+        await page.waitForFunction(width => document.querySelector('.body-sidebar').offsetWidth !== width, fromWidth);
+        await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+        assert.deepEqual(await page.evaluate(() => window.sidebarTransitions), [], 'route refits do not animate');
+        // Without an explicit choice, follow the operating system's motion preference.
         await page.evaluate(() => localStorage.removeItem('vector-animations:Administrator'));
         await page.emulateMedia({ reducedMotion: 'no-preference' });
         await page.reload();
         await ready();
-        assert.equal(await page.evaluate(() => frappe.vector_animations.enabled()), false);
+        assert.equal(await page.evaluate(() => frappe.vector_animations.enabled()), true);
         await page.emulateMedia({ reducedMotion: 'reduce' });
         await page.reload();
         await ready();
@@ -168,7 +184,7 @@ const base = `http://127.0.0.1:${env.HTTP_PORT || 8080}`;
         assert.equal(await page.evaluate(() => frappe.vector_animations.enabled()), true);
         await closeSettings();
         assert.deepEqual(errors, []);
-        console.log('PASS: animations default off, button hover in/out remains animated in ERP and framework, switch persistence, CSS/jQuery/Web Animations, fixed top panel and legacy preference fallback, and stable reload widths.');
+        console.log('PASS: default motion, reduced motion, saved settings, hover feedback, CSS/jQuery/Web Animations, fixed top panel, stable reload widths and instant sidebar refitting on navigation.');
     } finally {
         if (originalMode !== undefined) await page.evaluate(mode =>
             frappe.db.set_value('User', frappe.session.user, 'dock_mode', mode), originalMode);

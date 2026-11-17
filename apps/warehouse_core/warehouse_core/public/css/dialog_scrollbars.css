@@ -20,6 +20,14 @@
     margin: 1rem auto;
 }
 
+.modal-header .modal-actions {
+    margin-left: auto;
+}
+
+.modal-header .modal-actions > .btn-modal-close {
+    order: 1;
+}
+
 /* Shared by standard dialogs, settings panels, and nested popup scroll areas.
    Override the upstream mobile rule that hides the modal scrollbar. Leave
    overflow ownership intact so short dialogs do not acquire extra scrollbars. */

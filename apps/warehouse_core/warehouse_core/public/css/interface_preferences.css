@@ -1,3 +1,21 @@
+/* Keep the native summary, keyboard handling and closed state on older browsers. */
+@supports selector(details::details-content) {
+    @media (prefers-reduced-motion: no-preference) {
+        html:not(.vector-animations-disabled) .vector-disclosure {
+            display: grid;
+            grid-template-rows: max-content 0fr;
+            transition: grid-template-rows 180ms ease;
+        }
+        html:not(.vector-animations-disabled) .vector-disclosure[open] { grid-template-rows: max-content 1fr; }
+        html:not(.vector-animations-disabled) .vector-disclosure::details-content {
+            min-height: 0;
+            overflow: clip;
+            transition: content-visibility 180ms allow-discrete;
+        }
+        .vector-disclosure:not([open])::details-content { interactivity: inert; }
+    }
+}
+
 /* Near-instant durations still deliver completion events to framework controls. */
 html.vector-animations-disabled,
 html.vector-animations-disabled *,
@@ -30,9 +48,10 @@ html.vector-animations-disabled :is(button, [role="button"], .btn, .es-button, i
     transition-timing-function: ease !important;
 }
 
-/* Restore geometry before showing any navigation width transition on reload. */
+/* Snap to the fitted width on page changes and reloads. */
 html.vector-navigation-restoring .body-sidebar-container,
 html.vector-navigation-restoring .body-sidebar,
+html.vector-navigation-restoring .sidebar-edge,
 html.vector-navigation-restoring .sidebar-collapse-arrow,
 html.vector-navigation-restoring .main-section,
 html.vector-navigation-restoring #desk-dock {

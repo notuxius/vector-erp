@@ -98,7 +98,7 @@ const base = `http://localhost:${env.HTTP_PORT || 8080}`;
             await frappe.require('user_settings_dialog.bundle.js');
             await frappe.ui.show_user_settings('profile');
         });
-        await page.locator('.settings-dialog-panel-body:visible').waitFor();
+        await page.waitForFunction(() => cur_dialog?.display && cur_dialog === frappe.ui._user_settings_dialog);
         await shellVisible();
         await page.keyboard.press('Escape');
         await page.waitForFunction(() => !document.querySelector('.modal-backdrop'));

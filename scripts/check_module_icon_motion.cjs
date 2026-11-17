@@ -21,13 +21,14 @@ const base = `http://127.0.0.1:${env.HTTP_PORT || 8080}`;
         page.on('pageerror', error => errors.push(error.message));
         if (process.env.VECTOR_TEST_LOCAL_ASSETS) await page.route('**/assets/warehouse_core/css/interface_preferences.css*', route =>
             route.fulfill({ path: path.join(root, 'apps/warehouse_core/warehouse_core/public/css/interface_preferences.css'), contentType: 'text/css' }));
-        for (const [route, symbol] of [
-            ['/desk/stock/item', '#icon-gantt-chart-duotone'],
-            ['/desk/system-settings', '#icon-system-monitor-duotone'],
+        for (const [route, symbol, animated] of [
+            ['/desk/stock/item', '#icon-gantt-chart-duotone', true],
+            ['/desk/system-settings', '#icon-system-monitor-soft', false],
         ]) {
             await page.goto(base + route);
             await page.waitForFunction(() => window.frappe?.app?.sidebar?.dock?.enabled);
             await page.evaluate(() => new Promise(resolve => frappe.after_ajax(resolve)));
+            await page.evaluate(() => frappe.vector_animations.set(false));
             const buttons = page.locator('#desk-dock .dock-item');
             const index = await buttons.evaluateAll((elements, symbol) => elements.findIndex(el => {
                 const use = el.querySelector('use');
@@ -57,7 +58,7 @@ const base = `http://127.0.0.1:${env.HTTP_PORT || 8080}`;
             await page.evaluate(() => frappe.vector_animations.set(true));
             assert.deepEqual(await controls(), { motion: 'running', opacity: '1' });
             const moving = await samples();
-            assert(moving.some(frame => !frame.equals(moving[0])), `${symbol} animates when explicitly enabled`);
+            assert.equal(moving.some(frame => !frame.equals(moving[0])), animated, `${symbol} retains its native motion when enabled`);
             // Turn it off during hover, then exercise keyboard focus as well.
             await page.evaluate(() => frappe.vector_animations.set(false));
             const stoppedAgain = await samples();
@@ -67,7 +68,7 @@ const base = `http://127.0.0.1:${env.HTTP_PORT || 8080}`;
             await page.keyboard.press('Tab');
             await page.keyboard.press('Shift+Tab');
             assert.deepEqual(await controls(), { motion: 'paused', opacity: '0' });
-            console.log(`PASS: ${symbol} stays still on hover/focus and animates only when enabled.`);
+            console.log(`PASS: ${symbol} respects the animation preference.`);
         }
         assert.deepEqual(errors, []);
     } finally { await browser.close(); }

@@ -53,7 +53,7 @@ frappe.pages["operations-overview"].on_page_load = function (wrapper) {
             ${chart.has_data ? `<div class="vo-chart-canvas" role="img" aria-label="${escape(chart.title)}. ${escape(currency)}. Точні значення — у таблиці нижче."></div>`
                 : `<div class="vo-chart-empty" role="status">${chart.key === "stock" ? "Немає запасів із ненульовою вартістю." : "За цей період немає проведених документів."}</div>`}
             <div class="vo-chart-totals">${chart.datasets.map((dataset, i) => `<span><i style="background:${escape(chart.colors[i])}" aria-hidden="true"></i>${escape(dataset.name)}: <b>${escape(money(dataset.values.reduce((sum, value) => sum + value, 0), currency))}</b></span>`).join("")}</div>
-            <details class="vo-chart-data"><summary>Дані графіка</summary><div class="vo-chart-table"><table>
+            <details class="vo-chart-data vector-disclosure"><summary>Дані графіка</summary><div class="vo-chart-table"><table>
                 <thead><tr><th scope="col">${chart.key === "stock" ? "Склад" : "Місяць"}</th>${chart.datasets.map(dataset => `<th scope="col">${escape(dataset.name)} (${escape(currency)})</th>`).join("")}</tr></thead>
                 <tbody>${labels.map((label, index) => `<tr><th scope="row">${escape(label)}</th>${chart.datasets.map(dataset => `<td>${escape(money(dataset.values[index], currency))}</td>`).join("")}</tr>`).join("")}</tbody>
             </table></div></details></figure>`;

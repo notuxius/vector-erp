@@ -93,6 +93,42 @@ const base = `http://127.0.0.1:${env.HTTP_PORT || 8080}`;
             });
             assert(visibleInPanel.visible, `${module}: ${groupLabel} must reveal its first destination without manual scrolling: ${JSON.stringify(visibleInPanel)}`);
             if (module === 'selling' && groupLabel === 'Налаштування') {
+                const motion = await group.evaluate(async group => {
+                    const entries = group.querySelector(':scope > .nested-container');
+                    const button = group.querySelector('.drop-icon');
+                    const title = group.querySelector('.sidebar-item-label');
+                    const titleOffset = () => title.getBoundingClientRect().top - group.getBoundingClientRect().top;
+                    const height = () => entries.getBoundingClientRect().height;
+                    async function toggle() {
+                        const before = titleOffset();
+                        button.click();
+                        const slide = group.getAnimations().find(a => a.transitionProperty === 'grid-template-rows');
+                        if (!slide) throw Error('Missing sidebar height transition');
+                        slide.currentTime = slide.effect.getTiming().duration / 2;
+                        const middle = height();
+                        if (Math.abs(titleOffset() - before) > 0.5) throw Error('Sidebar title moved during the slide');
+                        if (!entries.checkVisibility({ visibilityProperty: true })) {
+                            throw Error('Entries disappeared during the slide');
+                        }
+                        await slide.finished;
+                        return [middle, height()];
+                    }
+                    const full = height();
+                    const closing = await toggle();
+                    const opening = await toggle();
+                    return { full, closing, opening };
+                });
+                assert(motion.closing[0] > 0 && motion.closing[0] < motion.full && motion.closing[1] === 0,
+                    `entries slide closed: ${JSON.stringify(motion)}`);
+                assert(motion.opening[0] > 0 && motion.opening[0] < motion.full && motion.opening[1] === motion.full,
+                    `entries slide open: ${JSON.stringify(motion)}`);
+                await page.emulateMedia({ reducedMotion: 'reduce' });
+                await page.waitForFunction(() => document.documentElement.classList.contains('vector-animations-disabled'));
+                await heading.locator('button').press('Enter');
+                assert.equal(await firstLink.isVisible(), false);
+                await heading.locator('button').press('Enter');
+                assert.equal(await firstLink.isVisible(), true);
+                await page.emulateMedia({ reducedMotion: 'no-preference' });
                 fs.mkdirSync(path.join(root, '.artifacts'), { recursive: true });
                 await page.screenshot({ path: path.join(root, '.artifacts/submenu-group-reveal.png') });
             }
@@ -103,6 +139,29 @@ const base = `http://127.0.0.1:${env.HTTP_PORT || 8080}`;
             assert.equal(await page.locator('.body-sidebar .active-sidebar > .item-anchor').getAttribute('href'), href);
             console.log(`PASS: ${module} / ${groupLabel} stays near the activation position, reveals destinations, navigates, and selects the entry.`);
         }
+        // On a short panel the scroll arrows appear only once the entries start opening.
+        await page.setViewportSize({ width: 1440, height: 500 });
+        await page.evaluate(() => {
+            const sidebar = frappe.app.sidebar;
+            sidebar.open();
+            sidebar.items.filter(item => item.item.type === 'Section Break' && item.wrapper?.[0]?.isConnected)
+                .forEach(item => item.close());
+            document.querySelector('.body-sidebar-top').scrollTop = 0;
+        });
+        const arrow = page.locator('.body-sidebar .vector-navigation-scroll-arrow').first();
+        await arrow.waitFor({ state: 'hidden' });
+        await page.waitForFunction(() => !document.querySelector('.body-sidebar')
+            .getAnimations({ subtree: true }).some(a => a.transitionProperty === 'grid-template-rows'));
+        const fixedTitle = page.locator('.body-sidebar .section-item > .standard-sidebar-item .sidebar-item-label')
+            .filter({ hasText: /^Звіти$/ }).first();
+        const start = await fixedTitle.boundingBox();
+        for (const state of ['visible', 'hidden']) {
+            await fixedTitle.click();
+            await arrow.waitFor({ state });
+            assert(Math.abs((await fixedTitle.boundingBox()).y - start.y) < 1,
+                'the title stays at the same screen position when scroll controls appear or disappear');
+        }
+        console.log('PASS: the dropdown title stays still when the short panel gains or loses scroll arrows.');
         assert.deepEqual(errors, []);
     } finally {
         await browser.close();

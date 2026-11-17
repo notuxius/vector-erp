@@ -108,9 +108,14 @@ const root = path.resolve(__dirname, '..');
         await sidebarLabel.hover();
         await tip.waitFor();
         assert.equal((await tip.innerText()).trim(), 'Шевченко Тарас Григорович');
-        await sidebarButton.click();
-        await page.locator('.es-menu[data-state="open"]').first().waitFor();
-        await page.keyboard.press('Escape');
+        for (const trigger of [sidebarButton, page.locator('.body-sidebar .sidebar-header .header-title')]) {
+            await trigger.click();
+            const popup = page.locator('.vector-sidebar-dropdown');
+            await popup.waitFor();
+            assert.equal(await popup.evaluate(el => getComputedStyle(el).animationName), 'vector-sidebar-menu-in');
+            await page.keyboard.press('Escape');
+            await popup.waitFor({ state: 'detached' });
+        }
         assert.deepEqual(errors, []);
         console.log('PASS: localized initials, compound surnames, missing middle/surname, responsive top panel, full-name tooltips and user menu.');
     } finally { await browser.close(); }

@@ -1,6 +1,8 @@
 // Keep the Desk shell visible behind every desktop popup, including pages such
 // as POS that normally hide it. Do not rewrite page flags or saved preferences.
 (() => {
+    // Keep outside clicks from dismissing Desk dialogs. Escape keeps its native behavior.
+    $.fn.modal.Constructor.Default.backdrop = "static";
     const prototype = frappe.ui.Sidebar?.prototype;
     if (!prototype || prototype.page_allows_sidebar.vectorDialogNavigation) return;
 

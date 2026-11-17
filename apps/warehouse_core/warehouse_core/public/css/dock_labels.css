@@ -20,6 +20,30 @@
     transform: rotate(180deg);
 }
 
+.es-menu.vector-sidebar-dropdown {
+    --vector-menu-offset: -8px;
+}
+
+.es-menu.vector-sidebar-dropdown[data-side="top"] {
+    --vector-menu-offset: 8px;
+}
+
+.es-menu.vector-sidebar-dropdown[data-motion="animated"][data-state="open"] {
+    animation-name: vector-sidebar-menu-in;
+}
+
+.es-menu.vector-sidebar-dropdown[data-motion="animated"][data-state="closed"] {
+    animation-name: vector-sidebar-menu-out;
+}
+
+@keyframes vector-sidebar-menu-in {
+    from { opacity: 0; transform: translateY(var(--vector-menu-offset)); }
+}
+
+@keyframes vector-sidebar-menu-out {
+    to { opacity: 0; transform: translateY(var(--vector-menu-offset)); }
+}
+
 .body-sidebar > .body-sidebar-bottom {
     flex-shrink: 0;
 }
@@ -58,6 +82,11 @@
 }
 
 .vector-navigation-scroll-arrow[hidden] { display: none; }
+/* The first title keeps its position when an expanding group makes the list scrollable. */
+.body-sidebar .vector-navigation-scroll-arrow:first-child[hidden] {
+    display: flex !important;
+    visibility: hidden;
+}
 .vector-navigation-scroll-arrow[aria-disabled="true"] { opacity: 0.25; cursor: default; }
 .vector-navigation-scroll-arrow:hover:not([aria-disabled="true"]) { background: var(--surface-gray-2); }
 .vector-navigation-scroll-arrow:focus-visible { outline: 2px solid var(--primary); outline-offset: -2px; }
@@ -65,6 +94,27 @@
 .body-sidebar .body-sidebar-top.vector-navigation-scroll-viewport {
     padding-top: 12px;
     padding-bottom: 8px;
+}
+
+/* Keep the heading in place while the entries take up or release their natural height. */
+html:not(.vector-animations-disabled) .body-sidebar .section-item {
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    transition: grid-template-rows 180ms ease;
+}
+
+html:not(.vector-animations-disabled) .body-sidebar .section-item:has(> .nested-container.hidden) {
+    grid-template-rows: max-content 0fr;
+}
+
+html:not(.vector-animations-disabled) .body-sidebar .section-item > .nested-container {
+    min-height: 0;
+    overflow: clip;
+    transition: display 180ms allow-discrete;
+}
+
+.body-sidebar .section-item > .nested-container.hidden {
+    interactivity: inert;
 }
 
 /* Framework groups use the same full-width rows as the ERP navigation. */

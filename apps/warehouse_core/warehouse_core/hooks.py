@@ -25,7 +25,7 @@ app_include_js = [f"/assets/warehouse_core/js/uk_ui.js?v={_ui_version}"]
 _shipping_version = _sha256((_Path(__file__).parent / "public/js/nova_poshta.js").read_bytes()).hexdigest()[:12]
 app_include_js.append(f"/assets/warehouse_core/js/nova_poshta.js?v={_shipping_version}")
 # Keep essential navigation separate from onboarding display customization.
-for _ui_asset in ("interface_preferences", "chart_rendering", "styled_tooltips", "onboarding_labels", "navigation_logo", "user_navigation", "dashboard_navigation", "navigation_localization", "navigation_resize", "navigation_mobile", "navigation_position", "dock_labels", "navigation_scroll", "navigation_sections", "page_appearance", "dialog_navigation", "pos_navigation", "list_updates"):
+for _ui_asset in ("error_feedback", "interface_preferences", "chart_rendering", "styled_tooltips", "onboarding_labels", "navigation_logo", "user_navigation", "dashboard_navigation", "navigation_localization", "navigation_resize", "navigation_mobile", "navigation_position", "dock_labels", "navigation_scroll", "navigation_sections", "page_appearance", "dialog_navigation", "pos_navigation", "list_updates"):
     _asset_version = _sha256((_Path(__file__).parent / f"public/js/{_ui_asset}.js").read_bytes()).hexdigest()[:12]
     app_include_js.append(f"/assets/warehouse_core/js/{_ui_asset}.js?v={_asset_version}")
 _tutorial_version = _sha256((_Path(__file__).parent / "public/js/tutorial_media.js").read_bytes()).hexdigest()[:12]

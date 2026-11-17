@@ -9,7 +9,6 @@ from zoneinfo import ZoneInfo
 
 LIMIT = 100
 WINDOW = 3600
-COOLDOWN = 10
 # Longer than the maximum two sequential gateway calls. Recovers an interrupted worker.
 LEASE = 300
 
@@ -32,11 +31,11 @@ class Allowance:
             yield db
 
     def state(self, db, person, now):
-        used, oldest, latest, busy = db.execute("""SELECT COUNT(*), MIN(started), MAX(started), MAX(busy_until)
+        used, oldest, busy = db.execute("""SELECT COUNT(*), MIN(started), MAX(busy_until)
             FROM questions WHERE person=? AND started>?""", (person, now - WINDOW)).fetchone()
-        retry = max((latest or 0) + COOLDOWN if used else 0, oldest + WINDOW if used >= LIMIT else 0)
+        retry = oldest + WINDOW if used >= LIMIT else 0
         return {"remaining": max(0, LIMIT - used), "busy": (busy or 0) > now,
-                "retry_at": math.ceil(retry) if retry > now else None}
+                "retry_at": math.ceil(retry) if retry > now else None, "retry_after": max(0, retry - now)}
 
     def status(self, person):
         with self.transaction() as db:
@@ -60,7 +59,7 @@ class Allowance:
 
 
 def describe(state, *, include_retry_time=True):
-    lines = [f"Залишилося запитань: {state['remaining']} зі {LIMIT} за останні 60 хв. Пауза між запитаннями — {COOLDOWN} с."]
+    lines = [f"Залишилося запитань: {state['remaining']} зі {LIMIT} за останні 60 хв."]
     if state['busy']:
         lines.append("Дочекайтеся завершення поточного запитання.")
     if include_retry_time and state['retry_at']:

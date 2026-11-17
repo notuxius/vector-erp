@@ -69,8 +69,17 @@
         const limit = name === "sidebar" && window.innerWidth < 768
             // Leave space for the 44px close button and its 8px side margins.
             ? Math.min(maximum(name), window.innerWidth - 60) : maximum(name);
-        panel.width = Math.round(Math.max(panel.min, Math.min(limit, value)));
+        const width = Math.round(Math.max(panel.min, Math.min(limit, value)));
+        if (panel.width === width) return;
+        panel.width = width;
+        // Commit a fitted width immediately; manual open/close still uses the native transition.
+        const snap = name === "sidebar" && observedSidebar && !root.classList.contains("vector-navigation-restoring");
+        if (snap) root.classList.add("vector-navigation-restoring");
         root.style.setProperty(`--vector-${name}-width`, `${panel.width}px`);
+        if (snap) {
+            observedSidebar.offsetWidth;
+            root.classList.remove("vector-navigation-restoring");
+        }
     }
 
     function restore() {
@@ -78,7 +87,7 @@
         const route = `${frappe.boot.lang}:${location.pathname}`;
         if (measuredRoute !== route) {
             measuredRoute = route;
-            textWidth = Number.isFinite(fittedWidths[route]) ? fittedWidths[route] : undefined;
+            if (Number.isFinite(fittedWidths[route])) textWidth = fittedWidths[route];
         }
         apply("dock", panels.dock.preferred);
         applySidebar();

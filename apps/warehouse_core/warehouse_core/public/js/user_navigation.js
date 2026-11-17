@@ -24,7 +24,8 @@
     const openMenu = dropdown?.open;
     if (openMenu && !openMenu.vectorFrameworkLink) {
         dropdown.open = function (...args) {
-            if (this.$trigger?.is(".body-sidebar .sidebar-header, .body-sidebar .dropdown-navbar-user")) {
+            const sidebarMenu = this.$trigger?.is(".body-sidebar .sidebar-header, .body-sidebar .dropdown-navbar-user");
+            if (sidebarMenu) {
                 this.side = "top";
             }
             if (this.$trigger?.is(".dock-user")) {
@@ -57,6 +58,7 @@
                 this.options = insertLink(this.options);
             }
             const result = openMenu.apply(this, args);
+            if (sidebarMenu) this.menu?.panels[0]?.panel.classList.add("vector-sidebar-dropdown");
             $(".es-menu__item.vector-return-menu-item .es-menu__image").each(function () {
                 const $image = $(this);
                 if (!$image.parent().hasClass("vector-return-logo")) {

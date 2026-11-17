@@ -4,6 +4,96 @@ const fs = require("node:fs");
 const path = require("node:path");
 const { chromium } = require("playwright");
 
+async function checkPanelFade(page) {
+    const launcher = page.locator("#vector-ai-launcher");
+    const panel = page.locator("#vector-ai-panel");
+    await launcher.waitFor();
+    const checkTransition = async (button, from, to) => {
+        const sample = await button.evaluate(el => {
+            el.click();
+            const panel = document.querySelector("#vector-ai-panel");
+            const transitions = panel.getAnimations();
+            const fade = transitions.find(a => a.transitionProperty === "opacity");
+            const slide = transitions.find(a => a.transitionProperty === "transform");
+            if (!fade || !slide) return null;
+            const positions = [0.25, 0.75].map(fraction => {
+                slide.currentTime = slide.effect.getTiming().duration * fraction;
+                return panel.getBoundingClientRect().top;
+            });
+            fade.currentTime = fade.effect.getTiming().duration / 2;
+            const style = getComputedStyle(panel);
+            return {frames: fade.effect.getKeyframes().map(k => k.opacity), opacity: Number(style.opacity),
+                positions, clip: style.clipPath, height: panel.offsetHeight, inert: panel.inert};
+        });
+        assert.ok(sample, "panel starts a slide and fade");
+        const [early, late] = sample.positions;
+        assert.ok(to === "1" ? early > late : late > early, "panel rises on open and lowers on close");
+        assert.deepEqual(sample.frames, [from, to]);
+        assert.ok(sample.opacity > 0 && sample.opacity < 1 && sample.height > 0);
+        assert.equal(sample.clip, "none");
+        assert.equal(sample.inert, to === "0");
+        await page.waitForFunction(() => !document.querySelector("#vector-ai-panel").getAnimations().length);
+    };
+    const enabled = await page.evaluate(() => frappe.vector_animations.enabled());
+    try {
+        await page.emulateMedia({reducedMotion: "no-preference"});
+        await page.evaluate(() => frappe.vector_animations.set(true));
+        await page.mouse.move(0, 0);
+        const idle = await launcher.boundingBox();
+        assert.equal(idle.width, idle.height);
+        const opacity = () => launcher.evaluate(el => Number(getComputedStyle(el).opacity));
+        const idleOpacity = await opacity();
+        assert.ok(idleOpacity > 0 && idleOpacity < 1);
+        assert.equal(await launcher.getAttribute("aria-label"), await page.evaluate(() => __("Vectoria ✦ AI-assistant")));
+        await launcher.hover();
+        assert.equal(await launcher.innerText(), "✦");
+        assert.deepEqual(await launcher.boundingBox(), idle);
+        assert.equal(await opacity(), 1);
+        assert.equal(await launcher.evaluate(el => el.getAnimations({subtree: true}).length), 0);
+        await checkTransition(launcher, "0", "1");
+        await checkTransition(panel.getByRole("button", {name: "Закрити чат"}), "1", "0");
+        assert.ok(await panel.isHidden());
+        assert.ok(await launcher.evaluate(el => el === document.activeElement));
+        await page.emulateMedia({reducedMotion: "reduce"});
+        await launcher.press("Enter");
+        assert.equal(await panel.evaluate(el => el.getAnimations().length), 0);
+        await page.keyboard.press("Escape");
+        assert.ok(await panel.isHidden());
+    } finally {
+        await page.emulateMedia({reducedMotion: null});
+        await page.evaluate(value => frappe.vector_animations.set(value), enabled);
+    }
+}
+
+async function checkDisclosure(details, motion) {
+    await details.scrollIntoViewIfNeeded();
+    const heights = await details.evaluate(async (el, motion) => {
+        const samples = [el.offsetHeight];
+        for (const open of [true, false]) {
+            el.querySelector("summary").click();
+            if (el.open !== open) throw Error("Summary did not toggle");
+            const transitions = el.getAnimations({subtree: true});
+            const slide = transitions.find(a => a.transitionProperty === "grid-template-rows");
+            if (Boolean(slide) !== motion) throw Error("Unexpected disclosure motion: " + el.className);
+            if (slide) {
+                await slide.ready;
+                slide.pause();
+                slide.currentTime = slide.effect.getTiming().duration / 2;
+                await new Promise(requestAnimationFrame);
+                samples.push(el.offsetHeight);
+                slide.play();
+                await Promise.all(transitions.map(a => a.finished));
+            }
+            samples.push(el.offsetHeight);
+        }
+        return samples;
+    }, motion);
+    const closed = heights[0], open = Math.max(...heights);
+    assert.ok(open > closed);
+    assert.equal(heights.at(-1), closed);
+    if (motion) for (const mid of [heights[1], heights[3]]) assert.ok(closed < mid && mid < open, heights.join(", "));
+}
+
 async function checkNewChat(page) {
     const reset = page.getByRole("button", {name: "Новий чат", exact: true});
     const input = page.locator("#vector-ai-input");
@@ -37,6 +127,54 @@ async function checkNewChat(page) {
     }
 }
 
+async function checkChatPopovers(page, motion) {
+    for (const selector of ["#vector-ai-mode", ".vector-stock-toggle"]) {
+        await page.locator(selector).evaluate(async (button, motion) => {
+            const panel = document.getElementById(button.getAttribute("aria-controls"));
+            for (const open of [true, false]) {
+                button.click();
+                const transitions = panel.getAnimations();
+                if (transitions.some(a => a.transitionProperty === "opacity") !== motion ||
+                    panel.inert !== !open || button.getAttribute("aria-expanded") !== String(open)) {
+                    throw Error("Unexpected transition or interactive state: " + panel.id);
+                }
+                // display:none can cancel sibling transitions on the final frame.
+                await Promise.allSettled(transitions.map(a => a.finished));
+                if ((panel.offsetHeight > 0) !== open) throw Error("Unexpected final size: " + panel.id);
+            }
+        }, motion);
+    }
+}
+
+async function checkConsecutiveQuestions(browser, base, cookies) {
+    const page = await browser.newPage();
+    try {
+        await page.context().addCookies(cookies);
+        await page.goto(base + "/desk/operations-overview");
+        const launcher = page.locator("#vector-ai-launcher");
+        const input = page.locator("#vector-ai-input");
+        const send = page.locator('.vector-ai-compose-footer [type="submit"]');
+        const quotaResponse = () => page.waitForResponse("**/api/method/warehouse_core.ai_chat.question_usage*");
+        const initial = quotaResponse();
+        await launcher.click();
+        let {remaining} = (await (await initial).json()).message;
+        assert.ok(remaining > 2, "Need two questions and a spare slot in the laptop allowance");
+        // Clarifications exercise the deployed allowance without calling the model.
+        for (const question of ["шпиндельний картридж", "сервопривід"]) {
+            await input.fill(question);
+            assert.ok(await send.isEnabled());
+            const quota = quotaResponse();
+            await send.click();
+            const state = (await (await quota).json()).message;
+            assert.equal(state.remaining, --remaining);
+            assert.equal(state.retry_after, 0);
+            assert.ok(await page.getByRole("button", {name: "Характеристики", exact: true}).last().isEnabled());
+        }
+    } finally {
+        await page.close();
+    }
+}
+
 async function main() {
     const env = Object.fromEntries(fs.readFileSync(path.join(__dirname, "../.env"), "utf8")
         .split(/\r?\n/).filter(line => line && !line.startsWith("#")).map(line => {
@@ -65,6 +203,9 @@ async function main() {
         let stock, failKnowledge = false;
         await page.route("**/api/method/warehouse_core.ai_chat.status*", route =>
             route.fulfill({json: {message: {available: !failKnowledge}}}));
+        let retryAfter = 0;
+        await page.route("**/api/method/warehouse_core.ai_chat.question_usage*", route =>
+            route.fulfill({json: {message: {retry_after: retryAfter}}}));
         const tokens = {availability: "1".repeat(32), knowledge: "2".repeat(32)};
         const plans = new Map();
         await page.route("**/api/method/warehouse_core.ai_chat.route", async route => {
@@ -101,7 +242,6 @@ async function main() {
                 });
                 const state = (await quota.json()).message;
                 assert.ok(state.remaining && !state.busy, "Administrator allowance is in use");
-                if (state.retry_at) await new Promise(resolve => setTimeout(resolve, Math.max(0, state.retry_at * 1000 - Date.now())));
                 const response = await route.fetch();
                 const result = (await response.json()).message;
                 assert.ok(result.ok, result.message);
@@ -113,14 +253,22 @@ async function main() {
         const incidents = [];
         await page.route("**/api/method/**.vectoria_feedback.report_error", route => {
             incidents.push(route.request().postDataJSON());
-            return incidents.length === 1 ? route.abort() : route.fulfill({json: {message: "VF-check"}});
+            return incidents.length === 1 ? route.abort() : route.fulfill({json: {message: "MTECH-1"}});
         });
         await page.route("**/api/method/warehouse_core.ai_chat.reset*", async route => {
             cleared.push(route.request().postDataJSON().conversation_id);
             await route.fulfill({json: {message: {ok: true}}});
         });
-        await page.goto(base + "/desk");
+        await page.goto(base + "/desk/operations-overview");
+        const chart = page.locator(".vo-chart-data").first();
+        await chart.waitFor();
+        await checkDisclosure(chart, true);
+        await checkPanelFade(page);
         await page.locator("#vector-ai-launcher").click();
+        await checkChatPopovers(page, true);
+        await page.evaluate(() => frappe.vector_animations.set(false));
+        await checkChatPopovers(page, false);
+        await page.evaluate(() => frappe.vector_animations.set(true));
         await checkNewChat(page);
         const input = page.locator("#vector-ai-input");
         const send = page.locator('.vector-ai-compose-footer button[type="submit"]');
@@ -142,9 +290,10 @@ async function main() {
             "Залишки, інструкції з ERP і робочі процеси", "Підготувати текст за затвердженими статтями",
         ]);
         await modePicker.press("Escape");
-        assert.equal(await modeOptions.isHidden(), true);
+        await modeOptions.waitFor({state: "hidden"});
         const ask = async message => {
             await input.fill(message);
+            await page.waitForFunction(() => !document.querySelector('.vector-ai-compose-footer [type="submit"]').disabled);
             await input.press("Enter");
             await page.waitForFunction(() => !document.querySelector("#vector-ai-input").disabled);
         };
@@ -179,27 +328,84 @@ async function main() {
         assert.match(snapshot.build, /^[a-f0-9]{12}$/);
         assert.match(snapshot.viewport, /^\d+x\d+$/);
         assert.deepEqual(incidents[1], incidents[0]);
-        const retry = error.getByRole("button", {name: /^Повторити/});
-        assert.ok(await retry.isDisabled());
-        assert.equal(await error.getByRole("button").count(), 1);
+        const reportLabel = "Надіслати адміністратору";
+        assert.ok(await error.getByRole("button", {name: reportLabel}).isVisible());
         assert.equal(await error.locator("summary").count(), 0);
         assert.equal(await error.locator(".vector-stock-stamp").count(), 0);
         await ask("Чи є DM542 на складі і яка гарантія?");
         assert.equal(await reply.locator(".vector-stock-stamp").count(), 1);
-        assert.ok(await reply.getByRole("button", {name: /^Повторити/}).isDisabled());
-        assert.equal(await reply.getByRole("button", {name: /адміністратор/i}).count(), 0);
-        assert.equal(await reply.locator("summary").count(), 0);
+        assert.equal(await reply.getByRole("button", {name: /^Повторити/}).count(), 0);
+        assert.ok(await reply.getByRole("button", {name: reportLabel}).isVisible());
+        assert.equal(await reply.locator(".vector-ai-follow-up").count(), 0);
         const admin = page.locator(".vector-ai-compose-footer").getByRole("button", {name: "Надіслати адміністратору"});
         assert.ok((await admin.boundingBox()).x < (await send.boundingBox()).x);
-        await admin.press("Enter");
         const dialog = page.locator(".modal:visible").filter({has: page.getByRole("radiogroup", {name: "Тип звернення"})});
         const excerpt = dialog.locator('textarea[data-fieldname="context"]');
+        const receipt = "MTECH-2";
+        const attempts = [];
+        let report;
+        await page.route("**/api/method/**.vectoria_feedback.submit", route => {
+            report = route.request().postDataJSON();
+            attempts.push(report);
+            return route.fulfill({json: {message: attempts.length === 1 ? "" : receipt}});
+        });
+        await input.fill("Моя чернетка");
+        const inlineReport = error.getByRole("button", {name: reportLabel});
+        await inlineReport.press("Enter");
+        const popup = page.locator(".modal:visible");
+        await popup.getByText(/Не вдалося підтвердити надсилання/).waitFor();
+        assert.ok(await inlineReport.isEnabled());
+        await popup.locator(".btn-modal-close").click();
+        await popup.waitFor({state: "hidden"});
+        await inlineReport.click();
+        const confirmation = popup.getByRole("status").filter({hasText: receipt});
+        const reload = popup.getByRole("button", {name: /^(Оновити|Reload)$/});
+        async function checkReceipt() {
+            await confirmation.waitFor();
+            assert.match(await confirmation.innerText(), /^✓ (Адміністратор отримав ваше звернення|The administrator received your report)\. MTECH-2$/);
+            assert.ok(await reload.isEnabled());
+        }
+        await checkReceipt();
+        assert.ok((await popup.innerText()).includes(report.message));
+        assert.deepEqual(attempts, [report, report]);
+        const sent = error.getByRole("button", {name: "✓ Надіслано адміністратору"});
+        assert.ok(await sent.isDisabled());
+        await popup.locator(".btn-modal-close").click();
+        await popup.waitFor({state: "hidden"});
+        assert.equal(await input.inputValue(), "Моя чернетка");
+        await input.fill("");
+        const disabledStyle = el => {
+            const {pointerEvents, backgroundColor, color, boxShadow, cursor} = getComputedStyle(el);
+            return {pointerEvents, backgroundColor, color, boxShadow, cursor};
+        };
+        assert.equal((await sent.evaluate(disabledStyle)).pointerEvents, "none");
+        assert.deepEqual(await sent.evaluate(disabledStyle), await send.evaluate(disabledStyle));
+        await sent.scrollIntoViewIfNeeded();
+        const bounds = await sent.boundingBox();
+        await page.mouse.move(bounds.x + bounds.width / 2, bounds.y + bounds.height / 2);
+        await page.mouse.down();
+        assert.equal(await sent.evaluate(el => el.matches(":active") || el.getAnimations().length > 0), false);
+        await page.mouse.up();
+        assert.equal(attempts.length, 2);
+        assert.equal(report.category, "Помилка");
+        assert.equal(report.message, await error.locator("p.vector-ai-text").innerText());
+        assert.match(report.context, /knowledge · provider$/);
+        assert.doesNotMatch(report.context, /DM542|Моя чернетка/);
+        await admin.press("Enter");
         const disclosure = dialog.getByText("Контекст для аналізу", {exact: true});
         await disclosure.waitFor();
         assert.equal(await dialog.getByRole("radio").count(), 2);
         assert.ok(await dialog.getByRole("radio", {name: "Пропозиція"}).isChecked());
         assert.ok(await excerpt.isHidden());
-        await disclosure.click();
+        const details = dialog.locator("details");
+        await checkDisclosure(details, true);
+        await page.evaluate(() => frappe.vector_animations.set(false));
+        await checkDisclosure(details, false);
+        await page.evaluate(() => frappe.vector_animations.set(true));
+        await page.emulateMedia({reducedMotion: "reduce"});
+        await checkDisclosure(details, false);
+        await page.emulateMedia({reducedMotion: "no-preference"});
+        await disclosure.press("Enter");
         assert.match(await excerpt.inputValue(), /DM542/);
         assert.match(await excerpt.inputValue(), /Версія вебчату: [a-f0-9]{12}/);
         assert.match(await excerpt.inputValue(), /Останній збій: .*provider/);
@@ -207,58 +413,59 @@ async function main() {
         await dialog.locator('textarea[data-fieldname="message"]').fill("Моя пропозиція");
         await excerpt.fill("");
         await disclosure.click();
-        let report;
-        await page.route("**/api/method/**.vectoria_feedback.submit", route => {
-            report = route.request().postDataJSON();
-            return route.fulfill({json: {message: "VF-preview"}});
-        });
         await dialog.locator(".btn-modal-primary").click();
         await dialog.waitFor({state: "hidden"});
+        await checkReceipt();
+        await popup.locator(".btn-modal-close").click();
+        await popup.waitFor({state: "hidden"});
         assert.equal(report.message, "Моя пропозиція");
         assert.equal(report.category, "Пропозиція");
         assert.ok(!report.context);
+        await admin.click();
+        await dialog.getByRole("radio", {name: "Помилка"}).check();
+        assert.equal(await dialog.locator('textarea[data-fieldname="message"]').inputValue(), "");
+        await dialog.locator(".btn-modal-primary").click();
+        await dialog.waitFor({state: "hidden"});
+        assert.equal(report.category, "Помилка");
+        assert.ok(!report.message);
+        assert.match(report.context, /DM542/);
+        await checkReceipt();
+        await popup.locator(".btn-modal-close").click();
+        await popup.waitFor({state: "hidden"});
         failKnowledge = false;
-        const beforeRetry = calls.length;
-        const draft = page.locator("#vector-ai-input");
-        await draft.fill("Наступне запитання");
-        await error.getByRole("button", {name: "Повторити", exact: true}).click();
-        await page.waitForFunction(() => !document.querySelector("#vector-ai-input").disabled);
-        assert.deepEqual(calls.slice(beforeRetry), [calls[3]]);
-        assert.equal(await draft.inputValue(), "Наступне запитання");
-        assert.equal(await reply.locator("summary").count(), 1);
-
-        await page.clock.install();
-        await page.route("**/api/method/warehouse_core.ai_chat.route", route => route.fulfill({json: {message: null}}), {times: 1});
-        await ask("Покажи залишки");
-        assert.match(await error.innerText(), /Не вдалося підготувати відповідь/);
-        assert.equal(await error.locator("summary").count(), 0);
-        const beforeCountdown = calls.length;
-        for (let seconds = 10; seconds >= 1; seconds--) {
-            assert.equal(await retry.textContent(), `Повторити (${seconds})`);
-            assert.ok(await retry.isDisabled());
-            await page.clock.fastForward(1000);
+        const quotaMessage = "Залишилося запитань: 0 зі 100 за останні 60 хв.";
+        await page.route("**/api/method/warehouse_core.ai_chat.send*", route => {
+            retryAfter = 3599;
+            return route.fulfill({json: {message: {ok: false, message: quotaMessage}}});
+        }, {times: 1});
+        await ask("Які умови гарантії?");
+        for (const width of [320, 1200]) {
+            await page.setViewportSize({width, height: 800});
+            await input.fill("/help");
+            const idle = await send.boundingBox();
+            await input.fill("Чернетка");
+            assert.ok(await send.isDisabled());
+            assert.equal(await send.innerText(), "Надіслати");
+            assert.deepEqual(await send.boundingBox(), idle);
         }
-        assert.equal(await retry.textContent(), "Повторити");
-        assert.ok(await retry.isEnabled());
-        assert.equal(calls.length, beforeCountdown);
-        await retry.click();
-        await reply.locator(".vector-stock-stamp").waitFor();
-        assert.equal(calls.length, beforeCountdown + 1);
-        assert.equal(calls.at(-1).message, "Покажи залишки");
-        const quotaMessage = "Залишилося запитань: 98 зі 100 за останні 60 хв. Пауза між запитаннями — 10 с.";
-        await page.route("**/api/method/warehouse_core.ai_chat.send*", route =>
-            route.fulfill({json: {message: {ok: false, message: quotaMessage}}}), {times: 1});
-        const warranty = "Які умови гарантії?";
-        await ask(warranty);
-        assert.equal(await error.locator("strong").innerText(), "База знань");
+        retryAfter = 4;
+        await page.getByRole("button", {name: "Закрити чат"}).click();
+        await page.locator("#vector-ai-launcher").click();
+        assert.equal(await send.innerText(), "Надіслати");
+        const shortWidth = (await send.boundingBox()).width;
         assert.equal(await error.locator("p.vector-ai-text").innerText(), quotaMessage);
-        assert.equal(await retry.textContent(), "Повторити (10)");
-        assert.ok(await retry.isDisabled());
-        await page.clock.fastForward(10000);
-        await retry.click();
-        await page.waitForFunction(() => !document.querySelector("#vector-ai-input").disabled);
-        assert.equal(calls.at(-1).message, warranty);
-        assert.equal(calls.at(-1).mode, "knowledge");
+        assert.equal(await error.getByRole("button").count(), 0);
+        await input.fill("/help");
+        assert.ok(await send.isEnabled());
+        assert.equal((await send.boundingBox()).width, shortWidth);
+        await input.fill("Наступне запитання");
+        assert.ok(await send.isDisabled());
+        const beforeCountdown = calls.length;
+        await input.press("Enter");
+        await page.waitForFunction(() => !document.querySelector('.vector-ai-compose-footer [type="submit"]').disabled);
+        assert.equal(calls.length, beforeCountdown);
+        assert.equal(await input.inputValue(), "Наступне запитання");
+        retryAfter = 0;
         const item = "НАВЧАННЯ: шпиндельний картридж 2,2 кВт";
         let before = calls.length;
         await ask(item + " - характеристики");
@@ -282,7 +489,7 @@ async function main() {
         await toggle.click();
         await filters.getByLabel("Назва або артикул").fill("SERVO-1");
         await filters.getByRole("button", {name: "Показати залишки"}).click();
-        assert.equal(await filters.isHidden(), true);
+        await filters.waitFor({state: "hidden"});
         assert.equal(await toggle.getAttribute("aria-expanded"), "false");
         await reply.locator(".vector-stock-stamp").waitFor();
         assert.equal(JSON.parse(calls.at(-1).availability_filters).query, "SERVO-1");
@@ -297,7 +504,7 @@ async function main() {
             await modePicker.click();
             await modeOptions.locator(`button[value="${mode}"]`).click();
             await page.waitForFunction(() => !document.querySelector("#vector-ai-mode").disabled);
-            assert.equal(await modeOptions.isHidden(), true);
+            await modeOptions.waitFor({state: "hidden"});
             assert.equal(await toggle.isVisible(), true);
             for (const width of [1200, 441, 390, 320]) {
                 await page.setViewportSize({width, height: 800});
@@ -347,6 +554,7 @@ async function main() {
                     const summary = followUp.locator("summary");
                     assert.equal(await summary.textContent(), mode === "draft" ? "Готові звернення" : "Готові запитання");
                     const beforeFollowUp = calls.length;
+                    await checkDisclosure(followUp, true);
                     await summary.press("Enter");
                     await followUp.locator(".vector-ai-suggestion").first().waitFor();
                     assert.deepEqual(await followUp.locator("button").allTextContents(), prompts.map(p => p.label));
@@ -362,10 +570,11 @@ async function main() {
                 await page.waitForFunction(() => !document.querySelector("#vector-ai-input").disabled);
             }
         }
-        console.log("Passed: combined mode, live stock, replies, citations, follow-ups, reset, and all quick inputs in both modes. Paid calls: 0.");
+        await checkConsecutiveQuestions(browser, base, await page.context().cookies());
+        console.log("Passed: consecutive questions, hourly limit, combined mode, live stock, replies, citations, follow-ups, reset, and all quick inputs in both modes. Paid calls: 0.");
     } finally {
         await browser.close();
     }
 }
-module.exports = {checkNewChat};
+module.exports = {checkNewChat, checkPanelFade};
 if (require.main === module) main().catch(error => { console.error(error); process.exitCode = 1; });

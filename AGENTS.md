@@ -1,5 +1,7 @@
 # Project conventions
 
+- Deploy ERP changes to the laptop first. After a change, wait for the local watcher or run `python scripts/local_release.py` on the running demo. Verify the changed behavior there and give the owner the local test URL and the release ID from `python scripts/local_release.py --candidate`. Wait for the owner's acceptance of that release before updating Contabo or publishing related Telegram changes. Promote the exact tested images following the README; a later edit needs a new local test.
+
 - Product name: **Vector ERP** in English, **Вектор ERP** in Ukrainian; Docker project and image: `vector-erp`. The internal Frappe package remains `warehouse_core`. The AI assistant is **Vectoria ✦ AI-assistant** in English and **Векторія ✦ ШІ-помічник** in Ukrainian.
 
 - Use natural English for English app names, modules, role profiles, package names, and routes (for example, `Warehouse Core`, `warehouse_core`, and `warehouse-core`). Do not transliterate Ukrainian words into English identifiers.

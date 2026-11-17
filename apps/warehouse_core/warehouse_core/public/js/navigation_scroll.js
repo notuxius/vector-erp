@@ -5,7 +5,8 @@
     function mount(panel, viewport, contentSelector) {
         if (!panel || !viewport || mounted.has(viewport)) return;
         mounted.add(viewport);
-        if (panel.matches(".body-sidebar")) {
+        const sidebar = panel.matches(".body-sidebar");
+        if (sidebar) {
             // Read overflow and text at hover time, including newly rendered
             // sections and labels affected by sidebar width changes.
             frappe.ui.Tooltip.delegate(panel,
@@ -49,10 +50,9 @@
         }
         function update() {
             pending = false;
-            // Compare against the space WITHOUT arrows, so adding them cannot
-            // make a formerly overflowing list permanently keep its arrows.
+            // Only the sidebar's top arrow occupies space while hidden.
             const sideways = horizontal();
-            const size = sideways ? frame.clientWidth : frame.clientHeight;
+            const size = sideways ? frame.clientWidth : frame.clientHeight - (sidebar ? buttons[0].offsetHeight : 0);
             const extent = sideways ? viewport.scrollWidth : viewport.scrollHeight;
             const offset = sideways ? viewport.scrollLeft : viewport.scrollTop;
             const visible = sideways ? viewport.clientWidth : viewport.clientHeight;

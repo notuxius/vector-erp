@@ -1,11 +1,24 @@
 param(
-    [ValidateSet('start', 'stop', 'status', 'logs', 'backup', 'demo', 'demo-production', 'verify')]
+    [ValidateSet('start', 'stop', 'status', 'logs', 'backup', 'demo', 'demo-production', 'verify', 'autodeploy')]
     [string]$Action = 'status'
 )
 $ErrorActionPreference = 'Stop'
 $ProjectRoot = Split-Path -Parent $PSScriptRoot
 Push-Location -LiteralPath $ProjectRoot
 try {
+    if ($Action -eq 'autodeploy') {
+        $PythonWindowless = (Get-Command pythonw.exe -CommandType Application).Source
+        $WatchArgs = '"' + (Join-Path $PSScriptRoot 'local_release.py') + '" --watch'
+        $Startup = [Environment]::GetFolderPath('Startup')
+        $Shortcut = (New-Object -ComObject WScript.Shell).CreateShortcut((Join-Path $Startup 'Vector ERP local deploy.lnk'))
+        $Shortcut.TargetPath = $PythonWindowless
+        $Shortcut.Arguments = $WatchArgs
+        $Shortcut.WorkingDirectory = $ProjectRoot
+        $Shortcut.Save()
+        Start-Process -FilePath $PythonWindowless -ArgumentList $WatchArgs -WorkingDirectory $ProjectRoot -WindowStyle Hidden
+        Write-Host 'Local deploy watcher started and enabled at Windows sign-in.'
+        return
+    }
     if (-not (Get-Command docker -ErrorAction SilentlyContinue)) {
         throw 'Docker Desktop is required.'
     }

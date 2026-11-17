@@ -5,7 +5,6 @@ import unittest
 import uuid
 import tempfile
 from pathlib import Path
-from itertools import count
 from contextlib import ExitStack
 from unittest.mock import MagicMock, patch
 from urllib.error import HTTPError
@@ -20,8 +19,7 @@ class AllowanceFixture(unittest.TestCase):
     def setUp(self):
         folder = tempfile.TemporaryDirectory()
         self.addCleanup(folder.cleanup)
-        self.clock = count(10000, 11)
-        self.ledger = ai_chat.chat_allowance.Allowance(Path(folder.name) / "quota.sqlite3", lambda: next(self.clock))
+        self.ledger = ai_chat.chat_allowance.Allowance(Path(folder.name) / "quota.sqlite3", lambda: 10000)
         self.enterContext(patch.object(ai_chat, "allowance", return_value=self.ledger))
 
 
@@ -141,8 +139,6 @@ class ChatTests(AllowanceFixture):
             provider.assert_not_called()
 
     def test_shared_question_counts_once_across_channels_and_commands_are_free(self):
-        now = 10000
-        self.ledger.clock = lambda: now
         with patch.dict(frappe.conf, {"vector_telegram_quota_user": "Administrator"}), \
                 patch.object(ai_chat, "lookup", return_value={"ok": True, "text": "offline"}) as lookup:
             result = ai_chat.combined("Чи є сервопривід і яка гарантія?")
@@ -151,14 +147,11 @@ class ChatTests(AllowanceFixture):
             self.assertEqual(ai_chat.question_usage()["remaining"], 99)
             self.assertTrue(ai_chat.send("/help")["ok"])
             self.assertEqual(ai_chat.question_usage()["remaining"], 99)
-            self.assertFalse(ai_chat.send("залишки")["ok"])
-            self.assertEqual(lookup.call_count, 2)
-            now += 10
             self.assertTrue(ai_chat.send("залишки")["ok"])
+            self.assertEqual(lookup.call_count, 3)
             frappe.set_user("Administrator")
             self.assertEqual(ai_chat.question_usage()["remaining"], 98)
-            self.assertEqual(ai_chat.send("ще"), {"ok": False, "message":
-                "Залишилося запитань: 98 зі 100 за останні 60 хв. Пауза між запитаннями — 10 с."})
+            self.assertEqual(ai_chat.question_usage()["retry_after"], 0)
             self.assertEqual(self.ledger.status("another-user")["remaining"], 100)
 
     def test_hour_boundary_busy_and_release_after_failure(self):
@@ -166,7 +159,6 @@ class ChatTests(AllowanceFixture):
         self.ledger.clock = lambda: now
         with self.assertRaises(ValueError):
             with self.ledger.question("a"):
-                now += 11
                 with self.assertRaises(ai_chat.chat_allowance.Limited):
                     with self.ledger.question("a"):
                         self.fail("Two active questions")
@@ -174,12 +166,14 @@ class ChatTests(AllowanceFixture):
         for _ in range(99):
             with self.ledger.question("a"):
                 pass
-            now += 10
         state = self.ledger.status("a")
         self.assertEqual((state["remaining"], state["retry_at"]), (0, 13600))
+        with self.assertRaises(ai_chat.chat_allowance.Limited):
+            with self.ledger.question("a"):
+                self.fail("101st question accepted")
         now = 13600
         with self.ledger.question("a"):
-            self.assertEqual(self.ledger.status("a")["remaining"], 0)
+            self.assertEqual(self.ledger.status("a")["remaining"], 99)
 
     def test_status_hides_billing_and_reports_unavailability(self):
         opener = MagicMock()

@@ -1,27 +1,16 @@
 .vector-ai-launcher {
     position: fixed; right: 24px; bottom: 24px; z-index: 1030;
-    display: grid; align-items: center;
-    box-sizing: border-box; width: max-content; min-width: 56px;
-    height: 56px; padding: 0 16px; overflow: hidden;
+    display: grid; place-items: center;
+    box-sizing: border-box; width: 56px; height: 56px; padding: 0;
     border: 1px solid var(--border-color);
-    border-radius: 28px; background: var(--btn-primary, #171717);
-    color: var(--neutral, #fff); font-weight: 600;
+    border-radius: 50%; background: var(--btn-primary, #171717);
+    color: var(--neutral, #fff); font-size: 32px; font-weight: 600; line-height: 1;
+    opacity: .65;
     box-shadow: 0 4px 18px #0002; cursor: pointer;
 }
-.vector-ai-launcher-sparkle {
-    position: absolute; inset: 0; display: grid; place-items: center;
-    font-size: 32px; line-height: 1; opacity: calc(1 - var(--launcher-expanded, 0)); transition: opacity .22s ease;
-}
-.vector-ai-launcher-label {
-    max-width: var(--launcher-max, 0); overflow: hidden; white-space: nowrap; opacity: var(--launcher-expanded, 0);
-    transition: max-width .42s ease-in-out, opacity .22s ease;
-}
-.vector-ai-launcher:focus-visible { --launcher-expanded: 1; --launcher-max: 16em; }
+.vector-ai-launcher:focus-visible { opacity: 1; }
 @media (hover: hover) {
-    .vector-ai-launcher:hover { --launcher-expanded: 1; --launcher-max: 16em; }
-}
-@media (prefers-reduced-motion: reduce) {
-    .vector-ai-launcher-sparkle, .vector-ai-launcher-label { transition: none; }
+    .vector-ai-launcher:hover { opacity: 1; }
 }
 .vector-ai-panel {
     position: fixed; right: 24px; bottom: 24px; z-index: 1031;
@@ -33,15 +22,14 @@
 }
 .vector-ai-panel[hidden], .vector-ai-launcher[hidden] { display: none !important; }
 @media (prefers-reduced-motion: no-preference) {
-    .vector-ai-panel:not([hidden]) { animation: vector-ai-open .4s cubic-bezier(.22, .68, .2, 1); }
-}
-@keyframes vector-ai-open {
-    from {
-        clip-path: inset(calc(100% - 56px - var(--launcher-inset, 0px)) var(--launcher-inset, 0px)
-            var(--launcher-inset, 0px) calc(100% - var(--launcher-width) - var(--launcher-inset, 0px)) round 28px);
-        opacity: .6;
+    html:not(.vector-animations-disabled) {
+        /* Mirror the Profile Settings dialog's motion from below. */
+        .vector-ai-panel { transition: opacity .15s linear, transform .2s ease, display .2s allow-discrete; }
+        .vector-ai-panel[hidden] { opacity: 0; transform: translateY(15%); }
+        @starting-style {
+            .vector-ai-panel:not([hidden]) { opacity: 0; transform: translateY(15%); }
+        }
     }
-    to { clip-path: inset(0 round 18px); opacity: 1; }
 }
 .vector-ai-header { display: flex; align-items: center; gap: 10px; padding: 16px 18px 10px; }
 .vector-ai-header button:disabled { opacity: .55; }
@@ -98,7 +86,6 @@
 .vector-ai-suggestion { padding: 11px 12px; text-align: left; font-size: 12px; line-height: 1.5; color: inherit; border: 1px solid var(--border-color); border-radius: 9px; background: transparent; }
 .vector-ai-suggestion:hover { background: var(--control-bg); }
 .vector-ai-follow-up { margin-top: 10px; }
-.vector-ai-retry { white-space: nowrap; font-variant-numeric: tabular-nums; }
 .vector-ai-follow-up summary {
     width: fit-content; padding: 6px 10px; cursor: pointer; font-size: 12px; font-weight: 500;
     border: 1px solid var(--border-color); border-radius: 8px; background: var(--control-bg);
@@ -109,18 +96,37 @@
 .vector-ai-message.is-assistant { background: transparent; padding-left: 0; padding-right: 0; }
 .vector-ai-speaker { font-size: 11px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; }
 .vector-ai-text { white-space: pre-wrap; font-size: 13px; line-height: 1.65; }
+.vector-ai-choices { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
 .vector-ai-message.is-error { border-left: 3px solid var(--red-500, #e24c4c); }
 .vector-ai-message.is-pending { color: var(--text-muted); }
 .vector-ai-form { padding: 0 14px 14px; }
 .vector-ai-input { resize: none; min-height: 72px; font-size: 13px; border-radius: 10px; }
 .vector-ai-compose-footer { display: flex; gap: 6px; align-items: center; margin-top: 10px; }
-.vector-ai-compose-footer span { flex: 1; font-size: 9px; line-height: 1.4; color: var(--text-muted); }
-.vector-ai-compose-footer button[type="submit"]:disabled {
+.vector-ai-compose-footer > span { flex: 1; font-size: 9px; line-height: 1.4; color: var(--text-muted); }
+.vector-ai-compose-footer button[type="submit"]:disabled,
+.vector-ai-message .vector-ai-report:disabled {
+    pointer-events: none;
     background-color: var(--control-bg); color: var(--text-muted); box-shadow: none; cursor: default;
 }
 .vector-ai-panel :is(button, textarea):focus-visible, .vector-ai-launcher:focus-visible { outline: 2px solid var(--primary, #5794ed); outline-offset: 2px; }
 .vector-stock-filters { flex-shrink: 0; padding: 10px 18px; border-bottom: 1px solid var(--border-color); font-size: 12px; max-height: 40%; overflow: auto; }
 .vector-stock-filters[hidden] { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+    html:not(.vector-animations-disabled) {
+        .vector-ai-mode-trigger::after, .vector-stock-toggle::before { transition: transform 180ms ease; }
+        .vector-ai-mode-menu { transition: opacity 180ms ease, display 180ms allow-discrete; }
+        .vector-stock-filters {
+            interpolate-size: allow-keywords;
+            transition: block-size 180ms ease, padding-block 180ms ease, opacity 180ms ease, display 180ms allow-discrete;
+        }
+        .vector-ai-mode-menu[hidden], .vector-stock-filters[hidden] { opacity: 0; }
+        .vector-stock-filters[hidden] { block-size: 0; padding-block: 0; overflow: clip; }
+        @starting-style {
+            .vector-ai-mode-menu:not([hidden]), .vector-stock-filters:not([hidden]) { opacity: 0; }
+            .vector-stock-filters:not([hidden]) { block-size: 0; padding-block: 0; }
+        }
+    }
+}
 .vector-stock-demand summary { cursor: pointer; }
 .vector-stock-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 0; }
 .vector-stock-fields label { min-width: 0; font-size: 11px; margin: 0; }
@@ -140,7 +146,7 @@
 .vector-ai-panel :is(select, input, summary):focus-visible { outline: 2px solid var(--primary, #5794ed); outline-offset: 2px; }
 @media (max-width: 575px) {
     .vector-ai-launcher { right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); }
-    .vector-ai-panel { --launcher-inset: 8px; right: 8px; bottom: max(8px, env(safe-area-inset-bottom)); width: calc(100vw - 16px); height: calc(100dvh - 76px); border-radius: 14px; }
+    .vector-ai-panel { right: 8px; bottom: max(8px, env(safe-area-inset-bottom)); width: calc(100vw - 16px); height: calc(100dvh - 76px); border-radius: 14px; }
 }
 @media (min-width: 400px) and (max-width: 460px) {
     .vector-ai-mode-actions { flex-direction: column; align-items: flex-end; }

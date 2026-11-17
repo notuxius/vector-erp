@@ -75,10 +75,8 @@
         return node;
     };
     const assistantName = __("Vectoria ✦ AI-assistant");
-    const launcher = make("button", "vector-ai-launcher");
-    const sparkle = make("span", "vector-ai-launcher-sparkle", "✦");
-    sparkle.setAttribute("aria-hidden", "true");
-    launcher.append(sparkle, make("span", "vector-ai-launcher-label", assistantName));
+    const launcher = make("button", "vector-ai-launcher", "✦");
+    launcher.setAttribute("aria-label", assistantName);
     launcher.id = "vector-ai-launcher";
     launcher.type = "button";
     launcher.setAttribute("aria-haspopup", "dialog");
@@ -117,6 +115,7 @@
     mode.setAttribute("aria-controls", menu.id);
     function expandModes(open) {
         menu.hidden = !open;
+        menu.inert = !open;
         mode.setAttribute("aria-expanded", String(open));
     }
     for (const [value, name, description] of [
@@ -169,6 +168,7 @@
     filterToggle.setAttribute("aria-controls", stockForm.id);
     function setFiltersExpanded(expanded) {
         stockForm.hidden = !expanded;
+        stockForm.inert = !expanded;
         filterToggle.setAttribute("aria-expanded", String(expanded));
     }
     setFiltersExpanded(false);
@@ -230,15 +230,44 @@
     document.body.append(launcher, panel);
     frappe.vector_tooltip?.(close, "Закрити чат");
     let busy = false, available = false, checking = false, optionsReady = false;
+    let quotaResetAt = 0, quotaTimer, quotaRequest = 0;
     const conversations = new Map();
     let previousMode = null, clarificationSubject = null;
     let warehouseOptions = [];
+    function feedbackRequestId() {
+        return [...crypto.getRandomValues(new Uint8Array(16))].map(n => n.toString(16).padStart(2, "0")).join("");
+    }
+    function outageReportButton(result, chatMode, time) {
+        const label = "Надіслати адміністратору";
+        const button = make("button", "btn btn-default btn-sm vector-ai-report", label);
+        button.type = "button";
+        const requestId = feedbackRequestId();
+        button.onclick = async () => {
+            if (button.disabled) return;
+            button.disabled = true;
+            button.textContent = "Надсилання…";
+            try {
+                const {message: receipt} = await frappe.call({method: feedbackApi + "submit", type: "POST",
+                    args: {category: "Помилка", message: result.message, request_id: requestId,
+                        context: [time, chatMode, result.incident].filter(Boolean).join(" · ")},
+                    silent: true, error: () => {}});
+                if (typeof receipt !== "string" || !receipt.trim()) throw new Error();
+                button.textContent = "✓ Надіслано адміністратору";
+                frappe.vector_feedback_received(receipt, result.message);
+            } catch {
+                button.disabled = false;
+                button.textContent = label;
+                frappe.msgprint("Не вдалося підтвердити надсилання. Натисніть «Надіслати адміністратору», щоб спробувати ще раз.");
+            }
+        };
+        return button;
+    }
     function openFeedback() {
         if (busy) return;
         const original = input.value;
         const rows = [...log.querySelectorAll(".vector-ai-message:not([data-private])")].slice(-6);
         const excerpt = rows.map(row => [row.dataset.time, ...[...row.querySelectorAll(".vector-ai-speaker, .vector-ai-text, .vector-ai-sources a")]
-            .map(el => el.textContent.trim())].filter(Boolean).join("\n").slice(0, 1100)).join("\n\n");
+            .map(el => el.textContent.trim())].filter(Boolean).join("\n").slice(0, 1100)).join("\n");
         const env = diagnostics();
         const stock = rows.findLast(row => row.querySelector(".vector-stock-stamp"));
         const context = ["Сторінка: " + location.pathname.split("/").slice(0, 3).join("/"),
@@ -246,33 +275,35 @@
             `Час (UTC): ${env.observed_at} · Екран: ${env.viewport} · З’єднання браузера: ${env.connection}`,
             env.build && "Версія вебчату: " + env.build, lastIncident && "Останній збій: " + lastIncident,
             stock && [".vector-stock-stamp", ".vector-stock-scope"].map(s => stock.querySelector(s)?.textContent).filter(Boolean).join("\n"),
-            excerpt].filter(Boolean).join("\n\n");
-        const requestId = [...crypto.getRandomValues(new Uint8Array(16))].map(n => n.toString(16).padStart(2, "0")).join("");
+            excerpt].filter(Boolean).join("\n");
+        const requestId = feedbackRequestId();
         const dialog = new frappe.ui.Dialog({
             title: "Надіслати адміністратору",
             fields: [
-                {fieldname: "message", fieldtype: "Small Text", label: "Повідомлення", reqd: 1,
+                {fieldname: "message", fieldtype: "Small Text", label: "Повідомлення (необов’язково)",
                     default: original},
                 {fieldname: "review", fieldtype: "HTML", options: `
                     <div class="d-flex mb-3" role="radiogroup" aria-label="Тип звернення">
                         <label class="mr-3"><input type="radio" name="${requestId}" value="Пропозиція" checked> Пропозиція</label>
                         <label><input type="radio" name="${requestId}" value="Помилка"> Помилка</label>
                     </div>
-                    <details><summary>Контекст для аналізу</summary>
+                    <details class="vector-disclosure"><summary>Контекст для аналізу</summary>
                         <textarea class="form-control mt-2" data-fieldname="context" aria-label="Контекст для аналізу" rows="4" maxlength="8000"></textarea>
                     </details>
                     <p class="text-muted small mt-2">Адміністратор і Codex отримають повідомлення та доданий контекст. Контекст можна змінити або видалити.</p>`},
             ],
             primary_action_label: "Надіслати адміністратору",
             primary_action: async values => {
-                if (!values.message.trim()) { frappe.msgprint("Введіть повідомлення."); return; }
+                const message = (values.message || "").trim();
+                if (!message && !contextInput.value.trim()) { frappe.msgprint("Додайте повідомлення або контекст."); return; }
                 dialog.disable_primary_action();
+                let receipt;
                 try {
                     const response = await frappe.call({method: feedbackApi + "submit",
-                        type: "POST", args: {message: values.message, category: review.querySelector("input:checked").value,
+                        type: "POST", args: {message, category: review.querySelector("input:checked").value,
                             context: contextInput.value, request_id: requestId}, silent: true, error: () => {}});
-                    if (!response.message) throw new Error();
-                    frappe.show_alert({message: "Надіслано адміністратору: " + response.message, indicator: "green"});
+                    if (typeof response.message !== "string" || !response.message.trim()) throw new Error();
+                    receipt = response.message;
                 } catch (error) {
                     reportFailure("feedback", error);
                     frappe.msgprint("Не вдалося підтвердити надсилання. Ваш текст залишився у формі. Спробуйте ще раз.");
@@ -283,6 +314,7 @@
                 if (input.value === original) input.value = "";
                 update();
                 dialog.hide();
+                frappe.vector_feedback_received(receipt);
             },
         });
         dialog.fields_dict.message.$input.attr("maxlength", 4000);
@@ -317,42 +349,18 @@
             list.append(button);
         });
     }
-    function appendRetry(row, retry) {
-        const button = make("button", "btn btn-default btn-sm vector-ai-retry", "Повторити (10)");
-        button.type = "button";
-        button.disabled = true;
-        button.dataset.waiting = "true";
-        button.onclick = () => {
-            if (busy || button.disabled) return;
-            button.remove();
-            retry();
-        };
-        row.append(button);
-        const readyAt = Date.now() + 10000;
-        const timer = setInterval(() => {
-            const seconds = Math.ceil((readyAt - Date.now()) / 1000);
-            if (seconds > 0 && button.isConnected) {
-                button.textContent = `Повторити (${seconds})`;
-                return;
-            }
-            clearInterval(timer);
-            button.textContent = "Повторити";
-            delete button.dataset.waiting;
-            button.disabled = busy;
-        }, 1000);
-    }
     function appendFollowUp(row) {
         if (!suggestions.childElementCount) return;
-        const picker = make("details", "vector-ai-follow-up");
+        const picker = make("details", "vector-ai-follow-up vector-disclosure");
         picker.name = "vector-ai-follow-ups";
         const summary = make("summary", "", mode.value === "draft" ? "Готові звернення" : "Готові запитання");
         const list = make("div", "vector-ai-suggestions");
         picker.append(summary, list);
         picker.ontoggle = () => {
-            if (picker.open) {
+            if (picker.open && !list.childElementCount) {
                 renderSuggestions(list);
                 update();
-            } else list.replaceChildren();
+            }
         };
         row.append(picker);
     }
@@ -396,19 +404,37 @@
         update();
     }
     function update() {
-        const sendUnavailable = busy || (mode.value === "draft" && !available);
+        const ms = Math.max(0, quotaResetAt - Date.now());
+        const waiting = busy || ms > 0;
+        const sendUnavailable = waiting || (mode.value === "draft" && !available);
         const command = /^\/(usage|help)$/i.test(input.value.trim());
+        clearTimeout(quotaTimer);
+        if (ms) quotaTimer = setTimeout(update, ms);
         submit.disabled = busy || (!command && sendUnavailable) || !input.value.trim();
         feedback.disabled = busy;
-        log.querySelectorAll(".vector-ai-retry").forEach(button => { button.disabled = busy || button.dataset.waiting === "true"; });
         log.querySelectorAll(".vector-ai-suggestion").forEach(button => { button.disabled = sendUnavailable; });
         reset.disabled = busy;
         input.disabled = busy;
         mode.disabled = busy;
-        stockSearch.disabled = busy || !optionsReady;
+        stockSearch.disabled = waiting || !optionsReady;
         Object.values(controls).forEach(control => { control.disabled = busy || !optionsReady; });
-        log.querySelectorAll(".vector-stock-more").forEach(button => { button.disabled = busy || button.dataset.expired === "true"; });
+        log.querySelectorAll(".vector-stock-more, .vector-stock-refresh, .vector-ai-choice").forEach(button => {
+            button.disabled = waiting || button.dataset.expired === "true";
+        });
         form.setAttribute("aria-busy", String(busy));
+    }
+    async function refreshQuota() {
+        const request = ++quotaRequest;
+        try {
+            const {message} = await frappe.call({method: "warehouse_core.ai_chat.question_usage", type: "POST", silent: true, error: () => {}});
+            if (!Number.isFinite(message?.retry_after)) throw new Error("Invalid question allowance");
+            if (request === quotaRequest) {
+                quotaResetAt = Date.now() + Math.ceil(message.retry_after * 1000);
+                update();
+            }
+        } catch (error) {
+            reportFailure("usage", error);
+        }
     }
     async function refreshStatus() {
         if (checking) return;
@@ -433,17 +459,19 @@
     function hide() {
         infoTip.hide();
         expandModes(false);
+        panel.inert = true;
         panel.hidden = true;
         launcher.hidden = false;
         launcher.setAttribute("aria-expanded", "false");
         launcher.focus();
     }
     launcher.onclick = () => {
-        panel.style.setProperty("--launcher-width", launcher.offsetWidth + "px");
+        panel.inert = false;
         panel.hidden = false;
         launcher.hidden = true;
         launcher.setAttribute("aria-expanded", "true");
         input.focus();
+        refreshQuota();
         refreshStatus();
         loadOptions();
     };
@@ -502,7 +530,7 @@
                 const cell = make("div", ""); cell.append(make("dt", "", label), make("dd", "", `${format(item[key])} ${unit}`)); metrics.append(cell);
             }
             card.append(metrics, make("p", "vector-stock-status", item.status));
-            const details = make("details", "vector-stock-demand"); details.append(make("summary", "", "Потреби та очікувані закупівлі"));
+            const details = make("details", "vector-stock-demand vector-disclosure"); details.append(make("summary", "", "Потреби та очікувані закупівлі"));
             for (const [key, label] of [["production_demand", "Виробничі замовлення"], ["planned_demand", "Виробничі плани"],
                 ["sales_demand", "Замовлення покупців"], ["subcontract_demand", "Субпідряд"], ["ordered_qty", "Очікується за закупівлями"]]) {
                 details.append(make("p", "", `${label}: ${format(item[key])} ${unit}`));
@@ -554,19 +582,18 @@
         });
         row.append(list);
     }
-    async function sendMessage(message, extra = {}, retryContext) {
+    async function sendMessage(message, extra = {}) {
         const stockAction = extra.mode === "availability";
         const usage = !stockAction && /^\/(usage|help)$/i.test(message.trim());
-        if (busy || (!retryContext && !usage && !stockAction && mode.value === "draft" && !available) || !message) return;
+        if (busy || !message || (!usage && (Date.now() < quotaResetAt || (!stockAction && mode.value === "draft" && !available)))) return;
         busy = true;
         log.querySelectorAll(".vector-ai-follow-up[open]").forEach(picker => { picker.open = false; });
         update();
         addMessage("user", message);
-        const useComposer = !stockAction && (!retryContext || !input.value || input.value === message);
-        if (useComposer) input.value = "";
+        if (!stockAction) input.value = "";
         const pending = addMessage("pending", "Готую відповідь…");
-        let question = retryContext?.question ?? message;
-        const routingMode = retryContext ? retryContext.routingMode : previousMode;
+        let question = message;
+        const routingMode = previousMode;
         let failed = false;
         let operation = usage ? "usage" : "route";
 
@@ -583,26 +610,27 @@
                 return;
             }
             const choice = message.trim().toLowerCase().replace(/[.!?]+$/u, "");
-            if (!retryContext && clarificationSubject && !Object.keys(extra).length) {
+            if (clarificationSubject && !Object.keys(extra).length) {
                 if (["залишки", "залишок", "наявність"].includes(choice)) question = "залишки: " + clarificationSubject;
                 if (["характеристики", "база знань"].includes(choice)) question = "знання: " + clarificationSubject + " — характеристики";
             }
             const planned = await assistantPlan(question, extra, routingMode);
             if (planned.message) {
                 addMessage("error", planned.message);
-                if (useComposer) input.value = message;
                 return;
             }
             const {requests, clarification} = planned;
             if (!requests.length) {
                 clarificationSubject = message;
                 const row = addMessage("assistant", clarification);
+                const choices = make("div", "vector-ai-choices");
+                row.append(choices);
                 for (const [label, prompt] of [["Залишок", "залишки: " + message],
                     ["Характеристики", "знання: " + message + " — характеристики"]]) {
-                    const button = make("button", "btn btn-default btn-sm", label);
+                    const button = make("button", "btn btn-default btn-sm vector-ai-choice", label);
                     button.type = "button";
                     button.onclick = () => sendMessage(prompt);
-                    row.append(button);
+                    choices.append(button);
                 }
                 return;
             }
@@ -618,7 +646,6 @@
                 if (typeof response.message?.ok !== "boolean") throw new Error("Invalid combined reply");
                 if (!response.message.ok) {
                     addMessage("error", response.message.message);
-                    if (useComposer) input.value = message;
                     return;
                 }
                 results = response.message.results;
@@ -642,6 +669,9 @@
                     row.append(make("strong", "", requests[index].mode === "availability" ? "Товари та залишки" : "База знань"));
                 }
                 row.append(make("p", "vector-ai-text", result.ok ? result.text : result.message || "Не вдалося отримати відповідь."));
+                if (!result.ok && result.contact_admin) {
+                    row.append(outageReportButton(result, requests[index].mode, row.dataset.time));
+                }
                 if (result.ok) renderSources(row, result.sources);
             });
             const stock = results.find(result => result.ok && result.availability);
@@ -650,22 +680,17 @@
                 renderStock(row, stock.availability);
             }
             log.scrollTop = row.offsetTop - log.offsetTop;
-            if (!succeeded) {
-                if (useComposer) input.value = message;
-                void refreshStatus();
-            } else if (retryContext && !available) await refreshStatus();
+            if (!succeeded) void refreshStatus();
         } catch (error) {
             reportFailure(operation, error);
             addMessage("error", "Не вдалося підготувати відповідь. Повторіть запит.");
-            if (useComposer) input.value = message;
         } finally {
             pending.remove();
             const row = log.lastElementChild;
-            if (failed || row.classList.contains("is-error")) {
-                appendRetry(row, () => sendMessage(message, extra, {question, routingMode}));
-            } else appendFollowUp(row);
+            if (!failed && !row.classList.contains("is-error")) appendFollowUp(row);
             busy = false;
             update();
+            if (!usage) void refreshQuota();
             if (!panel.hidden) input.focus();
         }
     }
