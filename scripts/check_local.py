@@ -77,10 +77,6 @@ def main():
     )
     port = int(os.environ.get("HTTP_PORT") or values.get("HTTP_PORT", "8080"))
     base = f"http://127.0.0.1:{port}"
-    logo_bytes = (env_path.parent / "apps/warehouse_core/warehouse_core/public/images/vector-mark.svg").read_bytes()
-    logo = "/assets/warehouse_core/images/vector-mark.svg?v=" + sha256(logo_bytes).hexdigest()[:12]
-    favicon_bytes = (env_path.parent / "apps/warehouse_core/warehouse_core/public/images/mtech-mark.svg").read_bytes()
-    favicon = "/assets/warehouse_core/images/mtech-mark.svg?v=" + sha256(favicon_bytes).hexdigest()[:12]
     opener = urllib.request.build_opener(
         urllib.request.ProxyHandler({}),
         urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()),
@@ -88,12 +84,20 @@ def main():
     with opener.open(base + "/login", timeout=30) as response:
         assert response.status == 200, "Login page did not return HTTP 200"
         login_html = response.read().decode()
-        assert f'src="{logo}"' in login_html, "Login logo is stale"
-        assert f'href="{favicon}"' in login_html, "Login favicon is stale"
-    with opener.open(base + logo, timeout=30) as response:
-        assert response.read() == logo_bytes, "Vector logo asset is stale or unavailable"
-    with opener.open(base + favicon, timeout=30) as response:
-        assert response.read() == favicon_bytes, "MTech favicon asset is stale or unavailable"
+
+    def asset_url(name, attribute):
+        path = "/assets/warehouse_core/images/" + name
+        match = re.search(attribute + r'="(' + re.escape(path) + r'\?v=([a-f0-9]{12}))"', login_html)
+        assert match, f"Missing versioned login asset: {name}"
+        expected = (env_path.parent / "apps/warehouse_core/warehouse_core/public/images" / name).read_bytes()
+        with opener.open(base + match[1], timeout=30) as response:
+            served = response.read()
+        assert sha256(served).hexdigest()[:12] == match[2], f"Wrong asset version: {name}"
+        assert served.replace(b"\r\n", b"\n") == expected.replace(b"\r\n", b"\n"), f"Stale asset: {name}"
+        return match[1]
+
+    logo = asset_url("vector-mark.svg", "src")
+    favicon = asset_url("mtech-mark.svg", "href")
     # Fresh guests and browsers retaining an English cookie must both see the
     # Ukrainian site entry page. An explicit language URL still takes precedence.
     public = urllib.request.build_opener(urllib.request.ProxyHandler({}))
