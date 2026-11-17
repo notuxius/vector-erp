@@ -93,9 +93,11 @@ def status():
         request = Request("http://ai-gateway:8091/status")
         with build_opener(NoRedirect()).open(request, timeout=3) as response:
             data = json.loads(response.read(65536))
-        available = data.get("can_request") is True
-    except (HTTPError, URLError, TimeoutError, ValueError):
-        available = False
+        available = data["can_request"]
+        if not isinstance(available, bool):
+            raise ValueError("Invalid gateway status")
+    except (OSError, ValueError, KeyError, TypeError):
+        return {"available": False, "message": UNAVAILABLE, "incident": "gateway"}
     # The public Desk availability indicator never includes account figures.
     return {"available": available, "message": "Готова допомогти" if available else UNAVAILABLE}
 
@@ -123,6 +125,7 @@ def question_usage():
 def usage():
     user = require_desk_user()
     sections = [question_usage()["text"]]
+    incidents = []
     if user == "Administrator" or "System Manager" in frappe.get_roles(user):
         for url, label in [("http://ai-gateway:8091/usage", "Шлюз ШІ"),
                            ("http://telegram-ai-bridge:8092/cloud-usage", "Cloudflare")]:
@@ -134,7 +137,8 @@ def usage():
                 sections.append(report)
             except (OSError, ValueError, KeyError, TypeError):
                 sections.append(f"{label} · дані недоступні.")
-    return {"text": "\n\n".join(sections)}
+                incidents.append("gateway" if label == "Шлюз ШІ" else "cloud_usage")
+    return {"text": "\n\n".join(sections), "incidents": incidents}
 
 
 @frappe.whitelist(methods=["POST"])
@@ -202,7 +206,7 @@ def combined(message, previous_mode=None, conversations=None):
                 except Exception:
                     frappe.db.rollback()
                     frappe.log_error(title="Assistant lookup failed")
-                    result = {"ok": False, "message": "Не вдалося перевірити залишки." if mode == "availability"
+                    result = {"ok": False, "incident": "lookup", "message": "Не вдалося перевірити залишки." if mode == "availability"
                               else "База знань зараз недоступна."}
                 results.append(result)
             return {"ok": True, "results": results}
@@ -321,16 +325,16 @@ def knowledge_answer(message, mode, memory=None):
         return context_reset("Джерела змінилися. Контекст очищено; повторіть повне запитання.")
     try:
         text = generate_text(prompt, max_output_tokens=1024)
-    except AIUnavailable:
+    except AIUnavailable as error:
         frappe.db.set_value("Knowledge Query Log", log, "outcome", "unavailable")
-        return {"ok": False, "message": UNAVAILABLE, "contact_admin": True}
+        return {"ok": False, "message": UNAVAILABLE, "contact_admin": True, "incident": error.incident}
     frappe.db.commit()  # Fresh permission/publication reads after the provider returns.
     if not knowledge.sources_current(dependencies):
         frappe.db.set_value("Knowledge Query Log", log, "outcome", "revoked")
         return context_reset("Доступ або редакція джерела змінилися. Відповідь приховано, контекст очищено; повторіть повне запитання.")
     if not isinstance(text, str) or not text.strip():
         frappe.db.set_value("Knowledge Query Log", log, "outcome", "empty")
-        return {"ok": False, "message": "ШІ не повернув текстової відповіді."}
+        return {"ok": False, "message": "ШІ не повернув текстової відповіді.", "incident": "empty"}
     frappe.db.set_value("Knowledge Query Log", log, "outcome", "answered")
     next_memory = {"mode": mode, "turns": trim_turns(turns + [{"user": message, "assistant": text}]),
                    "sources": sources, "dependencies": dependencies}

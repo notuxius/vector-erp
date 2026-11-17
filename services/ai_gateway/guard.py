@@ -128,9 +128,15 @@ class Ledger:
             return 'cutoff_95_percent'
         return None
 
-    def enable(self):
+    def enable(self, keep_reserved=()):
         with self.transaction() as db:
             p = self.policy(db)
+            for request_id in keep_reserved:
+                changed = db.execute("""UPDATE requests SET state='deferred' WHERE id=?
+                    AND state IN ('uncertain','deferred') AND actual IS NULL AND period=?""",
+                    (request_id, p['period'] if p else None))
+                if changed.rowcount != 1:
+                    raise Blocked('request_is_not_an_unresolved_hold')
             reason = self.reason(db, p, require_enabled=False)
             if reason:
                 raise Blocked(reason)
@@ -149,7 +155,7 @@ class Ledger:
         with self.transaction() as db:
             db.execute("UPDATE requests SET state='uncertain' WHERE state='pending'")
             p = self.policy(db)
-            if p and self.held(db):
+            if p and db.execute("SELECT 1 FROM requests WHERE state NOT IN ('settled','deferred') LIMIT 1").fetchone():
                 p['enabled'] = False
                 self.save(db, p)
 

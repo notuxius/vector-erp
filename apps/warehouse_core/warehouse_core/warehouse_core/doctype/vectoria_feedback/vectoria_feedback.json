@@ -1,0 +1,18 @@
+{
+ "doctype": "DocType",
+ "name": "Vectoria Feedback",
+ "module": "Warehouse Core",
+ "engine": "InnoDB",
+ "autoname": "hash",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "field_order": ["category", "reported_by", "message", "context", "analysis"],
+ "fields": [
+  {"fieldname": "category", "label": "Тип звернення", "fieldtype": "Data", "read_only": 1, "in_list_view": 1},
+  {"fieldname": "reported_by", "label": "Відправник", "fieldtype": "Link", "options": "User", "read_only": 1, "in_list_view": 1},
+  {"fieldname": "message", "label": "Повідомлення", "fieldtype": "Code", "read_only": 1},
+  {"fieldname": "context", "label": "Контекст відправника", "fieldtype": "Code", "read_only": 1},
+  {"fieldname": "analysis", "label": "Аналіз Codex", "fieldtype": "Code", "read_only": 1}
+ ],
+ "permissions": [{"role": "Administrator", "read": 1}]
+}

@@ -126,6 +126,30 @@ class SpendingGuardTests(unittest.TestCase):
             'http_status': 429, 'provider_request_id': 'req_test', 'error_type': 'HTTPError'})
         self.assertFalse(self.ledger.status()['can_request'])
 
+    def test_unreachable_before_http_send_consumes_no_budget(self):
+        import errno
+        self.enable()
+        with patch.dict('os.environ', OPENAI_API_KEY='test'), patch(
+            'http.client.HTTPSConnection.connect', side_effect=OSError(errno.ENETUNREACH, 'no route')
+        ) as connect:
+            with self.assertRaisesRegex(Blocked, 'provider_connection_unavailable'):
+                generate(self.ledger, {'prompt': 'test'})
+        self.assertEqual(connect.call_count, 2)
+        self.assertTrue(self.ledger.status()['can_request'])
+        self.assertEqual(self.ledger.status()['reserved_usd'], 0)
+        self.assertEqual(self.ledger.status()['accounted_usage_usd'], 0)
+
+    def test_socket_error_during_write_keeps_hold_without_retry(self):
+        self.enable()
+        with patch.dict('os.environ', OPENAI_API_KEY='test'), patch(
+            'http.client.HTTPSConnection.send', side_effect=BrokenPipeError('write failed')
+        ) as send:
+            with self.assertRaisesRegex(Blocked, 'outcome_uncertain'):
+                generate(self.ledger, {'prompt': 'test'})
+        self.assertEqual(send.call_count, 1)
+        self.assertGreater(self.ledger.status()['reserved_usd'], 0)
+        self.assertFalse(self.ledger.status()['can_request'])
+
     def test_precise_usage_prices_reads_writes_and_output(self):
         self.enable()
         request = self.ledger.reserve(100)
@@ -160,6 +184,28 @@ class SpendingGuardTests(unittest.TestCase):
         self.assertGreater(self.ledger.status()['reserved_usd'], 0)
         with self.assertRaisesRegex(Blocked, 'unresolved_request'):
             self.ledger.enable()
+
+    def test_named_holds_survive_restart_and_still_count_toward_cutoff(self):
+        self.enable(allowance=USD)
+        first, second = self.ledger.reserve(100), self.ledger.reserve(100)
+        for request in (first, second):
+            self.ledger.uncertain(request)
+        held = self.ledger.status()['reserved_usd']
+        with self.assertRaisesRegex(Blocked, 'unresolved_request'):
+            self.ledger.enable([first])
+        with self.ledger.transaction() as db:
+            self.assertEqual(db.execute("SELECT count(*) FROM requests WHERE state='uncertain'").fetchone()[0], 2)
+        self.ledger.enable([first, second])
+        self.ledger.recover()
+        self.assertTrue(self.ledger.status()['can_request'])
+        self.assertEqual(self.ledger.status()['reserved_usd'], held)
+        self.assertEqual(self.ledger.status()['accounted_usage_usd'], 0)
+        third = self.ledger.reserve(100)
+        with self.assertRaisesRegex(Blocked, '95_percent'):
+            self.ledger.reserve(100)
+        self.ledger.uncertain(third)
+        with self.assertRaisesRegex(Blocked, 'unresolved_request'):
+            self.ledger.enable([first, second])
 
     def test_malformed_usage_keeps_full_hold(self):
         self.enable()

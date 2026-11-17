@@ -8,6 +8,7 @@ from pathlib import Path
 from itertools import count
 from contextlib import ExitStack
 from unittest.mock import MagicMock, patch
+from urllib.error import HTTPError
 
 import frappe
 from warehouse_core import ai_chat
@@ -25,6 +26,15 @@ class AllowanceFixture(unittest.TestCase):
 
 
 class ChatTests(AllowanceFixture):
+    def test_spending_block_is_quiet_but_provider_failure_is_reportable(self):
+        from warehouse_core import ai
+        for reason, incident in [("next_request_would_cross_95_percent", None), ("provider_connection_unavailable", "provider")]:
+            error = HTTPError("http://ai-gateway", 403, "blocked", {}, io.BytesIO(json.dumps({"error": reason}).encode()))
+            with patch.object(ai, "build_opener") as opener, self.assertRaises(AIUnavailable) as raised:
+                opener.return_value.open.side_effect = error
+                ai.generate_text("test")
+            self.assertEqual(raised.exception.incident, incident)
+
     def setUp(self):
         super().setUp()
         self.user = frappe.session.user
@@ -115,9 +125,9 @@ class ChatTests(AllowanceFixture):
                 self.assertIn("Do not answer unrelated requests", prompt)
                 self.assertIn("Contact support.", prompt)
                 self.assertEqual(provider.call_args.kwargs, {"max_output_tokens": 1024})
-                provider.side_effect = AIUnavailable("private internal error")
+                provider.side_effect = AIUnavailable("private internal error", incident="gateway")
                 self.assertEqual(ai_chat.send("another", mode=mode),
-                                 {"ok": False, "message": ai_chat.UNAVAILABLE, "contact_admin": True})
+                                 {"ok": False, "message": ai_chat.UNAVAILABLE, "contact_admin": True, "incident": "gateway"})
             self.assertEqual(provider.call_count, 4)
             self.assertEqual(cache.lock.return_value.release.call_count, 4)
 
@@ -147,7 +157,8 @@ class ChatTests(AllowanceFixture):
             self.assertTrue(ai_chat.send("залишки")["ok"])
             frappe.set_user("Administrator")
             self.assertEqual(ai_chat.question_usage()["remaining"], 98)
-            self.assertFalse(ai_chat.send("ще")["ok"])
+            self.assertEqual(ai_chat.send("ще"), {"ok": False, "message":
+                "Залишилося запитань: 98 зі 100 за останні 60 хв. Пауза між запитаннями — 10 с."})
             self.assertEqual(self.ledger.status("another-user")["remaining"], 100)
 
     def test_hour_boundary_busy_and_release_after_failure(self):
@@ -178,7 +189,7 @@ class ChatTests(AllowanceFixture):
             ).encode()
             self.assertEqual(ai_chat.status(), {"available": True, "message": "Готова допомогти"})
             opener.open.side_effect = TimeoutError
-            self.assertEqual(ai_chat.status(), {"available": False, "message": ai_chat.UNAVAILABLE})
+            self.assertEqual(ai_chat.status(), {"available": False, "message": ai_chat.UNAVAILABLE, "incident": "gateway"})
 
     def test_redis_lock_and_counter(self):
         key = frappe.cache.make_key("vector-ai-chat-check:" + uuid.uuid4().hex)

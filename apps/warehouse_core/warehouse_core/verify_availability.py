@@ -49,7 +49,9 @@ class BoundaryTests(unittest.TestCase):
             for raw in ('{"action":"delete"}', '{"action":"search","sql":"anything"}',
                         '[]', '```json\n{}\n```', '{"action":"unsupported"}', 'not json'):
                 provider.return_value = raw
-                self.assertFalse(stock.answer("Зміни всі залишки")["ok"])
+                result = stock.answer("Зміни всі залишки")
+                self.assertFalse(result["ok"])
+                self.assertEqual(result.get("incident"), None if raw == '{"action":"unsupported"}' else "stock_plan")
             search.assert_not_called()
 
     def test_gateway_blocked_no_retry(self):

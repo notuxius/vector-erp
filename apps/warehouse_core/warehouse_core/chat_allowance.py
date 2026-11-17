@@ -50,7 +50,7 @@ class Allowance:
             db.execute("DELETE FROM questions WHERE started<=?", (now - WINDOW,))
             state = self.state(db, person, now)
             if state['busy'] or state['retry_at']:
-                raise Limited(describe(state))
+                raise Limited(describe(state, include_retry_time=False))
             db.execute("INSERT INTO questions VALUES(?,?,?,?)", (ticket, person, now, now + LEASE))
         try:
             yield
@@ -59,11 +59,11 @@ class Allowance:
                 db.execute("UPDATE questions SET busy_until=0 WHERE id=?", (ticket,))
 
 
-def describe(state):
+def describe(state, *, include_retry_time=True):
     lines = [f"Залишилося запитань: {state['remaining']} зі {LIMIT} за останні 60 хв. Пауза між запитаннями — {COOLDOWN} с."]
     if state['busy']:
         lines.append("Дочекайтеся завершення поточного запитання.")
-    if state['retry_at']:
+    if include_retry_time and state['retry_at']:
         moment = datetime.fromtimestamp(state['retry_at'], ZoneInfo("Europe/Kyiv"))
         lines.append(f"Наступне запитання — з {moment:%H:%M:%S} за Києвом.")
     return " ".join(lines)

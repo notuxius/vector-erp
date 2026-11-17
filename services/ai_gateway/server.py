@@ -1,15 +1,17 @@
 """Internal text-only AI endpoint; administration is local CLI only."""
 import argparse
+import errno
 import json
 import os
 import re
 import sys
 import threading
 from datetime import datetime, timezone
+from http.client import HTTPSConnection
 from urllib.error import HTTPError
 from pathlib import Path
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
-from urllib.request import Request, build_opener, HTTPRedirectHandler
+from urllib.request import Request, build_opener, HTTPRedirectHandler, HTTPSHandler
 
 from guard import Blocked, Ledger, MODEL
 from notifications import Notifier
@@ -22,6 +24,24 @@ class NoRedirect(HTTPRedirectHandler):
         return None
 
 
+class RequestNotSent(Exception):
+    pass
+
+
+class ProviderConnection(HTTPSConnection):
+    def connect(self):
+        try:
+            super().connect()
+        except OSError as error:
+            # TCP/TLS setup finishes before http.client writes the API request.
+            raise RequestNotSent() from error
+
+
+class ProviderHTTPSHandler(HTTPSHandler):
+    def https_open(self, request):
+        return self.do_open(ProviderConnection, request, context=self._context)
+
+
 def openai_request(body, observe_limits, request_id, evidence):
     key = os.environ.get('OPENAI_API_KEY', '')
     if not key:
@@ -30,9 +50,14 @@ def openai_request(body, observe_limits, request_id, evidence):
                       data=json.dumps(body).encode(), method='POST',
                       headers={'Authorization': 'Bearer ' + key, 'Content-Type': 'application/json',
                                'X-Client-Request-Id': request_id})
-    # No automatic retries or redirected credential forwarding.
+    opener = build_opener(NoRedirect(), ProviderHTTPSHandler())
     try:
-        response = build_opener(NoRedirect()).open(request, timeout=90)
+        try:
+            response = opener.open(request, timeout=90)
+        except RequestNotSent as error:
+            if error.__cause__.errno not in (errno.ENETUNREACH, errno.EHOSTUNREACH):
+                raise
+            response = opener.open(request, timeout=90)
     except HTTPError as error:
         response = error
     with response:
@@ -81,6 +106,9 @@ def generate(ledger, payload, transport=None):
         ledger.settle(request_id, usage['input_tokens'], usage['output_tokens'], limit,
                       usage.get('input_tokens_details'))
         return {'text': text, 'request_id': request_id}
+    except RequestNotSent:
+        ledger.settle(request_id, 0, 0, limit)
+        raise Blocked('provider_connection_unavailable') from None
     except Exception as error:
         # Even an HTTP error/timeout can follow billable work. Keep the full hold.
         evidence['error_type'] = type(error).__name__
@@ -167,7 +195,11 @@ def main():
     parser.add_argument('command', choices=['serve', 'status', 'disable', 'enable', 'budget', 'snapshot', 'test-notifications'])
     parser.add_argument('--file', help='Local budget JSON (period and allowance), or legacy snapshot')
     parser.add_argument('--test-id', help='Stable identifier to avoid repeating a delivery test')
+    parser.add_argument('--keep-reserved', action='append', default=[], metavar='REQUEST_ID',
+                        help='Enable with this unresolved request still fully reserved')
     args = parser.parse_args()
+    if args.keep_reserved and args.command != 'enable':
+        parser.error('--keep-reserved requires enable')
     path = Path(os.environ.get('AI_LEDGER_PATH', '/data/ledger.sqlite3'))
     path.parent.mkdir(parents=True, exist_ok=True)
     ledger = Ledger(str(path))
@@ -185,7 +217,7 @@ def main():
                 raw = sys.stdin.read() if args.file == '-' else Path(args.file).read_text(encoding='utf-8')
                 ledger.snapshot(json.loads(raw))
             elif args.command == 'enable':
-                ledger.enable()
+                ledger.enable(args.keep_reserved)
             elif args.command == 'disable':
                 ledger.disable()
             elif args.command == 'test-notifications':

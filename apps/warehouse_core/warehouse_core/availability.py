@@ -111,6 +111,10 @@ def options():
         return {"ok": False, "message": "Немає доступу до залишків або потрібно звузити область пошуку."}
 
 
+class InvalidStockPlan(ValueError):
+    pass
+
+
 def interpret(message, previous=None):
     """Bounded intent extraction through the existing text-only spending gateway."""
     require_access()
@@ -149,12 +153,13 @@ def interpret(message, previous=None):
     raw = generate_text(prompt, max_output_tokens=512)
     try:
         plan = json.loads(raw)
+        if plan == {"action": "unsupported"}:
+            return None
         if not isinstance(plan, dict) or plan.pop("action", None) != "search" or set(plan) != FILTER_KEYS:
             raise ValueError()
         return normalize(plan)
     except (ValueError, TypeError):
-        raise ValueError("Зараз можу перевірити товари, деталі, залишки та резерви. "
-                         "Уточніть назву або скористайтеся фільтрами. Комплектність верстата за BOM — наступний етап.") from None
+        raise InvalidStockPlan() from None
 
 
 def qty(value):
@@ -261,16 +266,18 @@ def answer(message, memory=None, filters=None, next_page=False):
             selected = normalize(memory["filters"])
         else:
             selected = normalize(filters) if filters is not None else interpret(message, memory.get("filters"))
+            if selected is None:
+                raise ValueError("Unsupported stock question")
         result = search(selected, memory.get("next_after") if next_page else None)
-    except AIUnavailable:
-        return {"ok": False, "message": "ШІ тимчасово недоступний. Пошук за фільтрами працює без ШІ."}
+    except AIUnavailable as error:
+        return {"ok": False, "message": "ШІ тимчасово недоступний. Пошук за фільтрами працює без ШІ.", "incident": error.incident}
     except frappe.PermissionError:
         return {"ok": False, "reset_conversation": True,
                 "message": "Немає доступу до потрібних залишків або вибраних фільтрів. Перевірте доступ із адміністратором."}
-    except (ValueError, TypeError):
+    except (ValueError, TypeError) as error:
         # Model output and internal errors must not become executable or leak data.
         return {"ok": False, "message": "Не вдалося уточнити, які залишки перевірити. Напишіть назву або артикул товару "
-                "й за потреби додайте склад."}
+                "й за потреби додайте склад.", "incident": "stock_plan" if isinstance(error, InvalidStockPlan) else None}
     text = (f"Позицій у доступних залишках ERP: {len(result['rows'])}."
             if result["rows"] else "У доступних залишках немає записів за цими фільтрами. "
             "Це не підтверджує нульовий залишок на недоступних складах. Спробуйте «Усі залишки» або змініть пошук.")
